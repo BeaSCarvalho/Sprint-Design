@@ -4,115 +4,113 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="css/filter-page.css" />
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="home" href="index.html" />
-
+  <link rel="stylesheet" href="css/page-filters.css" />
   <title>Filtrar Pokémons</title>
 </head>
 
-<body class="filters">
-  <header class="header-filters">
-    <a href="index.html">
-      <img class="logo-onpokemon" alt="Logo do OnPokemon" src="img/logo.png">
-    </a>
-  </header>
+<body class="container-filters">
 
-  <main class="main-filters">
-    <h1 class="title">FILTRAR</h1>
-    <p class="by-name">Pelo nome:</p>
-    <input type="text" id="inputText" class="input-name" placeholder="Insira o nome do Pokemon">
+  <div class="container-general-filter">
 
-    <div class="checkbox-title">
-      <p class="specify-type">Tipo</p>
-      <p class="specify-weaknesses">Fraqueza</p>
-    </div>
-
-    <form action="/main.js" class="full-checkbox">
-      <div class="container-checkboxes">
-        <p class="name">Normal
-          <input type="checkbox" class="checkbox" name="type" value="normal-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="normal-weak">
-        </p>
-        <p class="name">Fogo
-          <input type="checkbox" class="checkbox" name="type" value="fire-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="fire-weak">
-        </p>  
-        <p class="name">Água
-          <input type="checkbox" class="checkbox" name="type" value="water-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="water-weak">
-        </p>  
-        <p class="name">Planta
-          <input type="checkbox" class="checkbox" name="type" value="grass-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="grass-weak">
-        </p>  
-        <p class="name">Elétrico
-          <input type="checkbox" class="checkbox" name="type" value="electric-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="eletric-weak">
-        </p>  
-        <p class="name">Terra
-          <input type="checkbox" class="checkbox" name="type" value="ground-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="ground-weak">
-        </p>  
-        <p class="name">Pedra
-          <input type="checkbox" class="checkbox" name="type" value="rock-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="rock-weak">
-        </p>  
-          <p class="name">Inseto
-          <input type="checkbox" class="checkbox" name="type" value="bug-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="bug-weak"> 
-        </p>    
-        <p class="name">Voador
-          <input type="checkbox" class="checkbox" name="type" value="flying-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="flying-weak"> 
-        </p>  
-        <p class="name">Psíquico
-          <input type="checkbox" class="checkbox" name="type" value="psychic-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="psychic-weak"> 
-        </p>  
-        <p class="name">Dragão
-          <input type="checkbox" class="checkbox" name="type" value="type">
-          <input type="checkbox" class="checkbox" name="weakness" value="weak">  
-        </p>  
-        <p class="name">Fada
-          <input type="checkbox" class="checkbox" name="type" value="fairy-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="fairy-weak"> 
-        </p>  
-        <p class="name">Veneno
-          <input type="checkbox" class="checkbox" name="type" value="poison-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="poison-weak">
-        </p>     
-        <p class="name">Lutador
-          <input type="checkbox" class="checkbox" name="type" value="fight-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="fight-weak">
-        </p>  
-        <p class="name">Sombrio
-          <input type="checkbox" class="checkbox" name="type" value="dark-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="dark-weak"> 
-        </p>  
-        <p class="name">Ferro
-          <input type="checkbox" class="checkbox" name="type" value="steel-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="steel-weak"> 
-        <p class="name">Fantasma
-          <input type="checkbox" class="checkbox" name="type" value="ghost-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="ghost-weak">   
-        </p>  
-        <p class="name">Gelo
-          <input type="checkbox" class="checkbox" name="type" value="ice-type">
-          <input type="checkbox" class="checkbox" name="weakness" value="ice-weak">
-        </p>   
-      </div>
-
-      <button type="button" id="confirm-button" class="confirm-button">
-        &#10004;
-      </button>
-    </form>
-
+    <header class="header-filters">
+      <a href="index.html">
+        <img class="logo-onpokemon-filter" alt="Logo do OnPokemon" src="img/logo.png">
+      </a>
+    </header>
+    
+    <main class="main-filters">
+      <h1 class="filter-title">FILTRAR</h1>
+      <form action="/main.js" class="full-checkbox">
+        <p class="name-text">Pelo nome:</p>
+        <input type="text" id="inputText" class="input-name" placeholder="Insira o nome do Pokémon">
+        <div class="checkbox-name">
+          <p></p>
+          <p class="specify-type">Tipo</p>
+          <p class="specify-weaknesses">Fraqueza</p>
+        </div>
+        <section class="container-checkbox">
+          <p class="checkbox-name">Aço
+            <input type="checkbox" class="checkbox" name="type" value="steel-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="steel-weak">
+          </p>
+          <p class="checkbox-name">Água
+            <input type="checkbox" class="checkbox" name="type" value="water-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="water-weak">
+          </p>
+          <p class="checkbox-name">Dragão
+            <input type="checkbox" class="checkbox" name="type" value="dragon-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="dragon-weak">
+          </p>
+          <p class="checkbox-name">Elétrico
+            <input type="checkbox" class="checkbox" name="type" value="electric-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="eletric-weak">
+          </p>
+          <p class="checkbox-name">Fada
+            <input type="checkbox" class="checkbox" name="type" value="fairy-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="fairy-weak">
+          </p>
+          <p class="checkbox-name">Fantasma
+            <input type="checkbox" class="checkbox" name="type" value="ghost-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="ghost-weak">
+          </p>
+          <p class="checkbox-name">Fogo
+            <input type="checkbox" class="checkbox" name="type" value="fire-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="fire-weak">
+          </p>
+          <p class="checkbox-name">Gelo
+            <input type="checkbox" class="checkbox" name="type" value="ice-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="ice-weak">
+          </p>
+          <p class="checkbox-name">Inseto
+            <input type="checkbox" class="checkbox" name="type" value="bug-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="bug-weak">
+          </p>
+          <p class="checkbox-name">Lutador
+            <input type="checkbox" class="checkbox" name="type" value="fight-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="fight-weak">
+          </p>
+          <p class="checkbox-name">Normal
+            <input type="checkbox" class="checkbox" name="type" value="normal-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="normal-weak">
+          </p>
+          <p class="checkbox-name">Pedra
+            <input type="checkbox" class="checkbox" name="type" value="rock-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="rock-weak">
+          </p>
+          <p class="checkbox-name">Planta
+            <input type="checkbox" class="checkbox" name="type" value="grass-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="grass-weak">
+          </p>
+          <p class="checkbox-name">Psíquico
+            <input type="checkbox" class="checkbox" name="type" value="psychic-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="psychic-weak">
+          </p>
+          <p class="checkbox-name">Sombrio
+            <input type="checkbox" class="checkbox" name="type" value="dark-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="dark-weak">
+          </p>
+          <p class="checkbox-name">Terra
+            <input type="checkbox" class="checkbox" name="type" value="ground-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="ground-weak">
+          </p>
+          <p class="checkbox-name">Veneno
+            <input type="checkbox" class="checkbox" name="type" value="poison-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="poison-weak">
+          </p>
+          <p class="checkbox-name">Voador
+            <input type="checkbox" class="checkbox" name="type" value="flying-type">
+            <input type="checkbox" class="checkbox" name="weakness" value="flying-weak">
+          </p>
+        </section>
+        <button type="button" id="confirm-button" class="confirm-button">
+          &#10004;
+        </button>
+      </form>
+    </main>
     <section class="results-order">
-      <h1 class="results">RESULTADOS</h1>
-      <p class = "quantify">000 Pokémons ordenados por:</p>
-
+      <h1 class="results-text">RESULTADOS</h1>
+      <p class="quantify-text">000 Pokémons ordenados por:</p>
+      
       <form class="order-filter">
         <select class="order-calculation">
           <option value="number">Número da Pokédex</option>
@@ -126,16 +124,118 @@
           <option value="less-weakness">Menor quantidade de fraquezas</option>
         </select>
       </form>
+    </section>
 
-      <section class="result">
-        <a href="filters.html">
-          <button type="button" id="back-button" class="back-button">
-            &#11178;
-          </button>
-        </a>
-      </section>
+    <section class="show-the-cards">
+      <a href="filters.html">
+        <button type="button" id="back-button" class="back-button">
+          &#8634;
+        </button>
+      </a>
 
-  </main>
+      <div class="card">
+        <img class="pokedex-open" src="img/pokedex-open.png">
+        <p class="poke-number">N° 001</p>
+        <div class="card-box">
+          <figure class="box-poke-img">
+            <img class="poke-img" src="img/001.png" alt="Pokémon 001 Bulbasaur">
+          </figure>
+          <main class="box-poke-text">
+            <h4 class="poke-title">Bulbasaurxxxxxx</h4>
+            <ul class="poke-items">
+              <span class="poke-item-title">Tipo: </span>
+              <li>Planta</li>
+              <li>Venenoso</li>
+            </ul>
+            <ul class="poke-items">
+              <span class="poke-item-title">Fraqueza:</span>
+              <li>Fogo</li>
+              <li>Gelo</li>
+              <li>Voador</li>
+              <li>Psíquico</li>
+              <li>Gelo</li>
+              <li>Voador</li>
+              <li>Psíquico</li>
+              <li>Gelo</li>
+              <li>Voador</li>
+              <li>Psíquico</li>
+            </ul>
+          </main>
+        </div>
+      </div>
+      <div class="card">
+        <img class="pokedex-open" src="img/pokedex-open.png">
+        <p class="poke-number">N° 001</p>
+        <div class="card-box">
+          <figure class="box-poke-img">
+            <img class="poke-img" src="img/001.png" alt="Pokémon 001 Bulbasaur">
+          </figure>
+          <main class="box-poke-text">
+            <h4 class="poke-title">Bulbasaur</h4>
+            <ul class="poke-items">
+              <span class="poke-item-title">Tipo: </span>
+              <li>Planta</li>
+              <li>Venenoso</li>
+            </ul>
+            <ul class="poke-items">
+              <span class="poke-item-title">Fraqueza:</span>
+              <li>Fogo</li>
+              <li>Gelo</li>
+              <li>Voador</li>
+              <li>Psíquico</li>
+            </ul>
+          </main>
+        </div>
+      </div>
+      <div class="card">
+        <img class="pokedex-open" src="img/pokedex-open.png">
+        <p class="poke-number">N° 001</p>
+        <div class="card-box">
+          <figure class="box-poke-img">
+            <img class="poke-img" src="img/001.png" alt="Pokémon 001 Bulbasaur">
+          </figure>
+          <main class="box-poke-text">
+            <h4 class="poke-title">Bulbasaur</h4>
+            <ul class="poke-items">
+              <span class="poke-item-title">Tipo: </span>
+              <li>Planta</li>
+              <li>Venenoso</li>
+            </ul>
+            <ul class="poke-items">
+              <span class="poke-item-title">Fraqueza:</span>
+              <li>Fogo</li>
+              <li>Gelo</li>
+              <li>Voador</li>
+              <li>Psíquico</li>
+            </ul>
+          </main>
+        </div>
+      </div>
+      <div class="card">
+        <img class="pokedex-open" src="img/pokedex-open.png">
+        <p class="poke-number">N° 001</p>
+        <div class="card-box">
+          <figure class="box-poke-img">
+            <img class="poke-img" src="img/001.png" alt="Pokémon 001 Bulbasaur">
+          </figure>
+          <main class="box-poke-text">
+            <h4 class="poke-title">Bulbasaur</h4>
+            <ul class="poke-items">
+              <span class="poke-item-title">Tipo: </span>
+              <li>Planta</li>
+              <li>Venenoso</li>
+            </ul>
+            <ul class="poke-items">
+              <span class="poke-item-title">Fraqueza:</span>
+              <li>Fogo</li>
+              <li>Gelo</li>
+              <li>Voador</li>
+              <li>Psíquico</li>
+            </ul>
+          </main>
+        </div>
+      </div>
+    </section>
   <script src="main.js" type="module"></script>
 </body>
 
