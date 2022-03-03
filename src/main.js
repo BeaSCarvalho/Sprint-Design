@@ -17,21 +17,35 @@ import data from "./data/pokemon/pokemon.js";
  Ordenar por menor quantidade de fraqueza
  Resetar o filtro
 */
-startOnpokemon();
+startSiteOnpokemon();
 
-function startOnpokemon() {
-  // quando entra no arquivo home
-  startPageHome();
-  //quando entra no arquivo filters
-  startPageFilters();
+function formDataCheckbox(e) {
+  e.preventDefault();
+  const formCheck = document.querySelector(".full-checkbox").elements;
+  let result = "";
+  for (let i = 0; i < formCheck.length; i++) {
+    if (formCheck[i].checked) {
+      result = result + formCheck[i].value + " ";
+      console.log(typeof formCheck[i]);
+    }
+  }
+  document.getElementById("resultado").innerHTML =
+    "Valor(es) selecionado(s) = " + result;
+  //console.log(form.weakness.value);
+  //form.reset();
 }
 
-function startPageFilters() {
-  window.location.href = "filters.html";
-  document
-    .getElementById("confirm-button")
-    .addEventListener("click", formDataCheckbox);
-  //caso o link no onpokemon, voltar para home
+function startSiteOnpokemon() {
+  let url = Array.from(location.href).join();
+  url = url.replace(/\W/g, "");
+  url = url.includes("filters");
+  if (url === true) {
+    startPageFilters();
+  } else {
+    let containerMain = document.querySelector(".main-home");
+    containerMain.style.height = "";
+    startPageHome();
+  }
 }
 
 function startPageHome() {
@@ -44,21 +58,29 @@ function startPageHome() {
   } while (rotationPage == false);
   let clickPokedex = document.getElementsByClassName("pokedex-close").onclick;
   if (clickPokedex == true) {
+    window.location.href = "filters.html";
     startPageFilters();
   }
 }
 
 function heightWindow() {
   let heightWindow = Number(window.innerHeight);
-  console.log(heightWindow);
-  let heightLogo = Number(document.querySelector(".header-home").scrollHeight);
-  console.log(heightLogo);
-  let heightText = Number(document.querySelector(".intro-text").scrollHeight);
-  console.log(heightText);
-  let heightTab = Number(document.querySelector(".details-info").scrollHeight);
-  console.log(heightTab);
+  let heightLogo = Number(document.querySelector(".header-home").offsetHeight);
+  let heightText = Number(document.querySelector(".intro-text").offsetHeight);
+  let heightTab = Number(document.querySelector(".details-info").offsetHeight);
   let sumAll = heightWindow - (heightLogo + heightText + heightTab);
-  console.log(sumAll);
   let containerMain = document.querySelector(".main-home");
   containerMain.style.height = sumAll + "px";
+}
+
+function startPageFilters() {
+  document
+    .getElementById("confirm-button")
+    .addEventListener("click", formDataCheckbox);
+  let clickLogo = document.getElementsByClassName(
+    "logo-onpokemon-filter"
+  ).onclick;
+  if (clickLogo == true) {
+    startPageHome();
+  }
 }
