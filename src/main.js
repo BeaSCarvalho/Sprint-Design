@@ -1,4 +1,4 @@
-//import data from "./data/pokemon/pokemon.js";
+import data from "./data/pokemon/pokemon.js";
 
 /*
  Pegar os dados importantes
@@ -17,23 +17,13 @@
  Ordenar por menor quantidade de fraqueza
  Resetar o filtro
 */
-var confirmPage = false;
-startPageHome();
+startOnpokemon();
 
-function formDataCheckbox(e) {
-  e.preventDefault();
-  const formCheck = document.querySelector(".full-checkbox").elements;
-  let result = "";
-  for (let i = 0; i < formCheck.length; i++) {
-    if (formCheck[i].checked) {
-      result = result + formCheck[i].value + " ";
-      console.log(typeof formCheck[i]);
-    }
-  }
-  document.getElementById("resultado").innerHTML =
-    "Valor(es) selecionado(s) = " + result;
-  //console.log(form.weakness.value);
-  //form.reset();
+function startOnpokemon() {
+  // quando entra no arquivo home
+  startPageHome();
+  //quando entra no arquivo filters
+  startPageFilters();
 }
 
 function startPageFilters() {
@@ -41,13 +31,18 @@ function startPageFilters() {
   document
     .getElementById("confirm-button")
     .addEventListener("click", formDataCheckbox);
+  //caso o link no onpokemon, voltar para home
 }
 
 function startPageHome() {
+  let rotationPage = false;
   do {
     heightWindow();
-  } while (confirmPage == false);
-  const clickPokedex = document.getElementsByClassName("pokedex-close").onclick;
+    rotationPage = screen.orientation.onchange = function (e) {
+      location.reload();
+    };
+  } while (rotationPage == false);
+  let clickPokedex = document.getElementsByClassName("pokedex-close").onclick;
   if (clickPokedex == true) {
     startPageFilters();
   }
@@ -55,15 +50,15 @@ function startPageHome() {
 
 function heightWindow() {
   let heightWindow = Number(window.innerHeight);
+  console.log(heightWindow);
   let heightLogo = Number(document.querySelector(".header-home").scrollHeight);
+  console.log(heightLogo);
   let heightText = Number(document.querySelector(".intro-text").scrollHeight);
+  console.log(heightText);
   let heightTab = Number(document.querySelector(".details-info").scrollHeight);
+  console.log(heightTab);
   let sumAll = heightWindow - (heightLogo + heightText + heightTab);
+  console.log(sumAll);
   let containerMain = document.querySelector(".main-home");
   containerMain.style.height = sumAll + "px";
-  screen.orientation.onchange = function (e) {
-    confirmPage == true;
-    let containerMain = document.querySelector(".main-home");
-    containerMain.style.height = "";
-  };
 }
