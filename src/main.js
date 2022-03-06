@@ -1,39 +1,19 @@
 import data from "./data/pokemon/pokemon.js";
 
-/*
- Pegar os dados importantes
- Exibir os dados na tela
- Criar template do card (html)
- Passar esse template para dentro do loop
- Jogar de volta para o document a string criada
- Filtrar os dados por tipo
- Filtrar os dados por fraqueza
- Filtrar por nome usando regex
- Não permitir que tipos e fraquezas estejam disponíveis ao escrever o nome
- Ordenar os dados por número da pokédex
- Ordenar os dados por ordem alfabética crescente
- Ordenar os dados por ordem alfabética decrescente
- Ordenar por maior quantidade de fraqueza
- Ordenar por menor quantidade de fraqueza
- Resetar o filtro
-*/
-startSiteOnpokemon();
+const allDatas = data.pokemon;
+let formFilters = document.getElementsByClassName("full-checkbox");
+let namePokemon = document.getElementsByClassName("input-name");
+let confirmationButton = document.getElementById("confirm-button");
+let clearButton = document.getElementById("clear-button");
+let resultsType = "";
+let resultsWeakness = "";
+let resultName = "";
 
-function formDataCheckbox(e) {
-  e.preventDefault();
-  const formCheck = document.querySelector(".full-checkbox").elements;
-  let result = "";
-  for (let i = 0; i < formCheck.length; i++) {
-    if (formCheck[i].checked) {
-      result = result + formCheck[i].value + " ";
-      console.log(typeof formCheck[i]);
-    }
-  }
-  document.getElementById("resultado").innerHTML =
-    "Valor(es) selecionado(s) = " + result;
-  //console.log(form.weakness.value);
-  //form.reset();
-}
+//cancelar quando nome for digitado
+//aparecer os cards somente surgir
+//limpar formulário
+
+startSiteOnpokemon();
 
 function startSiteOnpokemon() {
   let url = Array.from(location.href).join();
@@ -51,7 +31,7 @@ function startSiteOnpokemon() {
 function startPageHome() {
   let rotationPage = false;
   do {
-    heightWindow();
+    heightWindowHome();
     rotationPage = screen.orientation.onchange = function (e) {
       location.reload();
     };
@@ -63,7 +43,7 @@ function startPageHome() {
   }
 }
 
-function heightWindow() {
+function heightWindowHome() {
   let heightWindow = Number(window.innerHeight);
   let heightLogo = Number(document.querySelector(".header-home").offsetHeight);
   let heightText = Number(document.querySelector(".intro-text").offsetHeight);
@@ -74,13 +54,57 @@ function heightWindow() {
 }
 
 function startPageFilters() {
-  document
-    .getElementById("confirm-button")
-    .addEventListener("click", formDataCheckbox);
+  heightWindowFilters();
   let clickLogo = document.getElementsByClassName(
     "logo-onpokemon-filter"
   ).onclick;
   if (clickLogo == true) {
     startPageHome();
   }
+  //formFilters.addEventListener("change", changeFormFilters);
+  confirmationButton.addEventListener("click", formName);
+  confirmationButton.addEventListener("click", formCheckbox);
+  //clearButton.addEventListener("click", clearFormFilters);
+}
+
+function clearFormFilters() {
+  let checkbox = getElementsByClassName("checkbox");
+  for (let i = 0; i < checkbox.length; i++) {
+    checkbox[i].checked = false;
+  }
+  namePokemon.textContent = "";
+  //Habilitando botão
+  confirmationButton.disabled = false;
+}
+
+function changeFormFilters(e) {
+  confirmationButton.addEventListener("click", formName);
+  confirmationButton.addEventListener("click", formCheckbox);
+  //Desabilita para não enviar mais de uma vez
+  confirmationButton.disabled = true;
+  console.log(e.target.value);
+}
+
+function formName(e) {
+  e.preventDefault();
+  let namePokemon = document.getElementsByClassName("input-name");
+  namePokemon = namePokemon.value.replace(/[^a-z^A-Zà-ú^À-Ú]+/g, "");
+  //teste
+  console.log(namePokemon);
+}
+
+function formCheckbox(e) {
+  e.preventDefault();
+  let formCheckType = document.forms.formFilters.elements.type;
+  let formCheckWeakness = document.forms.formFilters.elements.weakness;
+  for (let i = 0; i < formCheckType.length; i++) {
+    if (formCheckType[i].checked) {
+      resultsType += formCheckType[i].value + ",";
+    } else if (formCheckWeakness[i].checked) {
+      resultsWeakness += formCheckWeakness[i].value + ",";
+    }
+  }
+  //teste
+  console.log(resultsType);
+  console.log(resultsWeakness);
 }

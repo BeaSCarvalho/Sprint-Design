@@ -1,10 +1,11 @@
-export const dataPokemon = () => {
-  fetch("data/pokemon.json")
-    .then((data) => data.json())
-    .then((objectData) => {
-      return objectData;
-    });
-  return false;
+export const alphabeticOrder = (data, selectOption) => {
+  const orderNames = data.pokemon.sort((a, b) => a.name.localeCompare(b.name));
+  switch (selectOption) {
+    case "name-az":
+      return orderNames;
+    case "name-za":
+      return orderNames.reverse();
+  }
 };
 
 /*

@@ -7,38 +7,39 @@
 @import url("screen-300-landscape.css");
 @import url("screen-900-portrait.css");
 @import url("screen-600-landscape.css");
-@import url("screen-720-landscape.css");
+@import url("screen-700-landscape.css");
 
 .container-filters {
   margin: 0px;
   padding: 0px;
-  height: 100vh;
-  width: auto;
   background-color: var(--background-green);
   font-family: "Segoe UI", Helvetica, Arial, Verdana;
   color: var(--black);
 }
 
 .container-general-filters {
-  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 20px;
   justify-content: center;
   justify-items: center;
 }
 
 .header-filters {
-  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
   background-color: var(--dark-brown);
   display: flex;
   place-content: center;
 }
 
 .main-filters {
+  max-width: 1020px;
+  margin: 0 auto;
   background-color: var(--beige);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   justify-items: start;
   padding-left: 20px;
   padding-right: 20px;
@@ -56,6 +57,7 @@
 .name-text {
   padding-bottom: 10px;
   font-weight: 600;
+  display: block;
 }
 
 .input-name {
@@ -77,7 +79,6 @@
 }
 
 .container-checkbox {
-  width: 100%;
   display: grid;
 }
 
@@ -89,8 +90,11 @@
 }
 
 .results-order {
+  max-width: 1020px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, minmax(20px, 1fr));
   place-items: start;
   background-color: var(--beige);
   padding-left: 20px;
@@ -135,10 +139,13 @@
   }
 }
 
+.button {
+  text-align: right;
+}
+
 .confirm-button {
   font-size: 1.8rem;
   color: #fff0dd;
-  float: right;
   width: 50px;
   height: 50px;
   border-radius: 30px;
@@ -176,7 +183,6 @@
   position: fixed;
   bottom: 10px;
   right: 10px;
-  z-index: 2000;
 }
 
 .back-button:hover {
@@ -192,4 +198,13 @@
   font-size: 1.5rem;
   text-align: left;
   padding-left: 10px;
+}
+
+#clear-button {
+  margin: 0 40px;
+  background-color: #dd3333;
+}
+
+#clear-button:hover::after {
+  content: "  Limpar formulário";
 }

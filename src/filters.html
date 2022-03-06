@@ -20,8 +20,9 @@
 
     <main class="main-filters">
       <h1 class="filter-title">FILTRAR</h1>
-      <form action="/main.js" class="full-checkbox">
-        <p class="name-text">Pelo nome:</p>
+
+      <form action="/main.js" class="full-checkbox" name="formFilters">
+        <label class="name-text">Pelo nome:</label>
         <input type="text" id="inputText" class="input-name" placeholder="Insira o nome do Pokémon">
         <div class="checkbox-name">
           <p></p>
@@ -102,9 +103,14 @@
             <input type="checkbox" class="checkbox" name="weakness" value="flying">
           </p>
         </section>
-        <button type="button" id="confirm-button" class="confirm-button">
-          &#10004;
-        </button>
+        <div class="button">
+          <button type="button" id="clear-button" class="confirm-button">
+            &#10008;
+          </button>
+          <button type="button" id="confirm-button" class="confirm-button">
+            &#10004;
+          </button>
+        </div>
       </form>
     </main>
 
@@ -133,7 +139,8 @@
           &#8634;
         </button>
       </a>
-
+      <section class="view-cards">
+      </section>
     </section>
     <script src="main.js" type="module"></script>
 </body>

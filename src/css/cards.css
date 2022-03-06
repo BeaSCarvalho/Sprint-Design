@@ -2,7 +2,8 @@
 @import url("variables.css");
 
 .show-the-cards {
-  width: 100%;
+  margin: 0 auto;
+  max-width: 1060px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

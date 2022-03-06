@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@media screen and (min-height: 720px) and (orientation: landscape) {
+@media screen and (min-height: 700px) and (orientation: landscape) {
   .container-general {
     margin: auto auto;
   }
@@ -8,9 +8,10 @@
     background-position: center top;
   }
   .logo-onpokemon {
-    width: 406px;
-    height: 50px;
+    width: 310px;
+    height: 41px;
     padding: 30px 0px;
+    margin: auto;
   }
   .pokedex-close {
     width: 244px;
@@ -31,12 +32,12 @@
   }
 
   .container-general-filters {
-    min-width: 600px;
+    margin: auto auto;
   }
   .logo-onpokemon-filter {
     width: 310px;
     height: 41px;
-    padding: 30px 0px;
+    margin: 30px 0px;
   }
   .filter-title {
     font-size: 1.6rem;
@@ -90,15 +91,18 @@
     margin-top: 10px;
     width: 50px;
     height: 50px;
+    right: 20% !important;
   }
   .confirm-button:hover {
     width: 30px;
   }
-  .back-button {
+  #back-button {
     width: 50px;
     height: 50px;
+    position: fixed;
+    right: 10%;
   }
-  .back-button:hover:after {
+  #back-button:hover:after {
     font-size: 1rem;
   }
 }
