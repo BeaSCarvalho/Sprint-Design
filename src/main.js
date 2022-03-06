@@ -8,41 +8,34 @@ let resultsType = "";
 let resultsWeakness = "";
 let resultName = "";
 
-//cancelar quando nome for digitado
-//aparecer os cards somente surgir
-//limpar formulário
+//startSiteOnpokemon();
 
-startSiteOnpokemon();
+function changeFormFilters(e) {
+  e.preventDefault();
 
-function startPageFilters() {
-  let clickLogo = document.getElementsByClassName(
-    "logo-onpokemon-filter"
-  ).onclick;
-  if (clickLogo == true) {
-    startPageHome();
+  //change dispara quando termina de alterar
+  //focus dispara quando elemento é focado
+  
+
+  confirmationButton.disabled = true;
+  if (true) {
+    let name = confirmationButton.addEventListener("click", formName);
+    clearButton.addEventListener("click", clearFormFilters);
+  } else {
+    let checkbox = confirmationButton.addEventListener("click", formCheckbox);
+    clearButton.addEventListener("click", clearFormFilters);
   }
-  //formFilters.addEventListener("change", changeFormFilters);
-  confirmationButton.addEventListener("click", formName);
-  confirmationButton.addEventListener("click", formCheckbox);
-  //clearButton.addEventListener("click", clearFormFilters);
 }
 
 function clearFormFilters() {
+  let namePokemon = getElementsByClassName("input-name");
   let checkbox = getElementsByClassName("checkbox");
   for (let i = 0; i < checkbox.length; i++) {
     checkbox[i].checked = false;
   }
-  namePokemon.textContent = "";
-  //Habilitando botão
+  namePokemon.value = "";
   confirmationButton.disabled = false;
-}
-
-function changeFormFilters(e) {
-  confirmationButton.addEventListener("click", formName);
-  confirmationButton.addEventListener("click", formCheckbox);
-  //Desabilita para não enviar mais de uma vez
-  confirmationButton.disabled = true;
-  console.log(e.target.value);
+  startPageFilters();
 }
 
 function formCheckbox(e) {
@@ -56,17 +49,24 @@ function formCheckbox(e) {
       resultsWeakness += formCheckWeakness[i].value + ",";
     }
   }
-  //teste
-  console.log(resultsType);
-  console.log(resultsWeakness);
+  return checkboxPoke;
 }
 
 function formName(e) {
   e.preventDefault();
   let namePokemon = document.querySelector(".input-name").value;
   resultName = namePokemon.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
-  //teste
-  console.log(resultName);
+  return namePoke;
+}
+
+function startPageFilters() {
+  let clickLogo = document.getElementsByClassName(
+    "logo-onpokemon-filter"
+  ).onclick;
+  if (clickLogo == true) {
+    startPageHome();
+  }
+  formFilters.addEventListener("change", changeFormFilters);
 }
 
 function heightWindowHome() {
