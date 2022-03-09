@@ -3,8 +3,8 @@ import data from "./data/pokemon/pokemon.js";
 const allDatas = data.pokemon;
 let formFilters = document.getElementsByClassName("full-checkbox");
 let nameInput = document.getElementById("name-pokemon");
-let formCheckType = document.forms.formFilters.elements.type;
-let formCheckWeakness = document.forms.formFilters.elements.weakness;
+var formCheckType = document.forms.formFilters.elements.type;
+var formCheckWeakness = document.forms.formFilters.elements.weakness;
 let confirmationButton = document.getElementById("confirm-button");
 let clearButton = document.getElementById("clear-button");
 let resultsType = "";
@@ -33,7 +33,7 @@ function formName(e) {
   let namePokemon = nameInput.value;
   resultName = namePokemon.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
   //teste
-  //console.log(resultName);
+  console.log(resultName);
   startPageFilters();
 }
 
@@ -47,13 +47,15 @@ function formCheckbox(e) {
     }
   }
   //teste
-  //console.log(resultsType);
-  //console.log(resultsWeakness);
+  console.log(resultsType);
+  console.log(resultsWeakness);
   startPageFilters();
 }
 
 function clearFormFilters() {
   nameInput.value = "";
+  resultsType = "";
+  resultsWeakness = "";
   for (let i = 0; i < formCheckType.length; i++) {
     formCheckType[i].checked = false;
     formCheckWeakness[i].checked = false;
