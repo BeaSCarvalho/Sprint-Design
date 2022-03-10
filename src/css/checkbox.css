@@ -11,6 +11,11 @@
   box-shadow: var(--shadown-drop-weak);
 }
 
+.checkbox:disabled {
+  background-color: #cdb7b5;
+  cursor: not-allowed;
+}
+
 .checkbox:before {
   content: "";
   opacity: 0;

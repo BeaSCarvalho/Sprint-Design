@@ -78,6 +78,17 @@
   box-shadow: var(--shadown-drop-fort);
 }
 
+.input-name:disabled {
+  background-color: #cdb7b5;
+  border: gray solid 1px;
+  cursor: not-allowed;
+  box-shadow: var(--shadown-drop-fort);
+}
+
+.input-name:disabled::placeholder {
+  color: gray;
+}
+
 .container-checkbox {
   display: grid;
 }
@@ -94,7 +105,6 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, minmax(20px, 1fr));
   place-items: start;
   background-color: var(--beige);
   padding-left: 20px;
@@ -110,7 +120,7 @@
 }
 
 .order-calculation {
-  width: 268px;
+  width: 320px;
   background-color: var(--medium-beige);
   box-shadow: var(--shadown-drop-medium);
   border: none;

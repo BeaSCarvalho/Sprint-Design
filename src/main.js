@@ -1,8 +1,10 @@
+import { filterByType, filterByWeakness, alphabeticOrder } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
-const allDatas = data.pokemon;
-let formFilters = document.getElementsByClassName("full-checkbox");
-let nameInput = document.getElementById("name-pokemon");
+let pokemons = data.pokemon;
+let changeFormCheck = document.getElementById("container-checkbox");
+let namePokemon = document.getElementById("name-pokemon");
+var formCheckeds = document.forms.formFilters.elements;
 var formCheckType = document.forms.formFilters.elements.type;
 var formCheckWeakness = document.forms.formFilters.elements.weakness;
 let confirmationButton = document.getElementById("confirm-button");
@@ -11,8 +13,45 @@ let resultsType = "";
 let resultsWeakness = "";
 let resultName = "";
 
-//startSiteOnpokemon();
-startPageFilters();
+startSiteOnpokemon();
+
+function startSiteOnpokemon() {
+  let url = Array.from(location.href).join();
+  url = url.replace(/\W/g, "");
+  url = url.includes("filters");
+  if (url === true) {
+    startPageFilters();
+  } else {
+    let containerMain = document.querySelector(".main-home");
+    containerMain.style.height = "";
+    startPageHome();
+  }
+}
+
+function startPageHome() {
+  let rotationPage = false;
+  do {
+    heightWindowHome();
+    rotationPage = screen.orientation.onchange = function (e) {
+      location.reload();
+    };
+  } while (rotationPage == false);
+  let clickPokedex = document.getElementsByClassName("pokedex-close").onclick;
+  if (clickPokedex == true) {
+    window.location.href = "filters.html";
+    startPageFilters();
+  }
+}
+
+function heightWindowHome() {
+  let heightWindow = Number(window.innerHeight);
+  let heightLogo = Number(document.querySelector(".header-home").offsetHeight);
+  let heightText = Number(document.querySelector(".intro-text").offsetHeight);
+  let heightTab = Number(document.querySelector(".details-info").offsetHeight);
+  let sumAll = heightWindow - (heightLogo + heightText + heightTab);
+  let containerMain = document.querySelector(".main-home");
+  containerMain.style.height = sumAll + "px";
+}
 
 function startPageFilters() {
   let clickLogo = document.getElementsByClassName(
@@ -21,24 +60,64 @@ function startPageFilters() {
   if (clickLogo == true) {
     startPageHome();
   }
-  //erro
-  //formFilters.addEventListener("focus", onchangeForm);
-  confirmationButton.addEventListener("click", formName);
-  confirmationButton.addEventListener("click", formCheckbox);
+  namePokemon.addEventListener("change", changeFormName);
+  changeFormCheck.addEventListener("change", changeFormCheckbox);
   clearButton.addEventListener("click", clearFormFilters);
+}
+
+function changeFormCheckbox(e) {
+  if (e.target.value != 0) {
+    namePokemon.disabled = true;
+    confirmationButton.addEventListener("click", formCheckbox);
+    changeFormCheck.addEventListener("change", function (e) {
+      e.target.value = 1;
+      let count = 0;
+      let i = 0;
+      do {
+        if ((formCheckeds[i].checked = true)) {
+          count += 1;
+          e.target.value = count;
+        } else {
+          count -= 1;
+          e.target.value = count;
+        }
+        i++;
+      } while (e.target.value < 0);
+      namePokemon.disabled = false;
+      namePokemon.addEventListener("change", changeFormName);
+    });
+  }
+  startPageFilters();
+}
+
+function changeFormName(e) {
+  if (e.target.value != "") {
+    for (let i = 0; i < formCheckType.length; i++) {
+      formCheckType[i].disabled = true;
+      formCheckWeakness[i].disabled = true;
+    }
+    confirmationButton.addEventListener("click", formName);
+    namePokemon.addEventListener("change", changeFormName);
+  } else {
+    for (let i = 0; i < formCheckType.length; i++) {
+      formCheckType[i].disabled = false;
+      formCheckWeakness[i].disabled = false;
+    }
+    startPageFilters();
+  }
 }
 
 function formName(e) {
   e.preventDefault();
-  let namePokemon = nameInput.value;
+  let namePokemon = document.getElementById("name-pokemon").value;
   resultName = namePokemon.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
-  //teste
-  console.log(resultName);
   startPageFilters();
 }
 
 function formCheckbox(e) {
   e.preventDefault();
+  let formCheckType = document.forms.formFilters.elements.type;
+  let formCheckWeakness = document.forms.formFilters.elements.weakness;
   for (let i = 0; i < formCheckType.length; i++) {
     if (formCheckType[i].checked) {
       resultsType += formCheckType[i].value + ",";
@@ -46,35 +125,63 @@ function formCheckbox(e) {
       resultsWeakness += formCheckWeakness[i].value + ",";
     }
   }
-  //teste
-  console.log(resultsType);
-  console.log(resultsWeakness);
   startPageFilters();
 }
 
 function clearFormFilters() {
-  nameInput.value = "";
+  namePokemon = "";
   resultsType = "";
   resultsWeakness = "";
-  for (let i = 0; i < formCheckType.length; i++) {
-    formCheckType[i].checked = false;
-    formCheckWeakness[i].checked = false;
+  for (let i = 0; i <= inputsCheckbox.length; i++) {
+    inputsCheckbox[i].disabled = false;
   }
 }
 
-/*
-//Colocar essa função no start-page
-function onchangeForm(event) {
-  console.log(event);
-  if (nameChange.onchange != "") {
-    for (let i = 0; i < formCheckType.length; i++) {
-      formCheckType.disabled = true;
-      formCheckWeakness.disabled = true;
-    }
-    confirmationButton.addEventListener("click", formName);
-  } else {
-    nameInput.disabled = true;
-    confirmationButton.addEventListener("click", formCheckbox);
-  }
+function showResults() {
+  resultsType = resultsType.split(",");
+  resultsType.pop();
+  resultsWeakness = resultsWeakness.split(",");
+  resultsWeakness.pop();
+
+  /*
+    let resultsType = "";
+    let resultsWeakness = "";
+    let resultName = "";
+
+    comparar os valores, caso sim, enviar para o card
+    filtros
+  */
+
+  createCards(pokemons);
 }
-*/
+
+function createCards(data) {
+  document.getElementById("result-cards").innerHTML = data
+    .map((item) => {
+      return `
+    <div class="card">
+      <img class="pokedex-open" src="img/pokedex-open.png">
+      <p class="poke-number">${item.num}</p>
+      <div class="card-box">
+        <figure class="box-poke-img">
+          <img class="poke-img" src="${item.img}" alt=${item.name}>
+        </figure>
+        <main class="box-poke-text">
+          <h4 class="poke-title"> ${
+            item.name[0].toUpperCase() + item.name.substr(1)
+          }</h4>
+          <ul class="poke-items">
+            <span class="poke-item-title">Tipo: ${item.type}</span>
+          </ul>
+          <ul class="poke-items">
+            <span class="poke-item-title">Fraqueza:
+              <li>${item.weaknesses}</li>
+            </span>  
+          </ul>
+        </main>
+      </div>
+    </div>
+    `;
+    })
+    .join("");
+}
