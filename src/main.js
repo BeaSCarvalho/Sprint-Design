@@ -4,8 +4,8 @@ import data from "./data/pokemon/pokemon.js";
 let pokemons = data.pokemon;
 var formCheckType = document.forms.formFilters.elements.type;
 var formCheckWeakness = document.forms.formFilters.elements.weakness;
-let changeFormCheck = document.getElementById("container-checkbox");
-let namePokemon = document.getElementById("name-pokemon");
+let changeCheckboxGeneral = document.getElementById("container-checkbox");
+let namePokemon = document.querySelector("#name-pokemon");
 let clearButton = document.getElementById("clear-button");
 let resultsType = "";
 let resultsWeakness = "";
@@ -59,34 +59,33 @@ function startPageFilters() {
     startPageHome();
   }
   namePokemon.addEventListener("change", changeFormName);
-  changeFormCheck.addEventListener("change", changeFormCheckbox);
+  changeCheckboxGeneral.addEventListener("change", changeFormCheckbox);
   clearButton.addEventListener("click", clearFormFilters);
 }
 
-function changeFormCheckbox(e) {
-  let countChecked = 0;
-  if (e.target.checked == true) {
-    namePokemon.disabled = true;
-    changeFormCheck.addEventListener("change", function () {
-      countChecked += 1;
-    });
-  } else {
-    let countNoChecked = 0;
+function changeFormName(e) {
+  if (e.target.value != "") {
     for (let i = 0; i < formCheckType.length; i++) {
-      if (formCheckType[i].checked || formCheckWeakness[i].checked) {
-        countNoChecked += 1;
-      }
+      formCheckType[i].disabled = true;
+      formCheckWeakness[i].disabled = true;
     }
-    countChecked -= countNoChecked;
-    if (countChecked == 0) namePokemon.disabled = false;
-    namePokemon.addEventListener("change", changeFormName);
-    changeFormCheck.addEventListener("change", changeFormCheckbox);
+    let namePokemon = document.getElementById("name-pokemon").value;
+    resultName = namePokemon
+      .replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "")
+      .toLocaleLowerCase();
+    showResults();
+  } else {
+    for (let i = 0; i < formCheckType.length; i++) {
+      formCheckType[i].disabled = false;
+      formCheckWeakness[i].disabled = false;
+    }
+    resultName = "";
+    namePokemon.disabled = false;
+    startPageFilters();
   }
-  showResults();
 }
 
-function formCheckbox(e) {
-  e.preventDefault();
+function formCheckbox() {
   let formCheckType = document.forms.formFilters.elements.type;
   let formCheckWeakness = document.forms.formFilters.elements.weakness;
   for (let i = 0; i < formCheckType.length; i++) {
@@ -98,45 +97,16 @@ function formCheckbox(e) {
   }
 }
 
-function showResults() {
-  // verificar se cada um tem valor
+function changeFormCheckbox() {
+  resultsType = "";
+  resultsWeakness = "";
+  formCheckbox(); //enviou os checks
   if (resultsType != "" || resultsWeakness != "") {
-    resultsType = resultsType.split(",");
-    resultsType.pop();
-    resultsWeakness = resultsWeakness.split(",");
-    resultsWeakness.pop();
-  }
-  console.log(resultName);
-  console.log(resultsType);
-  console.log(resultsWeakness);
-
-  /*
-    let resultsType = "";
-    let resultsWeakness = "";
-    let resultName = "";
-
-    comparar os valores, caso sim, enviar para o card
-    filtros
-  */
-
-  //createCards(pokemons);
-}
-
-function changeFormName(e) {
-  if (e.target.value != "") {
-    for (let i = 0; i < formCheckType.length; i++) {
-      formCheckType[i].disabled = true;
-      formCheckWeakness[i].disabled = true;
-    }
-    let namePokemon = document.getElementById("name-pokemon").value;
-    resultName = namePokemon.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
+    namePokemon.disabled = true;
     showResults();
   } else {
-    for (let i = 0; i < formCheckType.length; i++) {
-      formCheckType[i].disabled = false;
-      formCheckWeakness[i].disabled = false;
-    }
-    clearFormFilters();
+    namePokemon.disabled = false;
+    startPageFilters();
   }
 }
 
@@ -149,6 +119,20 @@ function clearFormFilters() {
     formCheckType[i].disabled = false;
     formCheckWeakness[i].disabled = false;
   }
+}
+
+function showResults() {
+  // verificar se cada um tem valor
+  //Fazer filtro de nomes
+  /*
+    let resultsType = "";
+    let resultsWeakness = "";
+    let resultName = "";
+
+    comparar os valores, caso sim, enviar para o card
+    filtros
+  */
+  //createCards(pokemons);
 }
 
 function createCards(data) {
@@ -189,5 +173,3 @@ function createCards(data) {
     })
     .join("");
 }
-
-//buscar pelo nome
