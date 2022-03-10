@@ -66,28 +66,25 @@ function startPageFilters() {
 }
 
 function changeFormCheckbox(e) {
-  if (e.target.value != 0) {
+  let countChecked = 0;
+  if (e.target.checked == true) {
     namePokemon.disabled = true;
     confirmationButton.addEventListener("click", formCheckbox);
-    changeFormCheck.addEventListener("change", function (e) {
-      e.target.value = 1;
-      let count = 0;
-      let i = 0;
-      do {
-        if ((formCheckeds[i].checked = true)) {
-          count += 1;
-          e.target.value = count;
-        } else {
-          count -= 1;
-          e.target.value = count;
-        }
-        i++;
-      } while (e.target.value < 0);
-      namePokemon.disabled = false;
-      namePokemon.addEventListener("change", changeFormName);
+    changeFormCheck.addEventListener("change", function () {
+      countChecked += 1;
     });
+  } else {
+    let countNoChecked = 0;
+    for (let i = 0; i < formCheckType.length; i++) {
+      if (formCheckType[i].checked || formCheckWeakness[i].checked) {
+        countNoChecked += 1;
+      }
+    }
+    countChecked -= countNoChecked;
+    if (countChecked == 0) namePokemon.disabled = false;
+    namePokemon.addEventListener("change", changeFormName);
+    changeFormCheck.addEventListener("change", changeFormCheckbox);
   }
-  startPageFilters();
 }
 
 function changeFormName(e) {
