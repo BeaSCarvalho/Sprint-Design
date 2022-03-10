@@ -47,7 +47,7 @@
     font-size: 1.3rem;
     padding-top: 30px;
   }
-  .input-name {
+  #name-pokemon {
     font-size: 1.2rem;
     padding: 10px;
     margin-bottom: 30px;
@@ -87,13 +87,13 @@
     padding: 10px;
     margin-bottom: 25px;
   }
-  .confirm-button {
+  #clear-button {
     margin-top: 10px;
     width: 50px;
     height: 50px;
     right: 20% !important;
   }
-  .confirm-button:hover {
+  #clear-button:hover {
     width: 30px;
   }
   #back-button {

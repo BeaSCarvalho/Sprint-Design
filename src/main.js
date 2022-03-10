@@ -2,12 +2,10 @@ import { filterByType, filterByWeakness, alphabeticOrder } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
 let pokemons = data.pokemon;
-let changeFormCheck = document.getElementById("container-checkbox");
-let namePokemon = document.getElementById("name-pokemon");
-var formCheckeds = document.forms.formFilters.elements;
 var formCheckType = document.forms.formFilters.elements.type;
 var formCheckWeakness = document.forms.formFilters.elements.weakness;
-let confirmationButton = document.getElementById("confirm-button");
+let changeFormCheck = document.getElementById("container-checkbox");
+let namePokemon = document.getElementById("name-pokemon");
 let clearButton = document.getElementById("clear-button");
 let resultsType = "";
 let resultsWeakness = "";
@@ -69,7 +67,6 @@ function changeFormCheckbox(e) {
   let countChecked = 0;
   if (e.target.checked == true) {
     namePokemon.disabled = true;
-    confirmationButton.addEventListener("click", formCheckbox);
     changeFormCheck.addEventListener("change", function () {
       countChecked += 1;
     });
@@ -85,30 +82,7 @@ function changeFormCheckbox(e) {
     namePokemon.addEventListener("change", changeFormName);
     changeFormCheck.addEventListener("change", changeFormCheckbox);
   }
-}
-
-function changeFormName(e) {
-  if (e.target.value != "") {
-    for (let i = 0; i < formCheckType.length; i++) {
-      formCheckType[i].disabled = true;
-      formCheckWeakness[i].disabled = true;
-    }
-    confirmationButton.addEventListener("click", formName);
-    namePokemon.addEventListener("change", changeFormName);
-  } else {
-    for (let i = 0; i < formCheckType.length; i++) {
-      formCheckType[i].disabled = false;
-      formCheckWeakness[i].disabled = false;
-    }
-    startPageFilters();
-  }
-}
-
-function formName(e) {
-  e.preventDefault();
-  let namePokemon = document.getElementById("name-pokemon").value;
-  resultName = namePokemon.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
-  startPageFilters();
+  showResults();
 }
 
 function formCheckbox(e) {
@@ -122,23 +96,19 @@ function formCheckbox(e) {
       resultsWeakness += formCheckWeakness[i].value + ",";
     }
   }
-  startPageFilters();
-}
-
-function clearFormFilters() {
-  namePokemon = "";
-  resultsType = "";
-  resultsWeakness = "";
-  for (let i = 0; i <= inputsCheckbox.length; i++) {
-    inputsCheckbox[i].disabled = false;
-  }
 }
 
 function showResults() {
-  resultsType = resultsType.split(",");
-  resultsType.pop();
-  resultsWeakness = resultsWeakness.split(",");
-  resultsWeakness.pop();
+  // verificar se cada um tem valor
+  if (resultsType != "" || resultsWeakness != "") {
+    resultsType = resultsType.split(",");
+    resultsType.pop();
+    resultsWeakness = resultsWeakness.split(",");
+    resultsWeakness.pop();
+  }
+  console.log(resultName);
+  console.log(resultsType);
+  console.log(resultsWeakness);
 
   /*
     let resultsType = "";
@@ -149,10 +119,47 @@ function showResults() {
     filtros
   */
 
-  createCards(pokemons);
+  //createCards(pokemons);
+}
+
+function changeFormName(e) {
+  if (e.target.value != "") {
+    for (let i = 0; i < formCheckType.length; i++) {
+      formCheckType[i].disabled = true;
+      formCheckWeakness[i].disabled = true;
+    }
+    let namePokemon = document.getElementById("name-pokemon").value;
+    resultName = namePokemon.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
+    showResults();
+  } else {
+    for (let i = 0; i < formCheckType.length; i++) {
+      formCheckType[i].disabled = false;
+      formCheckWeakness[i].disabled = false;
+    }
+    clearFormFilters();
+  }
+}
+
+function clearFormFilters() {
+  namePokemon.disabled = false;
+  namePokemon = "";
+  resultsType = "";
+  resultsWeakness = "";
+  for (let i = 0; i < formCheckType.length; i++) {
+    formCheckType[i].disabled = false;
+    formCheckWeakness[i].disabled = false;
+  }
 }
 
 function createCards(data) {
+  /*
+  <a href="filters.html">
+    <button type="button" id="back-button" class="back-button">
+      &#8634;
+    </button>
+  </a>;
+
+  */
   document.getElementById("result-cards").innerHTML = data
     .map((item) => {
       return `
@@ -182,3 +189,5 @@ function createCards(data) {
     })
     .join("");
 }
+
+//buscar pelo nome

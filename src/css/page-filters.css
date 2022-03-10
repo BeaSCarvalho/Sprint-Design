@@ -60,7 +60,7 @@
   display: block;
 }
 
-.input-name {
+#name-pokemon {
   background-color: var(--medium-beige);
   border: rgb(217, 139, 116) solid 1px;
   border-radius: 10px;
@@ -68,36 +68,29 @@
   width: 300px;
 }
 
-.input-name::placeholder {
+#name-pokemon::placeholder {
   color: #471f1f;
   font-size: 1.2rem;
 }
 
-.input-name:focus {
+#name-pokemon:focus {
   border: 0;
   box-shadow: var(--shadown-drop-fort);
 }
 
-.input-name:disabled {
+#name-pokemon:disabled {
   background-color: #cdb7b5;
   border: gray solid 1px;
   cursor: not-allowed;
   box-shadow: var(--shadown-drop-fort);
 }
 
-.input-name:disabled::placeholder {
+#name-pokemon:disabled::placeholder {
   color: gray;
 }
 
 .container-checkbox {
   display: grid;
-}
-
-.checkbox-name {
-  font-weight: 600;
-  width: 100%;
-  display: grid;
-  align-items: end;
 }
 
 .results-order {
@@ -153,33 +146,7 @@
   text-align: right;
 }
 
-.confirm-button {
-  font-size: 1.8rem;
-  color: #fff0dd;
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
-  background-color: #45ab15;
-  border: none;
-  transition: width 1s;
-  box-shadow: var(--shadown-drop-medium);
-}
-/*
-.confirm-button:hover {
-  background-color: #318c05;
-  width: 300px;
-  text-align: left;
-}
-
-.confirm-button:hover:after {
-  content: "  Filtrar";
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-align: left;
-  padding-left: 10px;
-}
-*/
-.back-button {
+#back-button {
   font-size: 2.4rem;
   color: #fff0dd;
   width: 50px;
@@ -195,14 +162,14 @@
   right: 10px;
 }
 /*
-.back-button:hover {
+#back-button:hover {
   background-color: var(--dark-brown);
   width: 400px;
   padding-left: 20px;
   text-align: left;
 }
 
-.back-button:hover::after {
+#back-button:hover::after {
   content: "  Voltar para Filtragem";
   font-weight: bold;
   font-size: 1.5rem;
@@ -211,11 +178,29 @@
 }
 */
 #clear-button {
-  margin: 0 40px;
   background-color: #dd3333;
+  font-size: 1.8rem;
+  color: #fff0dd;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  transition: width 1s;
+  box-shadow: var(--shadown-drop-medium);
 }
+
 /*
-#clear-button:hover::after {
-  content: "  Limpar formulário";
+#clear-button:hover {
+  background-color:#c04000;
+  width: 300px;
+  text-align: left;
+}
+
+#clear-button:hover:after {
+  content: "  Limpar Formulário";
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: left;
+  padding-left: 10px;
 }
 */
