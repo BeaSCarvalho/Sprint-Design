@@ -80,13 +80,13 @@
 
 #name-pokemon:disabled {
   background-color: #cdb7b5;
-  border: gray solid 1px;
+  border: #cdb7b5 solid 1px;
   cursor: not-allowed;
   box-shadow: var(--shadown-drop-fort);
 }
 
 #name-pokemon:disabled::placeholder {
-  color: gray;
+  color: #333;
 }
 
 .container-checkbox {
