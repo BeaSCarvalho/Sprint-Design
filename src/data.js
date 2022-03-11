@@ -1,3 +1,7 @@
+export const filterName = (data, resultName) => {
+  
+};
+
 export const filterByType = (data, activeFilter) => {
   return data.filter((item) => {
     return item.type.includes(activeFilter);

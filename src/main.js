@@ -1,4 +1,5 @@
 import {
+  filterName,
   filterByType,
   filterByWeakness,
   alphabeticOrder,
@@ -7,18 +8,32 @@ import {
 } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
+/*
+Arrumar showResults
+Arrumar os filtros
+Fazer o filtro de nome
+*/
+
 let pokemons = data.pokemon;
 let changeCheckboxGeneral = document.getElementById("container-checkbox");
-let namePokemon = document.querySelector("#name-pokemon");
+let namePokemon = document.getElementById("name-pokemon");
+let confirmationButton = document.getElementById("confirm-button");
 let clearButton = document.getElementById("clear-button");
+let formCheckType = document.forms.formFilters.elements.type;
+let formCheckWeakness = document.forms.formFilters.elements.weakness;
+let resultsType = "";
+let resultsWeakness = "";
 let resultName = "";
-//const selectOrder = document.getElementById("order-selector").addEventListener("change", orderToShow);
-//const selectOrderByWeakness = document.getElementById("calculation-selector").addEventListener("change", showInOrderOfWeakness);
+
+/*
+const selectOrder = document
+  .getElementById("order-selector")
+  .addEventListener("change", orderToShow);
+const selectOrderByWeakness = document
+  .getElementById("calculation-selector")
+  .addEventListener("change", showInOrderOfWeakness);
 const percentage = document.getElementById("quantify-text");
-const checkboxTypeSelected = document.querySelectorAll("input[name=type]");
-const checkboxWeaknessSelected = document.querySelectorAll(
-  "input[name=weakness]"
-);
+*/
 
 startSiteOnpokemon();
 
@@ -74,59 +89,85 @@ function startPageFilters() {
 
 function changeFormName(e) {
   if (e.target.value != "") {
-    for (let i = 0; i < checkboxTypeSelected.length; i++) {
-      checkboxTypeSelected[i].disabled = true;
-      checkboxWeaknessSelected[i].disabled = true;
+    for (let i = 0; i < formCheckType.length; i++) {
+      formCheckType[i].disabled = true;
+      formCheckWeakness[i].disabled = true;
     }
-    let namePokemon = document.getElementById("name-pokemon").value;
-    resultName = namePokemon
-      .replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "")
-      .toLocaleLowerCase();
-    //Fazer filtro
+    confirmationButton.addEventListener("click", searchNamePokemon);
+    namePokemon.addEventListener("change", changeFormName);
   } else {
-    for (let i = 0; i < checkboxTypeSelected.length; i++) {
-      checkboxTypeSelected[i].disabled = false;
-      checkboxWeaknessSelected[i].disabled = false;
+    for (let i = 0; i < formCheckType.length; i++) {
+      formCheckType[i].disabled = false;
+      formCheckWeakness[i].disabled = false;
     }
-    resultName = "";
-    namePokemon.disabled = false;
-    startPageFilters();
   }
 }
 
+//botão
+function searchNamePokemon(e) {
+  e.preventDefault();
+  let namePokemon = document.getElementById("name-pokemon").value;
+  resultName = namePokemon.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
+  showResults();
+}
+
+//botão
 function formCheckbox() {
   for (let i = 0; i < checkboxTypeSelected.length; i++) {
-    checkboxTypeSelected[i].addEventListener("click", activeFilterType);
-    checkboxTypeSelected[i].addEventListener("click", showPercentagePerFilter);
-    return true;
+    if (checkboxTypeSelected[i].checked) {
+      resultsType += checkboxTypeSelected[i].value + ",";
+    } else if (checkboxWeaknessSelected[i].checked) {
+      resultsWeakness += checkboxWeaknessSelected[i].value + ",";
+    }
   }
-  for (let i = 0; i < checkboxWeaknessSelected.length; i++) {
-    checkboxWeaknessSelected[i].addEventListener("click", activeFilterWeakness);
-    checkboxWeaknessSelected[i].addEventListener(
-      "click",
-      showPercentagePerFilter
-    );
-    return true;
-  }
-  return false;
+  showResults();
 }
 
-function changeFormCheckbox() {
-  let check = formCheckbox(); //enviou os checks
-  if (check == true) {
+function changeFormCheckbox(e) {
+  let countChecked = 0;
+  let countNoChecked = 0;
+  // Houve um evento com checked true
+  if (e.target.checked == true) {
+    // Desativa o input name
     namePokemon.disabled = true;
-    showResults();
-  } else {
-    namePokemon.disabled = false;
-    startPageFilters();
+    // Se o usuário quiser enviar
+    confirmationButton.addEventListener("click", formCheckbox);
+    // Se o ususário quiser modificar mais alguma coisa
+    changeCheckboxGeneral.addEventListener("change", function () {
+      // Adiciona mais um evento
+      countChecked += 1;
+    });
+  }
+  if (e.target.checked == false) {
+    //Conta quantos checks foram desativados
+    for (let i = 0; i < checkboxTypeSelected.length; i++) {
+      if (
+        checkboxTypeSelected[i].checked ||
+        checkboxWeaknessSelected[i].checked
+      ) {
+        countNoChecked += 1;
+      }
+    }
+    countChecked -= countNoChecked;
+    // Ativou o input name, pois todos os checks foram desativados
+    if (countChecked == 0) {
+      namePokemon.disabled = false;
+    }
+    // Esperando o evento change ocorrer
+    namePokemon.addEventListener("change", changeFormName);
+    changeCheckboxGeneral.addEventListener("change", changeFormCheckbox);
   }
 }
 
-function clearFormFilters() {
-  namePokemon.disabled = false;
-  namePokemon = "";
+function clearFormFilters(e) {
+  e.preventDefault();
   resultsType = "";
   resultsWeakness = "";
+  resultName = "";
+  namePokemon.value = "";
+  if (namePokemon.disabled == true) {
+    namePokemon.disabled = false;
+  }
   for (let i = 0; i < formCheckType.length; i++) {
     formCheckType[i].disabled = false;
     formCheckWeakness[i].disabled = false;
@@ -134,15 +175,29 @@ function clearFormFilters() {
 }
 
 function showResults() {
-  createCards(pokemons);
+  if (resultName != "") {
+    resultsType = resultsType.split(",");
+    resultsType.pop();
+    resultsWeakness = resultsWeakness.split(",");
+    resultsWeakness.pop();
+  }
+  console.log(resultName);
+  console.log(resultsType);
+  console.log(resultsWeakness);
 }
 
+/*
+
 function createCards(data) {
-  document.getElementById("show-the-cards").innerHTML = `<a href="filters.html">
+
+  document.getElementById("show-the-cards").innerHTML = `
+  <a href="filters.html">
     <button type="button" id="back-button" class="back-button">
       &#8634;
     </button>
-  </a>;`;
+  </a>;
+  `;
+
 
   document.getElementById("result-cards").innerHTML = data
     .map((item) => {
@@ -200,3 +255,4 @@ function showPercentagePerFilter() {
   const showThePercentage = percentagePerFilter(pokemons, pokemons.length);
   percentage.innerHTML = `Esse filtro representa ${showThePercentage}% do total de Pokemons.`;
 }
+*/
