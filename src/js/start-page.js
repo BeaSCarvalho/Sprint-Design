@@ -1,5 +1,4 @@
 import { changeFormName, changeFormCheckbox } from "./change-form.js";
-
 import { clearFormFilters } from "./clear-form.js";
 
 export let startPageHome = () => {

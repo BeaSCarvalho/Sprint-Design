@@ -6,11 +6,12 @@ import {
   //percentagePerFilter,
 } from "./data.js";
 import { startPageHome, startPageFilters } from "./js/start-page.js";
-import { clearName, clearCheckbox } from "./js/clear-form.js";
+import { clearInputName, clearInputCheckbox } from "./js/clear-form.js";
 import data from "./data/pokemon/pokemon.js";
 
 let pokemons = data.pokemon;
-
+var formCheckType = document.forms.formFilters.elements.type;
+var formCheckWeakness = document.forms.formFilters.elements.weakness;
 let resultsType = "";
 let resultsWeakness = "";
 let resultName = "";
@@ -19,6 +20,10 @@ let resultName = "";
 //const percentage = document.getElementById("quantify-text");
 
 startSiteOnpokemon();
+/*
+  Fazer filtragem pelo nome
+  Receber somente um envio de formulário
+*/
 
 function startSiteOnpokemon() {
   let url = Array.from(location.href).join();
@@ -39,60 +44,63 @@ export let searchNamePokemon = (e) => {
   resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
   //fazer filtro
 
-  clearName();
   showResults();
+  clearInputName();
 };
 
 export let formCheckbox = (e) => {
   e.preventDefault();
-  let formCheckType = document.forms.formFilters.elements.type;
-  let formCheckWeakness = document.forms.formFilters.elements.weakness;
   for (let i = 0; i < formCheckType.length; i++) {
     if (formCheckType[i].checked) {
       resultsType += formCheckType[i].value + " ";
-    } else if (formCheckWeakness[i].checked) {
+    }
+    if (formCheckWeakness[i].checked) {
       resultsWeakness += formCheckWeakness[i].value + " ";
     }
   }
-  clearCheckbox();
   showResults();
+  clearInputCheckbox();
 };
 
 //Arrumar
 function showResults() {
-  if (resultsType != "") {
+  if (resultsType != "" || resultsWeakness != "") {
     resultsType = resultsType.split(" ");
     resultsType.pop();
-    for (let i = 0; i < resultsType.length; i++) {
-      activeFilterType(resultsType[i]);
-    }
-  }
-  if (resultsWeakness != "") {
     resultsWeakness = resultsWeakness.split(" ");
     resultsWeakness.pop();
-    for (let i = 0; i < resultsWeakness.length; i++) {
-      console.log("chamar funções");
+    clearInputCheckbox();
+  }
+
+  
+    //Passar para cada type a função resultsType
+    for (let i = 0; i < resultsType.length; i++) {
+      activeFilterType(resultsType[i]);
+      //showPercentagePerFilter();
     }
-  }
-  if (resultName != "") {
-    console.log("chamar funções de pesquisar nome");
-  }
+
+
   addButton();
-  //createCards(pokemons);
+  createCards(pokemons);
+  console.log(resultName);
+  console.log(resultsType);
+  console.log(resultsWeakness);
+  resultsType = "";
+  resultsWeakness = "";
 }
 
 //Arrumar funções de filtro
+
+//Está entrando nas duas funções
 function activeFilterType(valueType) {
-  console.log("Entrou na função active filter type");
   pokemons = filterByType(pokemons, valueType);
   createCards(pokemons);
-  console.log("Saiu na função active filter type");
 }
 
 function filterByType(data, activeFilter) {
-  console.log("entrou filter by type");
+  //passou uma função de dentro do filter, retornando todos os valores de filter
   return data.filter((item) => {
-    console.log("saiu filter by type");
+    //retorna para filter
     return item.type.includes(activeFilter);
   });
 }
