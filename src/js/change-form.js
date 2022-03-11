@@ -1,5 +1,4 @@
 import { searchNamePokemon, formCheckbox } from "../main.js";
-
 let namePokemon = document.getElementById("name-pokemon");
 let confirmationButton = document.getElementById("confirm-button");
 let changeCheckboxGeneral = document.getElementById("container-checkbox");

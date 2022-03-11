@@ -1,4 +1,5 @@
 let namePokemon = document.getElementById("name-pokemon");
+
 let resultsType = "";
 let resultsWeakness = "";
 let resultName = "";
