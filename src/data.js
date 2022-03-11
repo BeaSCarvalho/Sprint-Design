@@ -26,11 +26,10 @@ export const orderOfWeakness = (data, selectedOrder) => {
   } else if(selectedOrder === "more-weakness") {
     return data.sort((a, b) => (a.weaknesses.length > b.weaknesses.length ? -1 : 1));
   }
-}  
+}
 
 export const percentagePerFilter = (data, totalOfPokemons) => {
   totalOfPokemons = 251;
-  const percentageOfPokemons = (data.length / totalOfPokemons) * 100;
   const roundedNumber = Math.round(percentageOfPokemons*100) / 100;
   return roundedNumber;
 } 

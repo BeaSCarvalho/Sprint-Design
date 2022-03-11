@@ -20,15 +20,16 @@
 
     <main class="main-filters">
       <h1 class="filter-title">FILTRAR</h1>
-      <form action="/main.js" class="full-checkbox">
-        <p class="name-text">Pelo nome:</p>
-        <input type="text" id="inputText" class="input-name" placeholder="Insira o nome do Pokémon">
+
+      <form action="/main.js" class="full-checkbox" name="formFilters">
+        <label class="name-text">Pelo nome:</label>
+        <input type="text" id="name-pokemon" placeholder="Insira o nome do Pokémon">
         <div class="checkbox-name">
           <p></p>
           <p class="specify-type">Tipo</p>
           <p class="specify-weaknesses">Fraqueza</p>
         </div>
-        <section class="container-checkbox">
+        <section class="container-checkbox" id="container-checkbox">
           <p class="checkbox-name">Aço
             <input type="checkbox" class="checkbox" name="type" value="steel">
             <input type="checkbox" class="checkbox" name="weakness" value="steel">
@@ -102,9 +103,14 @@
             <input type="checkbox" class="checkbox" name="weakness" value="flying">
           </p>
         </section>
-        <button type="button" id="confirm-button" class="confirm-button">
-          &#10004;
-        </button>
+        <div class="button">
+          <button type="reset" id="clear-button">
+            &#10008;
+          </button>
+          <button type="button" id="confirm-button">
+            &#10004;
+          </button>
+        </div>
       </form>
     </main>
 
@@ -127,13 +133,10 @@
       </form>
     </section>
 
-    <section class="show-the-cards">
-      <a href="filters.html">
-        <button type="button" id="back-button" class="back-button">
-          &#8634;
-        </button>
-      </a>
+    <section id="show-the-cards">
 
+      <section class="result-cards">
+      </section>
     </section>
     <script src="main.js" type="module"></script>
   </div> 
