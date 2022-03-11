@@ -1,12 +1,12 @@
 import { searchNamePokemon, formCheckbox } from "../main.js";
 
 let namePokemon = document.getElementById("name-pokemon");
-let formCheckType = document.forms.formFilters.elements.type;
-let formCheckWeakness = document.forms.formFilters.elements.weakness;
 let confirmationButton = document.getElementById("confirm-button");
 let changeCheckboxGeneral = document.getElementById("container-checkbox");
 
 export let changeFormName = (e) => {
+  let formCheckType = document.forms.formFilters.elements.type;
+  let formCheckWeakness = document.forms.formFilters.elements.weakness;
   if (e.target.value != "") {
     for (let i = 0; i < formCheckType.length; i++) {
       formCheckType[i].disabled = true;
@@ -23,6 +23,8 @@ export let changeFormName = (e) => {
 };
 
 export let changeFormCheckbox = (e) => {
+  let formCheckType = document.forms.formFilters.elements.type;
+  let formCheckWeakness = document.forms.formFilters.elements.weakness;
   let countChecked = 0;
   let countNoChecked = 0;
   if (e.target.checked == true) {

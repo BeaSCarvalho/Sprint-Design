@@ -1,11 +1,11 @@
 let namePokemon = document.getElementById("name-pokemon");
-let formCheckType = document.forms.formFilters.elements.type;
-let formCheckWeakness = document.forms.formFilters.elements.weakness;
 let resultsType = "";
 let resultsWeakness = "";
 let resultName = "";
 
 export let clearFormFilters = () => {
+  let formCheckType = document.forms.formFilters.elements.type;
+  let formCheckWeakness = document.forms.formFilters.elements.weakness;
   resultsType = "";
   resultsWeakness = "";
   resultName = "";
@@ -30,6 +30,8 @@ export let clearName = () => {
 };
 
 export let clearCheckbox = () => {
+  let formCheckType = document.forms.formFilters.elements.type;
+  let formCheckWeakness = document.forms.formFilters.elements.weakness;
   for (let i = 0; i < formCheckType.length; i++) {
     formCheckType[i].checked = false;
     formCheckWeakness[i].checked = false;

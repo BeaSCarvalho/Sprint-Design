@@ -10,17 +10,12 @@ import { clearName, clearCheckbox } from "./js/clear-form.js";
 import data from "./data/pokemon/pokemon.js";
 
 let pokemons = data.pokemon;
-let formCheckType = document.forms.formFilters.elements.type;
-let formCheckWeakness = document.forms.formFilters.elements.weakness;
+
 let resultsType = "";
 let resultsWeakness = "";
 let resultName = "";
-const selectOrder = document
-  .getElementById("order-selector")
-  .addEventListener("change", orderToShow);
-const selectOrderByWeakness = document
-  .getElementById("calculation-selector")
-  .addEventListener("change", showInOrderOfWeakness);
+//const selectOrder = document.getElementById("order-selector").addEventListener("change", orderToShow);
+//const selectOrderByWeakness = document.getElementById("calculation-selector").addEventListener("change", showInOrderOfWeakness);
 //const percentage = document.getElementById("quantify-text");
 
 startSiteOnpokemon();
@@ -50,6 +45,8 @@ export let searchNamePokemon = (e) => {
 
 export let formCheckbox = (e) => {
   e.preventDefault();
+  let formCheckType = document.forms.formFilters.elements.type;
+  let formCheckWeakness = document.forms.formFilters.elements.weakness;
   for (let i = 0; i < formCheckType.length; i++) {
     if (formCheckType[i].checked) {
       resultsType += formCheckType[i].value + " ";
@@ -100,6 +97,7 @@ function filterByType(data, activeFilter) {
   });
 }
 
+/*
 function activeFilterWeakness(selectedValue) {
   console.log("Entrou na função filter weak");
   pokemons = filterByWeakness(pokemons, selectedValue);
@@ -116,6 +114,7 @@ function showInOrderOfWeakness() {
   pokemons = orderOfWeakness(pokemons, selectOrderByWeakness.value);
   createCards(pokemons);
 }
+*/
 /*
 //Arrumar
 function showPercentagePerFilter() {
