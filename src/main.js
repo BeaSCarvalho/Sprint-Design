@@ -67,7 +67,7 @@ function showResults() {
     resultsWeakness = resultsWeakness.split(" ");
     resultsWeakness.pop();
     for (let i = 0; i < resultsWeakness.length; i++) {
-      activeFilterType(resultsWeakness[i]);
+      activeFilterWeakness(resultsWeakness[i]);
       //showPercentagePerFilter();
     }
   }
@@ -90,7 +90,7 @@ function activeFilterType(selectedValue) {
 
 function activeFilterWeakness(selectedValue) {
   pokemons = filterByWeakness(pokemons, selectedValue);
-   if (pokemons == "") {
+  if (pokemons == "") {
     resultCards.innerHTML = `
     <Tente id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
     `;
