@@ -90,7 +90,13 @@ function activeFilterType(selectedValue) {
 
 function activeFilterWeakness(selectedValue) {
   pokemons = filterByWeakness(pokemons, selectedValue);
-  createCards(pokemons);
+   if (pokemons == "") {
+    resultCards.innerHTML = `
+    <Tente id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
+    `;
+  } else {
+    createCards(pokemons);
+  }
 }
 
 function orderToShow() {
@@ -109,6 +115,7 @@ function showPercentagePerFilter() {
   percentage.innerHTML = `Esse filtro representa ${showThePercentage}% do total de Pokemons.`;
 }
 */
+
 
 function createCards(data) {
   resultCards.innerHTML = data
