@@ -18,6 +18,8 @@ const percentage = document.getElementById("quantify-text");
 let resultsType = "";
 let resultsWeakness = "";
 let resultName = "";
+let itemsType = "";
+let itemsWeakness = "";
 
 startSiteOnpokemon();
 
@@ -78,6 +80,32 @@ function showResults() {
   filtersSelect();
 }
 
+function activeFilterType(selectedValue) {
+  pokemons = filterByType(pokemons, selectedValue);
+  if (pokemons == "") {
+    resultCards.innerHTML = `
+    <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
+    `;
+  } else {
+    createCards(pokemons);
+    createColorsType();
+    createColorsWeakness();
+  }
+}
+
+function activeFilterWeakness(selectedValue) {
+  pokemons = filterByWeakness(pokemons, selectedValue);
+  if (pokemons == "") {
+    resultCards.innerHTML = `
+    <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
+    `;
+  } else {
+    createCards(pokemons);
+    createColorsType();
+    createColorsWeakness();
+  }
+}
+
 function filtersSelect() {
   selectOrder.addEventListener("change", orderToShow);
   selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
@@ -93,28 +121,6 @@ export let showInOrderOfWeakness = () => {
   createCards(pokemons);
 };
 
-function activeFilterType(selectedValue) {
-  pokemons = filterByType(pokemons, selectedValue);
-  if (pokemons == "") {
-    resultCards.innerHTML = `
-    <Tente id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
-    `;
-  } else {
-    createCards(pokemons);
-  }
-}
-
-function activeFilterWeakness(selectedValue) {
-  pokemons = filterByWeakness(pokemons, selectedValue);
-  if (pokemons == "") {
-    resultCards.innerHTML = `
-    <Tente id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
-    `;
-  } else {
-    createCards(pokemons);
-  }
-}
-
 /*
 function showPercentagePerFilter() {
   const showThePercentage = percentagePerFilter(pokemons, pokemons.length);
@@ -122,9 +128,21 @@ function showPercentagePerFilter() {
 }
 */
 
+function addButton() {
+  document.getElementById("button-return").innerHTML = `
+  <a href="filters#header-filters">
+    <button type="button" id="back-button" class="back-button">
+      &#8634;
+    </button>
+  </a>;
+`;
+}
+
 function createCards(data) {
   resultCards.innerHTML = data
     .map((item) => {
+      itemsType = item.type;
+      itemsWeakness = item.weaknesses;
       return `
       <div class="card">
         <img class="pokedex-open" src="img/pokedex-open.png">
@@ -138,16 +156,10 @@ function createCards(data) {
               ${item.name[0].toUpperCase() + item.name.substr(1)}
             </h4>
             <ul class="poke-items">
-              <span class="poke-item-title">Tipo:</span>
-              <div class="items">
-                ${item.type}
-              </div>
+              <span class="poke-item-title list-type">Tipo:</span>
             </ul>
             <ul class="poke-items">
-              <span class="poke-item-title">Fraqueza:</span> 
-              <div class="items">
-                ${item.weaknesses}
-              </div>
+              <span class="poke-item-title list-weakness">Fraqueza:</span> 
             </ul>
           </main>
         </div>
@@ -157,84 +169,88 @@ function createCards(data) {
     .join("");
 }
 
-function addButton() {
-  document.getElementById("button-return").innerHTML = `
-  <a href="filters#header-filters">
-    <button type="button" id="back-button" class="back-button">
-      &#8634;
-    </button>
-  </a>;
-`;
+function createColorsType() {
+  const type = document.querySelectorAll(".list-type");
+  for (let j = 0; j < type.length; j++) {
+    for (let i = 0; i < itemsType.length; i++) {
+      const li = document.createElement("li");
+      li.textContent = `${itemsType[i]}`;
+      type[j].append(li);
+      let item = `${itemsType[i]}`;
+      //selectColor(item);
+    }
+  }
 }
 
-function createColors() {
-  let items = document.querySelectorAll(".items");
-  itemsType = Array.from(itemsType);
-
-  for (let i = 0; i <= items.length; i++) {
-    let li = document.createElement("li");
-    let value = document.createTextNode(items[i]);
-
-    for (let j = 0; j <= itemsType.length; j++) {
-      li.appendChild(value);
-      items.appendChild(li);
-
-      switch (itemsType[i]) {
-        case "bug":
-          list.style.backgroundColor = rgb(158, 191, 63);
-          break;
-        case "dark":
-          list.style.backgroundColor = rgb(93, 96, 109);
-          break;
-        case "dragon":
-          list.style.backgroundColor = rgb(21, 116, 196);
-          break;
-        case "electric":
-          list.style.backgroundColor = rgb(238, 212, 79);
-          break;
-        case "fairy":
-          list.style.backgroundColor = rgb(237, 153, 229);
-          break;
-        case "fight":
-          list.style.backgroundColor = rgb(215, 68, 86);
-          break;
-        case "fire":
-          list.style.backgroundColor = rgb(224, 164, 86);
-          break;
-        case "flying":
-          list.style.backgroundColor = rgb(156, 180, 230);
-          break;
-        case "ghost":
-          list.style.backgroundColor = rgb(107, 114, 196);
-          break;
-        case "grass":
-          list.style.backgroundColor = rgb(98, 190, 101);
-          break;
-        case "ground":
-          list.style.backgroundColor = rgb(214, 133, 91);
-          break;
-        case "ice":
-          list.style.backgroundColor = rgb(129, 212, 201);
-          break;
-        case "normal":
-          list.style.backgroundColor = rgb(154, 158, 163);
-          break;
-        case "poison":
-          list.style.backgroundColor = rgb(180, 103, 202);
-          break;
-        case "psychic":
-          list.style.backgroundColor = rgb(247, 124, 124);
-          break;
-        case "rock":
-          list.style.backgroundColor = rgb(205, 192, 144);
-          break;
-        case "stell":
-          list.style.backgroundColor = rgb(89, 150, 163);
-          break;
-        case "water":
-          list.style.backgroundColor = rgb(88, 159, 222);
-          break;
-      }
+function createColorsWeakness() {
+  const types = document.querySelectorAll(".list-weakness");
+  for (let j = 0; j < types.length; j++) {
+    for (let i = 0; i < itemsWeakness.length; i++) {
+      const li = document.createElement("li");
+      li.textContent = `${itemsWeakness[i]}`;
+      types[j].append(li);
+      let item = `${itemsWeakness[i]}`;
+      //selectColor(item);
     }
+  }
+}
+
+function selectColor(item) {
+  const list = document.querySelectorAll(".poke-items li");
+  switch (item) {
+    case "bug":
+      list.style.backgroundColor = "rgb(158, 191, 63)";
+      break;
+    case "dark":
+      list.style.backgroundColor = "rgb(93, 96, 109)";
+      break;
+    case "dragon":
+      list.style.backgroundColor = "rgb(21, 116, 196)";
+      break;
+    case "electric":
+      list.style.backgroundColor = "rgb(238, 212, 79)";
+      break;
+    case "fairy":
+      list.style.backgroundColor = "rgb(237, 153, 229)";
+      break;
+    case "fight":
+      list.style.backgroundColor = "rgb(215, 68, 86)";
+      break;
+    case "fire":
+      list.style.backgroundColor = "rgb(224, 164, 86)";
+      break;
+    case "flying":
+      list.style.backgroundColor = "rgb(156, 180, 230)";
+      break;
+    case "ghost":
+      list.style.backgroundColor = "rgb(107, 114, 196)";
+      break;
+    case "grass":
+      list.style.backgroundColor = "rgb(98, 190, 101)";
+      break;
+    case "ground":
+      list.style.backgroundColor = "rgb(214, 133, 91)";
+      break;
+    case "ice":
+      list.style.backgroundColor = "rgb(129, 212, 201)";
+      break;
+    case "normal":
+      list.style.backgroundColor = "rgb(154, 158, 163)";
+      break;
+    case "poison":
+      list.style.backgroundColor = "rgb(180, 103, 202)";
+      break;
+    case "psychic":
+      list.style.backgroundColor = "rgb(247, 124, 124)";
+      break;
+    case "rock":
+      list.style.backgroundColor = "rgb(205, 192, 144)";
+      break;
+    case "stell":
+      list.style.backgroundColor = "rgb(89, 150, 163)";
+      break;
+    case "water":
+      list.style.backgroundColor = "rgb(88, 159, 222)";
+      break;
   }
 }
