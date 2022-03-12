@@ -88,8 +88,9 @@ function activeFilterType(selectedValue) {
     `;
   } else {
     createCards(pokemons);
-    createColorsType();
-    createColorsWeakness();
+    createLiType();
+    createLiWeakness();
+    selectColor();
   }
 }
 
@@ -101,8 +102,9 @@ function activeFilterWeakness(selectedValue) {
     `;
   } else {
     createCards(pokemons);
-    createColorsType();
-    createColorsWeakness();
+    createLiType();
+    createLiWeakness();
+    selectColor();
   }
 }
 
@@ -169,88 +171,85 @@ function createCards(data) {
     .join("");
 }
 
-function createColorsType() {
+function createLiType() {
   const type = document.querySelectorAll(".list-type");
   for (let j = 0; j < type.length; j++) {
     for (let i = 0; i < itemsType.length; i++) {
       const li = document.createElement("li");
       li.textContent = `${itemsType[i]}`;
+      li.classList.add(".li-item");
       type[j].append(li);
-      let item = `${itemsType[i]}`;
-      //selectColor(item);
     }
   }
 }
 
-function createColorsWeakness() {
+function createLiWeakness() {
   const types = document.querySelectorAll(".list-weakness");
   for (let j = 0; j < types.length; j++) {
     for (let i = 0; i < itemsWeakness.length; i++) {
       const li = document.createElement("li");
       li.textContent = `${itemsWeakness[i]}`;
+      li.classList.add(".li-item");
       types[j].append(li);
-      let item = `${itemsWeakness[i]}`;
-      //selectColor(item);
     }
   }
 }
 
 function selectColor(item) {
-  const list = document.querySelectorAll(".poke-items li");
+  const list = document.querySelectorAll(".li-item");
+  //fazer loop para percorrer a list, já que o objeto já existe
   switch (item) {
     case "bug":
-      list.style.backgroundColor = "rgb(158, 191, 63)";
-      break;
+      return (list.style.backgroundColor = "rgb(158, 191, 63);");
     case "dark":
-      list.style.backgroundColor = "rgb(93, 96, 109)";
+      list.style.backgroundColor = "rgb(93, 96, 109);";
       break;
     case "dragon":
-      list.style.backgroundColor = "rgb(21, 116, 196)";
+      list.style.backgroundColor = "rgb(21, 116, 196);";
       break;
     case "electric":
-      list.style.backgroundColor = "rgb(238, 212, 79)";
+      list.style.backgroundColor = "rgb(238, 212, 79);";
       break;
     case "fairy":
-      list.style.backgroundColor = "rgb(237, 153, 229)";
+      list.style.backgroundColor = "rgb(237, 153, 229);";
       break;
     case "fight":
-      list.style.backgroundColor = "rgb(215, 68, 86)";
+      list.style.backgroundColor = "rgb(215, 68, 86);";
       break;
     case "fire":
-      list.style.backgroundColor = "rgb(224, 164, 86)";
-      break;
+      return (list.style.backgroundColor = "rgb(224, 164, 86);");
     case "flying":
-      list.style.backgroundColor = "rgb(156, 180, 230)";
+      list.style.backgroundColor = "rgb(156, 180, 230);";
       break;
     case "ghost":
-      list.style.backgroundColor = "rgb(107, 114, 196)";
+      list[i].style.backgroundColor = "rgb(107, 114, 196);";
       break;
     case "grass":
-      list.style.backgroundColor = "rgb(98, 190, 101)";
+      list[i].style.backgroundColor = "rgb(98, 190, 101);";
       break;
     case "ground":
-      list.style.backgroundColor = "rgb(214, 133, 91)";
+      list[i].style.backgroundColor = "rgb(214, 133, 91);";
       break;
     case "ice":
-      list.style.backgroundColor = "rgb(129, 212, 201)";
+      list[i].style.backgroundColor = "rgb(129, 212, 201);";
       break;
     case "normal":
-      list.style.backgroundColor = "rgb(154, 158, 163)";
+      list[i].style.backgroundColor = "rgb(154, 158, 163);";
       break;
     case "poison":
-      list.style.backgroundColor = "rgb(180, 103, 202)";
+      list[i].style.backgroundColor = "rgb(180, 103, 202);";
       break;
     case "psychic":
-      list.style.backgroundColor = "rgb(247, 124, 124)";
+      list[i].style.backgroundColor = "rgb(247, 124, 124);";
       break;
     case "rock":
-      list.style.backgroundColor = "rgb(205, 192, 144)";
+      list[i].style.backgroundColor = "rgb(205, 192, 144);";
       break;
     case "stell":
-      list.style.backgroundColor = "rgb(89, 150, 163)";
+      list[i].style.backgroundColor = "rgb(89, 150, 163);";
       break;
     case "water":
-      list.style.backgroundColor = "rgb(88, 159, 222)";
+      list[i].style.backgroundColor = "rgb(88, 159, 222);";
       break;
   }
 }
