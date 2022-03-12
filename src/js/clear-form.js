@@ -21,6 +21,10 @@ export let clearFormFilters = () => {
     formCheckType[i].disabled = false;
     formCheckWeakness[i].disabled = false;
   }
+  for (let i = 0; i < formCheckType.length; i++) {
+    formCheckType[i].checked = false;
+    formCheckWeakness[i].checked = false;
+  }
   document.getElementById("result-cards").innerHTML = "";
   document.getElementById("button-return").innerHTML = "";
   selectOrder.removeEventListener("change", orderToShow);
