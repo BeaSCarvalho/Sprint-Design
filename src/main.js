@@ -75,7 +75,23 @@ function showResults() {
   resultsType = "";
   resultsWeakness = "";
   addButton();
+  filtersSelect();
 }
+
+function filtersSelect() {
+  selectOrder.addEventListener("change", orderToShow);
+  selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
+}
+
+export let orderToShow = () => {
+  pokemons = alphabeticOrder(pokemons, selectOrder.value);
+  createCards(pokemons);
+};
+
+export let showInOrderOfWeakness = () => {
+  pokemons = orderOfWeakness(pokemons, selectOrderByWeakness.value);
+  createCards(pokemons);
+};
 
 function activeFilterType(selectedValue) {
   pokemons = filterByType(pokemons, selectedValue);
@@ -99,23 +115,12 @@ function activeFilterWeakness(selectedValue) {
   }
 }
 
-function orderToShow() {
-  pokemons = alphabeticOrder(pokemons, selectOrder.value);
-  createCards(pokemons);
-}
-
-function showInOrderOfWeakness() {
-  pokemons = orderOfWeakness(pokemons, selectOrderByWeakness.value);
-  createCards(pokemons);
-}
-
 /*
 function showPercentagePerFilter() {
   const showThePercentage = percentagePerFilter(pokemons, pokemons.length);
   percentage.innerHTML = `Esse filtro representa ${showThePercentage}% do total de Pokemons.`;
 }
 */
-
 
 function createCards(data) {
   resultCards.innerHTML = data
