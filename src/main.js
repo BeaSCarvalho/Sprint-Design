@@ -90,6 +90,7 @@ function activeFilterType(selectedValue) {
     createCards(pokemons);
     createLiType();
     createLiWeakness();
+    selectColor();
   }
 }
 
@@ -103,6 +104,7 @@ function activeFilterWeakness(selectedValue) {
     createCards(pokemons);
     createLiType();
     createLiWeakness();
+    selectColor();
   }
 }
 
@@ -116,6 +118,7 @@ export let orderToShow = () => {
   createCards(pokemons);
   createLiType();
   createLiWeakness();
+  selectColor();
 };
 
 export let showInOrderOfWeakness = () => {
@@ -123,6 +126,7 @@ export let showInOrderOfWeakness = () => {
   createCards(pokemons);
   createLiType();
   createLiWeakness();
+  selectColor();
 };
 
 /*
@@ -179,8 +183,8 @@ function createLiType() {
     for (let i = 0; i < itemsType.length; i++) {
       const li = document.createElement("li");
       li.textContent = `${itemsType[i]}`;
-      type[j].append(li);
-      li.classList.add(".li-item");
+      li.classList.add("li-item");
+      type[j].after(li);
     }
   }
 }
@@ -191,72 +195,77 @@ function createLiWeakness() {
     for (let i = 0; i < itemsWeakness.length; i++) {
       const li = document.createElement("li");
       li.textContent = `${itemsWeakness[i]}`;
-      li.classList.add(".li-item");
-      types[j].append(li);
+      li.classList.add("li-item");
+      types[j].after(li);
     }
   }
 }
 
-/*
 function selectColor() {
-  let list = document.querySelectorAll(".li-item");
+  const list = document.querySelectorAll(".poke-items");
+  console.log(list.length);
   for (let i = 0; i <= list.length; i++) {
-    switch (item) {
-      case "bug":
-        list[i].style.backgroundColor = "rgb(158, 191, 63);";
-        break;
-      case "dark":
-        list[i].style.backgroundColor = "rgb(93, 96, 109);";
-        break;
-      case "dragon":
-        list[i].style.backgroundColor = "rgb(21, 116, 196);";
-        break;
-      case "electric":
-        list[i].style.backgroundColor = "rgb(238, 212, 79);";
-        break;
-      case "fairy":
-        list[i].style.backgroundColor = "rgb(237, 153, 229);";
-        break;
-      case "fight":
-        list[i].style.backgroundColor = "rgb(215, 68, 86);";
-        break;
-      case "fire":
-        list[i].style.backgroundColor = "rgb(224, 164, 86);";
-        break;
-      case "flying":
-        list[i].style.backgroundColor = "rgb(156, 180, 230);";
-        break;
-      case "ghost":
-        list[i].style.backgroundColor = "rgb(107, 114, 196);";
-        break;
-      case "grass":
-        list[i].style.backgroundColor = "rgb(98, 190, 101);";
-        break;
-      case "ground":
-        list[i].style.backgroundColor = "rgb(214, 133, 91);";
-        break;
-      case "ice":
-        list[i].style.backgroundColor = "rgb(129, 212, 201);";
-        break;
-      case "normal":
-        list[i].style.backgroundColor = "rgb(154, 158, 163);";
-        break;
-      case "poison":
-        list[i].style.backgroundColor = "rgb(180, 103, 202);";
-        break;
-      case "psychic":
-        list[i].style.backgroundColor = "rgb(247, 124, 124);";
-        break;
-      case "rock":
-        list[i].style.backgroundColor = "rgb(205, 192, 144);";
-        break;
-      case "stell":
-        list[i].style.backgroundColor = "rgb(89, 150, 163);";
-        break;
-      case "water":
-        list[i].style.backgroundColor = "rgb(88, 159, 222);";
-        break;
+    let listLi = document.querySelectorAll(".li-item");
+    console.log(listLi.length);
+    for (let j = 0; j <= listLi.length; j++) {        
+      let item = listLi[i];
+      item = item.innerText;
+      switch (item) {
+        case "bug":
+          listLi[i].classList.add("bug");
+          break;
+        case "dark":
+          listLi[i].classList.add("dark");
+          break;
+        case "dragon":
+          listLi[i].classList.add("dragon");
+          break;
+        case "electric":
+          listLi[i].classList.add("electric");
+          break;
+        case "fairy":
+          listLi[i].classList.add("fairy");
+          break;
+        case "fight":
+          listLi[i].classList.add("fight");
+          break;
+        case "fire":
+          listLi[i].classList.add("fire");
+          break;
+        case "flying":
+          listLi[i].classList.add("flying");
+          break;
+        case "ghost":
+          listLi[i].classList.add("ghost");
+          break;
+        case "grass":
+          listLi[i].classList.add("grass");
+          break;
+        case "ground":
+          listLi[i].classList.add("ground");
+          break;
+        case "ice":
+          listLi[i].classList.add("ice");
+          break;
+        case "normal":
+          listLi[i].classList.add("normal");
+          break;
+        case "poison":
+          listLi[i].classList.add("poison");
+          break;
+        case "psychic":
+          listLi[i].classList.add("phychic");
+          break;
+        case "rock":
+          listLi[i].classList.add("rock");
+          break;
+        case "steel":
+          listLi[i].classList.add("steel");
+          break;
+        case "water":
+          listLi[i].classList.add("water");
+          break;
+      }
     }
   }
 }
-*/
