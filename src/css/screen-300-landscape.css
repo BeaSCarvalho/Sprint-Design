@@ -44,8 +44,7 @@
     padding: 10px;
     margin-bottom: 25px;
   }
-
-  .container-checkbox {
+  #container-checkbox {
     grid-template-columns: 1fr 1fr;
   }
   .checkbox-name {
@@ -84,6 +83,17 @@
     margin-top: 10px;
     width: 50px;
     height: 50px;
+  }
+  #confirm-button:hover {
+    width: 30px;
+  }
+  #clear-butoon {
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+  }
+  #clear-button:hover {
+    width: 30px;
   }
   #confirm-button:hover {
     width: 30px;

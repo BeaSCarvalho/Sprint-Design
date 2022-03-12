@@ -6,24 +6,20 @@ import {
   //percentagePerFilter,
 } from "./data.js";
 import { startPageHome, startPageFilters } from "./js/start-page.js";
-import { clearInputName, clearInputCheckbox } from "./js/clear-form.js";
 import data from "./data/pokemon/pokemon.js";
 
 let pokemons = data.pokemon;
-var formCheckType = document.forms.formFilters.elements.type;
-var formCheckWeakness = document.forms.formFilters.elements.weakness;
+const formCheckType = document.querySelectorAll("input[name=type]");
+const formCheckWeakness = document.querySelectorAll("input[name=weakness]");
+let resultCards = document.getElementById("result-cards");
+const selectOrder = document.getElementById("order-selector");
+const selectOrderByWeakness = document.getElementById("calculation-selector");
+const percentage = document.getElementById("quantify-text");
 let resultsType = "";
 let resultsWeakness = "";
 let resultName = "";
-//const selectOrder = document.getElementById("order-selector").addEventListener("change", orderToShow);
-//const selectOrderByWeakness = document.getElementById("calculation-selector").addEventListener("change", showInOrderOfWeakness);
-//const percentage = document.getElementById("quantify-text");
 
 startSiteOnpokemon();
-/*
-  Fazer filtragem pelo nome
-  Receber somente um envio de formulário
-*/
 
 function startSiteOnpokemon() {
   let url = Array.from(location.href).join();
@@ -42,10 +38,7 @@ export let searchNamePokemon = (e) => {
   e.preventDefault();
   let name = document.getElementById("name-pokemon").value;
   resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
-  //fazer filtro
-
   showResults();
-  clearInputName();
 };
 
 export let formCheckbox = (e) => {
@@ -59,90 +52,73 @@ export let formCheckbox = (e) => {
     }
   }
   showResults();
-  clearInputCheckbox();
 };
 
-//Arrumar
 function showResults() {
-  if (resultsType != "" || resultsWeakness != "") {
+  if (resultsType != "") {
     resultsType = resultsType.split(" ");
     resultsType.pop();
-    resultsWeakness = resultsWeakness.split(" ");
-    resultsWeakness.pop();
-    clearInputCheckbox();
-  }
-
-  
-    //Passar para cada type a função resultsType
     for (let i = 0; i < resultsType.length; i++) {
       activeFilterType(resultsType[i]);
       //showPercentagePerFilter();
     }
-
-
-  addButton();
-  createCards(pokemons);
-  console.log(resultName);
-  console.log(resultsType);
-  console.log(resultsWeakness);
+  }
+  if (resultsWeakness != "") {
+    resultsWeakness = resultsWeakness.split(" ");
+    resultsWeakness.pop();
+    for (let i = 0; i < resultsWeakness.length; i++) {
+      activeFilterType(resultsWeakness[i]);
+      //showPercentagePerFilter();
+    }
+  }
+  resultName = "";
   resultsType = "";
   resultsWeakness = "";
+  addButton();
 }
 
-//Arrumar funções de filtro
-
-//Está entrando nas duas funções
-function activeFilterType(valueType) {
-  pokemons = filterByType(pokemons, valueType);
-  createCards(pokemons);
+function activeFilterType(selectedValue) {
+  pokemons = filterByType(pokemons, selectedValue);
+  if (pokemons == "") {
+    resultCards.innerHTML = `
+    <Tente id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
+    `;
+  } else {
+    createCards(pokemons);
+  }
 }
 
-function filterByType(data, activeFilter) {
-  //passou uma função de dentro do filter, retornando todos os valores de filter
-  return data.filter((item) => {
-    //retorna para filter
-    return item.type.includes(activeFilter);
-  });
-}
-
-/*
 function activeFilterWeakness(selectedValue) {
-  console.log("Entrou na função filter weak");
   pokemons = filterByWeakness(pokemons, selectedValue);
-  createCards(pokemons);
-  //Como já tem criado os cards, não passa nada
-  createColors();
-  console.log("Saiu na função filter weak");
+   if (pokemons == "") {
+    resultCards.innerHTML = `
+    <Tente id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
+    `;
+  } else {
+    createCards(pokemons);
+  }
 }
+
 function orderToShow() {
   pokemons = alphabeticOrder(pokemons, selectOrder.value);
   createCards(pokemons);
 }
+
 function showInOrderOfWeakness() {
   pokemons = orderOfWeakness(pokemons, selectOrderByWeakness.value);
   createCards(pokemons);
 }
-*/
+
 /*
-//Arrumar
 function showPercentagePerFilter() {
   const showThePercentage = percentagePerFilter(pokemons, pokemons.length);
   percentage.innerHTML = `Esse filtro representa ${showThePercentage}% do total de Pokemons.`;
 }
 */
 
-function addButton() {
-  document.getElementById("show-the-cards").innerHTML = `
-  <a href="filters.html">
-    <button type="button" id="back-button" class="back-button">
-      &#8634;
-    </button>
-  </a>;
-`;
-}
 
 function createCards(data) {
-  document.getElementsByClassName("result-cards").innerHTML = data
+  resultCards.innerHTML = data
     .map((item) => {
       return `
       <div class="card">
@@ -176,7 +152,16 @@ function createCards(data) {
     .join("");
 }
 
-// Arrumar
+function addButton() {
+  document.getElementById("button-return").innerHTML = `
+  <a href="filters#header-filters">
+    <button type="button" id="back-button" class="back-button">
+      &#8634;
+    </button>
+  </a>;
+`;
+}
+
 function createColors() {
   let items = document.querySelectorAll(".items");
   itemsType = Array.from(itemsType);
@@ -248,97 +233,3 @@ function createColors() {
     }
   }
 }
-
-let pokemons = data.pokemon;
-
-function createCards(data) {
-  document.getElementById("result-cards").innerHTML = data.map((item) => {
-    return  `
-    <div class="card">
-      <img class="pokedex-open" src="img/pokedex-open.png">
-      <p class="poke-number">${item.num}</p>
-
-      <div class="card-box">
-        <figure class="box-poke-img">
-          <img class="poke-img" src="${item.img}" alt=${item.name}>
-        </figure>
-
-        <main class="box-poke-text">
-          <h4 class="poke-title"> ${item.name[0].toUpperCase() + item.name.substr(1)}</h4>
-          <ul class="poke-items">
-            <span class="poke-item-title">Tipo: ${item.type}</span>
-          </ul>
-
-          <ul class="poke-items">
-            <span class="poke-item-title">Fraqueza:
-              <li>${item.weaknesses}</li>
-            </span>  
-          </ul>
-        </main>
-      </div>
-    </div>
-    `})
-  .join("");
-}
-
-//html
-const selectOrder = document.getElementById("order-selector");
-const confirmButton = document.getElementById("confirm-button");
-const selectOrderByWeakness = document.getElementById("calculation-selector");
-const percentage = document.getElementById("quantify-text");
-const checkboxTypeSelected = document.querySelectorAll("input[name=type]");
-const checkboxWeaknessSelected = document.querySelectorAll("input[name=weakness]");
-
-function showResults () {
-  createCards(pokemons)
-}
-
-confirmButton.addEventListener("click", showResults);
-
-//função que pega o valor do checkbox e chama a função de filtros = type
-function activeFilterType(e) {
-  const selectedValue = e.target.value;
-  pokemons = filterByType(pokemons, selectedValue);
-  createCards(pokemons)
-}
-
-//loop para ouvir todos os checkboxes name=type
-for (let i = 0; i < checkboxTypeSelected.length; i++) {
-  checkboxTypeSelected[i].addEventListener("click", activeFilterType)
-  checkboxTypeSelected[i].addEventListener("click", showPercentagePerFilter)
-}
-
-//função que pega o valor do checkbox e chama a função de filtros = weakness
-function activeFilterWeakness(e) {
-  const selectedValue = e.target.value;
-  pokemons = filterByWeakness(pokemons, selectedValue);
-  createCards(pokemons);
-}
-
-//loop para ouvir todos os checkboxes name=weakness
-for (let i = 0; i < checkboxWeaknessSelected.length; i++) {
-  checkboxWeaknessSelected[i].addEventListener("click", activeFilterWeakness)
-  checkboxWeaknessSelected[i].addEventListener("click", showPercentagePerFilter)
-}
-
-//ordenar ordem alfabetica
-function orderToShow() {
-  pokemons = alphabeticOrder(pokemons, selectOrder.value);
-  createCards(pokemons);
-}
-
-selectOrder.addEventListener("change", orderToShow);
-
-//ordenar por quantidade de fraquezas
-function showInOrderOfWeakness () {
-  pokemons = orderOfWeakness(pokemons, selectOrderByWeakness.value);
-  createCards(pokemons);
-}
-
-selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
-
-function showPercentagePerFilter () {
-  const showThePercentage = percentagePerFilter(pokemons, pokemons.length);
-  percentage.innerHTML = `Esse filtro representa ${showThePercentage}% do total de Pokemons.`
-}
-

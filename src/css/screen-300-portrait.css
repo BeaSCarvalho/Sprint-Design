@@ -40,7 +40,7 @@
     padding: 10px;
     margin-bottom: 25px;
   }
-  .container-checkbox {
+  #container-checkbox {
     grid-template-columns: 1fr;
   }
   .checkbox-name {

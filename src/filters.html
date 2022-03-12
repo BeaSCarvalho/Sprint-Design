@@ -12,13 +12,13 @@
 
   <div class="container-general-filter">
 
-    <header class="header-filters">
+    <header id="header-filters">
       <a href="index.html">
         <img class="logo-onpokemon-filter" alt="Logo do OnPokemon" src="img/logo.png">
       </a>
     </header>
 
-    <main class="main-filters">
+    <main id="main-filters">
       <h1 class="filter-title">FILTRAR</h1>
 
       <form action="/main.js" class="full-checkbox" name="formFilters">
@@ -29,7 +29,7 @@
           <p class="specify-type">Tipo</p>
           <p class="specify-weaknesses">Fraqueza</p>
         </div>
-        <section class="container-checkbox" id="container-checkbox">
+        <section id="container-checkbox">
           <p class="checkbox-name">Aço
             <input type="checkbox" class="checkbox" name="type" value="steel">
             <input type="checkbox" class="checkbox" name="weakness" value="steel">
@@ -115,9 +115,7 @@
     </main>
 
     <section class="results-order">
-      <h1 class="results-text">RESULTADOS</h1>
-      <section class="result-cards" id="result-cards"></section>  
-
+      <h1 class="results-text">RESULTADOS</h1> 
       <form action="/main.js" class="order-filter">
         <select class="order-calculation" id="order-selector">
           <option value="number">Número da Pokédex</option>
@@ -132,14 +130,12 @@
         </select>
       </form>
     </section>
-
-    <section id="show-the-cards">
-
-      <section class="result-cards">
-      </section>
+    <section id="result-cards">
     </section>
+    <div id="button-return">
+    </div>
     <script src="main.js" type="module"></script>
-  </div> 
+  </div>
 </body>
 
 </html>

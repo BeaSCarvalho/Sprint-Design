@@ -26,7 +26,7 @@
   justify-items: center;
 }
 
-.header-filters {
+#header-filters {
   max-width: 1060px;
   margin: 0 auto;
   background-color: var(--dark-brown);
@@ -34,7 +34,7 @@
   place-content: center;
 }
 
-.main-filters {
+#main-filters {
   max-width: 1020px;
   margin: 0 auto;
   background-color: var(--beige);
@@ -89,7 +89,7 @@
   color: #333;
 }
 
-.container-checkbox {
+#container-checkbox {
   display: grid;
 }
 
@@ -106,6 +106,7 @@
 
 .results-text {
   font-weight: 600;
+  padding: 20px 0px;
 }
 
 .quantify-text {
