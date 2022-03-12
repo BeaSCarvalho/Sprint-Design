@@ -35,12 +35,12 @@
     font-size: 1.2rem;
     padding-top: 20px;
   }
-  .input-name {
+  #name-pokemon {
     font-size: 1.1rem;
     padding: 10px;
     margin-bottom: 25px;
   }
-  .container-checkbox {
+  #container-checkbox {
     grid-template-columns: 1fr;
   }
   .checkbox-name {
@@ -74,19 +74,27 @@
     padding: 10px;
     margin-bottom: 25px;
   }
-  .confirm-button {
+  #confirm-button {
     margin-top: 10px;
     width: 50px;
     height: 50px;
   }
-  .confirm-button:hover {
+  #confirm-button:hover {
     width: 30px;
   }
-  .back-button {
+  #clear-button {
+    margin-top: 10px;
     width: 50px;
     height: 50px;
   }
-  .back-button:hover:after {
+  #clear-button:hover {
+    width: 30px;
+  }
+  #back-button {
+    width: 50px;
+    height: 50px;
+  }
+  #back-button:hover:after {
     font-size: 1rem;
   }
 }
