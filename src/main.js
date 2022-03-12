@@ -178,7 +178,7 @@ function createCards(data) {
 }
 
 function createLiType() {
-  const type = document.querySelectorAll(".list-type");
+  let type = document.querySelectorAll(".list-type");
   for (let j = 0; j < type.length; j++) {
     for (let i = 0; i < itemsType.length; i++) {
       const li = document.createElement("li");
@@ -190,7 +190,7 @@ function createLiType() {
 }
 
 function createLiWeakness() {
-  const types = document.querySelectorAll(".list-weakness");
+  let types = document.querySelectorAll(".list-weakness");
   for (let j = 0; j < types.length; j++) {
     for (let i = 0; i < itemsWeakness.length; i++) {
       const li = document.createElement("li");
@@ -202,12 +202,10 @@ function createLiWeakness() {
 }
 
 function selectColor() {
-  const list = document.querySelectorAll(".poke-items");
-  console.log(list.length);
+  let list = document.querySelectorAll(".poke-items");
   for (let i = 0; i <= list.length; i++) {
     let listLi = document.querySelectorAll(".li-item");
-    console.log(listLi.length);
-    for (let j = 0; j <= listLi.length; j++) {        
+    for (let j = 0; j <= listLi.length; j++) {
       let item = listLi[i];
       item = item.innerText;
       switch (item) {
@@ -226,13 +224,13 @@ function selectColor() {
         case "fairy":
           listLi[i].classList.add("fairy");
           break;
-        case "fight":
-          listLi[i].classList.add("fight");
+        case "fighting":
+          listLi[i].classList.add("fighting");
           break;
         case "fire":
           listLi[i].classList.add("fire");
           break;
-        case "flying":
+        case "fighting":
           listLi[i].classList.add("flying");
           break;
         case "ghost":
