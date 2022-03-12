@@ -1,11 +1,15 @@
-let namePokemon = document.getElementById("name-pokemon");
+import { orderToShow, showInOrderOfWeakness } from "../main.js";
+
+const namePokemon = document.getElementById("name-pokemon");
+const formCheckType = document.querySelectorAll("input[name=type]");
+const formCheckWeakness = document.querySelectorAll("input[name=weakness]");
+const selectOrder = document.getElementById("order-selector");
+const selectOrderByWeakness = document.getElementById("calculation-selector");
 let resultsType = "";
 let resultsWeakness = "";
 let resultName = "";
 
 export let clearFormFilters = () => {
-  let formCheckType = document.forms.formFilters.elements.type;
-  let formCheckWeakness = document.forms.formFilters.elements.weakness;
   resultsType = "";
   resultsWeakness = "";
   resultName = "";
@@ -19,4 +23,8 @@ export let clearFormFilters = () => {
   }
   document.getElementById("result-cards").innerHTML = "";
   document.getElementById("button-return").innerHTML = "";
+  selectOrder.removeEventListener("change", orderToShow);
+  selectOrderByWeakness.removeEventListener("change", showInOrderOfWeakness);
+  selectOrder.selectedIndex = 0;
+  selectOrderByWeakness.selectedIndex = 0;
 };
