@@ -25,4 +25,6 @@ export let clearFormFilters = () => {
   document.getElementById("button-return").innerHTML = "";
   selectOrder.removeEventListener("change", orderToShow);
   selectOrderByWeakness.removeEventListener("change", showInOrderOfWeakness);
+  selectOrder.selectedIndex = 0;
+  selectOrderByWeakness.selectedIndex = 0;
 };
