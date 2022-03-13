@@ -1,4 +1,5 @@
 import {
+  searchByName,
   filterByType,
   filterByWeakness,
   alphabeticOrder,
@@ -23,9 +24,9 @@ const selectOrderByWeakness = document.getElementById("calculation-selector");
 const percentage = document.getElementById("quantify-text");
 let resultsType = "";
 let resultsWeakness = "";
-let resultName = "";
-let itemsType = "";
-let itemsWeakness = "";
+//let resultName = "";
+//let itemsType = "";
+//let itemsWeakness = "";
 
 startSiteOnpokemon();
 
@@ -45,8 +46,14 @@ function startSiteOnpokemon() {
 export let searchNamePokemon = (e) => {
   e.preventDefault();
   let name = document.getElementById("name-pokemon").value;
-  resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
-  showResults();
+  //resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
+  pokemons = searchByName(pokemons, name);
+  showResults(createCards(pokemons));
+  if (pokemons == "") {
+    resultCards.innerHTML = `
+    <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro nome!</p>
+    `;
+  }  
 };
 
 export let formCheckbox = (e) => {
@@ -68,7 +75,7 @@ function showResults() {
     resultsType.pop();
     for (let i = 0; i < resultsType.length; i++) {
       activeFilterType(resultsType[i]);
-      //showPercentagePerFilter();
+      showPercentagePerFilter();
     }
     selectOrder.addEventListener("change", orderToShow);
     selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
@@ -78,12 +85,12 @@ function showResults() {
     resultsWeakness.pop();
     for (let i = 0; i < resultsWeakness.length; i++) {
       activeFilterWeakness(resultsWeakness[i]);
-      //showPercentagePerFilter();
+      showPercentagePerFilter();
     }
     selectOrder.addEventListener("change", orderToShow);
     selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
   }
-  resultName = "";
+  //resultName = "";
   resultsType = "";
   resultsWeakness = "";
   addButton();
@@ -129,9 +136,9 @@ export let showInOrderOfWeakness = () => {
   createLiWeakness();
 };
 
-/*
+
 function showPercentagePerFilter() {
-  const showThePercentage = percentagePerFilter(pokemons, pokemons.length);
+  const showThePercentage = percentagePerFilter(pokemons, data.pokemon.length);
   percentage.innerHTML = `Esse filtro representa ${showThePercentage}% do total de Pokemons.`;
 }
-*/
+
