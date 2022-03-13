@@ -6,6 +6,12 @@ import {
   //percentagePerFilter,
 } from "./data.js";
 import { startPageHome, startPageFilters } from "./js/start-page.js";
+import {
+  addButton,
+  createCards,
+  createLiType,
+  createLiWeakness,
+} from "./js/cards.js";
 import data from "./data/pokemon/pokemon.js";
 
 let pokemons = data.pokemon;
@@ -64,6 +70,8 @@ function showResults() {
       activeFilterType(resultsType[i]);
       //showPercentagePerFilter();
     }
+    selectOrder.addEventListener("change", orderToShow);
+    selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
   }
   if (resultsWeakness != "") {
     resultsWeakness = resultsWeakness.split(" ");
@@ -72,12 +80,13 @@ function showResults() {
       activeFilterWeakness(resultsWeakness[i]);
       //showPercentagePerFilter();
     }
+    selectOrder.addEventListener("change", orderToShow);
+    selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
   }
   resultName = "";
   resultsType = "";
   resultsWeakness = "";
   addButton();
-  filtersSelect();
 }
 
 function activeFilterType(selectedValue) {
@@ -90,7 +99,6 @@ function activeFilterType(selectedValue) {
     createCards(pokemons);
     createLiType();
     createLiWeakness();
-    selectColor();
   }
 }
 
@@ -104,13 +112,7 @@ function activeFilterWeakness(selectedValue) {
     createCards(pokemons);
     createLiType();
     createLiWeakness();
-    selectColor();
   }
-}
-
-function filtersSelect() {
-  selectOrder.addEventListener("change", orderToShow);
-  selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
 }
 
 export let orderToShow = () => {
@@ -118,7 +120,6 @@ export let orderToShow = () => {
   createCards(pokemons);
   createLiType();
   createLiWeakness();
-  selectColor();
 };
 
 export let showInOrderOfWeakness = () => {
@@ -126,7 +127,6 @@ export let showInOrderOfWeakness = () => {
   createCards(pokemons);
   createLiType();
   createLiWeakness();
-  selectColor();
 };
 
 /*
@@ -135,135 +135,3 @@ function showPercentagePerFilter() {
   percentage.innerHTML = `Esse filtro representa ${showThePercentage}% do total de Pokemons.`;
 }
 */
-
-function addButton() {
-  document.getElementById("button-return").innerHTML = `
-  <a href="filters#header-filters">
-    <button type="button" id="back-button" class="back-button">
-      &#8634;
-    </button>
-  </a>;
-`;
-}
-
-function createCards(data) {
-  resultCards.innerHTML = data
-    .map((item) => {
-      itemsType = item.type;
-      itemsWeakness = item.weaknesses;
-      return `
-      <div class="card">
-        <img class="pokedex-open" src="img/pokedex-open.png">
-        <p class="poke-number">${item.num}</p>
-        <div class="card-box">
-          <figure class="box-poke-img">
-            <img class="poke-img" src="${item.img}" alt=${item.name}>
-          </figure>
-          <main class="box-poke-text">
-            <h4 class="poke-title"> 
-              ${item.name[0].toUpperCase() + item.name.substr(1)}
-            </h4>
-            <ul class="poke-items">
-              <span class="poke-item-title list-type">Tipo:</span>
-            </ul>
-            <ul class="poke-items">
-              <span class="poke-item-title list-weakness">Fraqueza:</span> 
-            </ul>
-          </main>
-        </div>
-      </div>
-      `;
-    })
-    .join("");
-}
-
-function createLiType() {
-  let type = document.querySelectorAll(".list-type");
-  for (let j = 0; j < type.length; j++) {
-    for (let i = 0; i < itemsType.length; i++) {
-      const li = document.createElement("li");
-      li.textContent = `${itemsType[i]}`;
-      li.classList.add("li-item");
-      type[j].after(li);
-    }
-  }
-}
-
-function createLiWeakness() {
-  let types = document.querySelectorAll(".list-weakness");
-  for (let j = 0; j < types.length; j++) {
-    for (let i = 0; i < itemsWeakness.length; i++) {
-      const li = document.createElement("li");
-      li.textContent = `${itemsWeakness[i]}`;
-      li.classList.add("li-item");
-      types[j].after(li);
-    }
-  }
-}
-
-function selectColor() {
-  let list = document.querySelectorAll(".poke-items");
-  for (let i = 0; i <= list.length; i++) {
-    let listLi = document.querySelectorAll(".li-item");
-    for (let j = 0; j <= listLi.length; j++) {
-      let item = listLi[i];
-      item = item.innerText;
-      switch (item) {
-        case "bug":
-          listLi[i].classList.add("bug");
-          break;
-        case "dark":
-          listLi[i].classList.add("dark");
-          break;
-        case "dragon":
-          listLi[i].classList.add("dragon");
-          break;
-        case "electric":
-          listLi[i].classList.add("electric");
-          break;
-        case "fairy":
-          listLi[i].classList.add("fairy");
-          break;
-        case "fighting":
-          listLi[i].classList.add("fighting");
-          break;
-        case "fire":
-          listLi[i].classList.add("fire");
-          break;
-        case "fighting":
-          listLi[i].classList.add("flying");
-          break;
-        case "ghost":
-          listLi[i].classList.add("ghost");
-          break;
-        case "grass":
-          listLi[i].classList.add("grass");
-          break;
-        case "ground":
-          listLi[i].classList.add("ground");
-          break;
-        case "ice":
-          listLi[i].classList.add("ice");
-          break;
-        case "normal":
-          listLi[i].classList.add("normal");
-          break;
-        case "poison":
-          listLi[i].classList.add("poison");
-          break;
-        case "psychic":
-          listLi[i].classList.add("phychic");
-          break;
-        case "rock":
-          listLi[i].classList.add("rock");
-          break;
-        case "steel":
-          listLi[i].classList.add("steel");
-          break;
-        case "water":
-          listLi[i].classList.add("water");
-          break;
-      }
-    }
-  }
-}
