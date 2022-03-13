@@ -5,7 +5,7 @@ export let startPageHome = () => {
   let rotationPage = false;
   do {
     heightWindowHome();
-    rotationPage = screen.orientation.onchange = function (e) {
+    rotationPage = screen.orientation.onchange = function () {
       location.reload();
     };
   } while (rotationPage == false);

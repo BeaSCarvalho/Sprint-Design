@@ -4,7 +4,7 @@ import {
   filterByWeakness,
   alphabeticOrder,
   orderOfWeakness,
-  //percentagePerFilter,
+  percentagePerFilter,
 } from "./data.js";
 import { startPageHome, startPageFilters } from "./js/start-page.js";
 import {
@@ -24,9 +24,7 @@ const selectOrderByWeakness = document.getElementById("calculation-selector");
 const percentage = document.getElementById("quantify-text");
 let resultsType = "";
 let resultsWeakness = "";
-//let resultName = "";
-//let itemsType = "";
-//let itemsWeakness = "";
+let resultName = "";
 
 startSiteOnpokemon();
 
@@ -46,14 +44,15 @@ function startSiteOnpokemon() {
 export let searchNamePokemon = (e) => {
   e.preventDefault();
   let name = document.getElementById("name-pokemon").value;
-  //resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
-  pokemons = searchByName(pokemons, name);
-  showResults(createCards(pokemons));
+  resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
+  pokemons = searchByName(pokemons, resultName);
+  createCards(pokemons);
+  showResults();
   if (pokemons == "") {
     resultCards.innerHTML = `
     <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro nome!</p>
     `;
-  }  
+  }
 };
 
 export let formCheckbox = (e) => {
@@ -90,7 +89,13 @@ function showResults() {
     selectOrder.addEventListener("change", orderToShow);
     selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
   }
-  //resultName = "";
+  if (resultName != "") {
+    createLiType();
+    createLiWeakness();
+    selectOrder.addEventListener("change", orderToShow);
+    selectOrderByWeakness.addEven;
+  }
+  resultName = "";
   resultsType = "";
   resultsWeakness = "";
   addButton();
@@ -136,9 +141,7 @@ export let showInOrderOfWeakness = () => {
   createLiWeakness();
 };
 
-
 function showPercentagePerFilter() {
   const showThePercentage = percentagePerFilter(pokemons, data.pokemon.length);
   percentage.innerHTML = `Esse filtro representa ${showThePercentage}% do total de Pokemons.`;
 }
-
