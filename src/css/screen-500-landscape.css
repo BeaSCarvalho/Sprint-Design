@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@media screen and (min-height: 600px) and (max-height: 699px) and (orientation: landscape) {
+@media screen and (min-height: 500px) and (max-height: 699px) and (orientation: landscape) {
   .container-pokemon {
     background-position: center top;
   }
