@@ -1,3 +1,10 @@
+export const searchByName = (data, condition) => {
+  const typedName = data.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(condition.toLowerCase())
+  );
+  return typedName;
+}
+
 export const filterByType = (data, activeFilter) => {
   return data.filter((item) => {
     return item.type.includes(activeFilter);
@@ -29,7 +36,7 @@ export const orderOfWeakness = (data, selectedOrder) => {
 }
 
 export const percentagePerFilter = (data, totalOfPokemons) => {
-  totalOfPokemons = 251;
-  const roundedNumber = Math.round(percentageOfPokemons * 100) / 100;
+  const percentageOfPokemons = (data.length/totalOfPokemons) * 100;
+  const roundedNumber = Math.round(percentageOfPokemons*100) / 100;
   return roundedNumber;
 };
