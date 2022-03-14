@@ -109,7 +109,7 @@ function activeFilterType(selectedValue) {
     `;
   } else {
     createCards(pokemons);
-    createLiType();
+    createLiType(filterByType(pokemons, selectedValue));
     createLiWeakness();
   }
 }
@@ -123,7 +123,7 @@ function activeFilterWeakness(selectedValue) {
   } else {
     createCards(pokemons);
     createLiType();
-    createLiWeakness();
+    createLiWeakness(filterByWeakness(pokemons, selectedValue));
   }
 }
 

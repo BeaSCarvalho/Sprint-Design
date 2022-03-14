@@ -105,7 +105,7 @@ describe("filterByType", () => {
         name: "shuckle",
         type: ["bug", "rock"],
         weaknesses: ["water", "rock", "steel"],
-      },
+      }
     ]);
   });
 });
@@ -496,7 +496,25 @@ describe("percentagePerFilter", () => {
     expect(typeof percentagePerFilter).toBe("function");
   });
 
-  it("should return 8.76% for pokemon type=bug", () => {
-    expect(percentagePerFilter(pokemonsForTest)).toEqual(8.76);
+  it("should return 20% for pokemon type=bug", () => {
+    expect(percentagePerFilter(pokemonsForTest.length)).toEqual(20);
   });
 });
+
+
+
+/*it("should return pokemons filtered by type = bug", () => {
+  expect(filterByType(pokemonsForTest, "bug")).toEqual([
+    {
+      num: "205",
+      name: "forretress",
+      type: ["bug", "steel"],
+      weaknesses: ["fire"],
+    },
+    {
+      num: "213",
+      name: "shuckle",
+      type: ["bug", "rock"],
+      weaknesses: ["water", "rock", "steel"],
+    }
+  ]);*/
