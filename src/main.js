@@ -13,6 +13,7 @@ import {
   createLiType,
   createLiWeakness,
 } from "./js/cards.js";
+
 import data from "./data/pokemon/pokemon.js";
 
 let pokemons = data.pokemon;
