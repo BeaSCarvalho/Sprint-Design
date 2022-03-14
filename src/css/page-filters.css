@@ -7,7 +7,7 @@
 @import url("screen-300-portrait.css");
 @import url("screen-300-landscape.css");
 @import url("screen-900-portrait.css");
-@import url("screen-600-landscape.css");
+@import url("screen-500-landscape.css");
 @import url("screen-700-landscape.css");
 
 .container-filters {
@@ -175,7 +175,7 @@
 */
 
 #clear-button {
-  margin: 0px 40px;
+  margin: 0px 20px;
   background-color: #dd3333;
   font-size: 1.8rem;
   color: #fff0dd;
@@ -234,3 +234,11 @@
   padding-left: 10px;
 }
 */
+
+#error-form {
+  font-weight: 600;
+  padding: 20px 0px;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 1.8;
+}
