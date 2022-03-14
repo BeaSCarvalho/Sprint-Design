@@ -476,6 +476,21 @@ describe("orderOfWeakness", () => {
   });
 });
 
+const pokemonsBugs = [
+  {
+    num: "205",
+    name: "forretress",
+    type: ["bug", "steel"],
+    weaknesses: ["fire"],
+  },
+  {
+    num: "213",
+    name: "shuckle",
+    type: ["bug", "rock"],
+    weaknesses: ["water", "rock", "steel"],
+  }
+]
+
 describe("percentagePerFilter", () => {
   it("is a function", () => {
     expect(typeof percentagePerFilter).toBe("function");
