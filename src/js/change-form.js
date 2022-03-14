@@ -2,7 +2,7 @@ import { searchNamePokemon, formCheckbox } from "../main.js";
 const namePokemon = document.getElementById("name-pokemon");
 const formCheckType = document.querySelectorAll("input[name=type]");
 const formCheckWeakness = document.querySelectorAll("input[name=weakness]");
-const confirmationButton = document.getElementById("confirm-button");
+const confirmButton = document.getElementById("confirm-button");
 const changeCheckboxGeneral = document.getElementById("container-checkbox");
 
 export let changeFormName = (e) => {
@@ -11,7 +11,10 @@ export let changeFormName = (e) => {
       formCheckType[i].disabled = true;
       formCheckWeakness[i].disabled = true;
     }
-    confirmationButton.addEventListener("click", searchNamePokemon);
+    confirmButton.addEventListener("click", function () {
+      confirmButton.classList.add("button-none");
+      searchNamePokemon();
+    });
     namePokemon.addEventListener("change", changeFormName);
   } else {
     for (let i = 0; i < formCheckType.length; i++) {
@@ -26,7 +29,10 @@ export let changeFormCheckbox = (e) => {
   let countNoChecked = 0;
   if (e.target.checked == true) {
     namePokemon.disabled = true;
-    confirmationButton.addEventListener("click", formCheckbox);
+    confirmButton.addEventListener("click", function () {
+      confirmButton.classList.add("button-none");
+      formCheckbox();
+    });
     changeCheckboxGeneral.addEventListener("change", function () {
       countChecked += 1;
     });
