@@ -204,7 +204,7 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
 
 - Os usuários encontraram dificuldades para acessar a página Filters, a partir da página Home. Uma sugestão encontrada para informar os usuários é informá-los por texto dentro do texto de boas-vindas.
 
-- Uma dificuldade encontrada na página Filters, é que não será possível pesquisar pelo nome e pelo checkbox ao mesmo tempo. Então, colocamos como correção para o site de bloquear o campo do checkbox, que pesquisa pelo tipo e fraquezas, quando o nome do pokémon for digitado. O inverso ocorreria também para bloquear o nome, ao assinalar o checkbox.
+- Uma dificuldade encontrada na página Filters, é que não será possível pesquisar pelo nome e pelo checkbox ao mesmo tempo. Então, colocamos como correção para o site de bloquear o campo do checkbox, que pesquisa pelo tipo e fraquezas, quando o nome do pokémon for digitado. O inverso ocorreria também para bloquear o nome, ao assinalar o checkbox. Além de adicionar um botão de limpar o formulário.
 
 - As sugestões apresentadas foram de fornecer mais informações sobre os pokémons, ao clicar nos cards.
 
