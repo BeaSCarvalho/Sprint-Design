@@ -148,6 +148,18 @@
   text-align: right;
 }
 
+#error-form {
+  font-weight: 600;
+  padding: 20px 0px;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.button-none {
+  display: none;
+}
+
 #confirm-button {
   font-size: 1.8rem;
   color: #fff0dd;
@@ -156,8 +168,40 @@
   border-radius: 30px;
   background-color: #45ab15;
   border: none;
-  transition: width 1s;
   box-shadow: var(--shadown-drop-medium);
+  margin-top: 10px;
+  /*transition: width 1s;*/
+}
+
+#clear-button {
+  margin: 0px 20px;
+  margin-top: 10px;
+  background-color: #dd3333;
+  font-size: 1.8rem;
+  color: #fff0dd;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  box-shadow: var(--shadown-drop-medium);
+  /*transition: width 1s;*/
+}
+
+#back-button {
+  font-size: 2.4rem;
+  color: #fff0dd;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  background-color: var(--medium-brown);
+  box-shadow: var(--shadown-drop-medium);
+  padding-bottom: 15px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  margin-top: 10px;
+  /*transition: width 1s;*/
 }
 /*
 #confirm-button:hover {
@@ -172,28 +216,11 @@
   text-align: left;
   padding-left: 10px;
 }
-*/
-
-#clear-button {
-  margin: 0px 20px;
-  background-color: #dd3333;
-  font-size: 1.8rem;
-  color: #fff0dd;
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
-  border: none;
-  transition: width 1s;
-  box-shadow: var(--shadown-drop-medium);
-}
-
-/*
 #clear-button:hover {
   background-color:#c04000;
   width: 300px;
   text-align: left;
 }
-
 #clear-button:hover:after {
   content: "  Limpar Formulário";
   font-weight: bold;
@@ -201,31 +228,12 @@
   text-align: left;
   padding-left: 10px;
 }
-*/
-
-#back-button {
-  font-size: 2.4rem;
-  color: #fff0dd;
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
-  border: none;
-  background-color: var(--medium-brown);
-  box-shadow: var(--shadown-drop-medium);
-  padding-bottom: 15px;
-  transition: width 1s;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-}
-/*
 #back-button:hover {
   background-color: var(--dark-brown);
   width: 400px;
   padding-left: 20px;
   text-align: left;
 }
-
 #back-button:hover::after {
   content: "  Voltar para Filtragem";
   font-weight: bold;
@@ -234,15 +242,3 @@
   padding-left: 10px;
 }
 */
-
-#error-form {
-  font-weight: 600;
-  padding: 20px 0px;
-  font-size: 1.6rem;
-  text-align: center;
-  line-height: 1.8;
-}
-
-.button-none {
-  display: none;
-}

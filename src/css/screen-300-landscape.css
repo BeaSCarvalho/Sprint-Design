@@ -79,38 +79,4 @@
     padding: 10px;
     margin-bottom: 25px;
   }
-  #confirm-button {
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-  }
-  #confirm-button:hover {
-    width: 30px;
-  }
-  #clear-butoon {
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-  }
-  #clear-button:hover {
-    width: 30px;
-  }
-  #confirm-button:hover {
-    width: 30px;
-  }
-  #clear-butoon {
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-  }
-  #clear-button:hover {
-    width: 30px;
-  }
-  #back-button {
-    width: 50px;
-    height: 50px;
-  }
-  #back-button:hover:after {
-    font-size: 1rem;
-  }
 }
