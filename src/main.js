@@ -41,8 +41,7 @@ function startSiteOnpokemon() {
   }
 }
 
-export let searchNamePokemon = (e) => {
-  e.preventDefault();
+export let searchNamePokemon = () => {
   let name = document.getElementById("name-pokemon").value;
   resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
   pokemons = searchByName(pokemons, resultName);
@@ -55,8 +54,7 @@ export let searchNamePokemon = (e) => {
   }
 };
 
-export let formCheckbox = (e) => {
-  e.preventDefault();
+export let formCheckbox = () => {
   for (let i = 0; i < formCheckType.length; i++) {
     if (formCheckType[i].checked) {
       resultsType += formCheckType[i].value + " ";

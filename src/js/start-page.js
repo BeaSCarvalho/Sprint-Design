@@ -1,5 +1,4 @@
 import { changeFormName, changeFormCheckbox } from "./change-form.js";
-import { clearFormFilters } from "./clear-form.js";
 
 export let startPageHome = () => {
   let rotationPage = false;
@@ -23,7 +22,7 @@ export let startPageFilters = () => {
   if (clickLogo == true) {
     startPageHome();
   }
-  
+
   document
     .getElementById("name-pokemon")
     .addEventListener("change", changeFormName);
@@ -32,7 +31,9 @@ export let startPageFilters = () => {
     .addEventListener("change", changeFormCheckbox);
   document
     .getElementById("clear-button")
-    .addEventListener("click", clearFormFilters);
+    .addEventListener("click", function () {
+      location.reload();
+    });
 };
 
 function heightWindowHome() {
