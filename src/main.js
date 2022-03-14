@@ -18,7 +18,7 @@ import data from "./data/pokemon/pokemon.js";
 let pokemons = data.pokemon;
 const formCheckType = document.querySelectorAll("input[name=type]");
 const formCheckWeakness = document.querySelectorAll("input[name=weakness]");
-let resultCards = document.getElementById("result-cards");
+const resultCards = document.getElementById("result-cards");
 const selectOrder = document.getElementById("order-selector");
 const selectOrderByWeakness = document.getElementById("calculation-selector");
 const percentage = document.getElementById("quantify-text");

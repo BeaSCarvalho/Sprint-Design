@@ -1,4 +1,5 @@
 import { orderToShow, showInOrderOfWeakness } from "../main.js";
+import { startPageFilters } from "./start-page.js";
 
 const namePokemon = document.getElementById("name-pokemon");
 const formCheckType = document.querySelectorAll("input[name=type]");
@@ -22,8 +23,10 @@ export let clearFormFilters = () => {
   document.getElementById("result-cards").innerHTML = "";
   document.getElementById("button-return").innerHTML = "";
   document.getElementById("quantify-text").innerHTML = "";
+
   selectOrder.removeEventListener("change", orderToShow);
   selectOrderByWeakness.removeEventListener("change", showInOrderOfWeakness);
   selectOrder.selectedIndex = 0;
-  selectOrderByWeakness.selectedIndex = 0;
+  selectOrderByWeakness.selectedIndex = 0; 
+  startPageFilters();
 };
