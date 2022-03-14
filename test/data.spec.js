@@ -476,45 +476,14 @@ describe("orderOfWeakness", () => {
   });
 });
 
-/*const something = [
-  {      
-  num: "205",
-  name: "forretress",
-  type: ["bug","steel"],
-  weaknesses: ["fire"]
-  },
-  {
-  num: "213",
-  name: "shuckle",
-  type: ["bug","rock"],
-  weaknesses: ["water","rock","steel"]   
-  }
-]*/
-
 describe("percentagePerFilter", () => {
   it("is a function", () => {
     expect(typeof percentagePerFilter).toBe("function");
   });
 
   it("should return 20% for pokemon type=bug", () => {
-    expect(percentagePerFilter(pokemonsForTest.length)).toEqual(20);
+    const totalOfPokemons = pokemonsForTest.length;
+    expect(percentagePerFilter(pokemonsBugs, totalOfPokemons)).toEqual(20);
   });
 });
 
-
-
-/*it("should return pokemons filtered by type = bug", () => {
-  expect(filterByType(pokemonsForTest, "bug")).toEqual([
-    {
-      num: "205",
-      name: "forretress",
-      type: ["bug", "steel"],
-      weaknesses: ["fire"],
-    },
-    {
-      num: "213",
-      name: "shuckle",
-      type: ["bug", "rock"],
-      weaknesses: ["water", "rock", "steel"],
-    }
-  ]);*/
