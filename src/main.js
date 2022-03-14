@@ -7,13 +7,7 @@ import {
   percentagePerFilter,
 } from "./data.js";
 import { startPageHome, startPageFilters } from "./js/start-page.js";
-import {
-  addButton,
-  createCards,
-  createLiType,
-  createLiWeakness,
-} from "./js/cards.js";
-
+import { addButton, createCards, createLiType } from "./js/cards.js";
 import data from "./data/pokemon/pokemon.js";
 
 let pokemons = data.pokemon;
@@ -46,7 +40,7 @@ export let searchNamePokemon = () => {
   let name = document.getElementById("name-pokemon").value;
   resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
   pokemons = searchByName(pokemons, resultName);
-  createCards(pokemons);
+  createLi(createCards(pokemons));
   showResults();
   if (pokemons == "") {
     resultCards.innerHTML = `
@@ -89,8 +83,6 @@ function showResults() {
     selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
   }
   if (resultName != "") {
-    createLiType();
-    createLiWeakness();
     selectOrder.addEventListener("change", orderToShow);
     selectOrderByWeakness.addEven;
   }
@@ -108,8 +100,6 @@ function activeFilterType(selectedValue) {
     `;
   } else {
     createCards(pokemons);
-    createLiType();
-    createLiWeakness();
   }
 }
 
@@ -121,23 +111,17 @@ function activeFilterWeakness(selectedValue) {
     `;
   } else {
     createCards(pokemons);
-    createLiType();
-    createLiWeakness();
   }
 }
 
 export let orderToShow = () => {
   pokemons = alphabeticOrder(pokemons, selectOrder.value);
   createCards(pokemons);
-  createLiType();
-  createLiWeakness();
 };
 
 export let showInOrderOfWeakness = () => {
   pokemons = orderOfWeakness(pokemons, selectOrderByWeakness.value);
   createCards(pokemons);
-  createLiType();
-  createLiWeakness();
 };
 
 function showPercentagePerFilter() {
