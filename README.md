@@ -181,6 +181,33 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
 
 ## 3. TESTE DE USABILIDADE
 
+- Para realizar o teste de usabilidade, usamos o formulário do Google para coletar informações dos usuários
+- Para acessar o Formulário: https://forms.gle/dgo4oDJE5FzHNzoj8
+
+### 3.1. Formulário:
+
+#### 3.1.1. Perguntas obrigatórias para a página Home:
+
+- Atividade 1 - O que você vê nesta página? O que deveria acontecer em seguida?
+- Atividade 2 - Você encontrou dificuldades para mudar de página? Por quê?
+
+#### 3.1.2. Perguntas obrigatórias para a página Filters:
+
+- Atividade 1 - Use a barra de pesquisa para encontrar um Pokémon pelo nome. O que você esperava que acontecesse? Qual foi o resultado?
+- Atividade 2 - Utilize um dos filtros. O que você esperava como resultado quando executou a filtragem? O que você vê nesta interface da parte de resultados(cards)?
+
+#### 3.1.3. Perguntas opcionais de sugestões e críticas:
+
+- Deixe as suas sugestões e críticas:
+
+### 3.2. Respostas:
+
+- Os usuários encontraram dificuldades para acessar a página Filters, a partir da página Home. Uma sugestão encontrada para informar os usuários é informá-los por texto dentro do texto de boas-vindas.
+
+- Uma dificuldade encontrada na página Filters, é que não será possível pesquisar pelo nome e pelo checkbox ao mesmo tempo. Então, colocamos como correção para o site de bloquear o campo do checkbox, que pesquisa pelo tipo e fraquezas, quando o nome do pokémon for digitado. O inverso ocorreria também para bloquear o nome, ao assinalar o checkbox.
+
+- As sugestões apresentadas foram de fornecer mais informações sobre os pokémons, ao clicar nos cards.
+
 ## 4. FERRAMENTAS UTILIZADAS
   
 - **Planejamento:**
@@ -193,6 +220,7 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
   - **Paleta de Cores com Acessibilidade:** _[Adobe Color](https://color.adobe.com/pt/create/color-wheel)_
   - **Protótipo:** _[Figma](https://www.figma.com/)_
   - **Para fazer Gif:** _[Canvas](https://www.canva.com/pt_br/)_
+  - **Para fazer o Teste de Usabilidade:** _[Google Forms](https://www.google.com/intl/pt-BR/forms/about/)_
 
 - **Web:**
   - **Editor:** _[Visual Studio Code](https://code.visualstudio.com/)_
