@@ -1,6 +1,6 @@
 let resultCards = document.getElementById("result-cards");
-let itemsType = "";
-let itemsWeakness = "";
+let itemsType = [];
+let itemsWeakness = [];
 
 export let addButton = () => {
   document.getElementById("button-return").innerHTML = `
@@ -15,8 +15,8 @@ export let addButton = () => {
 export let createCards = (data) => {
   resultCards.innerHTML = data
     .map((item) => {
-      itemsType = item.type;
-      itemsWeakness = item.weaknesses;
+      itemsType.push(item.type);
+      itemsWeakness.push(item.weaknesses);
       return `
       <div class="card">
         <img class="pokedex-open" src="img/pokedex-open.png">
@@ -44,13 +44,14 @@ export let createCards = (data) => {
 };
 
 export let createLiType = () => {
-  let type = document.querySelectorAll(".list-type");
-  for (let j = 0; j < type.length; j++) {
-    for (let i = 0; i < itemsType.length; i++) {
+  let list = document.querySelectorAll(".list-type");
+  for (let j = 0; j < itemsType.length; j++) {
+    let items = itemsType[j];
+    for (let i = 0; i < items.length; i++) {
       const li = document.createElement("li");
-      li.textContent = `${itemsType[i]}`;
+      li.textContent = `${items[i]}`;
       li.classList.add("li-item");
-      type[j].after(li);
+      list[j].after(li);
 
       if (li.textContent == "bug") {
         li.textContent = "inseto";
@@ -112,13 +113,14 @@ export let createLiType = () => {
 };
 
 export let createLiWeakness = () => {
-  let types = document.querySelectorAll(".list-weakness");
-  for (let j = 0; j < types.length; j++) {
-    for (let i = 0; i < itemsWeakness.length; i++) {
+  let list = document.querySelectorAll(".list-weakness");
+  for (let j = 0; j < itemsWeakness.length; j++) {
+    let items = itemsWeakness[j];
+    for (let i = 0; i < items.length; i++) {
       const li = document.createElement("li");
-      li.textContent = `${itemsWeakness[i]}`;
+      li.textContent = `${items[i]}`;
       li.classList.add("li-item");
-      types[j].after(li);
+      list[j].after(li);
 
       if (li.textContent == "bug") {
         li.textContent = "inseto";

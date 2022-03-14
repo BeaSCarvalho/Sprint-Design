@@ -16,10 +16,6 @@ export let clearFormFilters = () => {
     formCheckType[i].disabled = false;
     formCheckWeakness[i].disabled = false;
   }
-  for (let i = 0; i < formCheckType.length; i++) {
-    formCheckType[i].checked = false;
-    formCheckWeakness[i].checked = false;
-  }
   document.getElementById("result-cards").innerHTML = "";
   document.getElementById("button-return").innerHTML = "";
   document.getElementById("quantify-text").innerHTML = "";
@@ -27,6 +23,7 @@ export let clearFormFilters = () => {
   selectOrder.removeEventListener("change", orderToShow);
   selectOrderByWeakness.removeEventListener("change", showInOrderOfWeakness);
   selectOrder.selectedIndex = 0;
-  selectOrderByWeakness.selectedIndex = 0; 
+  selectOrderByWeakness.selectedIndex = 0;
+
   startPageFilters();
 };

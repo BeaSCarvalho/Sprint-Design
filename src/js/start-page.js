@@ -23,6 +23,7 @@ export let startPageFilters = () => {
   if (clickLogo == true) {
     startPageHome();
   }
+  
   document
     .getElementById("name-pokemon")
     .addEventListener("change", changeFormName);
