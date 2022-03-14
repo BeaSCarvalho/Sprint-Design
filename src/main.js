@@ -7,7 +7,7 @@ import {
   percentagePerFilter,
 } from "./data.js";
 import { startPageHome, startPageFilters } from "./js/start-page.js";
-import { addButton, createCards, createLiType } from "./js/cards.js";
+import { addButton, createCards } from "./js/cards.js";
 import data from "./data/pokemon/pokemon.js";
 
 let pokemons = data.pokemon;
@@ -40,7 +40,7 @@ export let searchNamePokemon = () => {
   let name = document.getElementById("name-pokemon").value;
   resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
   pokemons = searchByName(pokemons, resultName);
-  createLi(createCards(pokemons));
+  createCards(pokemons);
   showResults();
   if (pokemons == "") {
     resultCards.innerHTML = `
