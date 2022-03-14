@@ -4,8 +4,8 @@
 } from "./src/data.js";*/
 
 let resultCards = document.getElementById("result-cards");
-let itemsType = "";
-let itemsWeakness = "";
+let itemsType = [];
+let itemsWeakness = [];
 
 export let addButton = () => {
   document.getElementById("button-return").innerHTML = `
@@ -20,8 +20,8 @@ export let addButton = () => {
 export let createCards = (data) => {
   resultCards.innerHTML = data
     .map((item) => {
-      itemsType = item.type;
-      itemsWeakness = item.weaknesses;
+      itemsType.push(item.type);
+      itemsWeakness.push(item.weaknesses);
       return `
       <div class="card">
         <img class="pokedex-open" src="img/pokedex-open.png">
@@ -48,15 +48,15 @@ export let createCards = (data) => {
     .join("");
 };
 
-export let createLiType = (filterByType) => {
-  let type = document.querySelectorAll(".list-type");
-  for (let e = 0; e < filterByType.length; e++ ) {
-    for (let j = 0; j < filterByType[e].type.length; j++) {
+export let createLiType = () => {
+  let list = document.querySelectorAll(".list-type");
+  for (let j = 0; j < itemsType.length; j++) {
+    let items = itemsType[j];
+    for (let i = 0; i < items.length; i++) {
       const li = document.createElement("li");
-      li.textContent = `${filterByType[e].type[j]}`;
-      console.log(filterByType[e].type[j])
+      li.textContent = `${items[i]}`;
       li.classList.add("li-item");
-      type[e].after(li);
+      list[j].after(li);
 
       if (li.textContent === "bug") {
         li.textContent = "inseto";
@@ -118,15 +118,15 @@ export let createLiType = (filterByType) => {
 
 };
 
-export let createLiWeakness = (filterByType) => {
-  let types = document.querySelectorAll(".list-weakness");
-  for (let e = 0; e < filterByType.length; e++ ) {
-    for (let j = 0; j < filterByType[e].weaknesses.length; j++) {
+export let createLiWeakness = () => {
+  let list = document.querySelectorAll(".list-weakness");
+  for (let j = 0; j < itemsWeakness.length; j++) {
+    let items = itemsWeakness[j];
+    for (let i = 0; i < items.length; i++) {
       const li = document.createElement("li");
-      li.textContent = `${filterByType[e].type[j]}`;
-      console.log(filterByType[e].type[j])
+      li.textContent = `${items[i]}`;
       li.classList.add("li-item");
-      types[e].after(li);
+      list[j].after(li);
 
       if (li.textContent == "bug") {
         li.textContent = "inseto";
