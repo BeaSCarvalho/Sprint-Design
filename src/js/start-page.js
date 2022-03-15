@@ -1,4 +1,4 @@
-import { changeFormName, changeFormCheckbox } from "./change-form.js";
+/*import { changeFormName, changeFormCheckbox } from "./change-form.js";
 
 export let startPageHome = () => {
   let rotationPage = false;
@@ -44,4 +44,4 @@ function heightWindowHome() {
   let sumAll = heightWindow - (heightLogo + heightText + heightTab);
   let containerMain = document.querySelector(".main-home");
   containerMain.style.height = sumAll + "px";
-}
+}*/

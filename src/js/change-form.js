@@ -1,4 +1,4 @@
-import { searchNamePokemon, formCheckbox } from "../main.js";
+/*import { searchNamePokemon, formCheckbox } from "../main.js";
 const namePokemon = document.getElementById("name-pokemon");
 const formCheckType = document.querySelectorAll("input[name=type]");
 const formCheckWeakness = document.querySelectorAll("input[name=weakness]");
@@ -50,4 +50,4 @@ export let changeFormCheckbox = (e) => {
     namePokemon.addEventListener("change", changeFormName);
     changeCheckboxGeneral.addEventListener("change", changeFormCheckbox);
   }
-};
+};*/
