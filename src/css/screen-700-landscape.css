@@ -1,12 +1,6 @@
 @charset "utf-8";
 
 @media screen and (min-height: 700px) and (orientation: landscape) {
-  .container-general {
-    margin: auto auto;
-  }
-  .container-pokemon {
-    background-position: center top;
-  }
   .logo-onpokemon {
     width: 310px;
     height: 41px;

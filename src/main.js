@@ -6,40 +6,35 @@ import {
   orderOfWeakness,
   percentagePerFilter,
 } from "./data.js";
-import { startPageHome, startPageFilters } from "./js/start-page.js";
-import { addButton, createCards } from "./js/cards.js";
+import { addButton, createCards } from "./cards.js";
 import data from "./data/pokemon/pokemon.js";
 
 let pokemons = data.pokemon;
-const formCheckType = document.querySelectorAll("input[name=type]");
-const formCheckWeakness = document.querySelectorAll("input[name=weakness]");
 const resultCards = document.getElementById("result-cards");
+const namePokemon = document.getElementById("name-pokemon");
 const selectOrder = document.getElementById("order-selector");
 const selectOrderByWeakness = document.getElementById("calculation-selector");
 const percentage = document.getElementById("quantify-text");
-let resultsType = "";
-let resultsWeakness = "";
-let resultName = "";
+const clearButton = document.getElementById("clear-button");
 
 startSiteOnpokemon();
 
-function startSiteOnpokemon() {
-  let url = Array.from(location.href).join();
-  url = url.replace(/\W/g, "");
-  url = url.includes("filters");
-  if (url === true) {
-    startPageFilters();
-  } else {
-    let containerMain = document.querySelector(".main-home");
-    containerMain.style.height = "";
-    startPageHome();
-  }
+function startPageFilters() {
+  namePokemon.addEventListener("change", searchNamePokemon);
+  //Adicionar filtro Types
+  //Adicionar filtro Weaknesses
+  selectOrder.addEventListener("change", orderToShow);
+  selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
+  addButton();
+  clearButton.addEventListener("click", function () {
+    location.reload();
+  });
 }
 
-export let searchNamePokemon = () => {
-  let name = document.getElementById("name-pokemon").value;
-  resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
-  pokemons = searchByName(pokemons, resultName);
+function searchNamePokemon() {
+  let name = namePokemon.value;
+  name = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
+  pokemons = searchByName(pokemons, name);
   createCards(pokemons);
   showResults();
   if (pokemons == "") {
@@ -47,49 +42,6 @@ export let searchNamePokemon = () => {
     <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro nome!</p>
     `;
   }
-};
-
-export let formCheckbox = () => {
-  for (let i = 0; i < formCheckType.length; i++) {
-    if (formCheckType[i].checked) {
-      resultsType += formCheckType[i].value + " ";
-    }
-    if (formCheckWeakness[i].checked) {
-      resultsWeakness += formCheckWeakness[i].value + " ";
-    }
-  }
-  showResults();
-};
-
-function showResults() {
-  if (resultsType != "") {
-    resultsType = resultsType.split(" ");
-    resultsType.pop();
-    for (let i = 0; i < resultsType.length; i++) {
-      activeFilterType(resultsType[i]);
-      showPercentagePerFilter();
-    }
-    selectOrder.addEventListener("change", orderToShow);
-    selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
-  }
-  if (resultsWeakness != "") {
-    resultsWeakness = resultsWeakness.split(" ");
-    resultsWeakness.pop();
-    for (let i = 0; i < resultsWeakness.length; i++) {
-      activeFilterWeakness(resultsWeakness[i]);
-      showPercentagePerFilter();
-    }
-    selectOrder.addEventListener("change", orderToShow);
-    selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
-  }
-  if (resultName != "") {
-    selectOrder.addEventListener("change", orderToShow);
-    selectOrderByWeakness.addEven;
-  }
-  resultName = "";
-  resultsType = "";
-  resultsWeakness = "";
-  addButton();
 }
 
 function activeFilterType(selectedValue) {
@@ -127,4 +79,23 @@ export let showInOrderOfWeakness = () => {
 function showPercentagePerFilter() {
   const showThePercentage = percentagePerFilter(pokemons, data.pokemon.length);
   percentage.innerHTML = `Esse filtro representa ${showThePercentage}% do total de Pokemons.`;
+}
+
+//----------      Código abaixo está correto   -------------//
+
+function startSiteOnpokemon() {
+  startPageHome();
+  startPageFilters();
+}
+
+function startPageHome() {
+  let heightWindow = Number(window.innerHeight);
+  let heightLogo = Number(document.getElementById("header-home").offsetHeight);
+  let heightText = Number(document.getElementById("introduction").offsetHeight);
+  let heightContacts = Number(
+    document.getElementById("details-info").offsetHeight
+  );
+  let sumAll = heightWindow - (heightLogo + heightText + heightContacts);
+  let containerMain = document.getElementById("main-home");
+  containerMain.style.height = sumAll + "px";
 }

@@ -8,45 +8,31 @@
   <link rel="stylesheet" href="css/page-home.css" />
 </head>
 
-<body class="container-home">
-  <div class="container-general">
+<body id="container-general">
 
-    <section class="container-pokemon">
-      <header class="header-home">
-        <a href="index.html">
-          <img class="logo-onpokemon" alt="Logo do OnPokemon" src="img/logo.png">
-        </a>
-      </header>
-      <main class="main-home">
-        <a href="filters.html" class="pokedex">
-          <img class="pokedex-close" alt="Clique na Pokédex fechada" src="img/pokedex-close.png">
-        </a>
-      </main>
-    </section>
-
-    <section class="intro-text">
+  <div id="container-pokemon">
+    <header id="header-home">
+      <a href="index.html">
+        <img class="logo-onpokemon" alt="Logo do OnPokemon" src="img/logo.png">
+      </a>
+    </header>
+    <main id="main-home">
+      <a href="filters.html">
+        <img id="pokedex-close" alt="Clique na Pokédex fechada" src="img/pokedex-close.png">
+      </a>
+    </main>
+    <section id="introduction">
       <p>Olá Treinadora!<br>
         Aqui você consegue ver os tipos e fraquezas de seus Pokémons para se preparar para o combate.<br>Abra a Pokédex e descubra esse mundo!
       </p>
     </section>
 
-    <details class="details-info">
-      <summary class="tab-title">INFORMAÇÕES</summary>
-      <p class="tab-text">
-        <strong>ONPOKEMON</strong> é um site para filtrar dados sobre pokémons,
-        separando-os por tipo e fraqueza. Esses dados podem ser ordenados pelo número do pokémon,
-        por ordem alfabética os nomes e pelas maiores e menores quantidades de Fraquezas.
-        <br><br>
-        Para mais informações, envie um e-mail para:
-        <br><br>
-        Adriana Tiemi Watanabe -
-        <br>
-        adriana.t.watanabe@gmail.com
-        <br><br>
-        Beatriz de Sousa Carvalho -
-        <br>
-        beaproscarva@gmail.com
-      </p>
+    <details id="details-info">
+      <summary id="tab-title">INFORMAÇÕES</summary>
+      <address id="tab-text">
+        <p><span class="emphasis">Adriana Tiemi Watanabe</span> -<br> adriana.t.watanabe@gmail.com</p>
+        <p><span class="emphasis">Beatriz de Sousa Carvalho</span> -<br> beaproscarva@gmail.com </p>
+      </address>
     </details>
   </div>
   <script src="main.js" type="module"></script>
