@@ -84,8 +84,16 @@ function showPercentagePerFilter() {
 //----------      Código abaixo está correto   -------------//
 
 function startSiteOnpokemon() {
-  startPageHome();
-  startPageFilters();
+  let url = Array.from(location.href).join();
+  url = url.replace(/\W/g, "");
+  url = url.includes("filters");
+  if (url === true) {
+    startPageFilters();
+  } else {
+    let containerMain = document.getElementById("main-home");
+    containerMain.style.height = "";
+    startPageHome();
+  }
 }
 
 function startPageHome() {
