@@ -7,7 +7,7 @@ import {
   percentagePerFilter,
 } from "./data.js";
 /*import { startPageHome, startPageFilters } from "./js/start-page.js";*/
-import { /*addButton,*/ createCards } from "./js/cards.js";
+import { addButton, createCards } from "./js/cards.js";
 import data from "./data/pokemon/pokemon.js";
 
 let pokemons = data.pokemon;
@@ -22,9 +22,9 @@ let resultsType = "";
 let resultsWeakness = "";
 let resultName = "";
 
-//startSiteOnpokemon();
+startSiteOnpokemon();
 
-/*function startSiteOnpokemon() {
+function startSiteOnpokemon() {
   let url = Array.from(location.href).join();
   url = url.replace(/\W/g, "");
   url = url.includes("filters");
@@ -35,7 +35,7 @@ let resultName = "";
     containerMain.style.height = "";
     startPageHome();
   }
-}*/
+}
 
 createCards(pokemons);
 
@@ -49,6 +49,7 @@ function searchNamePokemon(e) {
     <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro nome!</p>
     `;
   }
+  pokemons = data.pokemon;
 };
 
 nameTyped.addEventListener("keyup", searchNamePokemon);
@@ -62,6 +63,7 @@ function activeFilterType(e) {
     <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
     `;
   }
+  pokemons = data.pokemon;
 };
 
 selectType.addEventListener("change", activeFilterType);
@@ -75,6 +77,7 @@ function activeFilterWeakness(e) {
     <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
     `;
   }
+  pokemons = data.pokemon
 };
 
 selectWeakness.addEventListener("change", activeFilterWeakness);
@@ -100,6 +103,8 @@ function showPercentagePerFilter() {
   const showThePercentage = percentagePerFilter(pokemons, totalOfPokemons);
   percentage.innerHTML = `Esse filtro representa ${showThePercentage}% do total de Pokemons.`;
 }
+
+showPercentagePerFilter()
 
 
 

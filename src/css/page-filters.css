@@ -51,7 +51,7 @@
   width: 100%;
 }
 
-.full-checkbox {
+.full-filters {
   width: 100%;
 }
 
@@ -88,10 +88,6 @@
 
 #name-pokemon:disabled::placeholder {
   color: #333;
-}
-
-#container-checkbox {
-  display: grid;
 }
 
 /*.results-order {

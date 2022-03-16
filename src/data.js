@@ -41,8 +41,8 @@ export const orderOfWeakness = (data, selectedOrder) => {
 };
 
 export const percentagePerFilter = (data, totalOfPokemons) => {
+  console.log(data.length)
   const percentageOfPokemons = (data.length / totalOfPokemons) * 100;
-  console.log(percentageOfPokemons)
   const roundedNumber = Math.round(percentageOfPokemons * 100) / 100;
   return roundedNumber;
 };

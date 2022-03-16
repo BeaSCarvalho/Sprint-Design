@@ -51,28 +51,6 @@
     padding: 10px;
     margin-bottom: 30px;
   }
-  #container-checkbox {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .checkbox-name {
-    font-size: 1.3rem;
-    padding: 6px 0px;
-    grid-template-columns: 110px repeat(2, 80px);
-    grid-auto-flow: column;
-  }
-  .checkbox-title {
-    font-size: 1.3rem;
-    padding-top: 2px;
-    padding-bottom: 2px;
-  }
-  .specify-type {
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
-  .specify-weaknesses {
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
   .results-text {
     font-size: 1.6rem;
     padding-top: 30px;
