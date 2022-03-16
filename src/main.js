@@ -22,7 +22,7 @@ let resultsType = "";
 let resultsWeakness = "";
 let resultName = "";
 
-startSiteOnpokemon();
+/*startSiteOnpokemon();
 
 function startSiteOnpokemon() {
   let url = Array.from(location.href).join();
@@ -35,7 +35,7 @@ function startSiteOnpokemon() {
     containerMain.style.height = "";
     startPageHome();
   }
-}
+}*/
 
 createCards(pokemons);
 
