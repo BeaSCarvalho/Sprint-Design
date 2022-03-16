@@ -21,120 +21,76 @@
     <main id="main-filters">
       <h1 class="filter-title">FILTRAR</h1>
 
-      <form action="/main.js" class="full-checkbox" name="formFilters">
+      <form class="full-filters" name="formFilters">
         <label class="name-text">Pelo nome:</label>
         <input type="text" id="name-pokemon" placeholder="Insira o nome do Pokémon">
-        <div class="checkbox-name">
-          <p></p>
-          <p class="specify-type">Tipo</p>
-          <p class="specify-weaknesses">Fraqueza</p>
-        </div>
-        <section id="container-checkbox">
-          <p class="checkbox-name">Aço
-            <input type="checkbox" class="checkbox" name="type" value="steel">
-            <input type="checkbox" class="checkbox" name="weakness" value="steel">
-          </p>
-          <p class="checkbox-name">Água
-            <input type="checkbox" class="checkbox" name="type" value="water">
-            <input type="checkbox" class="checkbox" name="weakness" value="water">
-          </p>
-          <p class="checkbox-name">Dragão
-            <input type="checkbox" class="checkbox" name="type" value="dragon">
-            <input type="checkbox" class="checkbox" name="weakness" value="dragon">
-          </p>
-          <p class="checkbox-name">Elétrico
-            <input type="checkbox" class="checkbox" name="type" value="electric">
-            <input type="checkbox" class="checkbox" name="weakness" value="eletric">
-          </p>
-          <p class="checkbox-name">Fada
-            <input type="checkbox" class="checkbox" name="type" value="fairy">
-            <input type="checkbox" class="checkbox" name="weakness" value="fairy">
-          </p>
-          <p class="checkbox-name">Fantasma
-            <input type="checkbox" class="checkbox" name="type" value="ghost">
-            <input type="checkbox" class="checkbox" name="weakness" value="ghost">
-          </p>
-          <p class="checkbox-name">Fogo
-            <input type="checkbox" class="checkbox" name="type" value="fire">
-            <input type="checkbox" class="checkbox" name="weakness" value="fire">
-          </p>
-          <p class="checkbox-name">Gelo
-            <input type="checkbox" class="checkbox" name="type" value="ice">
-            <input type="checkbox" class="checkbox" name="weakness" value="ice">
-          </p>
-          <p class="checkbox-name">Inseto
-            <input type="checkbox" class="checkbox" name="type" value="bug">
-            <input type="checkbox" class="checkbox" name="weakness" value="bug">
-          </p>
-          <p class="checkbox-name">Lutador
-            <input type="checkbox" class="checkbox" name="type" value="fight">
-            <input type="checkbox" class="checkbox" name="weakness" value="fight">
-          </p>
-          <p class="checkbox-name">Normal
-            <input type="checkbox" class="checkbox" name="type" value="normal">
-            <input type="checkbox" class="checkbox" name="weakness" value="normal">
-          </p>
-          <p class="checkbox-name">Pedra
-            <input type="checkbox" class="checkbox" name="type" value="rock">
-            <input type="checkbox" class="checkbox" name="weakness" value="rock">
-          </p>
-          <p class="checkbox-name">Planta
-            <input type="checkbox" class="checkbox" name="type" value="grass">
-            <input type="checkbox" class="checkbox" name="weakness" value="grass">
-          </p>
-          <p class="checkbox-name">Psíquico
-            <input type="checkbox" class="checkbox" name="type" value="psychic">
-            <input type="checkbox" class="checkbox" name="weakness" value="psychic">
-          </p>
-          <p class="checkbox-name">Sombrio
-            <input type="checkbox" class="checkbox" name="type" value="dark">
-            <input type="checkbox" class="checkbox" name="weakness" value="dark">
-          </p>
-          <p class="checkbox-name">Terra
-            <input type="checkbox" class="checkbox" name="type" value="ground">
-            <input type="checkbox" class="checkbox" name="weakness" value="ground">
-          </p>
-          <p class="checkbox-name">Veneno
-            <input type="checkbox" class="checkbox" name="type" value="poison">
-            <input type="checkbox" class="checkbox" name="weakness" value="poison">
-          </p>
-          <p class="checkbox-name">Voador
-            <input type="checkbox" class="checkbox" name="type" value="flying">
-            <input type="checkbox" class="checkbox" name="weakness" value="flying">
-          </p>
-        </section>
-        <div class="button">
-          <button type="reset" id="clear-button">
-            &#10008;
-          </button>
-          <button type="button" id="confirm-button">
-            &#10004;
-          </button>
-        </div>
-        <span id="error-form"></span>
-      </form>
-    </main>
 
-    <section class="results-order">
-      <p class="quantify-text" id="quantify-text"></p>
-      <form action="/main.js" class="order-filter">
-        <select class="order-calculation" id="order-selector">
-          <option value="number">Número da Pokédex</option>
-          <option value="name-az">Nome (A-Z)</option>
-          <option value="name-za">Nome (Z-A)</option>
-        </select>
+        <section class="results-order">
+          <select class="order-calculation" id="filter-type">
+            <option selected disabled>Tipos</option>
+            <option value="steel">Aço</option>
+            <option value="water">Água</option>
+            <option value="dragon">Dragão</option>
+            <option value="electric">Elétrico</option>
+            <option value="fairy">Fada</option>
+            <option value="ghost">Fantasma</option>
+            <option value="fire">Fogo</option>
+            <option value="ice">Gelo</option>
+            <option value="bug">Inseto</option>
+            <option value="fight">Lutador</option>
+            <option value="normal">Normal</option>
+            <option value="rock">Pedra</option>
+            <option value="grass">Planta</option>
+            <option value="psychic">Psíquico</option>
+            <option value="dark">Sombrio</option>
+            <option value="ground">Terra</option>
+            <option value="poison">Veneno</option>
+            <option value="flying">Voador</option>
+          </select>
 
-        <select class="order-calculation" id="calculation-selector">
-          <option selected>Ordenado por:</option>
-          <option value="more-weakness">Maior quantidade de fraquezas</option>
-          <option value="less-weakness">Menor quantidade de fraquezas</option>
-        </select>
+          <select class="order-calculation" id="filter-weaknesses">
+            <option selected disabled>Fraquezas</option>
+            <option value="steel">Aço</option>
+            <option value="water">Água</option>
+            <option value="dragon">Dragão</option>
+            <option value="electric">Elétrico</option>
+            <option value="fairy">Fada</option>
+            <option value="ghost">Fantasma</option>
+            <option value="fire">Fogo</option>
+            <option value="ice">Gelo</option>
+            <option value="bug">Inseto</option>
+            <option value="fight">Lutador</option>
+            <option value="normal">Normal</option>
+            <option value="rock">Pedra</option>
+            <option value="grass">Planta</option>
+            <option value="psychic">Psíquico</option>
+            <option value="dark">Sombrio</option>
+            <option value="ground">Terra</option>
+            <option value="poison">Veneno</option>
+            <option value="flying">Voador</option>
+          </select>
+
+          <select class="order-calculation" id="order-selector">
+            <option value="number">Número da Pokédex</option>
+            <option value="name-az">Nome (A-Z)</option>
+            <option value="name-za">Nome (Z-A)</option>
+          </select>
+
+          <select class="order-calculation" id="calculation-selector">
+            <option selected disabled>Ordenado por:</option>
+            <option value="more-weakness">Maior quantidade de fraquezas</option>
+            <option value="less-weakness">Menor quantidade de fraquezas</option>
+          </select>
+
+          <p class="quantify-text" id="quantify-text"></p>  
+        </section>  
       </form>
-    </section>
-    <section id="result-cards">
-    </section>
-    <div id="button-return">
-    </div>
+
+      <section id="result-cards">
+      </section>
+      <div id="button-return">
+      </div>
+    </main>  
     <script src="main.js" type="module"></script>
   </div>
 </body>

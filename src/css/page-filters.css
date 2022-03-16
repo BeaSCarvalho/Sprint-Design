@@ -51,7 +51,7 @@
   width: 100%;
 }
 
-.full-checkbox {
+.full-filters {
   width: 100%;
 }
 
@@ -90,11 +90,7 @@
   color: #333;
 }
 
-#container-checkbox {
-  display: grid;
-}
-
-.results-order {
+/*.results-order {
   max-width: 1020px;
   margin: 0 auto;
   display: grid;
@@ -103,7 +99,7 @@
   background-color: var(--beige);
   padding-left: 20px;
   padding-right: 20px;
-}
+}*/  
 
 .results-text {
   font-weight: 600;
@@ -114,8 +110,10 @@
   padding: 10px 0px 10px 0px;
 }
 
-.order-calculation {
-  width: 320px;
+.order-calculation,
+.filter-weaknesses,
+.filter-type {
+  width: 240px;
   background-color: var(--medium-beige);
   box-shadow: var(--shadown-drop-medium);
   border: none;
@@ -170,7 +168,6 @@
   border: none;
   box-shadow: var(--shadown-drop-medium);
   margin-top: 10px;
-  /*transition: width 1s;*/
 }
 
 #clear-button {
@@ -184,7 +181,6 @@
   border-radius: 30px;
   border: none;
   box-shadow: var(--shadown-drop-medium);
-  /*transition: width 1s;*/
 }
 
 #back-button {
@@ -201,44 +197,5 @@
   bottom: 10px;
   right: 10px;
   margin-top: 10px;
-  /*transition: width 1s;*/
 }
-/*
-#confirm-button:hover {
-  background-color: #318c05;
-  width: 300px;
-  text-align: left;
-}
-#confirm-button:hover:after {
-  content: "  Filtrar";
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-align: left;
-  padding-left: 10px;
-}
-#clear-button:hover {
-  background-color:#c04000;
-  width: 300px;
-  text-align: left;
-}
-#clear-button:hover:after {
-  content: "  Limpar Formulário";
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-align: left;
-  padding-left: 10px;
-}
-#back-button:hover {
-  background-color: var(--dark-brown);
-  width: 400px;
-  padding-left: 20px;
-  text-align: left;
-}
-#back-button:hover::after {
-  content: "  Voltar para Filtragem";
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-align: left;
-  padding-left: 10px;
-}
-*/
+
