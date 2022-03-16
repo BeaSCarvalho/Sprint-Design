@@ -101,7 +101,7 @@ function startPageHome() {
   let heightLogo = Number(document.getElementById("header-home").offsetHeight);
   let heightText = Number(document.getElementById("introduction").offsetHeight);
   let heightContacts = Number(
-    document.getElementById("details-info").offsetHeight
+    document.getElementById("info-contacts").offsetHeight
   );
   let sumAll = heightWindow - (heightLogo + heightText + heightContacts);
   let containerMain = document.getElementById("main-home");
