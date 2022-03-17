@@ -1,116 +1,77 @@
-@charset "utf-8";
 @import url("reset.css");
 @import url("cards.css");
 @import url("variables.css");
 @import url("colors-pokemon.css");
+@import url("page-filters-querie.css");
 
-.container-filters {
-  margin: 0px;
-  padding: 0px;
-  background-color: var(--background-green);
-  font-family: "Segoe UI", Helvetica, Arial, Verdana;
-  color: var(--black);
+#container-general {
+  background-color: var(--color-green-background);
+  font-family: var(--font-pattern);
 }
-
-.container-general-filters {
+#container-pokemon {
   max-width: 1060px;
-  margin: 0 auto;
+  background-color: var(--color-beige);
   display: grid;
-  grid-template-columns: 20px;
-  justify-content: center;
-  justify-items: center;
+  margin: 0 auto;
+  grid-template-columns: repeat(1, 1fr);
 }
-
 #header-filters {
-  max-width: 1060px;
-  margin: 0 auto;
-  background-color: var(--dark-brown);
-  display: flex;
-  place-content: center;
+  background-color: var(--color-dark-brown);
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
-
 #main-filters {
-  max-width: 1020px;
   margin: 0 auto;
-  background-color: var(--beige);
+  background-color: var(--color-beige);
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 0.1fr 1fr;
   justify-items: start;
   padding-left: 20px;
   padding-right: 20px;
 }
-
 .filter-title {
-  font-weight: bold;
-  width: 100%;
-}
-
-.full-checkbox {
-  width: 100%;
-}
-
-.name-text {
-  padding-bottom: 10px;
-  font-weight: 600;
   display: block;
+  font-weight: bold;
+  font-family: var(--font-pattern);
+  text-align: left;
 }
-
-#name-pokemon {
-  background-color: var(--medium-beige);
-  border: rgb(217, 139, 116) solid 1px;
-  border-radius: 10px;
-  box-shadow: var(--shadown-inner);
-  width: 300px;
+.form-filters {
+  width: 100%;
 }
-
-#name-pokemon::placeholder {
-  color: #471f1f;
-  font-size: 1.2rem;
-}
-
-#name-pokemon:focus {
-  border: 0;
-  box-shadow: var(--shadown-drop-fort);
-}
-
-#name-pokemon:disabled {
-  background-color: #cdb7b5;
-  border: #cdb7b5 solid 1px;
-  cursor: not-allowed;
-  box-shadow: var(--shadown-drop-fort);
-}
-
-#name-pokemon:disabled::placeholder {
-  color: #333;
-}
-
-#container-checkbox {
-  display: grid;
-}
-
-.results-order {
+#results-order {
   max-width: 1020px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
   place-items: start;
-  background-color: var(--beige);
-  padding-left: 20px;
-  padding-right: 20px;
 }
-
-.results-text {
+#name-text {
+  font-family: var(--font-pattern);
   font-weight: 600;
-  padding: 20px 0px;
+  color: var(--color-black);
+  padding-bottom: 5px;
 }
-
-.quantify-text {
-  padding: 10px 0px 10px 0px;
+#name-pokemon {
+  background-color: var(--color-medium-beige);
+  border: var(--border-input);
+  border-radius: 10px;
+  box-shadow: var(--shadown-inner);
+  width: 260px;
+  margin-bottom: 20px;
 }
-
+#name-pokemon::placeholder {
+  color: var(--color-black);
+}
+#name-pokemon:focus {
+  border: 0;
+  box-shadow: var(--shadown-drop-fort);
+}
 .order-calculation {
-  width: 320px;
-  background-color: var(--medium-beige);
+  width: 280px;
+  background-color: var(--color-medium-beige);
   box-shadow: var(--shadown-drop-medium);
   border: none;
   border-radius: 10px;
@@ -120,28 +81,45 @@
   background-repeat: no-repeat;
   background-size: auto 30%;
   outline: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
   appearance: none;
+  font-weight: var(--font-bold);
+  color: var(--color-black);
   cursor: pointer;
-  margin-right: 10px;
 }
-
-.order-calculation:hover {
-  background-color: #a96f57;
-}
-
 @-moz-document url-prefix() {
   select {
-    color: rgba(0, 0, 0, 0);
-    text-shadow: 0 0 0 #ffffff;
+    color: var(--color-black-fort);
+    text-shadow: var(--fort-shadow);
   }
 }
-
-.button {
-  text-align: right;
+#back-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: var(--shadown-drop-medium);
+  color: var(--white);
+  font-size: 2.6rem;
+  background-color: var(--color-medium-brown);
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding-bottom: 10px;
 }
-
+#quantify-text {
+  min-width: 260px;
+  background-color: var(--color-green-screen);
+  border-radius: 11px;
+  border: var(--border-input-green);
+  font-family: var(--font-spaced);
+  font-weight: var(--font-bold);
+  color: var(--dark-brown);
+  font-size: 1rem;
+  box-shadow: var(--shadown-inner-green);
+  padding: 10px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
 #error-form {
   font-weight: 600;
   padding: 20px 0px;
@@ -149,91 +127,19 @@
   text-align: center;
   line-height: 1.8;
 }
-
-.button-none {
-  display: none;
+#quantify-text::after {
+  content: "|";
+  opacity: 1;
+  margin-left: 5px;
+  display: inline-block;
+  animation: blink 0.7s infinite;
 }
-
-#confirm-button {
-  font-size: 1.8rem;
-  color: #fff0dd;
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
-  background-color: #45ab15;
-  border: none;
-  box-shadow: var(--shadown-drop-medium);
-  margin-top: 10px;
-  /*transition: width 1s;*/
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
-
-#clear-button {
-  margin: 0px 20px;
-  margin-top: 10px;
-  background-color: #dd3333;
-  font-size: 1.8rem;
-  color: #fff0dd;
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
-  border: none;
-  box-shadow: var(--shadown-drop-medium);
-  /*transition: width 1s;*/
-}
-
-#back-button {
-  font-size: 2.4rem;
-  color: #fff0dd;
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
-  border: none;
-  background-color: var(--medium-brown);
-  box-shadow: var(--shadown-drop-medium);
-  padding-bottom: 15px;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  margin-top: 10px;
-  /*transition: width 1s;*/
-}
-/*
-#confirm-button:hover {
-  background-color: #318c05;
-  width: 300px;
-  text-align: left;
-}
-#confirm-button:hover:after {
-  content: "  Filtrar";
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-align: left;
-  padding-left: 10px;
-}
-#clear-button:hover {
-  background-color:#c04000;
-  width: 300px;
-  text-align: left;
-}
-#clear-button:hover:after {
-  content: "  Limpar Formulário";
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-align: left;
-  padding-left: 10px;
-}
-#back-button:hover {
-  background-color: var(--dark-brown);
-  width: 400px;
-  padding-left: 20px;
-  text-align: left;
-}
-#back-button:hover::after {
-  content: "  Voltar para Filtragem";
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-align: left;
-  padding-left: 10px;
-}
-*/
-

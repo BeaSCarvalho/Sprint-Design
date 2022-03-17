@@ -1,68 +1,65 @@
-@charset "utf-8";
 @import url("reset.css");
 @import url("variables.css");
 @import url("page-home-querie.css");
 
 #container-general {
-  background-color: var(--background-green);
+  background-color: var(--color-green-background);
   font-family: var(--font-pattern);
   height: 100vh;
 }
 #container-pokemon {
   max-width: 1060px;
   margin: 0 auto;
+  display: grid;
   grid-template-columns: repeat(1, 1fr);
 }
-#header-home,
-#info-contacts {
-  background-color: var(--dark-brown);
-}
-#container-pokemon,
-#header-home,
-#main-home {
-  display: grid;
-}
-#header-home,
-#main-home,
-#info-contacts {
+#header-home {
   width: 100%;
-}
-#header-home,
-#main-home {
+  background-color: var(--color-dark-brown);
+  display: grid;
   justify-content: center;
   align-items: center;
 }
 #main-home {
+  width: 100%;
   background-image: url(../img/pokemon-back.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 #introduction {
   font-family: var(--font-spaced);
-  color: var(--dark-brown);
-  background-color: var(--beige);
+  color: var(--color-dark-brown);
+  background-color: var(--color-beige);
+  font-weight: var(--font-bold);
 }
 #introduction,
-.emphasis,
-#info-title {
-  font-weight: var(--bold);
+.emphasis {
+  font-weight: var(--font-bold);
 }
 #pokedex-close {
   animation: neon 1s alternate infinite;
 }
 @keyframes neon {
   from {
-    filter: drop-shadow(0 0 0 var(--cor-neon-blue));
+    filter: drop-shadow(0 0 0 var(--color-blue-neon));
   }
   to {
-    filter: drop-shadow(0 0 60px var(--cor-neon-blue));
+    filter: drop-shadow(0 0 60px var(--color-blue-neon));
   }
+}
+#info-contacts {
+  width: 100%;
+  background-color: var(--color-dark-brown);
 }
 #info-title {
   display: block;
-  color: var(--beige);
+  color: var(--color-beige);
   text-align: center;
+  font-weight: var(--font-bold);
   cursor: pointer;
 }
 .modal-container {
@@ -74,23 +71,20 @@
   left: 0;
   z-index: 2000;
   display: none;
-}
-.modal-container {
   justify-content: center;
   align-items: center;
 }
-.modal-container.active,
-#contacts,
-.container-contact {
+.modal-container.active {
   display: flex;
 }
 .container-contact {
+  display: flex;
   align-items: center;
   place-items: center;
 }
 .modal,
 .close-modal {
-  background: var(--beige);
+  background: var(--color-beige);
   box-shadow: var(--shadown-drop-modal);
   border: var(--border-modal);
 }
@@ -107,8 +101,8 @@
   right: -20px;
   position: absolute;
   font-size: 1.5rem;
-  color: var(--dark-brown);
-  font-weight: var(--bold);
+  color: var(--color-dark-brown);
+  font-weight: var(--font-bold);
   font-family: var(--font-spaced);
   cursor: pointer;
 }
@@ -135,6 +129,7 @@
   padding: 10px 0px;
 }
 #contacts {
+  display: flex;
   flex-direction: column;
   place-items: center;
 }

@@ -7,7 +7,7 @@ import {
   orderOfWeakness,
   percentagePerFilter,
 } from "./js/data.js";
-import { addButton, createCards } from "./js/cards.js";
+import { createCards } from "./js/cards.js";
 import data from "./data/pokemon/pokemon.js";
 
 let pokemons = data.pokemon;
@@ -16,7 +16,7 @@ const namePokemon = document.getElementById("name-pokemon");
 const selectOrder = document.getElementById("order-selector");
 const selectOrderByWeakness = document.getElementById("calculation-selector");
 const percentage = document.getElementById("quantify-text");
-const clearButton = document.getElementById("clear-button");
+const cleanButton = document.getElementById("clean-button");
 
 startSiteOnpokemon();
 
@@ -98,4 +98,15 @@ function startSiteOnpokemon() {
     containerMain.style.height = "";
     startPageHome();
   }
+}
+
+const phrase = document.querySelector("#quantify-text");
+typeWriter(phrase);
+
+function typeWriter(letter) {
+  const textArray = letter.innerHTML.split("");
+  letter.innerHTML = "";
+  textArray.forEach((arr, i) => {
+    setTimeout(() => (letter.innerHTML += arr), 75 * i);
+  });
 }

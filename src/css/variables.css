@@ -1,27 +1,42 @@
 @charset "utf-8";
 
 :root {
-  --background-green: #bfb63b;
-  --black: #191c1f;
-  --dark-brown: #471f1f;
-  --medium-brown: #713e03;
-  --medium-beige: #e9a588;
-  --beige: #ffdbac;
-  --cor-neon-blue: cyan;
+  --color-green-background: #bfb63b;
+  --color-green-screen: rgba(0, 255, 48, 0.8);
+  --color-green-dark: #107313;
+  --color-blue-neon: cyan;
+  --color-red: #dd3333;
+  --color-white: #fff0dd;
+  --color-black-fort: #000000;
+  --color-black: #191c1f;
+  --color-dark-brown: #471f1f;
+  --color-medium-brown: #713e03;
+  --color-medium-brown-red: #763636;
+  --color-light-brown: #74564a;
+  --color-medium-beige: #e9a588;
+  --color-beige: #ffdbac;
+  --color-gray: #737373;
 
-  --shadown-inner-fort: inset 8px 8px 8px #763636;
-  --shadown-inner: inset 3px 3px 4px #763636;
-  --shadown-drop-fort-fort: 12px 15px 15px #737373;
-  --shadown-drop-fort: 6px 8px 8px #737373;
-  --shadown-drop-medium: 6px 4px 4px #737373;
-  --shadown-drop-weak: 3px 2px 2px #737373;
+  --shadown-inner-fort: inset 8px 8px 8px;
+  --shadown-inner: inset 3px 3px 3px var(--color-medium-brown-red);
+  --shadown-inner-green: inset 4px 4px 4px var(--color-green-dark);
+  --shadown-drop-fort-fort: 12px 15px 15px var(--color-gray);
+  --shadown-drop-fort: 6px 8px 8px var(--color-gray);
+  --shadown-drop-medium: 6px 4px 4px var(--color-gray);
+  --shadown-drop-weak: 3px 2px 2px var(--color-gray);
+  --shadown-drop-modal: 4px 4px 4px var(--color-medium-brown);
 
-  --border-modal: 8px solid var(--dark-brown);
-  --shadown-drop-modal: 6px 4px 4px var(--medium-brown);
+  --border-modal: 6px solid var(--color-dark-brown);
+  --border-line: 1px solid var(--color-light-brown);
+  --border-input: 1px solid rgb(217, 139, 116);
+  --border-input-green: 1px solid var(--color-green-dark);
+  --border-beige: 3px solid var(--color-beige);
+  --border-red: 1px solid #a10909;
 
   --transparency: rgba(0, 0, 0, 0.5);
 
   --font-pattern: "Segoe UI", Helvetica, Arial, Verdana;
   --font-spaced: Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
-  --bold: 600;
+  --font-bold: 600;
+  --font-shadow: 0 0 0 #ffffff;
 }

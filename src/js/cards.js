@@ -2,16 +2,6 @@ const resultCards = document.getElementById("result-cards");
 let itemsType = [];
 let itemsWeakness = [];
 
-export let addButton = () => {
-  document.getElementById("button-return").innerHTML = `
-  <a href="filters#header-filters">
-    <button type="button" id="back-button" class="back-button">
-      &#8634;
-    </button>
-  </a>;
-`;
-};
-
 export let createCards = (data) => {
   itemsType = [];
   itemsWeakness = [];

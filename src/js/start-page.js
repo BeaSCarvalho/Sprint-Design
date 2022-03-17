@@ -2,7 +2,6 @@ export let startPageHome = () => {
   let rotationPage = false;
   do {
     heightPageHome();
-    initModal();
     rotationPage = screen.orientation.onchange = function () {
       location.reload();
     };
