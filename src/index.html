@@ -29,22 +29,36 @@
       </p>
     </section>
 
-    <address id="info-contacts">
-      <div class="contact">
-        <img class="icone" alt="Ícone de e-mail" src="./img/icone-email.png">
-        <p class="name-contact">
-          <span class="emphasis">Adriana Tiemi Watanabe</span><br>adriana.t.watanabe@gmail.com
-        </p>
-      </div>
-      <div class="contact">
-        <img class="icone" alt="Ícone de e-mail" src="./img/icone-email.png">
-        <p class="name-contact">
-          <span class="emphasis">Beatriz de Sousa Carvalho</span><br>beaproscarva@gmail.com
-        </p>
-      </div>
-    </address>
-
+    <section id="info-contacts">
+      <p id="info-title" data-modal="openModal">+ MAIS INFORMAÇÕES</p>
+    </section>
   </div>
+
+  <section class="modal-container" data-modal="containerContacts">
+    <div class="modal">
+      <button class="close-modal" data-modal="closeModal">X</button>
+      <p class="text-contact">
+        <span class="emphasis">ONPOKEMON</span> é um site para filtrar dados sobre pokémons,
+        separando-os por tipo e fraqueza. Esses dados podem ser ordenados pelo número do pokémon,
+        por ordem alfabética os nomes e pelas maiores e menores quantidades de Fraquezas.
+      </p>
+      <address id="contacts">
+        <div class="container-contact">
+          <img class="icone" alt="Ícone de e-mail" src="./img/icone-email.png">
+          <p class="name-contact">
+            <span class="emphasis">Adriana Tiemi Watanabe</span><br>adriana.t.watanabe@gmail.com
+          </p>
+        </div>
+        <div class="container-contact">
+          <img class="icone" alt="Ícone de e-mail" src="./img/icone-email.png">
+          <p class="name-contact">
+            <span class="emphasis">Beatriz de Sousa Carvalho</span><br>beaproscarva@gmail.com
+          </p>
+        </div>
+      </address>
+    </div>
+  </section>
+
   <script src="main.js" type="module"></script>
 </body>
 

@@ -7,14 +7,19 @@
   --medium-brown: #713e03;
   --medium-beige: #e9a588;
   --beige: #ffdbac;
-  --cor-neon-pink: #ff3366;
-  --cor-neon-yellow: #fff500;
+  --cor-neon-blue: cyan;
 
+  --shadown-inner-fort: inset 8px 8px 8px #763636;
   --shadown-inner: inset 3px 3px 4px #763636;
   --shadown-drop-fort-fort: 12px 15px 15px #737373;
   --shadown-drop-fort: 6px 8px 8px #737373;
   --shadown-drop-medium: 6px 4px 4px #737373;
   --shadown-drop-weak: 3px 2px 2px #737373;
+
+  --border-modal: 8px solid var(--dark-brown);
+  --shadown-drop-modal: 6px 4px 4px var(--medium-brown);
+
+  --transparency: rgba(0, 0, 0, 0.5);
 
   --font-pattern: "Segoe UI", Helvetica, Arial, Verdana;
   --font-spaced: Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;

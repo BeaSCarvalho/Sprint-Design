@@ -1,24 +1,6 @@
 @charset "utf-8";
 
 @media screen and (min-height: 300px) and (max-height: 499px) and (orientation: landscape) {
-  .container-pokemon {
-    background-position: center top;
-  }
-  .logo-onpokemon {
- 
-  }
-  .pokedex-close {
-  
-    margin-bottom: 2vh;
-  }
-  .intro-text {
-    font-size: 1rem;
-    padding: 10px 4%;
-  }
-  .details-info > .tab-title {
-    font-size: 0.75rem;
-  }
-
   .container-general-filters {
     min-width: 640px;
   }

@@ -1,3 +1,4 @@
+import { startPageHome } from "./js/start-page.js";
 import {
   searchByName,
   filterByType,
@@ -5,8 +6,8 @@ import {
   alphabeticOrder,
   orderOfWeakness,
   percentagePerFilter,
-} from "./data.js";
-import { addButton, createCards } from "./cards.js";
+} from "./js/data.js";
+import { addButton, createCards } from "./js/cards.js";
 import data from "./data/pokemon/pokemon.js";
 
 let pokemons = data.pokemon;
@@ -20,6 +21,8 @@ const clearButton = document.getElementById("clear-button");
 startSiteOnpokemon();
 
 function startPageFilters() {
+  console.log("Entrei");
+  /*
   namePokemon.addEventListener("change", searchNamePokemon);
   //Adicionar filtro Types
   //Adicionar filtro Weaknesses
@@ -29,8 +32,10 @@ function startPageFilters() {
   clearButton.addEventListener("click", function () {
     location.reload();
   });
+  */
 }
 
+/*
 function searchNamePokemon() {
   let name = namePokemon.value;
   name = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
@@ -80,8 +85,7 @@ function showPercentagePerFilter() {
   const showThePercentage = percentagePerFilter(pokemons, data.pokemon.length);
   percentage.innerHTML = `Esse filtro representa ${showThePercentage}% do total de Pokemons.`;
 }
-
-//----------      Código abaixo está correto   -------------//
+*/
 
 function startSiteOnpokemon() {
   let url = Array.from(location.href).join();
@@ -94,16 +98,4 @@ function startSiteOnpokemon() {
     containerMain.style.height = "";
     startPageHome();
   }
-}
-
-function startPageHome() {
-  let heightWindow = Number(window.innerHeight);
-  let heightLogo = Number(document.getElementById("header-home").offsetHeight);
-  let heightText = Number(document.getElementById("introduction").offsetHeight);
-  let heightContacts = Number(
-    document.getElementById("info-contacts").offsetHeight
-  );
-  let sumAll = heightWindow - (heightLogo + heightText + heightContacts);
-  let containerMain = document.getElementById("main-home");
-  containerMain.style.height = sumAll + "px";
 }
