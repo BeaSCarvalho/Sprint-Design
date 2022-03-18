@@ -1,28 +1,23 @@
 import {
   searchByName,
-  filterByType,
-  filterByWeakness,
   alphabeticOrder,
   orderOfWeakness,
   percentagePerFilter,
+  filterBy,
 } from "./data.js";
 /*import { startPageHome, startPageFilters } from "./js/start-page.js";*/
-import { addButton, createCards } from "./js/cards.js";
+import { createCards } from "./js/cards.js";
 import data from "./data/pokemon/pokemon.js";
 
-let pokemons = data.pokemon;
 const nameTyped = document.getElementById("name-pokemon");
-const selectType = document.getElementById("filter-type");
-const selectWeakness = document.getElementById("filter-weaknesses");
+const selectTypeOrWeakness = document.getElementById("filter-type-weakness");
+const selectAtributte = document.getElementById("filter-atributtes");
 const resultCards = document.getElementById("result-cards");
 const selectOrder = document.getElementById("order-selector");
 const selectOrderByWeakness = document.getElementById("calculation-selector");
 const percentage = document.getElementById("quantify-text");
-let resultsType = "";
-let resultsWeakness = "";
-let resultName = "";
 
-startSiteOnpokemon();
+/*startSiteOnpokemon();
 
 function startSiteOnpokemon() {
   let url = Array.from(location.href).join();
@@ -35,76 +30,58 @@ function startSiteOnpokemon() {
     containerMain.style.height = "";
     startPageHome();
   }
-}
+}*/
 
-createCards(pokemons);
+createCards(data.pokemon)
 
-function searchNamePokemon(e) {
-  let name = e.target.value;
+function searchNamePokemon() {
+  let resultName = "";
+  let name = nameTyped.value;
   resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
-  pokemons = searchByName(pokemons, name);
-  createCards(pokemons);
-  if (pokemons == "") {
+  createCards(searchByName(data.pokemon, resultName));
+  if (data.pokemon == "") {
     resultCards.innerHTML = `
     <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro nome!</p>
     `;
   }
-  pokemons = data.pokemon;
-};
+}
 
 nameTyped.addEventListener("keyup", searchNamePokemon);
 
-function activeFilterType(e) {
-  const selectedValue = e.target.value;
-  pokemons = filterByType(pokemons, selectedValue);
-  createCards(pokemons);
-  if (pokemons == "") {
+function activeFilters() {
+  let selectedValueTypeOrWeakness = selectTypeOrWeakness.value;
+  let selectedValueAttribute = selectAtributte.value;
+  let resultOfFilters = filterBy(data.pokemon, selectedValueTypeOrWeakness, selectedValueAttribute)
+
+  percentage.innerHTML = `Esse filtro representa
+  ${percentagePerFilter(resultOfFilters.length, data.pokemon.length)}% do total de Pokemons.`;
+
+  createCards(resultOfFilters)
+  if (data.pokemon == "") {
     resultCards.innerHTML = `
     <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
     `;
   }
-  pokemons = data.pokemon;
-};
+}
 
-selectType.addEventListener("change", activeFilterType);
+selectTypeOrWeakness.addEventListener("change", activeFilters);
+selectAtributte.addEventListener("change", activeFilters);
 
-function activeFilterWeakness(e) {
-  const selectedValue = e.target.value;
-  pokemons = filterByWeakness(pokemons, selectedValue);
-  createCards(pokemons);
-  if (pokemons == "") {
-    resultCards.innerHTML = `
-    <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
-    `;
-  }
-  pokemons = data.pokemon
-};
-
-selectWeakness.addEventListener("change", activeFilterWeakness);
-
-function orderToShow(e) {
-  const selectedOrder = e.target.value;
-  pokemons = alphabeticOrder(pokemons, selectedOrder);
-  createCards(pokemons);
-};
+function orderToShow() {
+  const selectedOrder = selectOrder.value;
+  activeFilters(alphabeticOrder(data.pokemon,selectedOrder));
+}  
 
 selectOrder.addEventListener("change", orderToShow);
 
-function showInOrderOfWeakness(e) {
-  const selectedOrderByWeakness = e.target.value;
-  pokemons = orderOfWeakness(pokemons, selectedOrderByWeakness);
-  createCards(pokemons);
-};
+function showInOrderOfWeakness() {
+  const selectedOrderByWeakness = selectOrderByWeakness.value;
+  activeFilters(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
+}
 
 selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
 
-function showPercentagePerFilter() {
-  let totalOfPokemons = pokemons.length;
-  const showThePercentage = percentagePerFilter(pokemons, totalOfPokemons);
-  percentage.innerHTML = `Esse filtro representa ${showThePercentage}% do total de Pokemons.`;
-}
 
-showPercentagePerFilter()
 
 
 

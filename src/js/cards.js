@@ -1,3 +1,4 @@
+//import data from ".src/data/pokemon/pokemon.js";
 let resultCards = document.getElementById("result-cards");
 let itemsType = [];
 let itemsWeakness = [];
