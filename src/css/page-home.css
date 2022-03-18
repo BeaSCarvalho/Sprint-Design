@@ -1,6 +1,7 @@
+@charset "utf-8";
 @import url("reset.css");
 @import url("variables.css");
-@import url("page-home-querie.css");
+@import url("page-home-media-queries.css");
 
 #container-general {
   background-color: var(--color-green-background);
@@ -8,7 +9,7 @@
   height: 100vh;
 }
 #container-pokemon {
-  max-width: 1060px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(1, 1fr);

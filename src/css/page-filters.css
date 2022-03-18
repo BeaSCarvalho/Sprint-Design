@@ -1,15 +1,16 @@
+@charset "utf-8";
 @import url("reset.css");
-@import url("cards.css");
 @import url("variables.css");
+@import url("cards.css");
 @import url("colors-pokemon.css");
-@import url("page-filters-querie.css");
+@import url("page-filters-media-queries.css");
 
 #container-general {
   background-color: var(--color-green-background);
   font-family: var(--font-pattern);
 }
 #container-pokemon {
-  max-width: 1060px;
+  max-width: 1100px;
   background-color: var(--color-beige);
   display: grid;
   margin: 0 auto;
@@ -23,7 +24,6 @@
   align-items: center;
 }
 #main-filters {
-  margin: 0 auto;
   background-color: var(--color-beige);
   display: grid;
   grid-template-columns: 1fr;
@@ -35,32 +35,29 @@
 .filter-title {
   display: block;
   font-weight: bold;
-  font-family: var(--font-pattern);
   text-align: left;
+  margin: 30px 0px 20px 0px;
 }
 .form-filters {
   width: 100%;
 }
 #results-order {
-  max-width: 1020px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  place-items: start;
+}
+#group-name {
+  display: flex;
+  flex-direction: column;
 }
 #name-text {
-  font-family: var(--font-pattern);
   font-weight: 600;
   color: var(--color-black);
-  padding-bottom: 5px;
 }
 #name-pokemon {
   background-color: var(--color-medium-beige);
   border: var(--border-input);
   border-radius: 10px;
   box-shadow: var(--shadown-inner);
-  width: 260px;
-  margin-bottom: 20px;
 }
 #name-pokemon::placeholder {
   color: var(--color-black);
@@ -69,17 +66,32 @@
   border: 0;
   box-shadow: var(--shadown-drop-fort);
 }
+.line {
+  border: var(--border-line);
+  border-radius: 10px;
+  margin: 20px 0px;
+  min-width: 280px;
+  max-width: 1100px;
+  position: relative;
+}
+#img-pokemons {
+  position: absolute;
+}
+#group-select {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 15px;
+}
 .order-calculation {
-  width: 280px;
   background-color: var(--color-medium-beige);
   box-shadow: var(--shadown-drop-medium);
   border: none;
   border-radius: 10px;
   margin-bottom: 20px;
   background-image: url(../img/arrow.png);
-  background-position: right 10px center;
+  background-position: right 8px center;
   background-repeat: no-repeat;
-  background-size: auto 30%;
+  background-size: auto 25%;
   outline: none;
   appearance: none;
   font-weight: var(--font-bold);
@@ -98,34 +110,25 @@
   border-radius: 50%;
   border: none;
   box-shadow: var(--shadown-drop-medium);
-  color: var(--white);
+  color: var(--color-white);
   font-size: 2.6rem;
   background-color: var(--color-medium-brown);
+  padding-bottom: 20px;
   position: fixed;
   bottom: 10px;
   right: 10px;
   padding-bottom: 10px;
 }
 #quantify-text {
-  min-width: 260px;
   background-color: var(--color-green-screen);
   border-radius: 11px;
   border: var(--border-input-green);
   font-family: var(--font-spaced);
   font-weight: var(--font-bold);
   color: var(--dark-brown);
-  font-size: 1rem;
   box-shadow: var(--shadown-inner-green);
-  padding: 10px;
   margin-bottom: 20px;
   line-height: 1.2;
-}
-#error-form {
-  font-weight: 600;
-  padding: 20px 0px;
-  font-size: 1.6rem;
-  text-align: center;
-  line-height: 1.8;
 }
 #quantify-text::after {
   content: "|";
@@ -142,4 +145,11 @@
   50% {
     opacity: 0;
   }
+}
+#error-form {
+  font-weight: 600;
+  padding: 20px 0px;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 1.8;
 }
