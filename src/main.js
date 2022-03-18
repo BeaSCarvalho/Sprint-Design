@@ -5,7 +5,7 @@ import {
   percentagePerFilter,
   filterBy,
 } from "./data.js";
-/*import { startPageHome, startPageFilters } from "./js/start-page.js";*/
+/*import { startPageHome} from "./js/start-page.js";*/
 import { createCards } from "./js/cards.js";
 import data from "./data/pokemon/pokemon.js";
 
