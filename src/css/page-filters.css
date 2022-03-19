@@ -2,6 +2,7 @@
 @import url("reset.css");
 @import url("variables.css");
 @import url("cards.css");
+@import url("pokemon.css");
 @import url("colors-pokemon.css");
 @import url("page-filters-media-queries.css");
 
@@ -46,6 +47,7 @@
 #results-order {
   display: grid;
   grid-template-columns: 1fr;
+  background-color: var(--color-beige);
 }
 #group-name {
   display: flex;
@@ -67,13 +69,6 @@
 #name-pokemon:focus {
   border: 0;
   box-shadow: var(--shadown-drop-fort);
-}
-.line {
-  border: var(--border-line);
-  border-radius: 10px;
-  margin: 20px 0px;
-  min-width: 280px;
-  max-width: 1100px;
 }
 #group-select {
   display: flex;
@@ -168,4 +163,18 @@
   background-color: var(--color-medium-beige);
   border-radius: 10px;
   border: var(--border-scroll);
+}
+
+.line {
+  border: var(--border-line);
+  border-radius: 10px;
+  margin: 20px 0px;
+  min-width: 280px;
+  max-width: 1100px;
+}
+#results-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  padding: 0px 20px;
 }
