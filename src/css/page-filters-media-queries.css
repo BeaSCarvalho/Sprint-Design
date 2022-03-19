@@ -47,6 +47,13 @@
   #quantify-text {
     min-width: 310px;
   }
+  #back-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    bottom: 20px;
+    right: 20px;
+  }
 }
 
 @media screen and (min-height: 700px) and (orientation: landscape) {
@@ -63,6 +70,13 @@
   #quantify-text {
     min-width: 455px;
   }
+  #back-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    bottom: 20px;
+    right: 10%;
+  }
 }
 
 @media screen and (min-height: 900px) and (orientation: portrait) {
@@ -77,6 +91,13 @@
   }
   #quantify-text {
     min-width: 310px;
+  }
+  #back-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    bottom: 20px;
+    right: 20px;
   }
 }
 
@@ -105,6 +126,19 @@
     font-size: 1.1rem;
     min-width: 260px;
     padding: 10px;
+  }
+  #back-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    bottom: 15px;
+    right: 10px;
+  }
+  .btn-action {
+    box-shadow: var(--shadown-solid-brown-dark-little);
+  }
+  .btn-action:active {
+    box-shadow: var(--shadown-solid-brown-light-little);
   }
 }
 

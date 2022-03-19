@@ -8,6 +8,8 @@
 #container-general {
   background-color: var(--color-green-background);
   font-family: var(--font-pattern);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-medium-beige) var(--color-beige);
 }
 #container-pokemon {
   max-width: 1100px;
@@ -72,10 +74,6 @@
   margin: 20px 0px;
   min-width: 280px;
   max-width: 1100px;
-  position: relative;
-}
-#img-pokemons {
-  position: absolute;
 }
 #group-select {
   display: flex;
@@ -103,21 +101,6 @@
     color: var(--color-black-fort);
     text-shadow: var(--fort-shadow);
   }
-}
-#back-button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  box-shadow: var(--shadown-drop-medium);
-  color: var(--color-white);
-  font-size: 2.6rem;
-  background-color: var(--color-medium-brown);
-  padding-bottom: 20px;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  padding-bottom: 10px;
 }
 #quantify-text {
   background-color: var(--color-green-screen);
@@ -152,4 +135,37 @@
   font-size: 1.6rem;
   text-align: center;
   line-height: 1.8;
+}
+#results-cards {
+  position: relative;
+}
+#back-button {
+  border-radius: 50%;
+  border: none;
+  color: var(--color-white);
+  text-decoration: none;
+  position: fixed;
+  background: var(--gradient-radial-brown);
+  transition: all 0.3s ease;
+  z-index: 2000;
+}
+.btn-action {
+  box-shadow: var(--shadown-solid-brown-dark-big);
+  transition: all 0.3s ease 0s;
+}
+.btn-action:active {
+  box-shadow: var(--shadown-solid-brown-light-big);
+  transform: translateY(5px);
+}
+
+#container-general::-webkit-scrollbar {
+  width: 13px;
+}
+#container-general::-webkit-scrollbar-track {
+  background: var(--color-beige);
+}
+#container-general::-webkit-scrollbar-thumb {
+  background-color: var(--color-medium-beige);
+  border-radius: 10px;
+  border: var(--border-scroll);
 }

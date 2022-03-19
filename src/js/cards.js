@@ -17,17 +17,15 @@ export let createCards = (data) => {
           <figure class="box-poke-img">
             <img class="poke-img" src="${item.img}" alt=${item.name}>
           </figure>
-          <main class="box-poke-text">
-            <h4 class="poke-title"> 
-              ${item.name[0].toUpperCase() + item.name.substr(1)}
-            </h4>
-            <ul class="poke-items">
-              <span class="poke-item-title list-type">Tipo:</span>
-            </ul>
-            <ul class="poke-items">
-              <span class="poke-item-title list-weakness">Fraqueza:</span> 
-            </ul>
-          </main>
+          <h4 class="poke-title"> 
+            ${item.name[0].toUpperCase() + item.name.substr(1)}
+          </h4>
+          <ul class="poke-items type">
+            <span class="list-type">Tipo:</span>
+          </ul>
+          <ul class="poke-items weakness">
+            <span class="list-weakness">Fraqueza:</span> 
+          </ul>
         </div>
       </div>
       `;

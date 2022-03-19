@@ -15,9 +15,31 @@
   --color-beige: #ffdbac;
   --color-gray: #737373;
 
+  --gradient-radial-green: radial-gradient(
+    circle,
+    rgba(157, 222, 127, 1) 0%,
+    rgba(69, 171, 21, 1) 35%,
+    rgba(34, 91, 7, 1) 100%
+  );
+  --gradient-radial-brown: radial-gradient(
+    circle,
+    rgba(200, 88, 88, 1) 0%,
+    rgba(138, 60, 60, 1) 53%,
+    rgba(105, 52, 52, 1) 83%
+  );
+
+  --shadown-solid-green-dark: 0 5px 0 4px #1d450b;
+  --shadown-solid-green-light: 0 2px 0 2px #2b7508;
+  --shadown-solid-brown-dark-big: 0 5px 0 4px #3e1b1b;
+  --shadown-solid-brown-light-big: 0 2px 0 2px #6e2f2f;
+
+  --shadown-solid-brown-dark-little: 0 5px 0 2px #3e1b1b;
+  --shadown-solid-brown-light-little: 0 2px 0 2px #6e2f2f;
+
   --shadown-inner-fort: inset 8px 8px 8px;
   --shadown-inner: inset 3px 3px 3px var(--color-medium-brown-red);
   --shadown-inner-green: inset 4px 4px 4px var(--color-green-dark);
+
   --shadown-drop-fort-fort: 12px 15px 15px var(--color-gray);
   --shadown-drop-fort: 6px 8px 8px var(--color-gray);
   --shadown-drop-medium: 6px 4px 4px var(--color-gray);
@@ -30,6 +52,7 @@
   --border-input-green: 1px solid var(--color-green-dark);
   --border-beige: 3px solid var(--color-beige);
   --border-red: 1px solid #a10909;
+  --border-scroll: 3px solid var(--color-beige);
 
   --transparency: rgba(0, 0, 0, 0.5);
 
