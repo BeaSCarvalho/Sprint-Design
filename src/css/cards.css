@@ -40,7 +40,11 @@
   width: 170px;
   padding: 5px;
   display: grid;
-  grid-template-areas: "img-pokemon" "title-pokemon" "type" "weakeness";
+  grid-template-areas:
+    "img-pokemon"
+    "title-pokemon"
+    "type"
+    "weakeness";
   font-weight: var(--font-bold);
   overflow-y: scroll;
 }

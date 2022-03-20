@@ -54,6 +54,35 @@
     bottom: 20px;
     right: 20px;
   }
+  #group-pokemon {
+    right: 30px;
+    bottom: 95px;
+  }
+  .pokemon-1 {
+    animation: tilt-one infinite 2s;
+  }
+
+  @keyframes tilt-one {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
+
+  .pokemon-2 {
+    animation: tilt-two infinite 1.5s;
+  }
+
+  @keyframes tilt-two {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
 }
 
 @media screen and (min-height: 700px) and (orientation: landscape) {
@@ -76,6 +105,37 @@
     font-size: 1.4rem;
     bottom: 20px;
     right: 10%;
+  }
+  #group-pokemon {
+    right: 30px;
+    bottom: 95px;
+  }
+  .pokemon-1 {
+    margin: 0px 6px;
+    animation: tilt-one infinite 2s;
+  }
+
+  @keyframes tilt-one {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
+
+  .pokemon-2 {
+    margin: 0px 6px;
+    animation: tilt-two infinite 1.5s;
+  }
+
+  @keyframes tilt-two {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(8px);
+    }
   }
 }
 

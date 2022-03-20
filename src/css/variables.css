@@ -47,7 +47,7 @@
   --shadown-drop-modal: 4px 4px 4px var(--color-medium-brown);
 
   --border-modal: 6px solid var(--color-dark-brown);
-  --border-line: 3px solid var(--color-light-brown);
+  --border-line: 6px solid #704d2f;
   --border-input: 1px solid rgb(217, 139, 116);
   --border-input-green: 1px solid var(--color-green-dark);
   --border-beige: 3px solid var(--color-beige);
