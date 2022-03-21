@@ -4,7 +4,7 @@
 @import url("cards.css");
 @import url("colors-pokemon.css");
 @import url("page-filters-screen.css");
-@import url("pokemons.css");
+@import url("pokemons-screen.css");
 
 #container-general {
   background-color: var(--color-green-background);
@@ -117,7 +117,7 @@
   font-weight: var(--font-bold);
   color: var(--dark-brown);
   box-shadow: var(--shadown-inner-green);
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   line-height: 1.2;
 }
 #quantify-text::after {
