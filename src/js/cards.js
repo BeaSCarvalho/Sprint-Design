@@ -1,14 +1,11 @@
-//import data from ".src/data/pokemon/pokemon.js";
-let resultCards = document.getElementById("result-cards");
+const resultCards = document.getElementById("result-cards");
 let itemsType = [];
 let itemsWeakness = [];
 
-export let addButton = () => {
+export const addButton = () => {
   document.getElementById("button-return").innerHTML = `
   <a href="filters#header-filters">
-    <button type="button" id="back-button" class="back-button">
-      &#8634;
-    </button>
+    <input type="button" id="back-button" class="btn-action" value="&#9650">
   </a>;
 `;
 };
@@ -28,17 +25,15 @@ export let createCards = (data) => {
           <figure class="box-poke-img">
             <img class="poke-img" src="${item.img}" alt=${item.name}>
           </figure>
-          <main class="box-poke-text">
-            <h4 class="poke-title"> 
-              ${item.name[0].toUpperCase() + item.name.substr(1)}
-            </h4>
-            <ul class="poke-items">
-              <span class="poke-item-title list-type">Tipo:</span>
-            </ul>
-            <ul class="poke-items">
-              <span class="poke-item-title list-weakness">Fraqueza:</span> 
-            </ul>
-          </main>
+          <h4 class="poke-title"> 
+            ${item.name[0].toUpperCase() + item.name.substr(1)}
+          </h4>
+          <ul class="poke-items type">
+            <span class="list-title list-type">Tipo:</span>
+          </ul>
+          <ul class="poke-items weakness">
+            <span class="list-title list-weakness">Fraqueza:</span> 
+          </ul>
         </div>
       </div>
       `;
@@ -46,7 +41,6 @@ export let createCards = (data) => {
     .join("");
   createLiType();
 };
-
 export let createLiType = () => {
   let listType = document.querySelectorAll(".list-type");
   for (let j = 0; j < itemsType.length; j++) {
@@ -61,7 +55,7 @@ export let createLiType = () => {
         li.textContent = "inseto";
         li.classList.add("bug");
       } else if (li.textContent === "dark") {
-        li.textContent = "sombrio";
+        li.textContent = "sombra";
         li.classList.add("dark");
       } else if (li.textContent === "dragon") {
         li.textContent = "dragão";
@@ -82,7 +76,7 @@ export let createLiType = () => {
         li.textContent = "voador";
         li.classList.add("flying");
       } else if (li.textContent === "ghost") {
-        li.textContent = "fastama";
+        li.textContent = "fantasma";
         li.classList.add("ghost");
       } else if (li.textContent === "grass") {
         li.textContent = "planta";
@@ -131,7 +125,7 @@ export let createLiWeakness = () => {
         li.textContent = "inseto";
         li.classList.add("bug");
       } else if (li.textContent === "dark") {
-        li.textContent = "sombrio";
+        li.textContent = "sombra";
         li.classList.add("dark");
       } else if (li.textContent === "dragon") {
         li.textContent = "dragão";
@@ -152,7 +146,7 @@ export let createLiWeakness = () => {
         li.textContent = "voador";
         li.classList.add("flying");
       } else if (li.textContent === "ghost") {
-        li.textContent = "fastama";
+        li.textContent = "fantasma";
         li.classList.add("ghost");
       } else if (li.textContent === "grass") {
         li.textContent = "planta";
