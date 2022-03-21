@@ -5,7 +5,6 @@ import {
   percentagePerFilter,
   filterBy,
 } from "./data.js";
-/*import { startPageHome} from "./js/start-page.js";*/
 import { createCards } from "./js/cards.js";
 import data from "./data/pokemon/pokemon.js";
 
@@ -16,21 +15,6 @@ const resultCards = document.getElementById("result-cards");
 const selectOrder = document.getElementById("order-selector");
 const selectOrderByWeakness = document.getElementById("calculation-selector");
 const percentage = document.getElementById("quantify-text");
-
-/*startSiteOnpokemon();
-
-function startSiteOnpokemon() {
-  let url = Array.from(location.href).join();
-  url = url.replace(/\W/g, "");
-  url = url.includes("filters");
-  if (url === true) {
-    startPageFilters();
-  } else {
-    let containerMain = document.querySelector(".main-home");
-    containerMain.style.height = "";
-    startPageHome();
-  }
-}*/
 
 createCards(data.pokemon)
 
@@ -69,14 +53,16 @@ selectAtributte.addEventListener("change", activeFilters);
 
 function orderToShow() {
   const selectedOrder = selectOrder.value;
+  createCards(alphabeticOrder(data.pokemon,selectedOrder))
   activeFilters(alphabeticOrder(data.pokemon,selectedOrder));
-}  
+} 
 
 selectOrder.addEventListener("change", orderToShow);
 
 function showInOrderOfWeakness() {
   const selectedOrderByWeakness = selectOrderByWeakness.value;
-  activeFilters(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
+  createCards(orderOfWeakness(data.pokemon,selectedOrderByWeakness))
+  activeFilters(orderOfWeakness(data.pokemon, selectedOrderByWeakness))
 }
 
 selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);

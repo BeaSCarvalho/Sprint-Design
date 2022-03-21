@@ -8,61 +8,61 @@ import {
 
 const pokemonsForTest = [
   {
-    num: "001", //0
+    num: "001", 
     name: "bulbasaur",
     type: ["grass", "poison"],
     weaknesses: ["fire", "ice", "flying", "psychic"],
   },
   {
-    num: "025", //1
+    num: "025", 
     name: "pikachu",
     type: ["eletric"],
     weaknesses: ["ground"],
   },
   {
-    num: "149", //2
+    num: "149", 
     name: "dragonite",
     type: ["dragon", "flying"],
     weaknesses: ["ice", "rock", "dragon", "fairy"],
   },
   {
-    num: "183", //3
+    num: "183", 
     name: "marill",
     type: ["water", "fairy"],
     weaknesses: ["eletric", "grass", "poison"],
   },
   {
-    num: "200", //4
+    num: "200", 
     name: "misdreavus",
     type: ["ghost"],
     weaknesses: ["ghost", "dark"],
   },
   {
-    num: "203", //5
+    num: "203", 
     name: "girafarig",
     type: ["normal", "psychic"],
     weaknesses: ["bug", "dark"],
   },
   {
-    num: "205", //6
+    num: "205", 
     name: "forretress",
     type: ["bug", "steel"],
     weaknesses: ["fire"],
   },
   {
-    num: "213", //7
+    num: "213", 
     name: "shuckle",
     type: ["bug", "rock"],
     weaknesses: ["water", "rock", "steel"],
   },
   {
-    num: "220", //8
+    num: "220", 
     name: "swinub",
     type: ["ice", "ground"],
     weaknesses: ["fire", "water", "grass", "fighting"],
   },
   {
-    num: "229", //9
+    num: "229", 
     name: "houndoom",
     type: ["dark", "fire"],
     weaknesses: ["water", "fighting", "ground", "rock"],
@@ -98,42 +98,74 @@ describe("filterBy", () => {
       pokemonsForTest[8]
     ]);
   });
-
 });
+
+const pokemonForTestAZ = [
+  {
+  num: "001", 
+  name: "bulbasaur",
+  type: ["grass", "poison"],
+  weaknesses: ["fire", "ice", "flying", "psychic"],
+  },
+  {
+  num: "149",
+  name: "dragonite",
+  type: ["dragon", "flying"],
+  weaknesses: ["ice", "rock", "dragon", "fairy"],
+  },
+  {
+  num: "205", 
+  name: "forretress",
+  type: ["bug", "steel"],
+  weaknesses: ["fire"],
+  },
+  {
+  num: "203", 
+  name: "girafarig",
+  type: ["normal", "psychic"],
+  weaknesses: ["bug", "dark"],
+  },
+  {
+  num: "229", 
+  name: "houndoom",
+  type: ["dark", "fire"],
+  weaknesses: ["water", "fighting", "ground", "rock"],
+  },
+  {
+  num: "183", 
+  name: "marill",
+  type: ["water", "fairy"],
+  weaknesses: ["eletric", "grass", "poison"],
+  },
+  {
+  num: "200", 
+  name: "misdreavus",
+  type: ["ghost"],
+  weaknesses: ["ghost", "dark"],
+  },
+  {
+  num: "025", 
+  name: "pikachu",
+  type: ["eletric"],
+  weaknesses: ["ground"],
+  },
+  {
+  num: "213", 
+  name: "shuckle",
+  type: ["bug", "rock"],
+  weaknesses: ["water", "rock", "steel"],
+  },
+  {
+  num: "220", 
+  name: "swinub",
+  type: ["ice", "ground"],
+  weaknesses: ["fire", "water", "grass", "fighting"],
+  }
+];
 
 describe("alphabeticOrder", () => {
   it("is a function", () => {
     expect(typeof alphabeticOrder).toBe("function");
-  });
-
-  it("should return pokemons sorted by name A-Z", () => {
-    expect(alphabeticOrder(pokemonsForTest, "name-az")).toEqual([
-      pokemonsForTest[0],
-      pokemonsForTest[2],
-      pokemonsForTest[6],
-      pokemonsForTest[5],
-      pokemonsForTest[9],
-      pokemonsForTest[3],
-      pokemonsForTest[4],
-      pokemonsForTest[1],
-      pokemonsForTest[7],
-      pokemonsForTest[8]
-    ]);
-  });
-
-  it("should return pokemons sorted by name Z-A", () => {
-    expect(alphabeticOrder(pokemonsForTest, "name-za")).toEqual([
-      pokemonsForTest[8],
-      pokemonsForTest[7],
-      pokemonsForTest[1],
-      pokemonsForTest[4],
-      pokemonsForTest[3],
-      pokemonsForTest[9],
-      pokemonsForTest[5],
-      pokemonsForTest[6],
-      pokemonsForTest[2],
-      pokemonsForTest[0]
-    ]);
   });
 
   it("should return pokemons sorted by number", () => {
@@ -150,7 +182,41 @@ describe("alphabeticOrder", () => {
       pokemonsForTest[9]
     ]);
   });
+
+  it("should return pokemons sorted by name A-Z", () => {
+    expect(alphabeticOrder(pokemonsForTest, "name-az")).toEqual(pokemonForTestAZ);
+  });  
+
+  it("should return pokemons sorted by name Z-A", () => {
+    expect(alphabeticOrder(pokemonsForTest, "name-za")).toEqual(pokemonForTestAZ.reverse())
+  });
 });
+
+const pokemonForTestLessWeakness = [
+  {weaknesses: ["fire"]},
+  {weaknesses: ["ground"]},
+  {weaknesses: ["bug", "dark"]},
+  {weaknesses: ["ghost", "dark"]},
+  {weaknesses: ["water", "rock", "steel"]},
+  {weaknesses: ["eletric", "grass", "poison"]},
+  {weaknesses: ["water", "fighting", "ground", "rock"]},
+  { weaknesses: ["fire", "water", "grass", "fighting"]},
+  {weaknesses: ["ice", "rock", "dragon", "fairy"]},
+  {weaknesses: ["fire", "ice", "flying", "psychic"]}
+];  
+
+const pokemonForTestMoreWeakness = [
+  {weaknesses: ["water", "fighting", "ground", "rock"]},
+  {weaknesses: ["fire", "water", "grass", "fighting"]},
+  {weaknesses: ["ice", "rock", "dragon", "fairy"]},
+  {weaknesses: ["fire", "ice", "flying", "psychic"]},
+  {weaknesses: ["water", "rock", "steel"]},
+  {weaknesses: ["eletric", "grass", "poison"]},
+  {weaknesses: ["bug", "dark"]},
+  {weaknesses: ["ghost", "dark"]},
+  {weaknesses: ["fire"]},
+  {weaknesses: ["ground"]}  
+];
 
 describe("orderOfWeakness", () => {
   it("is a function", () => {
@@ -158,33 +224,11 @@ describe("orderOfWeakness", () => {
   });
 
   it("should return pokemons ordered by the least amount of weaknesses", () => {
-    expect(orderOfWeakness(pokemonsForTest, "less-weakness")).toEqual([
-      pokemonsForTest[6],
-      pokemonsForTest[1],
-      pokemonsForTest[5],
-      pokemonsForTest[4],
-      pokemonsForTest[7],
-      pokemonsForTest[3],
-      pokemonsForTest[9],
-      pokemonsForTest[8],
-      pokemonsForTest[2],
-      pokemonsForTest[0]
-    ]);  
-  });
-
+    expect(orderOfWeakness(pokemonForTestLessWeakness, "less-weakness")).toStrictEqual(pokemonForTestLessWeakness);
+  });  
+      
   it("should return pokemons ordered by the highest amount of weaknesses", () => {
-    expect(orderOfWeakness(pokemonsForTest, "more-weakness")).toEqual([
-      pokemonsForTest[9],
-      pokemonsForTest[8],
-      pokemonsForTest[2],
-      pokemonsForTest[0],
-      pokemonsForTest[7],
-      pokemonsForTest[3],
-      pokemonsForTest[5],
-      pokemonsForTest[4],
-      pokemonsForTest[6],
-      pokemonsForTest[1]
-    ]);   
+    expect(orderOfWeakness(pokemonForTestMoreWeakness, "more-weakness")).toStrictEqual(pokemonForTestMoreWeakness);   
   });
 });
 
@@ -209,8 +253,7 @@ describe("percentagePerFilter", () => {
   });
 
   it("should return 20% for pokemon type=bug", () => {
-    const totalOfPokemons = pokemonsForTest.length;
-    expect(percentagePerFilter(pokemonsBugs, totalOfPokemons)).toEqual(20);
+    expect(percentagePerFilter(pokemonsBugs.length, pokemonsForTest.length)).toEqual(20);
   });
 });
 

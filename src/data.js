@@ -40,12 +40,10 @@ export const alphabeticOrder = (data, selectedOption) => {
 export const orderOfWeakness = (data, selectedOrder) => {
   if (selectedOrder === "less-weakness") {
     return data.sort((a, b) =>
-      a.weaknesses.length > b.weaknesses.length ? 1 : -1
-    );
+      (a.weaknesses.length > b.weaknesses.length ? 1 : -1));
   } else if (selectedOrder === "more-weakness") {
     return data.sort((a, b) =>
-      a.weaknesses.length > b.weaknesses.length ? -1 : 1
-    );
+      (a.weaknesses.length > b.weaknesses.length ? -1 : 1));
   }
 };
 
