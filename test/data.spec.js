@@ -4,7 +4,7 @@ import {
   alphabeticOrder,
   orderOfWeakness,
   percentagePerFilter,
-} from "../src/js/data.js";
+} from "../src/data.js";
 
 const pokemonsForTest = [
   {
@@ -101,66 +101,6 @@ describe("filterBy", () => {
 });
 
 const pokemonForTestAZ = [
-  {
-    num: "001",
-    name: "bulbasaur",
-    type: ["grass", "poison"],
-    weaknesses: ["fire", "ice", "flying", "psychic"],
-  },
-  {
-    num: "149",
-    name: "dragonite",
-    type: ["dragon", "flying"],
-    weaknesses: ["ice", "rock", "dragon", "fairy"],
-  },
-  {
-    num: "205",
-    name: "forretress",
-    type: ["bug", "steel"],
-    weaknesses: ["fire"],
-  },
-  {
-    num: "203",
-    name: "girafarig",
-    type: ["normal", "psychic"],
-    weaknesses: ["bug", "dark"],
-  },
-  {
-    num: "229",
-    name: "houndoom",
-    type: ["dark", "fire"],
-    weaknesses: ["water", "fighting", "ground", "rock"],
-  },
-  {
-    num: "183",
-    name: "marill",
-    type: ["water", "fairy"],
-    weaknesses: ["eletric", "grass", "poison"],
-  },
-  {
-    num: "200",
-    name: "misdreavus",
-    type: ["ghost"],
-    weaknesses: ["ghost", "dark"],
-  },
-  {
-    num: "025",
-    name: "pikachu",
-    type: ["eletric"],
-    weaknesses: ["ground"],
-  },
-  {
-    num: "213",
-    name: "shuckle",
-    type: ["bug", "rock"],
-    weaknesses: ["water", "rock", "steel"],
-  },
-  {
-    num: "220",
-    name: "swinub",
-    type: ["ice", "ground"],
-    weaknesses: ["fire", "water", "grass", "fighting"],
-  },
   {
   num: "001", 
   name: "bulbasaur",
@@ -304,8 +244,8 @@ const pokemonsBugs = [
     name: "shuckle",
     type: ["bug", "rock"],
     weaknesses: ["water", "rock", "steel"],
-  },
-];
+  }
+]
 
 describe("percentagePerFilter", () => {
   it("is a function", () => {
@@ -316,3 +256,4 @@ describe("percentagePerFilter", () => {
     expect(percentagePerFilter(pokemonsBugs.length, pokemonsForTest.length)).toEqual(20);
   });
 });
+
