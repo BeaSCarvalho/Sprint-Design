@@ -64,19 +64,19 @@
 
 @media screen and (min-width: 600px) and (max-width: 699px) {
   #poke-1 {
-    height: 86px;
+    height: 70px;
   }
   #poke-2 {
-    height: 67px;
+    height: 51px;
   }
   #poke-3 {
-    height: 53px;
+    height: 56px;
   }
   #poke-4 {
-    height: 76px;
+    height: 61px;
   }
   #poke-5 {
-    height: 120px;
+    height: 105px;
   }
   #poke-6,
   #poke-7 {
@@ -100,26 +100,41 @@
   #poke-4 {
     height: 85px;
   }
+}
+@media screen and (min-width: 700px) and (max-width: 845px) {
   #poke-5,
   #poke-6,
   #poke-7 {
     display: none;
   }
 }
-@media screen and (min-width: 846px) and (max-width: 929px),
-  screen and (min-width: 930px) and (max-width: 1019px),
-  screen and (min-width: 1020px) and (max-width: 1099px) {
+@media screen and (min-width: 846px) and (max-width: 929px) {
   #poke-5 {
     height: 133px;
   }
+  #poke-6,
+  #poke-7 {
+    display: none;
+  }
 }
-@media screen and (min-width: 930px) and (max-width: 1019px),
-  screen and (min-width: 1020px) and (max-width: 1099px) {
+@media screen and (min-width: 930px) and (max-width: 1019px) {
+  #poke-5 {
+    height: 133px;
+  }
   #poke-6 {
     height: 98px;
   }
+  #poke-7 {
+    display: none;
+  }
 }
 @media screen and (min-width: 1020px) and (max-width: 1099px) {
+  #poke-5 {
+    height: 133px;
+  }
+  #poke-6 {
+    height: 98px;
+  }
   #poke-7 {
     height: 104px;
   }
@@ -143,18 +158,25 @@
   #poke-5 {
     height: 150px;
   }
+}
+@media screen and (min-width: 1100px) and (max-width: 1219px) {
   #poke-6,
   #poke-7 {
     display: none;
   }
 }
-@media screen and (min-width: 1219px) and (max-width: 1269px),
-  screen and (min-width: 1270px) and (max-width: 1399px) {
+@media screen and (min-width: 1219px) and (max-width: 1269px) {
   #poke-6 {
     height: 112px;
   }
+  #poke-7 {
+    display: none;
+  }
 }
 @media screen and (min-width: 1270px) and (max-width: 1399px) {
+  #poke-6 {
+    height: 112px;
+  }
   #poke-7 {
     height: 104px;
   }
@@ -175,26 +197,41 @@
   #poke-4 {
     height: 129px;
   }
+}
+@media screen and (min-width: 1400px) and (max-width: 1469px) {
   #poke-5,
   #poke-6,
   #poke-7 {
     display: none;
   }
 }
-@media screen and (min-width: 1470px) and (max-width: 1599px),
-  screen and (min-width: 1600px) and (max-width: 1799px),
-  screen and (min-width: 1800px) and (max-width: 1849px) {
+@media screen and (min-width: 1470px) and (max-width: 1599px) {
   #poke-5 {
     height: 200px;
   }
+  #poke-6,
+  #poke-7 {
+    display: none;
+  }
 }
-@media screen and (min-width: 1600px) and (max-width: 1799px),
-  screen and (min-width: 1800px) and (max-width: 1849px) {
+@media screen and (min-width: 1600px) and (max-width: 1799px) {
+  #poke-5 {
+    height: 200px;
+  }
   #poke-6 {
     height: 153px;
   }
+  #poke-7 {
+    display: none;
+  }
 }
 @media screen and (min-width: 1800px) and (max-width: 1849px) {
+  #poke-5 {
+    height: 200px;
+  }
+  #poke-6 {
+    height: 153px;
+  }
   #poke-7 {
     height: 133px;
   }
@@ -218,18 +255,25 @@
   #poke-5 {
     height: 250px;
   }
+}
+@media screen and (min-width: 1850px) and (max-width: 1929px) {
   #poke-6,
   #poke-7 {
     display: none;
   }
 }
-@media screen and (min-width: 1930px) and (max-width: 2109px),
-  screen and (min-width: 2120px) {
+@media screen and (min-width: 1930px) and (max-width: 2109px) {
   #poke-6 {
     height: 200px;
   }
+  #poke-7 {
+    display: none;
+  }
 }
 @media screen and (min-width: 2120px) {
+  #poke-6 {
+    height: 200px;
+  }
   #poke-7 {
     height: 183px;
   }
