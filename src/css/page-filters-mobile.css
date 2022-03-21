@@ -54,34 +54,12 @@
     bottom: 20px;
     right: 20px;
   }
+  .pokemon-invisible {
+    display: none;
+  }
   #group-pokemon {
-    right: 30px;
-    bottom: 95px;
-  }
-  .pokemon-1 {
-    animation: tilt-one infinite 2s;
-  }
-
-  @keyframes tilt-one {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(8px);
-    }
-  }
-
-  .pokemon-2 {
-    animation: tilt-two infinite 1.5s;
-  }
-
-  @keyframes tilt-two {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(8px);
-    }
+    flex-direction: row;
+    align-items: flex-end;
   }
 }
 
@@ -106,36 +84,18 @@
     bottom: 20px;
     right: 10%;
   }
+  #form-filters {
+    grid-template-columns: 300px 1fr;
+  }
   #group-pokemon {
-    right: 30px;
-    bottom: 95px;
+    flex-direction: row;
+    align-items: flex-end;
   }
-  .pokemon-1 {
-    margin: 0px 6px;
-    animation: tilt-one infinite 2s;
+  .line {
+    grid-column: 1/3;
   }
-
-  @keyframes tilt-one {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(8px);
-    }
-  }
-
-  .pokemon-2 {
-    margin: 0px 6px;
-    animation: tilt-two infinite 1.5s;
-  }
-
-  @keyframes tilt-two {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(8px);
-    }
+  #group-select {
+    grid-column: 1/3;
   }
 }
 
@@ -158,6 +118,27 @@
     font-size: 1.4rem;
     bottom: 20px;
     right: 20px;
+  }
+  #form-filters {
+    grid-template-columns: 400px 1fr;
+  }
+  #group-pokemon {
+    grid-column: 2;
+    grid-row: 1/4;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .pokemon-invisible-big {
+    display: none;
+  }
+  .pokemon-invisible-small {
+    display: none;
+  }
+  .line {
+    grid-column: 1/2;
+  }
+  #group-select {
+    grid-column: 1/2;
   }
 }
 
@@ -224,38 +205,13 @@
     font-size: 1rem;
     padding: 10px;
   }
-  #img-pokemons {
-    visibility: hidden;
+}
+
+@media screen and (min-width: 970px) and (max-width: 1069px) {
+  .pokemon-invisible-big {
+    display: none;
   }
 }
 
-@media screen and (min-width: 525px) and (max-width: 614px) and (orientation: portrait),
-  screen and (min-width: 525px) and (max-width: 614px) and (orientation: landscape) {
-  #img-pokemons {
-    visibility: visible;
-    height: 80px;
-    top: 125px;
-    right: 20px;
-  }
-}
-
-@media screen and (min-width: 615px) and (max-width: 819px) and (orientation: portrait),
-  screen and (min-width: 615px) and (max-width: 819px) and (orientation: landscape) {
-  #img-pokemons {
-    visibility: visible;
-    height: 110px;
-    top: 95px;
-    right: 20px;
-  }
-}
-
-@media screen and (min-width: 820px) and (orientation: portrait),
-  screen and (min-width: 820px) and (orientation: landscape) {
-  #img-pokemons {
-    visibility: visible;
-    position: relative;
-    height: 150px;
-    top: 130px;
-    right: 12%;
-  }
+@media screen and (min-width: 970) {
 }

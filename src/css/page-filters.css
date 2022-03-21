@@ -3,7 +3,7 @@
 @import url("variables.css");
 @import url("cards.css");
 @import url("colors-pokemon.css");
-@import url("page-filters-media-queries.css");
+@import url("page-filters-desktop.css");
 
 #container-general {
   background-color: var(--color-green-background);
@@ -29,7 +29,6 @@
   background-color: var(--color-beige);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.1fr 1fr;
   justify-items: start;
   padding-left: 20px;
   padding-right: 20px;
@@ -43,8 +42,6 @@
 #form-filters {
   background-color: var(--color-beige);
   display: grid;
-  grid-template-columns: 1fr;
-  position: relative;
 }
 #group-name {
   grid-column: 1/2;
@@ -52,6 +49,8 @@
   flex-direction: column;
 }
 #name-text {
+  display: inline-block;
+  width: 300px;
   font-weight: 600;
   color: var(--color-black);
 }
@@ -70,10 +69,24 @@
 }
 #group-pokemon {
   display: flex;
-  flex-direction: row;
   column-gap: 8px;
-  align-items: flex-end;
-  position: absolute;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pokemon-one {
+  animation: tilt infinite 2s;
+}
+.pokemon-two {
+  animation: tilt infinite 1.5s;
+}
+@keyframes tilt {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
 .line {
   border: var(--border-line);
