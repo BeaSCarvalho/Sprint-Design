@@ -55,7 +55,7 @@ export let createLiType = () => {
         li.textContent = "inseto";
         li.classList.add("bug");
       } else if (li.textContent === "dark") {
-        li.textContent = "sombrio";
+        li.textContent = "sombra";
         li.classList.add("dark");
       } else if (li.textContent === "dragon") {
         li.textContent = "dragão";
@@ -76,7 +76,7 @@ export let createLiType = () => {
         li.textContent = "voador";
         li.classList.add("flying");
       } else if (li.textContent === "ghost") {
-        li.textContent = "fastama";
+        li.textContent = "fantasma";
         li.classList.add("ghost");
       } else if (li.textContent === "grass") {
         li.textContent = "planta";
@@ -125,7 +125,7 @@ export let createLiWeakness = () => {
         li.textContent = "inseto";
         li.classList.add("bug");
       } else if (li.textContent === "dark") {
-        li.textContent = "sombrio";
+        li.textContent = "sombra";
         li.classList.add("dark");
       } else if (li.textContent === "dragon") {
         li.textContent = "dragão";
@@ -146,7 +146,7 @@ export let createLiWeakness = () => {
         li.textContent = "voador";
         li.classList.add("flying");
       } else if (li.textContent === "ghost") {
-        li.textContent = "fastama";
+        li.textContent = "fantasma";
         li.classList.add("ghost");
       } else if (li.textContent === "grass") {
         li.textContent = "planta";

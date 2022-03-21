@@ -5,7 +5,7 @@ import {
   orderOfWeakness,
   percentagePerFilter,
   filterBy,
-} from "./data.js";
+} from "./js/data.js";
 import { createCards } from "./js/cards.js";
 import data from "./data/pokemon/pokemon.js";
 
@@ -72,11 +72,13 @@ function activeFilters() {
 
 function orderToShow() {
   const selectedOrder = selectOrder.value;
+  createCards(alphabeticOrder(data.pokemon, selectedOrder));
   activeFilters(alphabeticOrder(data.pokemon, selectedOrder));
 }
 
 function showInOrderOfWeakness() {
   const selectedOrderByWeakness = selectOrderByWeakness.value;
+  createCards(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
   activeFilters(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
 }
 
