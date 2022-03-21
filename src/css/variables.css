@@ -1,15 +1,93 @@
-@charset "utf-8";
-
 :root {
-  --background-green: #bfb63b;
-  --black: #191c1f;
-  --dark-brown: #471f1f;
-  --medium-brown: #713e03;
-  --medium-beige: #e9a588;
-  --beige: #ffdbac;
-  --shadown-inner: inset 3px 3px 4px #763636;
-  --shadown-drop-fort-fort: 12px 15px 15px #737373;
-  --shadown-drop-fort: 6px 8px 8px #737373;
-  --shadown-drop-medium: 6px 4px 4px #737373;
-  --shadown-drop-weak: 3px 2px 2px #737373;
+  --color-green-background: #bfb63b;
+  --color-green-screen: rgba(0, 255, 48, 0.8);
+  --color-green-dark: #107313;
+  --color-blue-neon: cyan;
+  --color-red: #dd3333;
+  --color-white: #fff0dd;
+  --color-black-fort: #000000;
+  --color-black: #191c1f;
+  --color-dark-brown: #471f1f;
+  --color-medium-brown: #713e03;
+  --color-medium-brown-red: #763636;
+  --color-medium-brown-line: #704d2f;
+  --color-light-brown: #74564a;
+  --color-medium-beige: #e9a588;
+  --color-beige: #ffdbac;
+  --color-gray: #737373;
+
+  --gradient-radial-green: radial-gradient(
+    circle,
+    rgba(157, 222, 127, 1) 0%,
+    rgba(69, 171, 21, 1) 35%,
+    rgba(34, 91, 7, 1) 100%
+  );
+  --gradient-radial-brown: radial-gradient(
+    circle,
+    rgba(200, 88, 88, 1) 0%,
+    rgba(138, 60, 60, 1) 53%,
+    rgba(105, 52, 52, 1) 83%
+  );
+
+  --shadown-solid-green-dark: 0 5px 0 4px #1d450b;
+  --shadown-solid-green-light: 0 2px 0 2px #2b7508;
+  --shadown-solid-brown-dark-big: 0 5px 0 4px #3e1b1b;
+  --shadown-solid-brown-light-big: 0 2px 0 2px #6e2f2f;
+
+  --shadown-solid-brown-dark-little: 0 5px 0 2px #3e1b1b;
+  --shadown-solid-brown-light-little: 0 2px 0 2px #6e2f2f;
+
+  --shadown-inner-fort: inset 8px 8px 8px;
+  --shadown-inner: inset 3px 3px 3px var(--color-medium-brown-red);
+  --shadown-inner-green: inset 4px 4px 4px var(--color-green-dark);
+
+  --shadown-drop-fort-fort: 12px 15px 15px var(--color-gray);
+  --shadown-drop-fort: 6px 8px 8px var(--color-gray);
+  --shadown-drop-medium: 6px 4px 4px var(--color-gray);
+  --shadown-drop-weak: 3px 2px 2px var(--color-gray);
+  --shadown-drop-modal: 4px 4px 4px var(--color-medium-brown);
+
+  --border-input: 1px solid rgb(217, 139, 116);
+  --border-modal: 6px solid var(--color-dark-brown);
+  --border-scroll: 3px solid var(--color-beige);
+  --border-input-green: 1px solid var(--color-green-dark);
+  --border-beige: 3px solid var(--color-beige);
+  --border-red: 1px solid #a10909;
+
+  --transparency: rgba(0, 0, 0, 0.5);
+
+  --font-pattern: "Segoe UI", Helvetica, Arial, Verdana;
+  --font-spaced: Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+  --font-bold: 600;
+  --font-shadow: 0 0 0 #ffffff;
+
+  --space-title-simple-margin: 30px 0px 20px 0px;
+  --space-title-double-margin: 55px 0px 40px 0px;
+  --space-title-triple-margin: 55px 0px 40px 0px;
+  --space-line-simple: 20px 0px;
+  --space-line-double: 40px 0px;
+  --space-line-triple: 60px 0px;
+  --space-input-simple: 0px 10px 20px 0px;
+  --space-input-double: 0px 15px 30px 0px;
+  --space-input-triple: 0px 15px 60px 0px;
+
+  /*Colors Pokémons*/
+  --bug: rgb(158, 191, 63);
+  --dark: rgb(93, 96, 109);
+  --dragon: rgb(21, 116, 196);
+  --electric: rgb(238, 212, 79);
+  --fairy: rgb(237, 153, 229);
+  --fighting: rgb(215, 68, 86);
+  --fire: rgb(224, 164, 86);
+  --flying: rgb(156, 180, 230);
+  --ghost: rgb(107, 114, 196);
+  --grass: rgb(98, 190, 101);
+  --ground: rgb(214, 133, 91);
+  --ice: rgb(129, 212, 201);
+  --normal: rgb(154, 158, 163);
+  --poison: rgb(180, 103, 202);
+  --psychic: rgb(247, 124, 124);
+  --rock: rgb(205, 192, 144);
+  --steel: rgb(89, 150, 163);
+  --water: rgb(88, 159, 222);
 }
