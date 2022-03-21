@@ -1,10 +1,11 @@
+import { startPageHome } from "./js/start-page.js";
 import {
   searchByName,
   alphabeticOrder,
   orderOfWeakness,
   percentagePerFilter,
   filterBy,
-} from "./data.js";
+} from "./js/data.js";
 import { createCards } from "./js/cards.js";
 import data from "./data/pokemon/pokemon.js";
 
@@ -16,59 +17,86 @@ const selectOrder = document.getElementById("order-selector");
 const selectOrderByWeakness = document.getElementById("calculation-selector");
 const percentage = document.getElementById("quantify-text");
 
-createCards(data.pokemon)
+startSiteOnpokemon();
 
-function searchNamePokemon() {
-  let resultName = "";
-  let name = nameTyped.value;
-  resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
-  createCards(searchByName(data.pokemon, resultName));
-  if (data.pokemon == "") {
-    resultCards.innerHTML = `
-    <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro nome!</p>
-    `;
+function startSiteOnpokemon() {
+  let url = Array.from(location.href).join();
+  url = url.replace(/\W/g, "");
+  url = url.includes("filters");
+  if (url === true) {
+    startPageFilters();
+  } else {
+    let containerMain = document.getElementById("main-home");
+    containerMain.style.height = "";
+    startPageHome();
   }
 }
 
-nameTyped.addEventListener("keyup", searchNamePokemon);
+function startPageFilters() {
+  createCards(data.pokemon);
+  nameTyped.addEventListener("keyup", searchNamePokemon);
+  nameTyped.addEventListener("change", function () {
+    nameTyped.value = "";
+  });
+  selectTypeOrWeakness.addEventListener("change", activeFilters);
+  selectAtributte.addEventListener("change", activeFilters);
+  selectOrder.addEventListener("change", orderToShow);
+  selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
+
+  const phrase = document.querySelector("#quantify-text");
+  typeWriter(phrase);
+}
+
+function searchNamePokemon() {
+  let name = nameTyped.value;
+  let resultName = "";
+  resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
+  resultName = searchByName(data.pokemon, resultName);
+  createCards(resultName);
+  resultName = resultName.length;
+  percentagePokemon(resultName, data.pokemon);
+}
 
 function activeFilters() {
   let selectedValueTypeOrWeakness = selectTypeOrWeakness.value;
   let selectedValueAttribute = selectAtributte.value;
-  let resultOfFilters = filterBy(data.pokemon, selectedValueTypeOrWeakness, selectedValueAttribute)
+  let resultOfFilters = filterBy(
+    data.pokemon,
+    selectedValueTypeOrWeakness,
+    selectedValueAttribute
+  );
+  createCards(resultOfFilters);
+  resultOfFilters = resultOfFilters.length;
+  percentagePokemon(resultOfFilters, data.pokemon);
+}
 
-  percentage.innerHTML = `Esse filtro representa
-  ${percentagePerFilter(resultOfFilters.length, data.pokemon.length)}% do total de Pokemons.`;
+function orderToShow() {
+  const selectedOrder = selectOrder.value;
+  createCards(alphabeticOrder(data.pokemon, selectedOrder));
+  activeFilters(alphabeticOrder(data.pokemon, selectedOrder));
+}
 
-  createCards(resultOfFilters)
-  if (data.pokemon == "") {
+function showInOrderOfWeakness() {
+  const selectedOrderByWeakness = selectOrderByWeakness.value;
+  createCards(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
+  activeFilters(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
+}
+
+function percentagePokemon(resultOfFilters, pokemon) {
+  pokemon = pokemon.length;
+  let resultPercentage = percentagePerFilter(resultOfFilters, pokemon);
+  percentage.innerHTML = `Esse filtro representa ${resultPercentage}% do total de Pokémons.`;
+  if (resultPercentage == 0.0) {
     resultCards.innerHTML = `
     <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
     `;
   }
 }
 
-selectTypeOrWeakness.addEventListener("change", activeFilters);
-selectAtributte.addEventListener("change", activeFilters);
-
-function orderToShow() {
-  const selectedOrder = selectOrder.value;
-  createCards(alphabeticOrder(data.pokemon,selectedOrder))
-  activeFilters(alphabeticOrder(data.pokemon,selectedOrder));
-} 
-
-selectOrder.addEventListener("change", orderToShow);
-
-function showInOrderOfWeakness() {
-  const selectedOrderByWeakness = selectOrderByWeakness.value;
-  createCards(orderOfWeakness(data.pokemon,selectedOrderByWeakness))
-  activeFilters(orderOfWeakness(data.pokemon, selectedOrderByWeakness))
+function typeWriter(letter) {
+  const textArray = letter.innerHTML.split("");
+  letter.innerHTML = "";
+  textArray.forEach((arr, i) => {
+    setTimeout(() => (letter.innerHTML += arr), 75 * i);
+  });
 }
-
-selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
-
-
-
-
-
-
