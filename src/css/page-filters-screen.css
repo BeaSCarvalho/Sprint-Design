@@ -173,14 +173,10 @@
   .filter-title {
     margin: var(--space-title-simple-margin);
     font-size: 1.6rem;
-    display: inline-block;
-    width: 240px;
   }
   #name-text {
     font-size: 1.1rem;
     padding-bottom: 12px;
-    display: inline-block;
-    width: 240px;
   }
   #name-pokemon {
     font-size: 1.1rem;

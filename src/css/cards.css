@@ -86,7 +86,6 @@
 .weakness {
   grid-area: weakeness;
 }
-
 .card-box::-webkit-scrollbar {
   width: 10px;
 }
