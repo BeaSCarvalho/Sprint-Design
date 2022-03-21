@@ -1,0 +1,236 @@
+@media screen and (min-width: 300px) and (max-width: 399px) {
+  #poke-1,
+  #poke-2,
+  #poke-3,
+  #poke-4,
+  #poke-5,
+  #poke-6,
+  #poke-7 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 469px) {
+  #poke-1 {
+    height: 54px;
+  }
+  #poke-2 {
+    height: 30px;
+  }
+  #poke-3 {
+    height: 26px;
+  }
+  #poke-4 {
+    height: 48px;
+  }
+  #poke-5 {
+    height: 76px;
+  }
+  #poke-6 {
+    height: 52px;
+  }
+  #poke-7 {
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 470px) and (max-width: 599px) {
+  #group-pokemon {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  #poke-1 {
+    height: 69px;
+  }
+  #poke-2 {
+    height: 53px;
+  }
+  #poke-3 {
+    height: 42px;
+  }
+  #poke-4 {
+    height: 69px;
+  }
+  #poke-5 {
+    height: 96px;
+  }
+  #poke-6 {
+    height: 66px;
+  }
+  #poke-7 {
+    height: 63px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 699px) {
+  #poke-1 {
+    height: 86px;
+  }
+  #poke-2 {
+    height: 67px;
+  }
+  #poke-3 {
+    height: 53px;
+  }
+  #poke-4 {
+    height: 76px;
+  }
+  #poke-5 {
+    height: 120px;
+  }
+  #poke-6,
+  #poke-7 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 845px),
+  screen and (min-width: 846px) and (max-width: 929px),
+  screen and (min-width: 930px) and (max-width: 1019px),
+  screen and (min-width: 1020px) and (max-width: 1099px) {
+  #poke-1 {
+    height: 100px;
+  }
+  #poke-2 {
+    height: 73px;
+  }
+  #poke-3 {
+    height: 63px;
+  }
+  #poke-4 {
+    height: 85px;
+  }
+  #poke-5,
+  #poke-6,
+  #poke-7 {
+    display: none;
+  }
+}
+@media screen and (min-width: 846px) and (max-width: 929px),
+  screen and (min-width: 930px) and (max-width: 1019px),
+  screen and (min-width: 1020px) and (max-width: 1099px) {
+  #poke-5 {
+    height: 133px;
+  }
+}
+@media screen and (min-width: 930px) and (max-width: 1019px),
+  screen and (min-width: 1020px) and (max-width: 1099px) {
+  #poke-6 {
+    height: 98px;
+  }
+}
+@media screen and (min-width: 1020px) and (max-width: 1099px) {
+  #poke-7 {
+    height: 104px;
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1219px),
+  screen and (min-width: 1219px) and (max-width: 1269px),
+  screen and (min-width: 1270px) and (max-width: 1399px) {
+  #poke-1 {
+    height: 120px;
+  }
+  #poke-2 {
+    height: 88px;
+  }
+  #poke-3 {
+    height: 85px;
+  }
+  #poke-4 {
+    height: 89px;
+  }
+  #poke-5 {
+    height: 150px;
+  }
+  #poke-6,
+  #poke-7 {
+    display: none;
+  }
+}
+@media screen and (min-width: 1219px) and (max-width: 1269px),
+  screen and (min-width: 1270px) and (max-width: 1399px) {
+  #poke-6 {
+    height: 112px;
+  }
+}
+@media screen and (min-width: 1270px) and (max-width: 1399px) {
+  #poke-7 {
+    height: 104px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1469px),
+  screen and (min-width: 1470px) and (max-width: 1599px),
+  screen and (min-width: 1800px) and (max-width: 1849px) {
+  #poke-1 {
+    height: 152px;
+  }
+  #poke-2 {
+    height: 113px;
+  }
+  #poke-3 {
+    height: 109px;
+  }
+  #poke-4 {
+    height: 129px;
+  }
+  #poke-5,
+  #poke-6,
+  #poke-7 {
+    display: none;
+  }
+}
+@media screen and (min-width: 1470px) and (max-width: 1599px),
+  screen and (min-width: 1600px) and (max-width: 1799px),
+  screen and (min-width: 1800px) and (max-width: 1849px) {
+  #poke-5 {
+    height: 200px;
+  }
+}
+@media screen and (min-width: 1600px) and (max-width: 1799px),
+  screen and (min-width: 1800px) and (max-width: 1849px) {
+  #poke-6 {
+    height: 153px;
+  }
+}
+@media screen and (min-width: 1800px) and (max-width: 1849px) {
+  #poke-7 {
+    height: 133px;
+  }
+}
+
+@media screen and (min-width: 1850px) and (max-width: 1929px),
+  screen and (min-width: 1930px) and (max-width: 2109px),
+  screen and (min-width: 2120px) {
+  #poke-1 {
+    height: 200px;
+  }
+  #poke-2 {
+    height: 163px;
+  }
+  #poke-3 {
+    height: 159px;
+  }
+  #poke-4 {
+    height: 180px;
+  }
+  #poke-5 {
+    height: 250px;
+  }
+  #poke-6,
+  #poke-7 {
+    display: none;
+  }
+}
+@media screen and (min-width: 1930px) and (max-width: 2109px),
+  screen and (min-width: 2120px) {
+  #poke-6 {
+    height: 200px;
+  }
+}
+@media screen and (min-width: 2120px) {
+  #poke-7 {
+    height: 183px;
+  }
+}
