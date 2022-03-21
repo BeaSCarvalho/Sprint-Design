@@ -5,17 +5,30 @@ export const searchByName = (data, condition) => {
   return typedName;
 };
 
-export const filterByType = (data, activeFilter) => {
-  return data.filter((item) => {
-    return item.type.includes(activeFilter);
-  });
+export const filterBy = (
+  data,
+  selectedValueTypeOrWeakness,
+  selectedValueAttribute
+) => {
+  if (selectedValueTypeOrWeakness === "type") {
+    return filterByType(data, selectedValueAttribute);
+  }
+  if (selectedValueTypeOrWeakness === "weaknesses") {
+    return filterByWeakness(data, selectedValueAttribute);
+  }
 };
 
-export const filterByWeakness = (data, activeFilter) => {
+function filterByType(data, selectedValueAttribute) {
   return data.filter((item) => {
-    return item.weaknesses.includes(activeFilter);
+    return item.type.includes(selectedValueAttribute);
   });
-};
+}
+
+function filterByWeakness(data, selectedValueAttribute) {
+  return data.filter((item) => {
+    return item.weaknesses.includes(selectedValueAttribute);
+  });
+}
 
 export const alphabeticOrder = (data, selectedOption) => {
   if (selectedOption === "number") {
@@ -40,8 +53,8 @@ export const orderOfWeakness = (data, selectedOrder) => {
   }
 };
 
-export const percentagePerFilter = (data, totalOfPokemons) => {
-  const percentageOfPokemons = (data.length / totalOfPokemons) * 100;
+export const percentagePerFilter = (resultOfFilters, totalOfPokemons) => {
+  const percentageOfPokemons = (resultOfFilters / totalOfPokemons) * 100;
   const roundedNumber = Math.round(percentageOfPokemons * 100) / 100;
   return roundedNumber;
 };

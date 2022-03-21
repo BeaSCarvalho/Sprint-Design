@@ -5,7 +5,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: center;
+  align-content: flex-start;
   background-color: var(--color-beige);
 }
 #not-pokemon {
@@ -21,7 +21,7 @@
 }
 .poke-number {
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: var(--font-bold);
   position: absolute;
   bottom: 330px;
   left: 151px;
@@ -45,7 +45,6 @@
     "title-pokemon"
     "type"
     "weakeness";
-  font-weight: var(--font-bold);
   overflow-y: scroll;
 }
 .pokedex-open {
@@ -67,10 +66,15 @@
   grid-area: title-pokemon;
   font-size: 1.19rem;
   margin-bottom: 7px;
+  font-weight: var(--font-bold);
 }
 .poke-items {
   padding: 0;
   margin: 0;
+}
+.list-title {
+  font-weight: var(--font-bold);
+  margin-right: 4px;
 }
 .poke-items li {
   display: inline-block;
