@@ -114,23 +114,6 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
             - Ordenação
               - Respostas   
 
-- _**Botões**_
-  
-  - Os botões são representados em forma de ícones com símbolos universais em formato circular, mas ao passar o mouse ou o dedo sobre o ícone, ele deslizará para a esquerda, mostrando o nome da ação que o botão fará.
-
-      <div>
-        <img alt="Botão filtrar" src="/src/img/to-readme/check-button-360.png">
-        <img alt="Botão filtrar expandido" src="/src/img/to-readme/slide-check.png">
-      </div>
-       <div>
-        <img alt="Botão descer" src="/src/img/to-readme/down-button-360.png">
-        <img alt="Botão descer expandido" src="/src/img/to-readme/slide-down.png">
-      </div>
-       <div>
-        <img alt="Botão voltar" src="/src/img/to-readme/back-button-360.png">
-        <img alt="Botão voltar expandido" src="/src/img/to-readme/slide-back.png">
-      </div>
-
 - _**Tipografia e Hierarquia**_
 
   - A [tipografia](https://www.chiefofdesign.com.br/tipografia/) escolhida possui fonte sem serifa, com a font-family: Arial, Verdana, Helvetica e Sans-Serif. São letras fáceis de serem visualizadas e lidas em aplicações da web.
