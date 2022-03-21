@@ -41,13 +41,13 @@
         <div class="line"></div>
 
         <div id="group-select">
-          <select class="order-calculation" id="order-selector">
+          <select class="order-calculation color-select-pattern" id="order-selector">
             <option value="number">Número da Pokédex</option>
             <option value="name-az">Nome (A-Z)</option>
             <option value="name-za">Nome (Z-A)</option>
           </select>
 
-          <select class="order-calculation" id="filter-atributtes">
+          <select class="order-calculation color-select-pattern" id="filter-atributtes">
             <option selected disabled>Elementos</option>
             <option value="steel">Aço</option>
             <option value="water">Água</option>
@@ -69,13 +69,13 @@
             <option value="flying">Voador</option>
           </select>
 
-          <select class="order-calculation" id="filter-type-weakness">
+          <select class="order-calculation color-select-pattern" id="filter-type-weakness">
             <option selected disabled>Tipos/Fraquezas</option>
             <option value="type">Tipo</option>
             <option value="weaknesses">Fraqueza</option>
           </select>
 
-          <select class="order-calculation" id="calculation-selector">
+          <select class="order-calculation color-select-pattern" id="calculation-selector">
             <option selected disabled>Ordenado por:</option>
             <option value="more-weakness">Maior quantidade de fraquezas</option>
             <option value="less-weakness">Menor quantidade de fraquezas</option>
@@ -88,10 +88,12 @@
     <section id="results-header">
       <h1 class="filter-title">RESULTADOS</h1>
       <p id="quantify-text"></p>
+      <a href="filters#header-filters">
+        <input type="button" id="back-button" class="btn-action" value="&#9650">
+      </a>
     </section>
 
     <section id="result-cards">
-
     </section>
     <script src="main.js" type="module"></script>
   </div>

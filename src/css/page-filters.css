@@ -92,7 +92,6 @@
   flex-wrap: wrap;
 }
 .order-calculation {
-  background-color: var(--color-medium-beige);
   box-shadow: var(--shadown-drop-medium);
   border: none;
   background-image: url(../img/arrow.png);
@@ -104,6 +103,9 @@
   font-weight: var(--font-bold);
   color: var(--color-black);
   cursor: pointer;
+}
+.color-select-pattern {
+  background-color: var(--color-medium-beige);
 }
 @-moz-document url-prefix() {
   select {
