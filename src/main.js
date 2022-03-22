@@ -16,7 +16,6 @@ const selectOrder = document.getElementById("order-selector");
 const selectOrderByWeakness = document.getElementById("calculation-selector");
 const cleanButton = document.getElementById("clean-button");
 const percentage = document.getElementById("quantify-text");
-const phrase = document.querySelector("#quantify-text");
 const resultCards = document.getElementById("result-cards");
 
 startSiteOnpokemon();
@@ -53,7 +52,7 @@ function startPageFilters() {
     selectOrderByWeakness.classList.replace("color-select", "new-color-select");
     showInOrderOfWeakness();
   });
-  typeWriter(phrase);
+  typeWriter(percentage);
   cleanButton.addEventListener("click", cleanForm);
 }
 
@@ -101,6 +100,7 @@ function percentagePokemon(resultOfFilters, pokemon) {
     <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
     `;
   }
+  typeWriter(percentage);
 }
 
 function typeWriter(letter) {
