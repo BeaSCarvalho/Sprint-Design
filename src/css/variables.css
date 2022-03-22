@@ -1,7 +1,7 @@
 :root {
   --color-green-background: #bfb63b;
   --color-green-screen: rgba(0, 255, 48, 0.8);
-  --color-green-dark: #107313;
+  --color-green-dark: rgb(0, 146, 51);
   --color-blue-neon: cyan;
   --color-red: #dd3333;
   --color-white: #fff0dd;

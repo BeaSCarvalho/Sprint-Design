@@ -12,10 +12,10 @@ import data from "./data/pokemon/pokemon.js";
 const nameTyped = document.getElementById("name-pokemon");
 const selectTypeOrWeakness = document.getElementById("filter-type-weakness");
 const selectAtributte = document.getElementById("filter-atributtes");
-const resultCards = document.getElementById("result-cards");
 const selectOrder = document.getElementById("order-selector");
 const selectOrderByWeakness = document.getElementById("calculation-selector");
 const percentage = document.getElementById("quantify-text");
+const resultCards = document.getElementById("result-cards");
 
 startSiteOnpokemon();
 
@@ -38,10 +38,19 @@ function startPageFilters() {
   nameTyped.addEventListener("change", function () {
     nameTyped.value = "";
   });
-  selectTypeOrWeakness.addEventListener("change", activeFilters);
-  selectAtributte.addEventListener("change", activeFilters);
   selectOrder.addEventListener("change", orderToShow);
-  selectOrderByWeakness.addEventListener("change", showInOrderOfWeakness);
+  selectTypeOrWeakness.addEventListener("change", function () {
+    selectTypeOrWeakness.classList.replace("color-select", "new-color-select");
+    activeFilters();
+  });
+  selectAtributte.addEventListener("change", function () {
+    selectAtributte.classList.replace("color-select", "new-color-select");
+    activeFilters();
+  });
+  selectOrderByWeakness.addEventListener("change", function () {
+    selectOrderByWeakness.classList.replace("color-select", "new-color-select");
+    showInOrderOfWeakness();
+  });
 
   const phrase = document.querySelector("#quantify-text");
   typeWriter(phrase);

@@ -13,6 +13,7 @@
   scrollbar-color: var(--color-medium-beige) var(--color-beige);
 }
 #container-pokemon {
+  max-width: 2000px;
   background-color: var(--color-beige);
   display: grid;
   margin: 0 auto;
@@ -70,7 +71,6 @@
 .pokemon-one {
   animation: tilt infinite 2s;
 }
-
 .pokemon-two {
   animation: tilt infinite 1.5s;
 }
@@ -101,12 +101,18 @@
   outline: none;
   appearance: none;
   font-weight: var(--font-bold);
-  color: var(--color-black);
   cursor: pointer;
 }
-.color-select-pattern {
+.color-select {
   background-color: var(--color-medium-beige);
+  color: var(--color-black);
 }
+.new-color-select {
+  background-color: var(--color-green-dark);
+  color: var(--color-white);
+  background-image: url(../img/arrow-two.png);
+}
+
 @-moz-document url-prefix() {
   select {
     color: var(--color-black-fort);

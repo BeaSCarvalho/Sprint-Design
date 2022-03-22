@@ -1,10 +1,4 @@
 @media screen and (min-width: 300px) and (max-width: 599px) {
-  #container-general {
-    min-width: 300px;
-  }
-  #container-pokemon {
-    max-width: 600px;
-  }
   .logo-onpokemon {
     height: 27px;
     padding: 10px 0px;
@@ -80,9 +74,6 @@
 }
 
 @media screen and (min-width: 600px) and (max-width: 699px) {
-  #container-pokemon {
-    min-width: 600px;
-  }
   .logo-onpokemon {
     height: 30px;
     margin: 20px 0px;
@@ -156,12 +147,6 @@
 }
 
 @media screen and (min-width: 700px) and (max-width: 1399px) {
-  #container-general {
-    margin: auto auto;
-  }
-  #container-pokemon {
-    min-width: 700px;
-  }
   #main-filters,
   #results-header {
     padding: 0px 20px;
@@ -231,13 +216,6 @@
 }
 
 @media screen and (min-width: 1400px) {
-  #container-general {
-    margin: auto auto;
-  }
-  #container-pokemon {
-    min-width: 1400px;
-    max-width: 2000px;
-  }
   .logo-onpokemon {
     height: 60px;
     margin: 40px 0px;
@@ -306,3 +284,4 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
