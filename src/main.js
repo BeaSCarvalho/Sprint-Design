@@ -104,10 +104,11 @@ function percentagePokemon(resultOfFilters, pokemon) {
 }
 
 function typeWriter(letter) {
-  const textArray = letter.innerHTML.split("");
+  let textArray = "";
+  textArray = letter.innerText.split("");
   letter.innerHTML = "";
   textArray.forEach((arr, i) => {
-    setTimeout(() => (letter.innerHTML += arr), 75 * i);
+    setTimeout(() => (letter.innerText += arr), 75 * i);
   });
 }
 
@@ -116,5 +117,5 @@ function cleanForm() {
   selectAtributte.classList.replace("new-color-select", "color-select");
   selectOrderByWeakness.classList.replace("new-color-select", "color-select");
   percentage.innerHTML = `Esse filtro representa 100% do total de Pokémons.`;
-  createCards(data.pokemon);
+  startPageFilters();
 }
