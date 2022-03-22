@@ -38,10 +38,13 @@
     padding: 10px;
     border-radius: 10px;
   }
+  #clean-button,
   #back-button {
     width: 40px;
     height: 40px;
     font-size: 1.1rem;
+  }
+  #back-button {
     bottom: 15px;
     right: 10px;
   }
@@ -66,7 +69,7 @@
     width: 260px;
     grid-column: 1/2;
     margin: var(--space-line-simple);
-    height: 6px;
+    height: 4px;
   }
   #group-select {
     grid-column: 1/2;
@@ -113,10 +116,13 @@
     padding: 10px;
     border-radius: 10px;
   }
+  #clean-button,
   #back-button {
     width: 40px;
     height: 40px;
     font-size: 1.1rem;
+  }
+  #back-button {
     bottom: 15px;
     right: 10px;
   }
@@ -138,7 +144,7 @@
   }
   .line {
     margin: var(--space-line-simple);
-    height: 6px;
+    height: 4px;
     grid-column: 1/2;
   }
   #group-select {
@@ -190,12 +196,18 @@
     padding: 10px;
     border-radius: 10px;
   }
+  #clean-button,
   #back-button {
     width: 50px;
     height: 50px;
     font-size: 1.4rem;
+  }
+  #back-button {
     bottom: 20px;
     right: 20px;
+  }
+  #clean-button {
+    grid-column: 1/3;
   }
   #group-pokemon {
     flex-direction: row;
@@ -259,12 +271,18 @@
     padding: 10px;
     border-radius: 15px;
   }
+  #clean-button,
   #back-button {
     width: 50px;
     height: 50px;
     font-size: 1.8rem;
+  }
+  #back-button {
     bottom: 20px;
     right: 20px;
+  }
+  #clean-button {
+    grid-column: 1/3;
   }
   #group-pokemon {
     flex-direction: row;
@@ -275,7 +293,7 @@
   .line {
     grid-column: 1/3;
     margin: var(--space-line-double);
-    height: 8px;
+    height: 6px;
   }
   #group-select {
     grid-column: 1/3;
@@ -284,4 +302,3 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-

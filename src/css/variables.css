@@ -16,19 +16,6 @@
   --color-beige: #ffdbac;
   --color-gray: #737373;
 
-  --gradient-radial-green: radial-gradient(
-    circle,
-    rgba(157, 222, 127, 1) 0%,
-    rgba(69, 171, 21, 1) 35%,
-    rgba(34, 91, 7, 1) 100%
-  );
-  --gradient-radial-brown: radial-gradient(
-    circle,
-    rgba(200, 88, 88, 1) 0%,
-    rgba(138, 60, 60, 1) 53%,
-    rgba(105, 52, 52, 1) 83%
-  );
-
   --shadown-solid-green-dark: 0 5px 0 4px #1d450b;
   --shadown-solid-green-light: 0 2px 0 2px #2b7508;
   --shadown-solid-brown-dark-big: 0 5px 0 4px #3e1b1b;

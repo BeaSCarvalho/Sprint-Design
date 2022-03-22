@@ -14,7 +14,9 @@ const selectTypeOrWeakness = document.getElementById("filter-type-weakness");
 const selectAtributte = document.getElementById("filter-atributtes");
 const selectOrder = document.getElementById("order-selector");
 const selectOrderByWeakness = document.getElementById("calculation-selector");
+const cleanButton = document.getElementById("clean-button");
 const percentage = document.getElementById("quantify-text");
+const phrase = document.querySelector("#quantify-text");
 const resultCards = document.getElementById("result-cards");
 
 startSiteOnpokemon();
@@ -51,9 +53,8 @@ function startPageFilters() {
     selectOrderByWeakness.classList.replace("color-select", "new-color-select");
     showInOrderOfWeakness();
   });
-
-  const phrase = document.querySelector("#quantify-text");
   typeWriter(phrase);
+  cleanButton.addEventListener("click", cleanForm);
 }
 
 function searchNamePokemon() {
@@ -108,4 +109,12 @@ function typeWriter(letter) {
   textArray.forEach((arr, i) => {
     setTimeout(() => (letter.innerHTML += arr), 75 * i);
   });
+}
+
+function cleanForm() {
+  selectTypeOrWeakness.classList.replace("new-color-select", "color-select");
+  selectAtributte.classList.replace("new-color-select", "color-select");
+  selectOrderByWeakness.classList.replace("new-color-select", "color-select");
+  percentage.innerHTML = `Esse filtro representa 100% do total de Pokémons.`;
+  createCards(data.pokemon);
 }

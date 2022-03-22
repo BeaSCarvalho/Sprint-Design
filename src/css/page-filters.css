@@ -112,7 +112,6 @@
   color: var(--color-white);
   background-image: url(../img/arrow-two.png);
 }
-
 @-moz-document url-prefix() {
   select {
     color: var(--color-black-fort);
@@ -161,19 +160,26 @@
 #results-cards {
   position: relative;
 }
+#clean-button {
+  color: var(--color-white);
+  border-radius: 50%;
+  background-color: var(--color-red);
+  border: none;
+  box-shadow: var(--shadown-drop-medium);
+  margin: 0px 10px;
+  place-self: end;
+}
 #back-button {
   border-radius: 50%;
   border: none;
   color: var(--color-white);
+  background: var(--color-medium-brown-red);
+  box-shadow: var(--shadown-drop-medium);
   text-decoration: none;
   position: fixed;
-  background: var(--gradient-radial-brown);
   transition: all 0.3s ease;
   z-index: 2000;
-}
-.btn-action {
-  box-shadow: var(--shadown-solid-brown-dark-big);
-  transition: all 0.3s ease 0s;
+  padding-bottom: 4px;
 }
 .btn-action:active {
   box-shadow: var(--shadown-solid-brown-light-big);
