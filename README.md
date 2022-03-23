@@ -2,6 +2,10 @@
    <img alt="Logo OnPokemon" src="/src/img/to-readme/logo-readme.png">
 
 ## Escolha os seus Pokemóns para combate, filtrando por tipo e fraqueza.
+  
+**Status do Projeto:** _Concluído_
+  
+**Deploy:** [Site OnPokemon](https://adrianatwatanabe.github.io/SAP007-data-lovers/)
 
 <div style="display: inline_block">
   <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank"> <img alt="HTML" height="35" width="35" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"></a>
@@ -30,9 +34,10 @@
   - [2.3.4. Table na Posição Horizontal](#234-table-na-posição-horizontal)
   - [2.3.5. Desktop](#235-desktop)
 - [3. TESTE DE USABILIDADE](#3-teste-de-usabilidade)
-- [4. FERRAMENTAS UTILIZADAS](#4-ferramentas-utilizadas)
-- [5. CHECKLIST](#5-checklist)
-- [6. AUTORAS](#6-autoras)
+- [4. FEEDBACK DA LABORATORIA](#4-feedback-da-laboratoria)
+- [5. FERRAMENTAS UTILIZADAS](#5-ferramentas-utilizadas)
+- [6. CHECKLIST](#6-checklist)
+- [7. AUTORAS](#7-autoras)
 
 ---
   
@@ -165,7 +170,6 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
 ## 3. TESTE DE USABILIDADE
 
 - Para realizar o teste de usabilidade, usamos o formulário do Google para coletar informações dos usuários
-- Para acessar o Formulário: https://forms.gle/dgo4oDJE5FzHNzoj8
 
 ### 3.1. Formulário:
 
@@ -191,7 +195,15 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
 
 - As sugestões apresentadas foram de fornecer mais informações sobre os pokémons, ao clicar nos cards.
 
-## 4. FERRAMENTAS UTILIZADAS
+## 4. FEEDBACK DA LABORATORIA
+
+- Após o Project Feedback da Laboratoria, o site **ONPOKEMON** precisou ser alterado, desde a página inicial até a página de filtragens. Na página inicial, foi adicionado um efeito visual iluminado na cor neon azul, animado sobre a _*[Pokédex](https://www.google.com/search?q=pokedex&sxsrf=APq-WBtX91dV3Oazkw71mQ-bonUeJ0o3PA:1647997454895&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiZ2473hNv2AhVFlJUCHWdaDbcQ_AUoAnoECAEQBA&biw=1725&bih=873&dpr=1)*_, além de acrescentar o texto instruindo o usuário a clicar na Pokédex.
+
+- Na página de filtragens, foi necessário retirar as caixinhas de seleção, conhecidas como _*[checkbox](https://pt.wikipedia.org/wiki/Caixa_de_sele%C3%A7%C3%A3o)*_, substituídas pelas _*[listas de seleção](https://www.minhasplanilhas.com.br/lista-suspensa-no-excel/)*_, sendo separadas em duas: uma para escolher tipo ou fraqueza, e, a outra para escolher os elementos, como inseto, pedra, etc.
+
+- Por fim, também foi retirado o botão de confirmar da página de filtragens para enviar as respostas do checkbox. Como foi optado pela lista suspensa, o usuário necessita apenas selecionar os valores dessas lista e automaticamente será filtrado os pokémons escolhidos. Permaneceu o botão de limpar listas suspensas, caso o usuário queira desselecionar alguma opção.
+
+## 5. FERRAMENTAS UTILIZADAS
   
 - **Planejamento:**
 
@@ -208,24 +220,24 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
 - **Web:**
   - **Editor:** _[Visual Studio Code](https://code.visualstudio.com/)_
   
-## 5. CHECKLIST
+## 6. CHECKLIST
 
-- [ ] Usar VanillaJS.
-- [ ] Passa pelo linter (`npm run pretest`)
-- [ ] Passa pelos testes (`npm test`)
-- [ ] Testes unitários cobrem um mínimo de 70% de statements, functions, lines e
+- [X] Usar VanillaJS.
+- [X] Passa pelo linter (`npm run pretest`)
+- [X] Passa pelos testes (`npm test`)
+- [X] Testes unitários cobrem um mínimo de 70% de statements, functions, lines e
       branches.
-- [ ] Inclui uma _definição de produto_ clara e informativa no `README.md`.
-- [ ] Inclui histórias de usuário no `README.md`.
-- [ ] Inclui rascunho da solução (protótipo de baixa fidelidade) no `README.md`.
-- [ ] Inclui uma lista de problemas detectados nos testes de usabilidade no
+- [X] Inclui uma _definição de produto_ clara e informativa no `README.md`.
+- [X] Inclui histórias de usuário no `README.md`.
+- [X] Inclui rascunho da solução (protótipo de baixa fidelidade) no `README.md`.
+- [X] Inclui uma lista de problemas detectados nos testes de usabilidade no
       `README.md`.
-- [ ] UI: Mostra lista/tabela/etc com dados e/ou indicadores.
-- [ ] UI: Permite ordenar dados por um ou mais campos (asc e desc).
-- [ ] UI: Permite filtrar dados com base em uma condição.
-- [ ] UI: É _responsivo_.
+- [X] UI: Mostra lista/tabela/etc com dados e/ou indicadores.
+- [X] UI: Permite ordenar dados por um ou mais campos (asc e desc).
+- [X] UI: Permite filtrar dados com base em uma condição.
+- [X] UI: É _responsivo_.
 
-## 6. AUTORAS 
+## 7. AUTORAS 
 
 <table>
 <td>
