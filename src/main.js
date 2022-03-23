@@ -35,6 +35,7 @@ function startSiteOnpokemon() {
 
 function startPageFilters() {
   createCards(data.pokemon);
+  selectAtributte.disabled = true;
   nameTyped.addEventListener("keyup", searchNamePokemon);
   nameTyped.addEventListener("change", function () {
     nameTyped.value = "";
@@ -42,6 +43,7 @@ function startPageFilters() {
   selectOrder.addEventListener("change", orderToShow);
   selectTypeOrWeakness.addEventListener("change", function () {
     selectTypeOrWeakness.classList.replace("color-select", "new-color-select");
+    selectAtributte.disabled = false;
     activeFilters();
   });
   selectAtributte.addEventListener("change", function () {
@@ -100,12 +102,10 @@ function percentagePokemon(resultOfFilters, pokemon) {
     <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
     `;
   }
-  typeWriter(percentage);
 }
 
 function typeWriter(letter) {
-  let textArray = "";
-  textArray = letter.innerText.split("");
+  let textArray = letter.innerHTML.split("");
   letter.innerHTML = "";
   textArray.forEach((arr, i) => {
     setTimeout(() => (letter.innerText += arr), 75 * i);
@@ -116,6 +116,9 @@ function cleanForm() {
   selectTypeOrWeakness.classList.replace("new-color-select", "color-select");
   selectAtributte.classList.replace("new-color-select", "color-select");
   selectOrderByWeakness.classList.replace("new-color-select", "color-select");
+  selectAtributte.disabled = true;
   percentage.innerHTML = `Esse filtro representa 100% do total de Pokémons.`;
-  startPageFilters();
+  selectOrder.selectedIndex = 0;
+  const selectedOrder = selectOrder.value;
+  createCards(alphabeticOrder(data.pokemon, selectedOrder));
 }

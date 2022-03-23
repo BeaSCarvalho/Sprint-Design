@@ -112,6 +112,12 @@
   color: var(--color-white);
   background-image: url(../img/arrow-two.png);
 }
+#filter-atributtes:disabled {
+  background-color: #cdb7b5;
+  border: #cdb7b5 solid 1px;
+  cursor: not-allowed;
+  box-shadow: var(--shadown-drop-fort);
+}
 @-moz-document url-prefix() {
   select {
     color: var(--color-black-fort);
