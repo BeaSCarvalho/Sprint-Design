@@ -38,6 +38,8 @@
     right: -20px;
     font-size: 1.5rem;
   }
+
+  
 }
 @media screen and (min-width: 600px) and (max-width: 699px) {
   .modal {

@@ -5,6 +5,7 @@ import {
   orderOfWeakness,
   percentagePerFilter,
   filterBy,
+  filterRarity
 } from "./js/data.js";
 import { createCards } from "./js/cards.js";
 import data from "./data/pokemon/pokemon.js";
@@ -17,6 +18,7 @@ const selectOrderByWeakness = document.getElementById("calculation-selector");
 const cleanButton = document.getElementById("clean-button");
 const percentage = document.getElementById("quantify-text");
 const resultCards = document.getElementById("result-cards");
+const selectRarity = document.getElementById("rarity-selector");
 
 startSiteOnpokemon();
 
@@ -41,6 +43,7 @@ function startPageFilters() {
     nameTyped.value = "";
   });
   selectOrder.addEventListener("change", orderToShow);
+  selectRarity.addEventListener("change", filterPerRarity);
   selectTypeOrWeakness.addEventListener("change", function () {
     selectTypeOrWeakness.classList.replace("color-select", "new-color-select");
     selectAtributte.disabled = false;
@@ -81,16 +84,29 @@ function activeFilters() {
   percentagePokemon(resultOfFilters, data.pokemon);
 }
 
+function filterPerRarity() {
+  let selectedValueRarity = selectRarity.value;
+  let resultOfFilters = filterRarity(
+    data.pokemon,
+    selectedValueRarity
+  );
+  createCards(resultOfFilters);
+  resultOfFilters = resultOfFilters.length;
+  percentagePokemon(resultOfFilters, data.pokemon);
+}
+
 function orderToShow() {
   const selectedOrder = selectOrder.value;
   createCards(alphabeticOrder(data.pokemon, selectedOrder));
   activeFilters(alphabeticOrder(data.pokemon, selectedOrder));
+  filterPerRarity(alphabeticOrder(data.pokemon, selectedOrder));
 }
 
 function showInOrderOfWeakness() {
   const selectedOrderByWeakness = selectOrderByWeakness.value;
   createCards(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
   activeFilters(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
+  filterPerRarity(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
 }
 
 function percentagePokemon(resultOfFilters, pokemon) {

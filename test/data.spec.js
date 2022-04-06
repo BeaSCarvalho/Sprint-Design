@@ -4,6 +4,7 @@ import {
   alphabeticOrder,
   orderOfWeakness,
   percentagePerFilter,
+  filterRarity
 } from "../src/js/data.js";
 
 const pokemonsForTest = [
@@ -12,60 +13,70 @@ const pokemonsForTest = [
     name: "bulbasaur",
     type: ["grass", "poison"],
     weaknesses: ["fire", "ice", "flying", "psychic"],
+    resistant: ["water", "electric", "grass", "fighting", "fairy"]
   },
   {
     num: "025",
     name: "pikachu",
     type: ["eletric"],
     weaknesses: ["ground"],
+    resistant:["electric", "flying", "steel"]
   },
   {
     num: "149",
     name: "dragonite",
     type: ["dragon", "flying"],
     weaknesses: ["ice", "rock", "dragon", "fairy"],
+    resistant: ["fire", "water", "grass", "fighting", "ground"]
   },
   {
     num: "183",
     name: "marill",
     type: ["water", "fairy"],
     weaknesses: ["eletric", "grass", "poison"],
+    resistant: ["fire", "water", "ice", "fighting", "bug"]
   },
   {
     num: "200",
     name: "misdreavus",
     type: ["ghost"],
     weaknesses: ["ghost", "dark"],
+    resistant: ["normal","fighting", "poison", "bug"]
   },
   {
     num: "203",
     name: "girafarig",
     type: ["normal", "psychic"],
     weaknesses: ["bug", "dark"],
+    resistant: ["psychic"],
   },
   {
     num: "205",
     name: "forretress",
     type: ["bug", "steel"],
     weaknesses: ["fire"],
+    resistant: ["normal", "grass", "ice", "poison", "psychic"]
   },
   {
     num: "213",
     name: "shuckle",
     type: ["bug", "rock"],
     weaknesses: ["water", "rock", "steel"],
+    resistant: ["normal", "poison"]
   },
   {
     num: "220",
     name: "swinub",
     type: ["ice", "ground"],
     weaknesses: ["fire", "water", "grass", "fighting"],
+    resistant: ["electric", "poison"]
   },
   {
     num: "229",
     name: "houndoom",
     type: ["dark", "fire"],
     weaknesses: ["water", "fighting", "ground", "rock"],
+    resistant: ["fire", "grass", "ice", "psychic", "ghost"]
   },
 ];
 
@@ -100,6 +111,14 @@ describe("filterBy", () => {
       pokemonsForTest[8],
     ]);
   });
+
+  it("should return pokemons filtered resistant = psychic", () => {
+    expect(filterBy(pokemonsForTest, "resistant", "psychic")).toEqual([
+      pokemonsForTest[5],
+      pokemonsForTest[6],
+      pokemonsForTest[9],
+    ]);
+  });
 });
 
 const pokemonForTestAZ = [
@@ -108,60 +127,70 @@ const pokemonForTestAZ = [
     name: "bulbasaur",
     type: ["grass", "poison"],
     weaknesses: ["fire", "ice", "flying", "psychic"],
+    resistant: ["water", "electric", "grass", "fighting", "fairy"]
   },
   {
     num: "149",
     name: "dragonite",
     type: ["dragon", "flying"],
     weaknesses: ["ice", "rock", "dragon", "fairy"],
+    resistant: ["fire", "water", "grass", "fighting", "ground"]
   },
   {
     num: "205",
     name: "forretress",
     type: ["bug", "steel"],
     weaknesses: ["fire"],
+    resistant: ["normal", "grass", "ice", "poison", "psychic"]
   },
   {
     num: "203",
     name: "girafarig",
     type: ["normal", "psychic"],
     weaknesses: ["bug", "dark"],
+    resistant: ["psychic"],
   },
   {
     num: "229",
     name: "houndoom",
     type: ["dark", "fire"],
     weaknesses: ["water", "fighting", "ground", "rock"],
+    resistant: ["fire", "grass", "ice", "psychic", "ghost"]
   },
   {
     num: "183",
     name: "marill",
     type: ["water", "fairy"],
     weaknesses: ["eletric", "grass", "poison"],
+    resistant: ["fire", "water", "ice", "fighting", "bug"]
   },
   {
     num: "200",
     name: "misdreavus",
     type: ["ghost"],
     weaknesses: ["ghost", "dark"],
+    resistant: ["normal","fighting", "poison", "bug"]
   },
   {
     num: "025",
     name: "pikachu",
     type: ["eletric"],
     weaknesses: ["ground"],
+    resistant:["electric", "flying", "steel"]
   },
   {
     num: "213",
     name: "shuckle",
     type: ["bug", "rock"],
     weaknesses: ["water", "rock", "steel"],
+    resistant: ["normal", "poison"]
   },
   {
     num: "220",
     name: "swinub",
     type: ["ice", "ground"],
     weaknesses: ["fire", "water", "grass", "fighting"],
+    resistant: ["electric", "poison"]
   },
 ];
 
@@ -268,3 +297,38 @@ describe("percentagePerFilter", () => {
     ).toEqual(20);
   });
 });
+
+const pokemonRarityTest = [
+  {
+    name: "mew",
+    ['pokemon-rarity']:"mythic"
+  },
+  {
+    name: "celebi",
+    ['pokemon-rarity']:"mythic"
+  },
+  {
+    name: "mewtwo",
+    ['pokemon-rarity']:"legendary"
+  },
+  {
+    name: "rattata",
+    ['pokemon-rarity']:"normal"
+  }
+];  
+
+describe("percentagePerFilter", () => {
+  it("is a function", () => {
+    expect(typeof filterRarity).toBe("function");
+  });
+
+  it('should return Mew and Celebi for pokemon-rarity=mythic', () => {
+    expect(filterRarity(pokemonRarityTest, "mythic")).toEqual([
+      pokemonRarityTest[0],
+      pokemonRarityTest[1]
+    ])
+  });
+});
+
+
+
