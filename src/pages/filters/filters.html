@@ -105,33 +105,6 @@
     </section>
 
   </div>
-  <section class="modal-container" data-modal="container">
-    <div id="modal" class="modal">
-      <button class="close" data-modal="close-modal">X</button>
-      <p class="emphasis">OnPokemon</p>
-    </div>
-  </section>
-  <script>
-    const openModal = document.querySelector('[data-modal="open-modal"]');
-    const closeModal = document.querySelector('[data-modal="close-modal"]');
-    const containerModal = document.querySelector('[data-modal="container"]');
-
-    if (openModal && closeModal && containerModal) {
-      let toogle = function (e) {
-        e.preventDefault();
-        containerModal.classList.toggle("active");
-      };
-      let outside = function (e) {
-        if (event.target === this) {
-          event.preventDefault();
-          containerModal.classList.toggle("active");
-        }
-      };
-      openModal.addEventListener("click", toogle);
-      closeModal.addEventListener("click", toogle);
-      containerModal.addEventListener("click", outside);
-    }
-  </script>
   <script src="main.js" type="module"></script>
 </body>
 
