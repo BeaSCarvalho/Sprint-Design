@@ -21,6 +21,7 @@
 
     <form id="form-filters">
       <h1 class="filter-title">TO FILTER</h1>
+      <input type="text" id="name-pokemon" placeholder=" Search by Pokemon name">
 
       <div id="group-pokemon">
         <img id="poke-1" class="pokemon-one" src="./img/pokemon/poke-01.png" />
@@ -32,9 +33,9 @@
         <img id="poke-7" class="pokemon-one" src="./img/pokemon/poke-06.png" />
       </div>
 
-      <div id="group-select">
-        <input type="text" id="name-pokemon" placeholder=" Search by Pokemon name">
+      <div class="line"></div>
 
+      <div id="group-select">
         <select class="order-calculation new-color-select" id="order-selector">
           <option selected disabled>Order by</option>
           <option value="number">Pokedex number</option>
@@ -71,13 +72,14 @@
           <option value="water">Water</option>
         </select>
 
+        <select class="order-calculation color-select">
+          <option selected disabled>Ordered by Rarity</option>
+        </select>
+
         <select class="order-calculation color-select" id="calculation-selector">
           <option selected disabled>Ordered by Weakness</option>
           <option value="less-weakness">Lesser amount of weakness</option>
           <option value="more-weakness">Greater amount of weakness</option>
-        </select>
-        <select class="order-calculation color-select">
-          <option selected disabled>Ordered by Rarity</option>
         </select>
       </div>
 
@@ -97,9 +99,53 @@
     </section>
 
     <section id="result-cards">
+      <div class="card">
+        <p class="poke-number bug">001</p>
+        <div class="card-box">
+          <img class="poke-img" src="./img/001.png" alt=${item.name}>
+        </div>
+        <h4 class="poke-title">
+          Bulbasaur
+        </h4>
+        <ul class="poke-items list-type">
+          <li class="li-item bug">Inseto</li>
+        </ul>
+        <button type="button" class="small-button">
+          open
+          <div class="container-icon" data-modal="open-modal">
+            <img src="./img/icon-open.png" alt="More information" class="small-icon">
+          </div>
+        </button>
+      </div>
     </section>
   </div>
-  <script src="main.js" type="module"></script>
+  <section class="modal-container" data-modal="container">
+    <div id="modal" class="modal">
+      <button class="close" data-modal="close-modal">X</button>
+      <p class="emphasis">OnPokemon</p>
+    </div>
+  </section>
+  <script>
+    const openModal = document.querySelector('[data-modal="open-modal"]');
+    const closeModal = document.querySelector('[data-modal="close-modal"]');
+    const containerModal = document.querySelector('[data-modal="container"]');
+
+    if (openModal && closeModal && containerModal) {
+      let toogle = function (event) {
+        event.preventDefault();
+        containerModal.classList.toggle("active");
+      };
+      let outside = function (event) {
+        if (event.target === this) {
+          event.preventDefault();
+          containerModal.classList.toggle("active");
+        }
+      };
+      openModal.addEventListener("click", toogle);
+      closeModal.addEventListener("click", toogle);
+      containerModal.addEventListener("click", outside);
+    }
+  </script>
 
 </body>
 

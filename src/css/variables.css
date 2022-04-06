@@ -14,7 +14,6 @@
   --color-medium-green: #9ebf3f;
   --color-light-green: #b8cd7d;
   --color-yellow: #f2960c;
-
   --color-card: #f2f2f2;
   --color-disabled: #cdb7b5;
 
@@ -24,28 +23,32 @@
     rgba(255, 255, 255, 1) 83%
   );
 
+  --transparency-medium: rgba(0, 0, 0, 0.7);
+  --transparency-light: rgba(0, 0, 0, 0.5);
+  --transparency-light-gray: rgba(191, 208, 211, 0.7);
+
   --border-input: 1px solid var(--color-light-blue);
   --border-radius-simple: 6px;
 
-  --transparency-medium: rgba(0, 0, 0, 0.7);
-  --transparency-light: rgba(0, 0, 0, 0.5);
-
-  --color-light-gray: rgba(191, 208, 211, 0.7);
-
   --shadown-drop-fort: 6px 6px 6px #737373;
   --shadown-drop-medium: 6px 4px 4px #737373;
-  --shadown-drop-weak: 3px 2px 2px #737373;
   --shadown-drop-medium-cards: 6px 4px 4px #8da7ac;
 
   --space-top-bottom-simple: 30px 0px 20px 0px;
-  --space-top-bottom-double: 50px 0px 40px 0px;
+  --space-top-bottom-double: 45px 0px 30px 0px;
   --space-line-simple: 20px 0px;
-  --space-line-double: 40px 0px;
-  --space-line-triple: 60px 0px;
-
+  --space-line-double: 30px 0px;
+  --space-simple-simple: 10px;
+  --space-simple: 15px;
+  --space-double: 20px;
+  --space-triple: 30px;
+  --space-quadruple: 40px;
+  --space-left-right-simple: 0 15px;
+  --space-left-right-double: 0 20px;
+  --space-left-right-triple: 0 30px;
   --space-input-simple: 0px 0px 20px 0px;
   --space-input-double: 0px 15px 30px 0px;
-  --space-input-triple: 0px 15px 60px 0px;
+  --space-input-triple: 0px 25px 30px 0px;
 
   /*Colors Pokémons*/
   --bug: rgb(158, 191, 63);

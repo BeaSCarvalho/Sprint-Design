@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
+  background-color: var(--color-white);
 }
 #not-pokemon {
   font-weight: 600;
@@ -62,9 +63,10 @@
   margin-left: 0px;
   border-radius: 3px;
   font-size: 0.875rem;
+  color: var(--color-white);
 }
 .small-button {
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--color-dark-gray);
   display: flex;
   align-items: center;

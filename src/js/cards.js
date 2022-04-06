@@ -1,3 +1,5 @@
+import { initModal } from "./modal.js";
+
 const resultCards = document.getElementById("result-cards");
 let itemsType = [];
 
@@ -17,9 +19,9 @@ export let createCards = (data) => {
         </h4>
         <ul class="poke-items list-type">
         </ul>
-        <button type="button" class="small-button">
+        <button type="button" class="small-button" data-modal="open-modal">
           open
-          <div class="container-icon" data-modal="open-modal">
+          <div class="container-icon">
             <img src="./img/icon-open.png" alt="More information" class="small-icon">
           </div>
         </button>
@@ -98,4 +100,3 @@ let createLiType = () => {
     }
   }
 };
-

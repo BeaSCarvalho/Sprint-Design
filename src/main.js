@@ -1,4 +1,3 @@
-import { startPageHome } from "./js/start-page.js";
 import {
   searchByName,
   alphabeticOrder,
@@ -26,10 +25,6 @@ function startSiteOnpokemon() {
   url = url.includes("filters");
   if (url === true) {
     startPageFilters();
-  } else {
-    let containerMain = document.getElementById("main-home");
-    containerMain.style.height = "";
-    startPageHome();
   }
 }
 
