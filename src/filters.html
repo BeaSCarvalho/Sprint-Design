@@ -1,113 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/page-filters.css">
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  <title>Filtrar Pokémons</title>
+  <link rel="stylesheet" href="../../css/page-filters.css">
+  <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
+  <title>Filter Pokémons</title>
 </head>
 
 <body id="container-general">
 
   <div id="container-pokemon">
     <header id="header-filters">
-      <a href="index.html">
-        <img class="logo-onpokemon" alt="Logo do OnPokemon" src="img/logo.png">
+      <a href="../../index.html" class="link-pokemon">
+        <img class="logo-onpokemon" alt="Website logo OnPokemon" src="../../img/logo.png">
       </a>
+      <img class="menu-onpokemon" alt="Website menu OnPokemon" src="../../img/icon-menu.png">
     </header>
 
-    <main id="main-filters">
+    <form id="form-filters">
+      <h1 class="filter-title">TO FILTER</h1>
+      <input type="text" id="name-pokemon" placeholder=" Search by Pokemon name">
 
-      <form id="form-filters">
+      <div id="group-pokemon">
+        <img id="poke-1" class="pokemon-one" src="../../img/pokemon/poke-01.png" />
+        <img id="poke-2" class="pokemon-two" src="../../img/pokemon/poke-02.png" />
+        <img id="poke-3" class="pokemon-one" src="../../img/pokemon/poke-03.png" />
+        <img id="poke-4" class="pokemon-two" src="../../img/pokemon/poke-04.png" />
+        <img id="poke-5" class="pokemon-one" src="../../img/pokemon/poke-05.png" />
+        <img id="poke-6" class="pokemon-two" src="../../img/pokemon/poke-07.png" />
+        <img id="poke-7" class="pokemon-one" src="../../img/pokemon/poke-06.png" />
+      </div>
 
-        <div id="group-name">
-          <h1 class="filter-title">FILTER</h1>
-          <label id="name-text">By name:</label>
-          <input type="text" id="name-pokemon" placeholder="Search by name">
-        </div>
+      <div class="line"></div>
 
-        <div id="group-pokemon">
-          <img id="poke-1" class="pokemon-one" src="./img/poke-01.png" />
-          <img id="poke-2" class="pokemon-two" src="./img/poke-02.png" />
-          <img id="poke-3" class="pokemon-one" src="./img/poke-03.png" />
-          <img id="poke-4" class="pokemon-two" src="./img/poke-04.png" />
-          <img id="poke-5" class="pokemon-one" src="./img/poke-05.png" />
-          <img id="poke-6" class="pokemon-two" src="./img/poke-07.png" />
-          <img id="poke-7" class="pokemon-one" src="./img/poke-06.png" />
-        </div>
+      <div id="group-select">
+        <select class="order-calculation new-color-select" id="order-selector">
+          <option selected disabled>Order by</option>
+          <option value="number">Pokedex number</option>
+          <option value="name-az">A-Z name</option>
+          <option value="name-za">Z-A name</option>
+        </select>
 
-        <div class="line"></div>
+        <select class="order-calculation color-select" id="filter-type-weakness">
+          <option selected disabled>Select by</option>
+          <option value="type">Type</option>
+          <option value="weaknesses">Weakness</option>
+          <option value="weaknesses">Resistance</option>
+        </select>
 
-        <div id="group-select">
-          <select class="order-calculation new-color-select" id="order-selector">
-            <option value="number">Número da Pokédex</option>
-            <option value="name-az">Name (A-Z)</option>
-            <option value="name-za">Name (Z-A)</option>
-          </select>
+        <select class="order-calculation color-select" id="filter-atributtes">
+          <option selected disabled>Elements</option>
+          <option value="bug">Bug</option>
+          <option value="dark">Dark</option>
+          <option value="dragon">Dragon</option>
+          <option value="electric">Electric</option>
+          <option value="fairy">Fairy</option>
+          <option value="fighting">Fight</option>
+          <option value="fire">Fire</option>
+          <option value="flying">Flying</option>
+          <option value="ghost">Ghost</option>
+          <option value="grass">Grass</option>
+          <option value="ground">Ground</option>
+          <option value="ice">Ice</option>
+          <option value="normal">Normal</option>
+          <option value="poison">Poison</option>
+          <option value="psychic">Psychic</option>
+          <option value="rock">Rock</option>
+          <option value="steel">Steel</option>
+          <option value="water">Water</option>
+        </select>
 
-          <select class="order-calculation color-select" id="filter-type-weakness">
-            <option selected disabled>Tipos/Fraquezas</option>
-            <option value="type">Type</option>
-            <option value="weaknesses">Weaknesses</option>
-          </select>
+        <select class="order-calculation color-select">
+          <option selected disabled>Ordered by Rarity</option>
+        </select>
 
-          <select class="order-calculation color-select" id="filter-atributtes">
-            <option selected disabled>Elementos</option>
-            <option value="steel">Steel</option>
-            <option value="water">Water</option>
-            <option value="dragon">Dragon</option>
-            <option value="electric">Eletric</option>
-            <option value="fairy">Fairy</option>
-            <option value="ghost">Ghost</option>
-            <option value="fire">Fire</option>
-            <option value="ice">Ice</option>
-            <option value="bug">Bug</option>
-            <option value="fight">Fighting</option>
-            <option value="normal">Normal</option>
-            <option value="rock">Rock</option>
-            <option value="grass">Grass</option>
-            <option value="psychic">Psychic/option>
-            <option value="dark">Sombrio</option>
-            <option value="ground">Ground</option>
-            <option value="poison">Poison</option>
-            <option value="flying">Flying</option>
-          </select>
+        <select class="order-calculation color-select" id="calculation-selector">
+          <option selected disabled>Ordered by Weakness</option>
+          <option value="less-weakness">Lesser amount of weakness</option>
+          <option value="more-weakness">Greater amount of weakness</option>
+        </select>
+      </div>
 
-          <select class="order-calculation color-select" id="calculation-selector">
-            <option selected disabled>Ordenado por:</option>
-            <option value="more-weakness">Maior quantidade de fraquezas</option>
-            <option value="less-weakness">Menor quantidade de fraquezas</option>
-          </select>
-        </div>
-
-        <input type="reset" id="clean-button" class="btn-action" value="&#10008">
-
-        <div class="line"></div>
-
-      </form>
-    </main>
+      <button type="reset" id="clean-button" class="btn-action">
+        <img src="../../img/icon-close.png" alt="To clean filters">
+      </button>
+    </form>
 
     <section id="results-header">
-<<<<<<< HEAD
-      <h1 class="filter-title">RESULTADOS</h1>
-      <p id="quantify-text">This filter represents 100% of the Pokémon total.</p>
-=======
       <h1 class="filter-title">RESULTS</h1>
-      <p id="quantify-text">
-        This filter represents 100% of the total Pokemon.
-      </p>
->>>>>>> 8133a8267bf4799228344d93da5c9278667b5259
+      <p id="quantify-text">This filter represents 100% of the total Pokemon.</p>
       <a href="filters.html#header-filters">
-        <input type="button" id="back-button" class="btn-action" value="&#9650">
+        <button type="button" id="back-button" class="btn-action">
+          <img src="../../img/icon-up-arrow.png" alt="Back to filters">
+        </button>
       </a>
     </section>
 
     <section id="result-cards">
     </section>
-    <script src="main.js" type="module"></script>
+
   </div>
+  <section class="modal-container" data-modal="container">
+    <div id="modal" class="modal">
+      <button class="close" data-modal="close-modal">X</button>
+      <p class="emphasis">OnPokemon</p>
+    </div>
+  </section>
+  <script>
+    const openModal = document.querySelector('[data-modal="open-modal"]');
+    const closeModal = document.querySelector('[data-modal="close-modal"]');
+    const containerModal = document.querySelector('[data-modal="container"]');
+
+    if (openModal && closeModal && containerModal) {
+      let toogle = function (e) {
+        e.preventDefault();
+        containerModal.classList.toggle("active");
+      };
+      let outside = function (e) {
+        if (event.target === this) {
+          event.preventDefault();
+          containerModal.classList.toggle("active");
+        }
+      };
+      openModal.addEventListener("click", toogle);
+      closeModal.addEventListener("click", toogle);
+      containerModal.addEventListener("click", outside);
+    }
+  </script>
+  <script src="main.js" type="module"></script>
 </body>
 
 </html>
