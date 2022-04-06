@@ -2,11 +2,12 @@
   --font-pattern: "Segoe UI", Helvetica, Arial, Verdana;
   --font-bold: 600;
 
-  --color-black: #000000;
+  --color-black: #022f35;
   --color-white: #ffffff;
+  --color-dark-gray: #4E6064;
   --color-medium-gray: #8da7ac;
-  --color-light-gray: #c7d6d9;
-  --color-dark-blue: #0a4659;
+  --color-dark-dark-blue: #0a4659;
+  --color-dark-blue: #06616d;
   --color-medium-blue: #329caa;
   --color-light-blue: #3bd1e5;
   --color-dark-green: #898220;
@@ -14,19 +15,32 @@
   --color-light-green: #b8cd7d;
   --color-yellow: #f2960c;
 
+  --gradient-background: linear-gradient(
+    180deg,
+    rgba(192, 248, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 83%
+  );
+
+  --border-input: 1px solid var(--color-light-blue);
+  --border-radius-simple: 6px;
+
   --transparency-medium: rgba(0, 0, 0, 0.7);
   --transparency-light: rgba(0, 0, 0, 0.5);
 
-  --shadown-drop-fort: 6px 6px 6px var(--color-black);
-  --shadown-drop-medium: 6px 4px 4px var(--color-black);
-  --shadown-drop-weak: 3px 2px 2px var(--color-black);
+  --color-light-gray: rgba(191, 208, 211, 0.7);
+
+  --shadown-drop-fort: 6px 6px 6px #737373;
+  --shadown-drop-medium: 6px 4px 4px #737373;
+  --shadown-drop-weak: 3px 2px 2px #737373;
+  --shadown-drop-medium-cards: 6px 4px 4px #8da7ac;
 
   --space-top-bottom-simple: 30px 0px 20px 0px;
   --space-top-bottom-double: 50px 0px 40px 0px;
   --space-line-simple: 20px 0px;
   --space-line-double: 40px 0px;
   --space-line-triple: 60px 0px;
-  --space-input-simple: 0px 10px 20px 0px;
+
+  --space-input-simple: 0px 0px 20px 0px;
   --space-input-double: 0px 15px 30px 0px;
   --space-input-triple: 0px 15px 60px 0px;
 

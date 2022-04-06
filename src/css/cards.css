@@ -6,7 +6,6 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
-  background-color: var(--color-beige);
 }
 #not-pokemon {
   font-weight: 600;
@@ -16,92 +15,78 @@
   line-height: 1.8;
 }
 .card {
+  margin: 15px;
   position: relative;
-  padding: 15px;
-}
-.poke-number {
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  position: absolute;
-  bottom: 330px;
-  left: 151px;
-  background-color: var(--color-green-screen);
-  width: 55px;
-  text-align: center;
-  padding: 3px;
-  border: var(--border-red);
-  border-radius: 4px;
 }
 .card-box {
-  position: absolute;
-  bottom: 89px;
-  left: 31px;
-  height: 219px;
-  width: 170px;
-  padding: 5px;
-  display: grid;
-  grid-template-areas:
-    "img-pokemon"
-    "title-pokemon"
-    "type"
-    "weakeness";
-  overflow-y: scroll;
-}
-.pokedex-open {
-  position: relative;
-  box-shadow: var(--shadown-drop-fort-fort);
-  width: 235px;
-}
-.box-poke-img {
-  grid-area: img-pokemon;
+  height: 200px;
+  width: 200px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: var(--shadown-drop-medium-cards);
   display: flex;
-  place-content: center;
-  height: 92px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
 .poke-img {
-  width: 90px;
-  height: 90px;
+  width: 142px;
+  height: 142px;
+}
+.poke-number {
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  box-shadow: var(--shadown-drop-medium-cards);
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 237px;
+  right: 160px;
 }
 .poke-title {
-  grid-area: title-pokemon;
-  font-size: 1.19rem;
+  font-size: 1.125rem;
   margin-bottom: 7px;
-  font-weight: var(--font-bold);
 }
 .poke-items {
   padding: 0;
   margin: 0;
 }
-.list-title {
-  font-weight: var(--font-bold);
-  margin-right: 4px;
-}
-.poke-items li {
+.li-item {
   display: inline-block;
-  padding: 1.5px 7px;
+  padding: 3px 7px;
   margin: 2px;
   margin-left: 0px;
-  border-radius: 10px;
-  font-size: 1rem;
+  border-radius: 3px;
+  font-size: 0.875rem;
 }
-.type {
-  grid-area: type;
+.small-button {
+  font-size: 0.75rem;
+  color: var(--color-dark-gray);
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white);
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  padding: 0;
 }
-.weakness {
-  grid-area: weakeness;
+.container-icon {
+  background-color: var(--color-medium-gray);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 2px;
 }
-.card-box::-webkit-scrollbar {
+.small-icon {
+  height: 10px;
   width: 10px;
-}
-.card-box::-webkit-scrollbar-track {
-  background: var(--color-beige);
-}
-.card-box::-webkit-scrollbar-thumb {
-  background-color: var(--color-medium-beige);
-  border-radius: 5px;
-  border: var(--border-scroll);
-}
-.card-box {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-medium-beige) var(--color-beige);
 }

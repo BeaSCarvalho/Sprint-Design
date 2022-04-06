@@ -11,7 +11,6 @@ export let createCards = (data) => {
       itemsWeakness.push(item.weaknesses);
       return `
       <div class="card">
-        <img class="pokedex-open" src="img/pokedex-open.png">
         <p class="poke-number">${item.num}</p>
         <div class="card-box">
           <figure class="box-poke-img">
