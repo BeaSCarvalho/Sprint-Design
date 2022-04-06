@@ -141,5 +141,4 @@
 .line {
   border: none;
   border-radius: var(--border-radius-simple);
-  background-color: var(--color-medium-blue);
 }

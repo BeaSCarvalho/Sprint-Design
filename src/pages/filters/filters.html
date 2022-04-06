@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/page-filters.css">
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../../css/page-filters.css">
+  <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
   <title>Filter Pokémons</title>
 </head>
 
@@ -13,10 +13,10 @@
 
   <div id="container-pokemon">
     <header id="header-filters">
-      <a href="index.html" class="link-pokemon">
-        <img class="logo-onpokemon" alt="Website logo OnPokemon" src="img/logo.png">
+      <a href="../../index.html" class="link-pokemon">
+        <img class="logo-onpokemon" alt="Website logo OnPokemon" src="../../img/logo.png">
       </a>
-      <img class="menu-onpokemon" alt="Website menu OnPokemon" src="img/icon-menu.png">
+      <img class="menu-onpokemon" alt="Website menu OnPokemon" src="../../img/icon-menu.png">
     </header>
 
     <form id="form-filters">
@@ -24,13 +24,13 @@
       <input type="text" id="name-pokemon" placeholder=" Search by Pokemon name">
 
       <div id="group-pokemon">
-        <img id="poke-1" class="pokemon-one" src="./img/pokemon/poke-01.png" />
-        <img id="poke-2" class="pokemon-two" src="./img/pokemon/poke-02.png" />
-        <img id="poke-3" class="pokemon-one" src="./img/pokemon/poke-03.png" />
-        <img id="poke-4" class="pokemon-two" src="./img/pokemon/poke-04.png" />
-        <img id="poke-5" class="pokemon-one" src="./img/pokemon/poke-05.png" />
-        <img id="poke-6" class="pokemon-two" src="./img/pokemon/poke-07.png" />
-        <img id="poke-7" class="pokemon-one" src="./img/pokemon/poke-06.png" />
+        <img id="poke-1" class="pokemon-one" src="../../img/pokemon/poke-01.png" />
+        <img id="poke-2" class="pokemon-two" src="../../img/pokemon/poke-02.png" />
+        <img id="poke-3" class="pokemon-one" src="../../img/pokemon/poke-03.png" />
+        <img id="poke-4" class="pokemon-two" src="../../img/pokemon/poke-04.png" />
+        <img id="poke-5" class="pokemon-one" src="../../img/pokemon/poke-05.png" />
+        <img id="poke-6" class="pokemon-two" src="../../img/pokemon/poke-07.png" />
+        <img id="poke-7" class="pokemon-one" src="../../img/pokemon/poke-06.png" />
       </div>
 
       <div class="line"></div>
@@ -84,7 +84,7 @@
       </div>
 
       <button type="reset" id="clean-button" class="btn-action">
-        <img src="./img/icon-close.png" alt="To clean filters">
+        <img src="../../img/icon-close.png" alt="To clean filters">
       </button>
     </form>
 
@@ -93,7 +93,7 @@
       <p id="quantify-text">This filter represents 100% of the total Pokemon.</p>
       <a href="filters.html#header-filters">
         <button type="button" id="back-button" class="btn-action">
-          <img src="./img/icon-up-arrow.png" alt="Back to filters">
+          <img src="../../img/icon-up-arrow.png" alt="Back to filters">
         </button>
       </a>
     </section>
@@ -102,7 +102,7 @@
       <div class="card">
         <p class="poke-number bug">001</p>
         <div class="card-box">
-          <img class="poke-img" src="./img/001.png" alt=${item.name}>
+          <img class="poke-img" src="../../img/001.png" alt=${item.name}>
         </div>
         <h4 class="poke-title">
           Bulbasaur
@@ -113,7 +113,7 @@
         <button type="button" class="small-button">
           open
           <div class="container-icon" data-modal="open-modal">
-            <img src="./img/icon-open.png" alt="More information" class="small-icon">
+            <img src="../../img/icon-open.png" alt="More information" class="small-icon">
           </div>
         </button>
       </div>
@@ -131,11 +131,11 @@
     const containerModal = document.querySelector('[data-modal="container"]');
 
     if (openModal && closeModal && containerModal) {
-      let toogle = function (event) {
-        event.preventDefault();
+      let toogle = function (e) {
+        e.preventDefault();
         containerModal.classList.toggle("active");
       };
-      let outside = function (event) {
+      let outside = function (e) {
         if (event.target === this) {
           event.preventDefault();
           containerModal.classList.toggle("active");
