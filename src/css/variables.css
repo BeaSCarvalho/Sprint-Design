@@ -4,7 +4,7 @@
 
   --color-black: #022f35;
   --color-white: #ffffff;
-  --color-dark-gray: #4E6064;
+  --color-dark-gray: #4e6064;
   --color-medium-gray: #8da7ac;
   --color-dark-dark-blue: #0a4659;
   --color-dark-blue: #06616d;
@@ -14,6 +14,9 @@
   --color-medium-green: #9ebf3f;
   --color-light-green: #b8cd7d;
   --color-yellow: #f2960c;
+
+  --color-card: #f2f2f2;
+  --color-disabled: #cdb7b5;
 
   --gradient-background: linear-gradient(
     180deg,

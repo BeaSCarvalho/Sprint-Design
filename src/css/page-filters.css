@@ -86,8 +86,8 @@
   background-color: var(--color-medium-blue);
 }
 #filter-atributtes:disabled {
-  background-color: #cdb7b5;
-  border: #cdb7b5 solid 1px;
+  background-color: var(--color-disabled);
+  border: var(--color-disabled) solid 1px;
   cursor: not-allowed;
   box-shadow: var(--shadown-drop-fort);
 }
@@ -201,17 +201,16 @@
   #name-pokemon::placeholder {
     font-size: 1rem;
   }
-  .order-calculation,
-  #quantify-text {
+  .order-calculation {
     width: 260px;
     height: 40px;
+  }
+  .order-calculation,
+  #quantify-text {
     font-size: 1rem;
     padding: 10px;
     margin: var(--space-input-simple);
     border-radius: var(--border-radius-simple);
-  }
-  #quantify-text {
-    width: 235px;
   }
   .btn-action {
     height: 40px;
