@@ -1,4 +1,3 @@
-import { initModal } from "./modal.js";
 
 const resultCards = document.getElementById("result-cards");
 let itemsType = [];

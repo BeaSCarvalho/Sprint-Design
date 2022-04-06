@@ -4,8 +4,8 @@ import {
   orderOfWeakness,
   percentagePerFilter,
   filterBy,
-} from "../../js/data.js";
-import { createCards } from "../../js/cards.js";
+} from "./js/data.js";
+import { createCards } from "./js/cards.js";
 import data from "../../data/pokemon/pokemon.js";
 
 const nameTyped = document.getElementById("name-pokemon");
