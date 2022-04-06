@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -10,57 +10,87 @@
 </head>
 
 <body id="container-general">
-  <div id="container-pokemon">
 
-    <header id="header-home">
+  <div id="container-pokemon">
+    <header id="header-filters">
       <a href="index.html">
         <img class="logo-onpokemon" alt="Logo do OnPokemon" src="img/logo.png">
       </a>
     </header>
 
-    <main id="main-home">
-      <a href="filters.html">
-        <img id="pokedex-close" alt="Clique na Pokédex fechada" src="img/pokedex-close.png">
-      </a>
+    <main id="main-filters">
+
+      <form id="form-filters">
+
+        <div id="group-name">
+          <h1 class="filter-title">FILTRAR</h1>
+          <label id="name-text">Pelo nome:</label>
+          <input type="text" id="name-pokemon" placeholder="Insira o nome do Pokémon">
+        </div>
+
+        <div id="group-select">
+          <select class="order-calculation new-color-select" id="order-selector">
+            <option value="number">Número da Pokédex</option>
+            <option value="name-az">Nome (A-Z)</option>
+            <option value="name-za">Nome (Z-A)</option>
+          </select>
+
+          <select class="order-calculation color-select" id="filter-type-weakness">
+            <option selected disabled>Tipos/Fraquezas</option>
+            <option value="type">Tipo</option>
+            <option value="weaknesses">Fraqueza</option>
+          </select>
+
+          <select class="order-calculation color-select" id="filter-atributtes">
+            <option selected disabled>Elementos</option>
+            <option value="steel">Aço</option>
+            <option value="water">Água</option>
+            <option value="dragon">Dragão</option>
+            <option value="electric">Elétrico</option>
+            <option value="fairy">Fada</option>
+            <option value="ghost">Fantasma</option>
+            <option value="fire">Fogo</option>
+            <option value="ice">Gelo</option>
+            <option value="bug">Inseto</option>
+            <option value="fight">Lutador</option>
+            <option value="normal">Normal</option>
+            <option value="rock">Pedra</option>
+            <option value="grass">Planta</option>
+            <option value="psychic">Psíquico</option>
+            <option value="dark">Sombrio</option>
+            <option value="ground">Terra</option>
+            <option value="poison">Veneno</option>
+            <option value="flying">Voador</option>
+          </select>
+
+          <select class="order-calculation color-select" id="calculation-selector">
+            <option selected disabled>Ordenado por:</option>
+            <option value="more-weakness">Maior quantidade de fraquezas</option>
+            <option value="less-weakness">Menor quantidade de fraquezas</option>
+          </select>
+        </div>
+
+        <input type="reset" id="clean-button" class="btn-action" value="&#10008">
+
+        <div class="line"></div>
+
+      </form>
     </main>
 
-    <section id="introduction">
-      <p>Olá Treinadora!<br>
-        Aqui você consegue ver os tipos e fraquezas de seus Pokémons para se preparar para o combate.<br>Abra a Pokédex e descubra esse mundo!
+    <section id="results-header">
+      <h1 class="filter-title">RESULTS</h1>
+      <p id="quantify-text">
+        This filter represents 100% of the total Pokemon.
       </p>
+      <a href="filters.html#header-filters">
+        <input type="button" id="back-button" class="btn-action" value="&#9650">
+      </a>
     </section>
 
-    <section id="info-contacts">
-      <p id="info-title" data-modal="openModal">+ MAIS INFORMAÇÕES</p>
+    <section id="result-cards">
     </section>
+    <script src="main.js" type="module"></script>
   </div>
-
-  <section class="modal-container" data-modal="containerContacts">
-    <div class="modal">
-      <button class="close-modal" data-modal="closeModal">X</button>
-      <p class="text-contact">
-        <span class="emphasis">ONPOKEMON</span> é um site para filtrar dados sobre pokémons,
-        separando-os por tipo e fraqueza. Esses dados podem ser ordenados pelo número do pokémon,
-        por ordem alfabética os nomes e pelas maiores e menores quantidades de Fraquezas.
-      </p>
-      <address id="contacts">
-        <div class="container-contact">
-          <img class="icone" alt="Ícone de e-mail" src="./img/icone-email.png">
-          <p class="name-contact">
-            <span class="emphasis">Adriana Tiemi Watanabe</span><br>adriana.t.watanabe@gmail.com
-          </p>
-        </div>
-        <div class="container-contact">
-          <img class="icone" alt="Ícone de e-mail" src="./img/icone-email.png">
-          <p class="name-contact">
-            <span class="emphasis">Beatriz de Sousa Carvalho</span><br>beaproscarva@gmail.com
-          </p>
-        </div>
-      </address>
-    </div>
-  </section>
-
-  <script src="main.js" type="module"></script>
 </body>
 
 </html>
