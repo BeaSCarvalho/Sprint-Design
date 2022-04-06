@@ -1,56 +1,28 @@
 :root {
-  --color-green-background: #bfb63b;
-  --color-green-screen: rgba(0, 255, 48, 0.8);
-  --color-green-dark: rgb(0, 146, 51);
-  --color-blue-neon: cyan;
-  --color-red: #dd3333;
-  --color-white: #fff0dd;
-  --color-black-fort: #000000;
-  --color-black: #191c1f;
-  --color-dark-brown: #471f1f;
-  --color-medium-brown: #713e03;
-  --color-medium-brown-red: #763636;
-  --color-medium-brown-line: #704d2f;
-  --color-light-brown: #74564a;
-  --color-medium-beige: #e9a588;
-  --color-beige: #ffdbac;
-  --color-gray: #737373;
-
-  --shadown-solid-green-dark: 0 5px 0 4px #1d450b;
-  --shadown-solid-green-light: 0 2px 0 2px #2b7508;
-  --shadown-solid-brown-dark-big: 0 5px 0 4px #3e1b1b;
-  --shadown-solid-brown-light-big: 0 2px 0 2px #6e2f2f;
-
-  --shadown-solid-brown-dark-little: 0 5px 0 2px #3e1b1b;
-  --shadown-solid-brown-light-little: 0 2px 0 2px #6e2f2f;
-
-  --shadown-inner-fort: inset 8px 8px 8px;
-  --shadown-inner: inset 3px 3px 3px var(--color-medium-brown-red);
-  --shadown-inner-green: inset 4px 4px 4px var(--color-green-dark);
-
-  --shadown-drop-fort-fort: 12px 15px 15px var(--color-gray);
-  --shadown-drop-fort: 6px 8px 8px var(--color-gray);
-  --shadown-drop-medium: 6px 4px 4px var(--color-gray);
-  --shadown-drop-weak: 3px 2px 2px var(--color-gray);
-  --shadown-drop-modal: 4px 4px 4px var(--color-medium-brown);
-
-  --border-input: 1px solid rgb(217, 139, 116);
-  --border-modal: 6px solid var(--color-dark-brown);
-  --border-scroll: 3px solid var(--color-beige);
-  --border-input-green: 1px solid var(--color-green-dark);
-  --border-beige: 3px solid var(--color-beige);
-  --border-red: 1px solid #a10909;
-
-  --transparency: rgba(0, 0, 0, 0.5);
-
   --font-pattern: "Segoe UI", Helvetica, Arial, Verdana;
-  --font-spaced: Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
   --font-bold: 600;
-  --font-shadow: 0 0 0 #ffffff;
 
-  --space-title-simple-margin: 30px 0px 20px 0px;
-  --space-title-double-margin: 55px 0px 40px 0px;
-  --space-title-triple-margin: 55px 0px 40px 0px;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-medium-gray: #8da7ac;
+  --color-light-gray: #c7d6d9;
+  --color-dark-blue: #0a4659;
+  --color-medium-blue: #329caa;
+  --color-light-blue: #3bd1e5;
+  --color-dark-green: #898220;
+  --color-medium-green: #9ebf3f;
+  --color-light-green: #b8cd7d;
+  --color-yellow: #f2960c;
+
+  --transparency-medium: rgba(0, 0, 0, 0.7);
+  --transparency-light: rgba(0, 0, 0, 0.5);
+
+  --shadown-drop-fort: 6px 6px 6px var(--color-black);
+  --shadown-drop-medium: 6px 4px 4px var(--color-black);
+  --shadown-drop-weak: 3px 2px 2px var(--color-black);
+
+  --space-top-bottom-simple: 30px 0px 20px 0px;
+  --space-top-bottom-double: 50px 0px 40px 0px;
   --space-line-simple: 20px 0px;
   --space-line-double: 40px 0px;
   --space-line-triple: 60px 0px;
