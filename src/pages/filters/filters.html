@@ -16,7 +16,19 @@
       <a href="../../index.html" class="link-pokemon">
         <img class="logo-onpokemon" alt="Website logo OnPokemon" src="../../img/logo.png">
       </a>
-      <img class="menu-onpokemon" alt="Website menu OnPokemon" src="../../img/icon-menu.png">
+      <section class="menu-header">  
+        <nav id="nav">
+          <button class="button-mobile" id="button-mobile" aria-label="Open menu" 
+          aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
+          <span class="icon"></span>  
+          </button>
+          <ul class="menu" id="menu" role="menu">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="filters.html">Filtros</a></li>
+            <li><a href="../tips/tips.html">Tips</a></li>
+          </ul>
+        </nav>
+      </section>
     </header>
 
     <form id="form-filters">
@@ -72,7 +84,7 @@
           <option value="water">Water</option>
         </select>
 
-        <select class="order-calculation color-select">
+        <select class="order-calculation color-select" id="rarity-selector">
           <option selected disabled>Rarity:</option>
             <option value="normal">Normal</option>
             <option value="legendary">Legendary</option>
@@ -105,33 +117,6 @@
     </section>
 
   </div>
-  <section class="modal-container" data-modal="container">
-    <div id="modal" class="modal">
-      <button class="close" data-modal="close-modal">X</button>
-      <p class="emphasis">OnPokemon</p>
-    </div>
-  </section>
-  <script>
-    const openModal = document.querySelector('[data-modal="open-modal"]');
-    const closeModal = document.querySelector('[data-modal="close-modal"]');
-    const containerModal = document.querySelector('[data-modal="container"]');
-
-    if (openModal && closeModal && containerModal) {
-      let toogle = function (e) {
-        e.preventDefault();
-        containerModal.classList.toggle("active");
-      };
-      let outside = function (e) {
-        if (event.target === this) {
-          event.preventDefault();
-          containerModal.classList.toggle("active");
-        }
-      };
-      openModal.addEventListener("click", toogle);
-      closeModal.addEventListener("click", toogle);
-      containerModal.addEventListener("click", outside);
-    }
-  </script>
   <script src="main.js" type="module"></script>
 </body>
 

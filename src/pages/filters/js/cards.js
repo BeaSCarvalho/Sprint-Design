@@ -1,3 +1,4 @@
+//import modal from "../modal.js"
 
 const resultCards = document.getElementById("result-cards");
 let itemsType = [];
@@ -25,6 +26,13 @@ export let createCards = (data) => {
           </div>
         </button>
       </div>
+
+      <section class="modal-container" data-modal="container">
+      <div id="modal" class="modal">
+        <button class="close" data-modal="close-modal">X</button>
+        <p class="emphasis">OnPokemon</p>
+      </div>
+      </section>
       `;
     })
     .join("");

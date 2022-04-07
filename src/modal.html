@@ -1,0 +1,51 @@
+<section class="modal-container" data-modal="container">
+  <div id="modal" class="modal">
+    <button class="close" data-modal="close-modal">X</button>
+    <p class="emphasis">OnPokemon</p>
+
+    <p class="pokemon-number">${item.num}</p> 
+    <p class="name-pokemon">${item.name[0].toUpperCase() + item.name.substr(1)}</p>
+    <img class="poke-img" src="${item.img}" alt=${item.name}>
+    <p class="pokemon-about">${item.about}</p> 
+    <p class="pokemon-rarity">${item['pokemon-rarity']}</p>
+
+    <h1 class="modal-titles">Type</h1> 
+    <ul class="poke-items list-type">
+      <li>${item.type}</li>
+    </ul>
+    <h1 class="modal-titles">Weaknesses</h1> 
+    <ul class="poke-items list-weaknesses">
+      <li>${item.weaknesses}</li>
+    </ul>
+    <h1 class="modal-titles">Resistant</h1> 
+    <ul class="poke-items list-weaknesses">
+      <li>${item.weaknesses}</li>
+    </ul>
+    <h1 class="modal-titles">Quick Moves</h1> 
+    <ul class="poke-items list-quick-moves">
+      <li>${item['quick-move']}</li>
+    </ul>
+    <h1 class="modal-titles">Special Attack</h1> 
+    <ul class="poke-items list-special-attack">
+      <li>${item['special-attack']}</li>
+    </ul>
+
+    <h1 class="modal-titles">Stats</h1> 
+    <ul class="poke-items list-stats">
+      <li>${item.stats}</li>
+    </ul>
+
+    <section class="evolutions">
+      <h1 class="modal-titles">Evolution</h1>
+      <div class="evolution">
+        <p class="evolution">${item.evolution['prev-evolution'].num}</p>  
+        <p class="evolution">${item.evolution['prev-evolution'].name}</p>  
+      </div>
+
+      <div class="evolution">
+        <p class="evolution">${item.evolution['next-evolution'].num}</p>  
+        <p class="evolution">${item.evolution['next-evolution'].name}</p>  
+      </div>
+    </section>
+  </div>
+</section>
