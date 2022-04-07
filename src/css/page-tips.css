@@ -1,70 +1,68 @@
 @import url("header.css");
 @import url("menu.css");
 @import url("button.css");
+@import url("variables.css");
 
-body {
-    display: flex;
-    flex-direction: column;
-    }
+#container-general {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
     
-    section {
-        box-sizing: border-box;
-        justify-content:center;
-        align-items: center;
-        flex-direction: column;
-        margin: auto 15% 5%; 
-        padding: 5%;
-    }
+.intro-text {
+  box-sizing: border-box;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto 15% 5%; 
+  padding: 5%;
+}
     
-    .main-title {
-        text-align: center;
-    }
+.main-title {
+  text-align: center;
+}
     
-    .first {
-        order: 0;
-    }
+.first {
+  order: 0;
+}
     
-    .wrapper {
-        margin-right: 30%;
-    }
+.wrapper {
+  margin-right: 30%;
+}
     
-    h2 {
-        text-align: center;
-    }
+.sub-title {
+  text-align: center;
+}
     
-    article {
-        box-sizing: border-box;
-        justify-content:center;
-        align-items: center;
-        flex-direction: column;
-        border: 1px solid #aaa9a9;
-        margin: auto 15% 5%; 
-        padding: 5%;
-        border-radius: 7px;
-        -webkit-box-shadow: 5px 15px 30px 0px rgba(0,0,0,0.45);
-        display: flex;
-      }
+.article {
+  box-sizing: border-box;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #aaa9a9;
+  margin: auto 15% 5%; 
+  padding: 5%;
+  border-radius: 7px;
+  -webkit-box-shadow: 5px 15px 30px 0px rgba(0,0,0,0.45);
+  display: flex;
+}
     
-    img {
-        max-width: 100%;
-        align-items: center;
-    }    
+img {
+  max-width: 100%;
+  align-items: center;
+}    
     
-    figcaption {
-        color: #918d8d;
-        font-size: small;
-        align-self: flex-end;
-    }
+figcaption {
+  color: #918d8d;
+  font-size: small;
+  align-self: flex-end;
+}
     
-    p {
-    text-align: justify;
-    }
+p {
+  text-align: justify;
+}
     
-    a {
-        text-decoration: none;
-        color: red;
-    }
-
-    li {
-        list-style-type: disc;
-    }
+a {
+  text-decoration: none;
+  color: red;
+}
