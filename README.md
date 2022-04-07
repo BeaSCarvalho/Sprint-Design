@@ -1,5 +1,5 @@
 <div align="center">
-   <img alt="Logo OnPokemon" src="./src/imgage/to-readme/logo-readme.png">
+   <img alt="Logo OnPokemon" src="./src/img/to-readme/logo-readme.png">
 
 ## Escolha os seus Pokemóns para combate, filtrando por tipo e fraqueza.
 
@@ -38,7 +38,7 @@
 
 Antes de iniciar o desenvolvimento do app, fizemos um trabalho de investigação de melhorias a serem implantadas através de um projeto base. E criamos usuários, quais seus possíveis problemas e a criação de personas a partir disso.
 
-O Jogo Pokémon GO é um jogo eletrônico free-to-play de realidade aumentada voltado para smartphones. Com o uso do sistema de posicionamento global (GPS) e a câmara de dispositivos compatíveis, o jogo permite aos jogadores capturar, batalhar, e treinar criaturas virtuais chamadas Pokémon, que aparecem na tela do jogador usando realidade aumentada. Também há um acessório opcional, o Pokémon Go Plus, alerta os usuários quando Pokémon estiverem nas proximidades.
+O Jogo Pokémon GO é um jogo eletrônico gratuito de realidade aumentada voltado para smartphones. Com o uso do sistema de posicionamento global (GPS) e a câmara de dispositivos compatíveis, o jogo permite aos jogadores capturar, batalhar, e treinar criaturas virtuais chamadas Pokémon, que aparecem na tela do jogador usando realidade aumentada. Também há um acessório opcional, o Pokémon Go Plus, alerta os usuários quando Pokémon estiverem nas proximidades.
 
 Pensando nos jogadores, desevolvemos uma plataforma onde reuni informações relevantes para ser um treinador Pokémon. O usuário encontrará uma plataforma intuitiva  que é possivel coletar dados referente aos seus Pokémons ou aqueles que deseja capturar.
  
@@ -59,7 +59,7 @@ Os Pokémons têm diferentes tipos e fraquezas em combate. Estas característica
 ### 1.2.1 Personas
 
   <div>
-    <img alt="Protótipo de baixa fidelidade para smartphone - Parte 1" height="400" src="./src/image/to-readme/personas.png">
+    <img alt="Protótipo de baixa fidelidade para smartphone - Parte 1" height="400" src="./src/img/to-readme/personas.png">
   </div>
 
 ### 1.3. OnPokemon
@@ -82,7 +82,7 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
   - _**PARA MOBILE (smartphones):**_
 
        <div>
-         <img alt="Protótipo de baixa fidelidade para smartphone - Parte 1" height="400" src="./src/image/to-readme/paper-prototype.png">
+         <img alt="Protótipo de baixa fidelidade para smartphone - Parte 1" height="400" src="./src/img/to-readme/paper-prototype.png">
        </div>
 
 ### 2.2. UX (Experiência do Usuário) e UI (Design de Interface)
@@ -124,7 +124,7 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
   - As cores escolhidas para o site foram pensadas em cores neutras para combinarem com as cores das imagens dos Pokémons, além de cores que pudessem ser contrastadas entre a cor do texto e o seu plano de fundo, para facilitar a leitura e legibilidade. Para isso foi utilizado a ferramenta da _[Adobe Color](https://color.adobe.com/pt/create/color-wheel)_ que testa, na parte de acessibilidade, as cores de textos com o seu plano de fundo. Foram testadas com a cor de plano de fundo da aplicação em si, dos textos, dos botões e pop-ups.
 
       <div>
-        <img alt="Cartela de cores do site OnPokemon" src="./src/image/to-readme/site-color.png">
+        <img alt="Cartela de cores do site OnPokemon" src="./src/img/to-readme/site-color.png">
      </div>
 
 ## 2.3 Protótipos de Alta Fidelidade
@@ -134,7 +134,7 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
 ### 2.3.1 Smartphone Posição Vertical
 
 <div>
-  <img alt="Protótipo de Smartphone com orientação vertical" src="./src/image/to-readme/mobile-gif.gif">
+  <img alt="Protótipo de Smartphone com orientação vertical" src="./src/img/to-readme/mobile-gif.gif">
 </div>
 
 
