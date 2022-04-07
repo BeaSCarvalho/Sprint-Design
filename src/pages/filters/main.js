@@ -4,7 +4,7 @@ import {
   orderOfWeakness,
   percentagePerFilter,
   filterBy,
-  filterRarity,
+  filterRarity
 } from "./js/data.js";
 import { createCards } from "./js/cards.js";
 import data from "../../data/pokemon/pokemon.js";
