@@ -37,8 +37,8 @@
 
       <div id="group-select">
         <select class="order-calculation new-color-select" id="order-selector">
-          <option selected disabled>Order by</option>
-          <option value="number">Pokedex number</option>
+          <option disabled>Order by</option>
+          <option selected value="number">Pokedex number</option>
           <option value="name-az">A-Z name</option>
           <option value="name-za">Z-A name</option>
         </select>
@@ -73,7 +73,7 @@
         </select>
 
         <select class="order-calculation color-select">
-          <option selected disabled>Rarity:</option>
+          <option selected disabled>Rarity</option>
             <option value="normal">Normal</option>
             <option value="legendary">Legendary</option>
             <option value="mythic">Mythic</option>
@@ -105,33 +105,6 @@
     </section>
 
   </div>
-  <section class="modal-container" data-modal="container">
-    <div id="modal" class="modal">
-      <button class="close" data-modal="close-modal">X</button>
-      <p class="emphasis">OnPokemon</p>
-    </div>
-  </section>
-  <script>
-    const openModal = document.querySelector('[data-modal="open-modal"]');
-    const closeModal = document.querySelector('[data-modal="close-modal"]');
-    const containerModal = document.querySelector('[data-modal="container"]');
-
-    if (openModal && closeModal && containerModal) {
-      let toogle = function (e) {
-        e.preventDefault();
-        containerModal.classList.toggle("active");
-      };
-      let outside = function (e) {
-        if (event.target === this) {
-          event.preventDefault();
-          containerModal.classList.toggle("active");
-        }
-      };
-      openModal.addEventListener("click", toogle);
-      closeModal.addEventListener("click", toogle);
-      containerModal.addEventListener("click", outside);
-    }
-  </script>
   <script src="main.js" type="module"></script>
 </body>
 

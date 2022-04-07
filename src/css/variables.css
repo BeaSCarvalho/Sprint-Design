@@ -36,8 +36,8 @@ html {
 
   --space-top-bottom-simple: 30px 0px 20px 0px;
   --space-top-bottom-double: 45px 0px 30px 0px;
-  --space-line-simple: 20px 0px;
-  --space-line-double: 30px 0px;
+  --space-line-simple: 10px 0px;
+  --space-line-double: 15px 0px;
   --space-simple-simple: 10px;
   --space-simple: 15px;
   --space-double: 20px;

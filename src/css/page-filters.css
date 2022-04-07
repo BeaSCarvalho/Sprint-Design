@@ -5,6 +5,7 @@
 @import url("button.css");
 @import url("cards.css");
 @import url("colors-pokemon.css");
+@import url("modal.css");
 @import url("screen-group-pokemon.css");
 
 * {
@@ -139,5 +140,4 @@
 }
 .line {
   border: none;
-  border-radius: var(--border-radius-simple);
 }
