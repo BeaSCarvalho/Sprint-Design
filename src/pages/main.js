@@ -7,28 +7,18 @@ import {
   filterRarity,
 } from "./filters/js/data.js";
 import { createCards } from "./filters/js/cards.js";
-import data from "../data/pokemon/pokemon.js";
+import data from "../data/pokemon.js";
 
-const nameTyped = document.getElementById("name-pokemon");
-const selectTypeOrWeakness = document.getElementById("filter-type-weakness");
-const selectAtributte = document.getElementById("filter-atributtes");
-const selectOrder = document.getElementById("order-selector");
-const selectOrderByWeakness = document.getElementById("calculation-selector");
-const cleanButton = document.getElementById("clean-button");
-const percentage = document.getElementById("quantify-text");
-const resultCards = document.getElementById("result-cards");
-const selectRarity = document.getElementById("rarity-selector");
 const buttonMobile = document.getElementById("button-mobile");
 
 buttonMobile.addEventListener("click", toggleMenu);
 buttonMobile.addEventListener("touchstart", toggleMenu);
 
-startPageFilters();
-
 function toggleMenu(event) {
   if (event.type === "touchstart") {
     event.preventDefault();
   }
+
   const navigation = document.getElementById("nav");
   navigation.classList.toggle("active");
   const navActive = nav.classList.contains("active");
@@ -40,6 +30,18 @@ function toggleMenu(event) {
     event.currentTarget.setAttribute("aria-laberl", "Open Menu");
   }
 }
+
+const nameTyped = document.getElementById("name-pokemon");
+const selectTypeOrWeakness = document.getElementById("filter-type-weakness");
+const selectAtributte = document.getElementById("filter-atributtes");
+const selectOrder = document.getElementById("order-selector");
+const selectOrderByWeakness = document.getElementById("calculation-selector");
+const cleanButton = document.getElementById("clean-button");
+const percentage = document.getElementById("quantify-text");
+const resultCards = document.getElementById("result-cards");
+const selectRarity = document.getElementById("rarity-selector");
+
+startPageFilters();
 
 function startPageFilters() {
   createCards(data.pokemon);
@@ -126,23 +128,21 @@ function typeWriter(letter) {
   });
 }
 
+function cleanForm() {
+  selectTypeOrWeakness.classList.replace("new-color-select", "color-select");
+  selectAtributte.classList.replace("new-color-select", "color-select");
+  selectOrderByWeakness.classList.replace("new-color-select", "color-select");
+  selectAtributte.disabled = true;
+  percentage.innerHTML = `Esse filtro representa 100% do total de Pokémons.`;
+  selectOrder.selectedIndex = 0;
+  const selectedOrder = selectOrder.value;
+  createCards(alphabeticOrder(data.pokemon, selectedOrder));
+}
+
 function filterPerRarity() {
   let selectedValueRarity = selectRarity.value;
   let resultOfFilters = filterRarity(data.pokemon, selectedValueRarity);
   createCards(resultOfFilters);
   resultOfFilters = resultOfFilters.length;
   percentagePokemon(resultOfFilters, data.pokemon);
-}
-
-function cleanForm() {
-  selectTypeOrWeakness.classList.replace("new-color-select", "color-select");
-  selectAtributte.classList.replace("new-color-select", "color-select");
-  selectOrderByWeakness.classList.replace("new-color-select", "color-select");
-  selectOrderByWeakness.classList.replace("new-color-select", "color-select");
-  selectRarity.classList.replace("new-color-select", "color-select");
-  selectAtributte.disabled = true;
-  percentage.innerHTML = `This filter represents 100% of the total Pokemon.`;
-  selectOrder.selectedIndex = 0;
-  const selectedOrder = selectOrder.value;
-  createCards(alphabeticOrder(data.pokemon, selectedOrder));
 }
