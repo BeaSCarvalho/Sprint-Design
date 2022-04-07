@@ -8,9 +8,9 @@ export const searchByName = (data, condition) => {
 export const filterBy = (
   data,
   selectedValueTypeOrWeakness,
-  selectedValueAttribute,
+  selectedValueAttribute
 ) => {
-  switch(selectedValueTypeOrWeakness) {
+  switch (selectedValueTypeOrWeakness) {
     case "type":
       return data.filter((item) => {
         return item.type.includes(selectedValueAttribute);
@@ -19,18 +19,18 @@ export const filterBy = (
       return data.filter((item) => {
         return item.weaknesses.includes(selectedValueAttribute);
       });
-    case "resistant": 
+    case "resistant":
       return data.filter((item) => {
         return item.resistant.includes(selectedValueAttribute);
       });
   }
-}  
+};
 
 export const filterRarity = (data, selectedOption) => {
   return data.filter((item) => {
-    return item['pokemon-rarity'] == selectedOption;
+    return item["pokemon-rarity"] == selectedOption;
   });
-}
+};
 
 export const alphabeticOrder = (data, selectedOption) => {
   if (selectedOption === "number") {
