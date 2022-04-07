@@ -6,7 +6,7 @@ import {
   filterBy,
   filterRarity
 } from "./js/data.js";
-import { showData } from "./js/cards.js";
+import { createCards } from "./js/cards.js";
 import data from "../../data/pokemon/pokemon.js";
 
 const buttonMobile = document.getElementById("button-mobile")
@@ -44,7 +44,7 @@ const selectRarity = document.getElementById("rarity-selector");
 startPageFilters();
 
 function startPageFilters() {
-  showData(data.pokemon)
+  createCards(data.pokemon)
   selectAtributte.disabled = true;
   nameTyped.addEventListener("keyup", searchNamePokemon);
   nameTyped.addEventListener("change", function () {
