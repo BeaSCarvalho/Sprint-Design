@@ -39,6 +39,7 @@ article {
     padding: 5%;
     border-radius: 7px;
     -webkit-box-shadow: 5px 15px 30px 0px rgba(0,0,0,0.45);
+    display: flex;
   }
 
 img {
@@ -46,6 +47,17 @@ img {
     align-items: center;
 }    
 
+figcaption {
+    color: #918d8d;
+    font-size: small;
+    align-self: flex-end;
+}
+
 p {
 text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: red;
 }
