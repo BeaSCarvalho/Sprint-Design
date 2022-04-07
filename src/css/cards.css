@@ -31,8 +31,8 @@
   margin-bottom: 8px;
 }
 .poke-img {
-  width: 142px;
-  height: 142px;
+  width: 135px;
+  height: 135px;
 }
 .poke-number {
   width: 50px;
@@ -45,12 +45,17 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 237px;
+  bottom: 250px;
   right: 160px;
+  color: var(--color-white);
+}
+.card-info {
+  padding: 5px;
+  width: 100%;
 }
 .poke-title {
   font-size: 1.125rem;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 .poke-items {
   padding: 0;
@@ -65,21 +70,23 @@
   font-size: 0.875rem;
   color: var(--color-white);
 }
-.small-button {
+.button-modal {
   font-size: 1rem;
   color: var(--color-dark-gray);
   display: flex;
   align-items: center;
+  flex-direction: row;
   background-color: var(--color-white);
   border: none;
   cursor: pointer;
   position: absolute;
-  right: 0;
-  bottom: 3px;
+  right: 3px;
+  bottom: 10px;
   padding: 0;
 }
 .container-icon {
   background-color: var(--color-medium-gray);
+  border: none;
   height: 20px;
   width: 20px;
   border-radius: 50%;
