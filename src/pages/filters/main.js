@@ -4,32 +4,34 @@ import {
   orderOfWeakness,
   percentagePerFilter,
   filterBy,
-  filterRarity
+  filterRarity,
 } from "./js/data.js";
 import { createCards } from "./js/cards.js";
 import data from "../../data/pokemon/pokemon.js";
 
-const buttonMobile = document.getElementById("button-mobile")
-  
-buttonMobile.addEventListener("click", toggleMenu)
-buttonMobile.addEventListener("touchstart", toggleMenu)
+/*
+const buttonMobile = document.getElementById("button-mobile");
 
-function toggleMenu (event) {
-	if(event.type === 'touchstart') {
-		event.preventDefault();
-	}
+buttonMobile.addEventListener("click", toggleMenu);
+buttonMobile.addEventListener("touchstart", toggleMenu);
 
-	const navigation = document.getElementById("nav");
-	navigation.classList.toggle('active');
-	const navActive = nav.classList.contains('active');
-	event.currentTarget.setAttribute('aria-expanded', navActive);
+function toggleMenu(event) {
+  if (event.type === "touchstart") {
+    event.preventDefault();
+  }
 
-	if (navActive) {
-		event.currentTarget.setAttribute('aria-laberl', 'Close Menu')
-	} else {
-		event.currentTarget.setAttribute('aria-laberl', 'Open Menu')
-	}
-}   
+  const navigation = document.getElementById("nav");
+  navigation.classList.toggle("active");
+  const navActive = nav.classList.contains("active");
+  event.currentTarget.setAttribute("aria-expanded", navActive);
+
+  if (navActive) {
+    event.currentTarget.setAttribute("aria-laberl", "Close Menu");
+  } else {
+    event.currentTarget.setAttribute("aria-laberl", "Open Menu");
+  }
+}
+*/
 
 const nameTyped = document.getElementById("name-pokemon");
 const selectTypeOrWeakness = document.getElementById("filter-type-weakness");
@@ -141,10 +143,7 @@ function cleanForm() {
 
 function filterPerRarity() {
   let selectedValueRarity = selectRarity.value;
-  let resultOfFilters = filterRarity(
-    data.pokemon,
-    selectedValueRarity
-  );
+  let resultOfFilters = filterRarity(data.pokemon, selectedValueRarity);
   createCards(resultOfFilters);
   resultOfFilters = resultOfFilters.length;
   percentagePokemon(resultOfFilters, data.pokemon);
