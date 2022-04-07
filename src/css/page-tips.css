@@ -1,13 +1,15 @@
+@import url("header.css");
 @import url("menu.css");
 @import url("button.css");
-@import url("header.css");
 @import url("variables.css");
 
 #container-general {
-  margin:0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
-
-.section-text {
+    
+.intro-text {
   box-sizing: border-box;
   justify-content:center;
   align-items: center;
@@ -15,23 +17,23 @@
   margin: auto 15% 5%; 
   padding: 5%;
 }
-
+    
 .main-title {
   text-align: center;
 }
-
+    
 .first {
   order: 0;
 }
-
+    
 .wrapper {
   margin-right: 30%;
 }
-
-h2 {
+    
+.sub-title {
   text-align: center;
 }
-
+    
 .article {
   box-sizing: border-box;
   justify-content:center;
@@ -43,23 +45,23 @@ h2 {
   border-radius: 7px;
   -webkit-box-shadow: 5px 15px 30px 0px rgba(0,0,0,0.45);
   display: flex;
-  }
-
+}
+    
 img {
   max-width: 100%;
   align-items: center;
 }    
-
+    
 figcaption {
   color: #918d8d;
   font-size: small;
   align-self: flex-end;
 }
-
+    
 p {
   text-align: justify;
 }
-
+    
 a {
   text-decoration: none;
   color: red;

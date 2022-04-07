@@ -21,23 +21,27 @@
 - [Escolha os seus Pokemóns para combate, filtrando por tipo e fraqueza.](#escolha-os-seus-pokemóns-para-combate-filtrando-por-tipo-e-fraqueza)
 - [ÍNDICE](#índice)
 - [1. PRODUTO](#1-produto)
-  - [1.1. Pokémon](#11-pokémon)
-  - [1.2. Histórias de Usuários](#12-histórias-de-usuários)
-  - [1.3. OnPokemon](#13-onpokemon)
+  - [1.1. Pokémon](#1.1-pokémon)
+  - [1.2. Histórias de Usuários](#1.2-histórias-de-usuários)
+  - [1.3. OnPokemon](#1.3-onpokemon)
 - [2. PROTÓTIPOS](#2-protótipos)
   - [2.1. Protótipo de Baixa Fidelidade](#2.1-protótipo-de-baixa-fidelidade)
   - [2.2. UX (Experiência do Usuário) e UI (Design de Interface)](#2.2-ux-experiência-do-usuário-e-ui-design-de-interface)
 - [2.3 Protótipos de Alta Fidelidade](#2.3-protótipos-de-alta-fidelidade)
-  - [2.3.1 Smartphone na Posição Vertical](#2.3.1-smartphone-na-posição-vertical)
-- [3. TESTE DE USABILIDADE](#3-teste-de-usabilidade)
-- [4. FERRAMENTAS UTILIZADAS](#4-ferramentas-utilizadas)
-- [5. CHECKLIST](#5-checklist)
-- [6. AUTORAS](#6-autoras)
-gi
+  - [2.3.1 Smartphone Posição Vertical](#2.3.1-smartphone-posição-vertical)
+- [3. FERRAMENTAS UTILIZADAS](#3-ferramentas-utilizadas)
+- [4. CHECKLIST](#4-checklist)
+- [5. AUTORAS](#5-autoras)
 ---
 
 ## 1. PRODUTO
 
+Antes de iniciar o desenvolvimento do app, fizemos um trabalho de investigação de melhorias a serem implantadas através de um projeto base. E criamos usuários, quais seus possíveis problemas e a criação de personas a partir disso.
+
+O Jogo Pokémon GO é um jogo eletrônico gratuito de realidade aumentada voltado para smartphones. Com o uso do sistema de posicionamento global (GPS) e a câmara de dispositivos compatíveis, o jogo permite aos jogadores capturar, batalhar, e treinar criaturas virtuais chamadas Pokémon, que aparecem na tela do jogador usando realidade aumentada. Também há um acessório opcional, o Pokémon Go Plus, alerta os usuários quando Pokémon estiverem nas proximidades.
+
+Pensando nos jogadores, desevolvemos uma plataforma onde reuni informações relevantes para ser um treinador Pokémon. O usuário encontrará uma plataforma intuitiva  que é possivel coletar dados referente aos seus Pokémons ou aqueles que deseja capturar.
+ 
 ### 1.1. Pokémon
 
 Pokémons são criaturas de todas as formas e tamanhos que podem ser selvagens ou então aparecer ao lado de seus parceiros treinadores. Durante suas aventuras, os Pokémons crescem e se tornam mais experientes e evoluem para se tornarem Pokémons ainda mais fortes. Centenas de Pokémon conhecidos habitam o universo Pokémons, com números incontáveis esperando para serem descobertos!
@@ -68,7 +72,7 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
 
 - OnPokemon é um projeto desenvolvido em 2022, para o bootcamp da Laboratoria Brasil.
 - Esse projeto é baseado nas instruções apresentadas pelo README do [Data-Lovers](https://github.com/Laboratoria/SAP007-data-lovers).
-- Para iniciar o projeto, iniciamos com um planejamento realizado no site Trello, com base em [Babys Steps](https://blogprisma.com.br/baby-steps/) e na metodologia [Scrum](http://www.desenvolvimentoagil.com.br/scrum/), com sprints de uma semana.
+- Para iniciar o projeto, iniciamos com um planejamento realizado no site Trello, com metodologia [Scrum](http://www.desenvolvimentoagil.com.br/scrum/), com sprint de uma semana.
 
 ### 2.1. Protótipo de Baixa Fidelidade
 
@@ -85,7 +89,7 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
 
 - _**Estilo**_
 
-  - OnPokemon é do estilo _**[skeumórfico](https://www.chiefofdesign.com.br/ui-design/)**_, que utiliza artifícios como texturas, sombras, gradientes e proporções, para simular os objetos reais e é muito utilizado em jogos, como o Pokémon Go. Já para o site OnPokemon, foi usado no logo para o desenho da [pokebola](https://pokepedia.fandom.com/pt/wiki/Pokeb%C3%B3la#:~:text=Este%20item%20caracteriza%20a%20s%C3%A9rie,Pok%C3%A9mon%20em%20um%20pequeno%20espa%C3%A7o.), além das imagens da [pokédex](https://pokemon.fandom.com/pt-br/wiki/Pok%C3%A9dex) fechada e aberta, dos ícones e dos campos do formulário.
+  - OnPokemon é do estilo _**[skeumórfico](https://www.chiefofdesign.com.br/ui-design/)**_, que utiliza artifícios como texturas, sombras, gradientes e proporções, para simular os objetos reais e é muito utilizado em jogos, como o Pokémon Go. Já para o site OnPokemon, foi usado no logo para o desenho da [pokebola](https://pokepedia.fandom.com/pt/wiki/Pokeb%C3%B3la#:~:text=Este%20item%20caracteriza%20a%20s%C3%A9rie,Pok%C3%A9mon%20em%20um%20pequeno%20espa%C3%A7o.).
 
 - _**Responsividade**_
 
@@ -127,41 +131,14 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
 
 - Para o desenvolvimento do protótipo de alta fidelidade, foi usado uma ferramenta digital para protótipo. A ferramenta utilizada foi o Figma, que é um editor gráfico de vetor e prototipagem de projetos de design baseado principalmente no navegador web.
 
-### 2.3.1 Smartphone na Posição Vertical
+### 2.3.1 Smartphone Posição Vertical
 
 <div>
   <img alt="Protótipo de Smartphone com orientação vertical" src="./src/img/to-readme/mobile-gif.gif">
 </div>
 
-## 3. TESTE DE USABILIDADE
 
-- Para realizar o teste de usabilidade, usamos o formulário do Google para coletar informações dos usuários
-
-### 3.1. Formulário:
-
-#### 3.1.1. Perguntas obrigatórias para a página Home:
-
-- Atividade 1 - O que você vê nesta página? O que deveria acontecer em seguida?
-- Atividade 2 - Você encontrou dificuldades para mudar de página? Por quê?
-
-#### 3.1.2. Perguntas obrigatórias para a página Filters:
-
-- Atividade 1 - Use a barra de pesquisa para encontrar um Pokémon pelo nome. O que você esperava que acontecesse? Qual foi o resultado?
-- Atividade 2 - Utilize um dos filtros. O que você esperava como resultado quando executou a filtragem? O que você vê nesta interface da parte de resultados(cards)?
-
-#### 3.1.3. Perguntas opcionais de sugestões e críticas:
-
-- Deixe as suas sugestões e críticas:
-
-### 3.2. Respostas:
-
-- Os usuários encontraram dificuldades para acessar a página Filters, a partir da página Home. Uma sugestão encontrada para informar os usuários é informá-los por texto dentro do texto de boas-vindas.
-
-- Uma dificuldade encontrada na página Filters, é que não será possível pesquisar pelo nome e pelo checkbox ao mesmo tempo. Então, colocamos como correção para o site de bloquear o campo do checkbox, que pesquisa pelo tipo e fraquezas, quando o nome do pokémon for digitado. O inverso ocorreria também para bloquear o nome, ao assinalar o checkbox. Além de adicionar um botão de limpar o formulário.
-
-- As sugestões apresentadas foram de fornecer mais informações sobre os pokémons, ao clicar nos cards.
-
-## 4. FERRAMENTAS UTILIZADAS
+## 3. FERRAMENTAS UTILIZADAS
 
 - **Planejamento:**
 
@@ -172,13 +149,11 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
   - **Edição de Imagens:** _[Canva](https://www.canva.com/pt_br/)_
   - **Paleta de Cores com Acessibilidade:** _[Adobe Color](https://color.adobe.com/pt/create/color-wheel)_
   - **Protótipo:** _[Figma](https://www.figma.com/)_
-  - **Para fazer Gif:** _[Canva](https://www.canva.com/pt_br/)_
-  - **Para fazer o Teste de Usabilidade:** _[Google Forms](https://www.google.com/intl/pt-BR/forms/about/)_
 
 - **Web:**
   - **Editor:** _[Visual Studio Code](https://code.visualstudio.com/)_
 
-## 5. CHECKLIST
+## 4. CHECKLIST
 
 - [x] Usar VanillaJS.
 - [x] Passa pelo linter (`npm run pretest`)
@@ -195,7 +170,7 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
 - [x] UI: Permite filtrar dados com base em uma condição.
 - [x] UI: É _responsivo_.
 
-## 6. AUTORAS
+## 5. AUTORAS
 
 <table>
 <td>
