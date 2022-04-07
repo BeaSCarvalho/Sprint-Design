@@ -10,25 +10,27 @@ export const filterBy = (
   selectedValueTypeOrWeakness,
   selectedValueAttribute
 ) => {
-  if (selectedValueTypeOrWeakness === "type") {
-    return filterByType(data, selectedValueAttribute);
-  }
-  if (selectedValueTypeOrWeakness === "weaknesses") {
-    return filterByWeakness(data, selectedValueAttribute);
+  switch (selectedValueTypeOrWeakness) {
+    case "type":
+      return data.filter((item) => {
+        return item.type.includes(selectedValueAttribute);
+      });
+    case "weaknesses":
+      return data.filter((item) => {
+        return item.weaknesses.includes(selectedValueAttribute);
+      });
+    case "resistant":
+      return data.filter((item) => {
+        return item.resistant.includes(selectedValueAttribute);
+      });
   }
 };
 
-function filterByType(data, selectedValueAttribute) {
+export const filterRarity = (data, selectedOption) => {
   return data.filter((item) => {
-    return item.type.includes(selectedValueAttribute);
+    return item["pokemon-rarity"] == selectedOption;
   });
-}
-
-function filterByWeakness(data, selectedValueAttribute) {
-  return data.filter((item) => {
-    return item.weaknesses.includes(selectedValueAttribute);
-  });
-}
+};
 
 export const alphabeticOrder = (data, selectedOption) => {
   if (selectedOption === "number") {
