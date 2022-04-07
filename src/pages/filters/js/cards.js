@@ -86,13 +86,10 @@ export let createCards = (data) => {
             <h2 class="modal-titles">Evolution</h2>
             <div class="evolution">
               <p class="evolution">
-                ${item.evolution["prev-evolution"].num}
+                ${item.evolution.num}
               </p>  
               <p class="evolution">
-                ${item.evolution["prev-evolution"].name}
-              </p>
-              <p class="evolution">
-                ${item.evolution["prev-evolution"].candy}
+                ${item.evolution.name}
               </p>
             </div>
           </section>
