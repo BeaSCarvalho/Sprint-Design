@@ -1,12 +1,14 @@
 .box {
   margin-bottom: 1rem;
+ 
 }
 
 .box-image img {
   margin: auto;
   animation: anima;
   animation-duration: 800ms;
-  max-width: 80%;
+  max-width: 56%;
+  margin-top: 1px;
 }
 
 @keyframes anima {
@@ -30,9 +32,9 @@
   margin-right: 1px;
   border-radius: 50%;
   cursor: pointer;
-  background: red;
+  background: #0c3559;
 }
 .box-cursor span.marcador{
 
-  background-color: blue;
+  background-color: rgb(84, 84, 234);
  }
