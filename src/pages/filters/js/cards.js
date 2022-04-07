@@ -21,7 +21,8 @@ export let createCards = (data) => {
           <ul class="poke-items">
             ${item.type
               .map(
-                (type) => '<li class="li-item ' + type + '">' + type + "</li>"
+                (type) =>
+                  '<li class="li-item-card ' + type + '">' + type + "</li>"
               )
               .join("")}
           </ul>
