@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/page-home.css">
-  <title>ONPOKEMON</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/page-home.css">
+    <title>ONPOKEMON</title>
+  </head>
 
-<body id="container-general">
+  <body id="container-general">
 
-  <div id="container-pokemon">
-    <header id="header-filters">
-      <a href="index.html" class="link-pokemon">
-        <img class="logo-onpokemon" alt="Website logo OnPokemon" src="./img/logo.png">
-      </a>
-      <img class="menu-onpokemon" alt="Website menu OnPokemon" src="./img/icon-menu.png">
-    </header>
+    <div id="container-pokemon">
+      <header id="header-filters">
+        <a href="index.html" class="link-pokemon">
+          <img class="logo-onpokemon" alt="Website logo OnPokemon" src="./img/logo.png">
+        </a>
+        <section class="menu-header">  
+          <nav id="nav">
+            <button class="button-mobile" id="button-mobile" aria-label="Open menu" 
+            aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
+            <span class="icon"></span>  
+            </button>
+            <ul class="menu" id="menu" role="menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="./pages/filters/filters.html">Filters</a></li>
+              <li><a href="./pages/tips/tips.html">Tips</a></li>
+            </ul>
+          </nav>
+        </section>  
+      </header>
 
-    <a href="./pages/filters/filters.html">IR NA PÁGINA FILTERS</a>
     <script src="main.js" type="module"></script>
-  </div>
-</body>
-
+    </div>
+  </body>
 </html>
