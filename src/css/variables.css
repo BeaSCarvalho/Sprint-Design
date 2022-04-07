@@ -1,4 +1,4 @@
-html {
+:root {
   --font-pattern: "Segoe UI", Helvetica, Arial, Verdana;
   --font-bold: 600;
 
@@ -33,6 +33,7 @@ html {
   --shadown-drop-fort: 6px 6px 6px #737373;
   --shadown-drop-medium: 6px 4px 4px #737373;
   --shadown-drop-medium-cards: 6px 4px 4px #8da7ac;
+  --shadown-modal: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
 
   --space-top-bottom-simple: 30px 0px 20px 0px;
   --space-top-bottom-double: 45px 0px 30px 0px;

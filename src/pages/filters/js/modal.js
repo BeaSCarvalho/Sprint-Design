@@ -1,23 +1,20 @@
 export default () => {
-  const openModal = document.querySelector('[data-modal="open-modal"]');
-  const closeModal = document.querySelector('[data-modal="close-modal"]');
+  const openModal = document.querySelector('[data-modal="open"]');
+  const closeModal = document.querySelector('[data-modal="close"]');
   const containerModal = document.querySelector('[data-modal="container"]');
 
-
   if (openModal && closeModal && containerModal) {
-    let toogle = function (e) {
+    function toggleModal(e) {
       e.preventDefault();
-      containerModal.classList.toggle("active");
-    };
-  }  
-    let outside = function (e) {
+      containerModal.classList.toggle("active-modal");
+    }
+    function outsideModal(e) {
       if (e.target === this) {
-        e.preventDefault();
-        containerModal.classList.toggle("active");
+        toggleModal(e);
       }
-    };
-
-  openModal.addEventListener("click", toogle);
-  closeModal.addEventListener("click", toogle);
-  containerModal.addEventListener("click", outside);
-}
+    }
+    openModal.addEventListener("click", toggleModal);
+    closeModal.addEventListener("click", toggleModal);
+    containerModal.addEventListener("click", outsideModal);
+  }
+};

@@ -5,10 +5,15 @@
   border: none;
   border-radius: var(--border-radius-simple);
   place-self: end;
+  height: 40px;
+  width: 40px;
 }
 .btn-action:active {
   box-shadow: var(--shadown-solid-brown-light-big);
   transform: translateY(5px);
+}
+.btn-action img {
+  height: 20px;
 }
 #clean-button {
   background-color: var(--color-light-green);
@@ -27,13 +32,6 @@
 }
 
 @media screen and (min-width: 550px) and (max-width: 999px) {
-  .btn-action {
-    height: 40px;
-    width: 40px;
-  }
-  .btn-action img {
-    height: 20px;
-  }
   #back-button {
     bottom: var(--space-simple);
     right: var(--space-simple);

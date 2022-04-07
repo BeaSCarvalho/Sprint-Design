@@ -1,51 +1,188 @@
-<section class="modal-container" data-modal="container">
-  <div id="modal" class="modal">
-    <button class="close" data-modal="close-modal">X</button>
-    <p class="emphasis">OnPokemon</p>
+<!DOCTYPE html>
+<html lang="en">
 
-    <p class="pokemon-number">${item.num}</p> 
-    <p class="name-pokemon">${item.name[0].toUpperCase() + item.name.substr(1)}</p>
-    <img class="poke-img" src="${item.img}" alt=${item.name}>
-    <p class="pokemon-about">${item.about}</p> 
-    <p class="pokemon-rarity">${item['pokemon-rarity']}</p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/page-modal.css">
+</head>
 
-    <h1 class="modal-titles">Type</h1> 
-    <ul class="poke-items list-type">
-      <li>${item.type}</li>
-    </ul>
-    <h1 class="modal-titles">Weaknesses</h1> 
-    <ul class="poke-items list-weaknesses">
-      <li>${item.weaknesses}</li>
-    </ul>
-    <h1 class="modal-titles">Resistant</h1> 
-    <ul class="poke-items list-weaknesses">
-      <li>${item.weaknesses}</li>
-    </ul>
-    <h1 class="modal-titles">Quick Moves</h1> 
-    <ul class="poke-items list-quick-moves">
-      <li>${item['quick-move']}</li>
-    </ul>
-    <h1 class="modal-titles">Special Attack</h1> 
-    <ul class="poke-items list-special-attack">
-      <li>${item['special-attack']}</li>
-    </ul>
+<body>
+  <a href="#" data-modal="open">MODAL</a>
+  <section class="modal-container" data-modal="container">
+    <div class="modal">
+      <button class="close-modal" data-modal="close">X</button>
 
-    <h1 class="modal-titles">Stats</h1> 
-    <ul class="poke-items list-stats">
-      <li>${item.stats}</li>
-    </ul>
-
-    <section class="evolutions">
-      <h1 class="modal-titles">Evolution</h1>
-      <div class="evolution">
-        <p class="evolution">${item.evolution['prev-evolution'].num}</p>  
-        <p class="evolution">${item.evolution['prev-evolution'].name}</p>  
+      <div class="group-header">
+        <span class="header-number">
+          <p class="modal-poke-number">001</p>
+        </span>
+        <span class="header-name">
+          <p class="modal-poke-name">Bulbasaur</p>
+        </span>
       </div>
 
-      <div class="evolution">
-        <p class="evolution">${item.evolution['next-evolution'].num}</p>  
-        <p class="evolution">${item.evolution['next-evolution'].name}</p>  
+      <div class="group-modal">
+        <img class="poke-img" src="img/001.png"" alt=" qualquer coisa">
+        <p class="pokemon-about">Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.</p>
+
+        <p class="pokemon-rarity">Normal</p>
+
+        <h1 class="modal-titles">Stats</h1>
+        <section class="group-stats">
+          <ul class="poke-items">
+            <span class="list-title">HP</span>
+            <li class="li-item">113</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">CP</span>
+            <li class="li-item">1115</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Attack</span>
+            <li class="li-item">118</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Defense</span>
+            <li class="li-item">111</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Stamina</span>
+            <li class="li-item">128</li>
+          </ul>
+        </section>
+
+        <h1 class="modal-titles">Type</h1>
+        <ul class="poke-items list-type">
+          <li class="li-item">Grass</li>
+          <li class="li-item">Poison</li>
+        </ul>
+        <h1 class="modal-titles">Weaknesses</h1>
+        <ul class="poke-items list-weaknesses">
+          <li class="li-item">Fire</li>
+          <li class="li-item">Ice</li>
+          <li class="li-item">Flying</li>
+          <li class="li-item">Psychic</li>
+        </ul>
+        <h1 class="modal-titles">Resistant</h1>
+        <ul class="poke-items list-resistant">
+          <li class="li-item">Water</li>
+          <li class="li-item">Eletric</li>
+          <li class="li-item">Grass</li>
+          <li class="li-item">Fighting</li>
+          <li class="li-item">Fairy</li>
+        </ul>
+
+        <h1 class="modal-titles">Quick Moves</h1>
+        <section class="group-moves-attack">
+          <ul class="poke-items">
+            <span class="list-title">vine whip</span>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Type</span>
+            <li class="li-item">grass</li>
+            <li class="li-item">poison</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Damage</span>
+            <li class="li-item">7</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Energy</span>
+            <li class="li-item">6</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Move duration - seg</span>
+            <li class="li-item">0.5</li>
+          </ul>
+        </section>
+        <section class="group-moves-attack">
+          <ul class="poke-items">
+            <span class="list-title">vine whip</span>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Type</span>
+            <li class="li-item">grass</li>
+            <li class="li-item">poison</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Damage</span>
+            <li class="li-item">7</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Energy</span>
+            <li class="li-item">6</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Move duration - seg</span>
+            <li class="li-item">0.5</li>
+          </ul>
+        </section>
+
+        <h1 class="modal-titles">Special Attack</h1>
+        <section class="group-moves-attack">
+          <ul class="poke-items">
+            <span class="list-title">vine whip</span>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Type</span>
+            <li class="li-item">grass</li>
+            <li class="li-item">poison</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Damage</span>
+            <li class="li-item">7</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Energy</span>
+            <li class="li-item">6</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Move duration - seg</span>
+            <li class="li-item">0.5</li>
+          </ul>
+        </section>
+
+        <section class="evolutions">
+          <h1 class="modal-titles">Evolution</h1>
+          <div class="evolution">
+            <p class="evolution">002</p>
+            <p class="evolution">ivysaur</p>
+          </div>
+
+          <div class="evolution">
+            <p class="evolution">003</p>
+            <p class="evolution">venusaur</p>
+          </div>
+        </section>
       </div>
-    </section>
-  </div>
-</section>
+    </div>
+  </section>
+  <script>
+
+    const openModal = document.querySelector('[data-modal="open"]');
+    const closeModal = document.querySelector('[data-modal="close"]');
+    const containerModal = document.querySelector('[data-modal="container"]');
+
+
+    if (openModal && closeModal && containerModal) {
+      function toggleModal(e) {
+        e.preventDefault();
+        containerModal.classList.toggle('active-modal');
+      }
+      function outsideModal(e) {
+        if (e.target === this) {
+          toggleModal(e);
+        }
+      }
+      openModal.addEventListener("click", toggleModal);
+      closeModal.addEventListener("click", toggleModal);
+      containerModal.addEventListener("click", outsideModal);
+    }
+
+  </script>
+</body>
+
+</html>
