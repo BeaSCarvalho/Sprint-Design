@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-//import modal from "../modal.js"
-
->>>>>>> origin/main
 const resultCards = document.getElementById("result-cards");
 
 export let createCards = (data) => {
@@ -101,31 +96,8 @@ export let createCards = (data) => {
             </div>
           </section>
         </div>
-<<<<<<< HEAD
       </section>
     `;
-=======
-        <h4 class="poke-title">
-          ${item.name[0].toUpperCase() + item.name.substr(1)}
-        </h4>
-        <ul class="poke-items list-type">
-        </ul>
-        <button type="button" class="small-button" data-modal="open-modal">
-          open
-          <div class="container-icon">
-            <img src="../../img/icon-open.png" alt="More information" class="small-icon">
-          </div>
-        </button>
-      </div>
-
-      <section class="modal-container" data-modal="container">
-      <div id="modal" class="modal">
-        <button class="close" data-modal="close-modal">X</button>
-        <p class="emphasis">OnPokemon</p>
-      </div>
-      </section>
-      `;
->>>>>>> origin/main
     })
     .join("");
 };
@@ -141,12 +113,12 @@ function initModal() {
 
 function toogle(e) {
   e.preventDefault();
-  containerModal.classList.toggle("active");
+  containerModal.classList.toggle("active-modal");
 }
 
 function outside(e) {
   if (e.target === this) {
     e.preventDefault();
-    containerModal.classList.toggle("active");
+    containerModal.classList.toggle("active-modal");
   }
 }
