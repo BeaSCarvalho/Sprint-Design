@@ -3,12 +3,11 @@
 @import url("variables.css");
 @import url("colors-pokemon.css");
 @import url("modal.css");
-@import url("cards.css");
 
 [data-modal="container"] {
   font-family: var(--font-pattern);
+  font-size: 0.625rem;
 }
-
 .group-header,
 .group-modal {
   display: flex;
@@ -46,7 +45,12 @@
   grid-template-columns: 1fr;
 }
 
-.group-modal::-webkit-scrollbar {
+.modal-poke-img {
+  height: 60px;
+  width: 60px;
+}
+
+.poke .group-modal::-webkit-scrollbar {
   width: 5px;
 }
 .group-modal::-webkit-scrollbar-track {
