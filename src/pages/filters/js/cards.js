@@ -113,12 +113,12 @@ function initModal() {
 
 function toogle(e) {
   e.preventDefault();
-  containerModal.classList.toggle("active");
+  containerModal.classList.toggle("active-modal");
 }
 
 function outside(e) {
   if (e.target === this) {
     e.preventDefault();
-    containerModal.classList.toggle("active");
+    containerModal.classList.toggle("active-modal");
   }
 }
