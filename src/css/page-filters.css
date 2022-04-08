@@ -1,10 +1,9 @@
 @charset "utf-8";
-
-@import url("cards.css");
-@import url("colors-pokemon.css");
-@import url("modal.css");
-@import url("screen-group-pokemon.css");
-@import url("screen-page-filters.css");
+@import url("container.css");
+@import url("./filter/cards.css");
+@import url("./filter/colors-pokemon.css");
+@import url("./filter/modal.css");
+@import url("./filter/group-pokemon.css");
 
 #form-filters {
   display: grid;

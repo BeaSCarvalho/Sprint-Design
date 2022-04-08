@@ -18,15 +18,12 @@ img {
   margin: 0;
 }
 #container-general {
-  background-repeat: no-repeat;
-  display: grid;
-  grid-template-columns: 1fr;
   background: #3bd1e5;
 }
 #container-pokemon {
   min-width: 300px;
   max-width: 1800px;
-  justify-self: center;
+  margin: 0 auto;
   background-color: #ffffff;
 }
 
@@ -48,7 +45,6 @@ img {
   --color-yellow: #f2960c;
   --color-card: #f2f2f2;
   --color-disabled: #cdb7b5;
-
   --gradient-background: linear-gradient(
     180deg,
     rgba(192, 248, 255, 1) 0%,
@@ -57,7 +53,6 @@ img {
 
   --transparency-light: rgba(0, 0, 0, 0.5);
   --transparency-light-gray: rgba(191, 208, 211, 0.7);
-
   --shadown-drop-medium: 6px 4px 4px #737373;
   --shadown-article: 5px 10px 10px 0px rgba(0, 0, 0, 0.45);
 
