@@ -7,7 +7,7 @@
 }
 .logo-onpokemon,
 .menu-header {
-  margin: 1rem;
+  margin: 1rem 2rem;
 }
 .logo-onpokemon {
   height: 2rem;
@@ -101,31 +101,15 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1000px) {
   .logo-onpokemon,
   .menu-header {
-    margin: 1.5rem;
+    margin: 1.5rem 3rem;
   }
   .logo-onpokemon {
     height: 3rem;
   }
   .menu a {
     font-size: 2rem;
-  }
-}
-
-@media screen and (max-width: 549px) {
-  #container-pokemon {
-    min-width: 300px;
-  }
-}
-@media screen and (min-width: 550px) and (max-width: 999px) {
-  #container-pokemon {
-    min-width: 550px;
-  }
-}
-@media screen and (min-width: 1000px) and (max-width: 1799px) {
-  #container-pokemon {
-    min-width: 1000px;
   }
 }

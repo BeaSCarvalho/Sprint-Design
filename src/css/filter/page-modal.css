@@ -4,10 +4,6 @@
 @import url("colors-pokemon.css");
 @import url("modal.css");
 
-[data-modal="container"] {
-  font-family: var(--font-pattern);
-  font-size: 0.5rem;
-}
 .group-header,
 .group-modal {
   display: flex;
