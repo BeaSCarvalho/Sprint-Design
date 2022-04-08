@@ -1,6 +1,6 @@
 #result-cards {
-  margin: 0 auto;
-  max-width: 2000px;
+  margin: 5rem auto;
+  max-width: 1800px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -10,51 +10,51 @@
 }
 #not-pokemon {
   font-weight: 600;
-  padding: 20px 0px;
-  font-size: 1.6rem;
+  padding: 2rem 0;
+  font-size: 2.6rem;
   text-align: center;
   line-height: 1.8;
 }
 .card {
-  margin: 30px;
+  margin: 3rem;
   position: relative;
 }
 .card-box {
-  height: 200px;
-  width: 200px;
+  height: 20rem;
+  width: 20rem;
   background-color: var(--color-card);
-  border-radius: 8px;
-  box-shadow: var(--shadown-drop-medium-cards);
+  border-radius: 0.8rem;
+  box-shadow: var(--shadown-drop-cards);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 0.8rem;
 }
 .poke-img {
-  width: 135px;
-  height: 135px;
+  width: 13.5rem;
+  height: 13.5rem;
 }
 .poke-number {
-  width: 50px;
-  height: 30px;
-  border-radius: 5px;
-  box-shadow: var(--shadown-drop-medium-cards);
-  font-size: 1rem;
-  font-weight: var(--font-bold);
+  width: 5rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadown-drop-cards);
+  font-size: 1.5rem;
+  font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 250px;
+  bottom: 255px;
   right: 160px;
   color: var(--color-white);
 }
 .card-info {
-  padding: 5px;
+  padding: 0.5rem;
   width: 100%;
 }
 .poke-title {
-  font-size: 1.125rem;
+  font-size: 2rem;
   margin-bottom: 2px;
 }
 .poke-items {
@@ -63,37 +63,26 @@
 }
 .li-item-card {
   display: inline-block;
-  padding: 3px 7px;
-  margin: 2px;
-  margin-left: 0px;
-  border-radius: 3px;
-  font-size: 0.875rem;
+  padding: 0.3rem 0.7rem;
+  margin: 0.5rem;
+  margin-left: 0;
+  border-radius: 0.3rem;
+  font-size: 1.4rem;
   color: var(--color-white);
 }
-.button-modal {
-  font-size: 1rem;
-  color: var(--color-dark-gray);
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  background-color: var(--color-white);
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  right: 3px;
-  bottom: 10px;
-  padding: 0;
-}
 .container-icon {
-  background-color: var(--color-medium-gray);
+  background-color: var(--transparency-light-gray);
   border: none;
-  height: 20px;
-  width: 20px;
+  height: 2rem;
+  width: 2rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px 2px;
+  margin: 0 0.2rem;
+  position: absolute;
+  bottom: 80px;
+  right: 5px;
 }
 .small-icon {
   height: 10px;

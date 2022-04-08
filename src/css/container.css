@@ -28,9 +28,6 @@ img {
 }
 
 :root {
-  --space-simple: 2rem;
-  --space-double: 4rem;
-
   --color-black: #022f35;
   --color-white: #ffffff;
   --color-dark-gray: #4e6064;
@@ -50,14 +47,12 @@ img {
     rgba(192, 248, 255, 1) 0%,
     rgba(255, 255, 255, 1) 83%
   );
-
   --transparency-light: rgba(0, 0, 0, 0.5);
-  --transparency-light-gray: rgba(191, 208, 211, 0.7);
+  --transparency-light-gray: rgba(191, 208, 211, 0.8);
   --shadown-drop-fort: 6px 6px 6px #737373;
   --shadown-drop-medium: 6px 4px 4px #737373;
   --shadown-article: 5px 10px 10px 0px rgba(0, 0, 0, 0.45);
   --shadown-drop-cards: 6px 4px 4px #8da7ac;
-
   --border-input: 1px solid var(--color-light-blue);
 
   /*Colors Pokémons*/

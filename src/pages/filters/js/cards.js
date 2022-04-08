@@ -1,4 +1,4 @@
-const containerList = document.getElementById("list");
+const containerList = document.getElementById("result-cards");
 const pokemonModal = document.getElementById("modal-pokemon");
 
 let body = document.getElementsByTagName("body")[0];
@@ -32,12 +32,9 @@ export let createCards = function (pokemonArray) {
             )
             .join("")}
         </ul> 
-        <button type="button" class="button-modal open-modal">
-          open
-          <div class="container-icon">
-            <img src="../../img/icon-open.png" alt="More information" class="small-icon">
-          </div>
-        </button> 
+        <div class="container-icon">
+          <img src="../../img/icon-open.png" alt="More information" class="small-icon">
+        </div>
       </main>
     `;
 
@@ -79,7 +76,7 @@ export let createCards = function (pokemonArray) {
       }
 
       let template = `
-          <div class="modal-content">
+          <div class="modal-conteiner">
             <span id="spanClose" class="close">x</span>
               
             <div class="modal_block1">
