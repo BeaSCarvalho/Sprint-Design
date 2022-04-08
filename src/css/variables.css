@@ -1,7 +1,5 @@
 :root {
-  --font-pattern: "Segoe UI", Helvetica, Arial, Verdana;
   --font-bold: 600;
-
   --color-black: #022f35;
   --color-white: #ffffff;
   --color-dark-gray: #4e6064;
@@ -16,7 +14,6 @@
   --color-yellow: #f2960c;
   --color-card: #f2f2f2;
   --color-disabled: #cdb7b5;
-
   --gradient-background: linear-gradient(
     180deg,
     rgba(192, 248, 255, 1) 0%,
@@ -51,23 +48,5 @@
   --space-input-double: 0px 15px 30px 0px;
   --space-input-triple: 0px 25px 30px 0px;
 
-  /*Colors Pokémons*/
-  --bug: rgb(158, 191, 63);
-  --dark: rgb(93, 96, 109);
-  --dragon: rgb(21, 116, 196);
-  --electric: rgb(238, 212, 79);
-  --fairy: rgb(237, 153, 229);
-  --fighting: rgb(215, 68, 86);
-  --fire: rgb(224, 164, 86);
-  --flying: rgb(156, 180, 230);
-  --ghost: rgb(107, 114, 196);
-  --grass: rgb(98, 190, 101);
-  --ground: rgb(214, 133, 91);
-  --ice: rgb(129, 212, 201);
-  --normal: rgb(154, 158, 163);
-  --poison: rgb(180, 103, 202);
-  --psychic: rgb(247, 124, 124);
-  --rock: rgb(205, 192, 144);
-  --steel: rgb(89, 150, 163);
-  --water: rgb(88, 159, 222);
+
 }

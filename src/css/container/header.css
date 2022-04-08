@@ -1,0 +1,116 @@
+#header-filters {
+  background-color: var(--color-dark-dark-blue);
+  width: 100%;
+  display: grid;
+  grid-template-areas: "logo menu";
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-onpokemon,
+.menu-header {
+  margin: 1rem;
+}
+.logo-onpokemon {
+  height: 2rem;
+  grid-area: logo;
+}
+.menu-header {
+  grid-area: menu;
+}
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+.menu a:hover {
+  background-color: #8da7ac;
+}
+.menu a {
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem;
+  color: #3bd1e5;
+  font-family: sans-serif;
+  font-size: 1.375rem;
+}
+.button-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .logo-onpokemon {
+    height: 1.5rem;
+  }
+  .button-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    gap: 0.5rem;
+    color: #3bd1e5;
+  }
+  .menu {
+    display: block;
+    background-color: var(--color-dark-dark-blue);
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    right: 0;
+    height: 0;
+    transition: 0.6s;
+    z-index: 1000;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #nav.active .menu {
+    height: calc(100vh - 45px);
+    visibility: visible;
+    width: 100%;
+  }
+  .icon {
+    border-top: 2px solid;
+  }
+  .icon::before,
+  .icon::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: currentColor;
+    margin: 6px 0;
+    transition: 0.3s;
+    position: relative;
+  }
+  #nav.active .icon {
+    border-top-color: transparent;
+  }
+  #nav.active .icon::before {
+    transform: rotate(135deg);
+  }
+  #nav.active .icon::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+  .menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo-onpokemon,
+  .menu-header {
+    margin: 1.5rem;
+  }
+  .logo-onpokemon {
+    height: 3rem;
+  }
+  .menu a {
+    font-size: 2rem;
+  }
+}

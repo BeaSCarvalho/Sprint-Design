@@ -1,66 +1,91 @@
-@import url("menu.css");
-@import url("button.css");
-@import url("header.css");
-@import url("variables.css");
+@import url("container.css");
 
-#container-general {
-  margin:0;
+.container-article {
+  line-height: 1.5;
 }
-
 .section-text {
   box-sizing: border-box;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: auto 15% 5%; 
+  margin: auto 8% 3%;
   padding: 5%;
 }
-
-.main-title {
+.main-title,
+.sub-title {
   text-align: center;
 }
-
+.main-title {
+  margin-top: var(--space-simple);
+  font-size: 2.5rem;
+}
+.sub-title,
+.img-articles {
+  margin-bottom: var(--space-simple);
+}
+.sub-title {
+  font-size: 1.5rem;
+}
+.article h3 {
+  font-size: 1.2rem;
+  margin: var(--space-simple) 0;
+}
 .first {
   order: 0;
 }
-
 .wrapper {
-  margin-right: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-h2 {
-  text-align: center;
-}
-
 .article {
   box-sizing: border-box;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #aaa9a9;
-  margin: auto 15% 5%; 
+  margin: auto 10% 12%;
   padding: 5%;
   border-radius: 7px;
-  -webkit-box-shadow: 5px 15px 30px 0px rgba(0,0,0,0.45);
+  box-shadow: var(--shadown-article);
   display: flex;
-  }
-
-img {
+}
+.img-articles {
   max-width: 100%;
   align-items: center;
-}    
-
+}
 figcaption {
-  color: #918d8d;
   font-size: small;
   align-self: flex-end;
 }
-
-p {
+.paragraph-article {
   text-align: justify;
+  font-size: 1rem;
 }
 
-a {
-  text-decoration: none;
-  color: red;
+@media screen and (min-width: 550px) {
+  .article {
+    margin: auto 10% 6%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main-title {
+    font-size: 3.5rem;
+    margin-top: var(--space-double);
+  }
+  .sub-title,
+  .img-articles {
+    margin-bottom: var(--space-double);
+  }
+  .sub-title {
+    font-size: 2.8rem;
+  }
+  .article h3 {
+    font-size: 2.2rem;
+    margin: var(--space-double);
+  }
+  .paragraph-article {
+    font-size: 2rem;
+  }
 }
