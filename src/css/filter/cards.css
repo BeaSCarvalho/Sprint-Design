@@ -1,0 +1,90 @@
+#result-cards {
+  margin: 5rem auto;
+  max-width: 1800px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  background-color: var(--color-white);
+}
+#not-pokemon {
+  font-weight: 600;
+  padding: 2rem 0;
+  font-size: 2.6rem;
+  text-align: center;
+  line-height: 1.8;
+}
+.card {
+  margin: 3rem;
+  position: relative;
+}
+.card-box {
+  height: 20rem;
+  width: 20rem;
+  background-color: var(--color-card);
+  border-radius: 0.8rem;
+  box-shadow: var(--shadown-drop-cards);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+.poke-img {
+  width: 13.5rem;
+  height: 13.5rem;
+}
+.poke-number {
+  width: 5rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadown-drop-cards);
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 255px;
+  right: 160px;
+  color: var(--color-white);
+}
+.card-info {
+  padding: 0.5rem;
+  width: 100%;
+}
+.poke-title {
+  font-size: 2rem;
+  margin-bottom: 2px;
+}
+.poke-items {
+  padding: 0;
+  margin: 0;
+}
+.li-item-card {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  margin: 0.5rem;
+  margin-left: 0;
+  border-radius: 0.3rem;
+  font-size: 1.4rem;
+  color: var(--color-white);
+}
+.container-icon {
+  background-color: var(--transparency-light-gray);
+  border: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.2rem;
+  position: absolute;
+  bottom: 80px;
+  right: 5px;
+}
+.small-icon {
+  height: 10px;
+  width: 10px;
+}

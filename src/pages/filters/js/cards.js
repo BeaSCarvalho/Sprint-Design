@@ -1,65 +1,44 @@
-const resultCards = document.getElementById("result-cards");
+const containerList = document.getElementById("result-cards");
 const pokemonModal = document.getElementById("modal-pokemon");
-const backColor = {
-  water: "#6890F0",
-  fire: "#F08030",
-  grass: "#78C850",
-  poison: "#A040A0",
-  bug: "#729f3f",
-  normal: "#a4acaf",
-  flying: "#A890F0",
-  fighting: "#C03028",
-  electric: "#f8d030",
-  ground: "#E0C068",
-  psychic: "#F85888",
-  rock: "#B8A038",
-  ice: "#98D8D8",
-  dragon: "#7038F8",
-  ghost: "#705898",
-  dark: "#705848",
-  steel: "#B8B8D0",
-  fairy: "#B8B8D0",
-};
+const button = document.getElementById("back-button");
+
+let body = document.getElementsByTagName("body")[0];
 
 export let createCards = function (pokemonArray) {
   containerList.innerHTML = "";
 
   pokemonArray.forEach((pokemon) => {
     const item = document.createElement("section");
-    item.className = "card ";
+    item.className = "card pokemon";
     item.id = pokemon.num;
-    resultCards.appendChild(item).innerHTML = `
-      <section class="card">
-        <p
+    containerList.appendChild(item).innerHTML = `
+      <p
+        ${pokemon.type
+          .map((type) => 'class="poke-number ' + type + '"')
+          .join("")}>
+        ${pokemon.num}  
+      </p>
+      <figure class="card-box" id="pokemon-${pokemon.num}">
+        <img class="poke-img" src="${pokemon.img}" alt=${pokemon.name}>
+      </figure>
+      <main class="card-info">
+        <h4 class="poke-title">
+          ${pokemon.name[0].toUpperCase() + pokemon.name.substr(1)}</p>
+        </h4>
+        <ul class="poke-items">
           ${pokemon.type
-            .map((type) => 'class="poke-number ' + type + '"')
-            .join("")}>
-          ${pokemon.num}  
-        </p>
-        <figure class="card-box" id="pokemon-${pokemon.num}">
-          <img class="poke-img" src="${pokemon.img}" alt=${pokemon.name}>
-        </figure>
-        <main class="card-info">
-          <h4 class="poke-title">
-            ${pokemon.name[0].toUpperCase() + pokemon.name.substr(1)}</p>
-          </h4>
-          <ul class="poke-items">
-            ${pokemon.type
-              .map(
-                (type) =>
-                  '<li class="li-item-card ' + type + '">' + type + "</li>"
-              )
-              .join("")}
-          </ul> 
-          <button type="button" class="button-modal open-modal">
-            open
-            <div class="container-icon">
-              <img src="../../img/icon-open.png" alt="More information" class="small-icon">
-            </div>
-          </button> 
-        </main>
-      </section>
+            .map(
+              (type) =>
+                '<li class="li-item-card ' + type + '">' + type + "</li>"
+            )
+            .join("")}
+        </ul> 
+        <div class="container-icon">
+          <img src="../../img/icon-open.png" alt="More information" class="small-icon">
+        </div>
+      </main>
     `;
+
     const pokemonButton = item.querySelector(
       '[id="pokemon-' + pokemon.num + '"]'
     );
@@ -70,91 +49,191 @@ export let createCards = function (pokemonArray) {
 
       if (pokemon.evolution["prev-evolution"]) {
         let evolutions = getPrevEvolution(pokemon.evolution["prev-evolution"]);
+
         evolutions.forEach((evol) => {
           prevEvolution += `
-        <div class="evolution-each-container">
-          <img class="evolution-img" src="https://www.serebii.net/pokemongo/pokemon/${evol.num}.png">
-          <p class="evolution-p">${evol.name}</p><p class="evolution-p">N° ${evol.num}</p>
-        </div>`;
+              <div class="evolution-each-container">
+                <img class="evolution-img" 
+                  src="https://www.serebii.net/pokemongo/pokemon/${evol.num}.png">
+                <p class="evolution-p">${evol.name}</p><p class="evolution-p">N° ${evol.num}</p>
+              </div>
+            `;
         });
       }
+
       if (pokemon.evolution["next-evolution"]) {
         let evolutions = getNextEvolution(pokemon.evolution["next-evolution"]);
+
         evolutions.forEach((evol) => {
           nextEvolution += `
-        <div class="evolution-each-container">
-          <img class="evolution-img" src="https://www.serebii.net/pokemongo/pokemon/${evol.num}.png">
-          <p class="evolution-p">${evol.name}</p><p class="evolution-p">N° ${evol.num}</p>
-        </div>`;
+              <div class="evolution-each-container">
+                <img class="evolution-img" 
+                  src="https://www.serebii.net/pokemongo/pokemon/${evol.num}.png">
+                <p class="evolution-p">${evol.name}</p>
+                <p class="evolution-p">N° ${evol.num}</p>
+              </div>
+              `;
         });
       }
 
-      let creteModal = `
-        <div class="modal-content">
-          <span id="spanClose" class="close">x</span>
+      let template = `
+<div id="modal-container" class="modal-container">
+  <div class="modal-group">
+    <button id="spanClose" class="close-modal">X</button> 
+    <div class="group-header">
+      <span class="header-number">
+        <p class="modal-poke-number">${pokemon.num}</p>
+      </span>
+      <span class="header-name">
+        <h4 class="modal-poke-name">${
+          pokemon.name[0].toUpperCase() + pokemon.name.substr(1)
+        }
+        </h4>
+      </span>
+    </div>
+    <div class="group-modal">
+      <figure class="group-img">
+        <img class="modal-poke-img" src="${pokemon.img}" 
+        alt=${pokemon.name}>
+      </figure>
+      <p class="poke-about">${pokemon.about}</p> 
+      <p class="li-item poke-rarity"><span class="list-title">Rarity:</span>${
+        pokemon.rarity
+      }</p> 
+      <div class="container-group">
+        <section class="group-stats">
+          <h1 class="modal-titles">Stats</h1>
+          <ul class="poke-items">
+            <span class="list-title">Max-HP</span>
+            <li class="li-item">${pokemon.stats["max-hp"]}</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Max-CP</span>
+            <li class="li-item">${pokemon.stats["max-cp"]}</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Base-Attack</span>
+            <li class="li-item">${pokemon.stats["base-attack"]}</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Base-Defense</span>
+            <li class="li-item">${pokemon.stats["base-defense"]}</li>
+          </ul>
+          <ul class="poke-items">
+            <span class="list-title">Base-Stamina</span>
+            <li class="li-item">${pokemon.stats["base-stamina"]}</li>
+          </ul>
+        </section>
+        <section class="group-type">
+          <h2 class="poke-type modal-titles">Type</h2>
+          <ul class="poke-items list-type">
+          ${pokemon.type
+            .map(
+              (type) =>
+                '<li class="li-item-card ' + type + '">' + type + "</li>"
+            )
+            .join("")}
+          </ul>
+        </section>
+        <section class="group-weakness">
+          <h2 class="modal-titles">Weaknesses</h2>
+          <ul class="poke-items list-weaknesses">
+          ${pokemon.weaknesses
+            .map(
+              (type) =>
+                '<li class="li-item-card ' + type + '">' + type + "</li>"
+            )
+            .join("")}
+          </ul>
+        </section>
+        <section class="group-resistant">
+          <h2 class="modal-titles">Resistant</h2>
+          <ul class="poke-items list-resistant">
+          ${pokemon.resistant
+            .map(
+              (type) =>
+                '<li class="li-item-card ' + type + '">' + type + "</li>"
+            )
+            .join("")}
+          </ul>
+        </section>
+        <section class="group-move-special">
 
-          <div class="modal_block1">
-            <h4 class="poke-title">
-              ${pokemon.name[0].toUpperCase() + pokemon.name.substr(1)}</p>
-            </h4>
-            <img class="poke-img" src="${pokemon.img}" alt=${pokemon.name}>
-            <p class="modal_block1-txt"> N° ${pokemon.num}</p>
-            <p class="version-description">About: ${pokemon.about}</p>    
-          </div>
-
-          <section class="row-2">
-            <section class="rows" id="rows">
-              <article class="titleAttack" ><strong>QUIK MOVE: </strong>
-                <p>${pokemon["quick-move"]
-                  .map((move) => move.type + move.name)
-                  .join("")}</p>
-              </article>
-              <article class="titleAttack" ><strong>SPECIAL ATTACK:</strong>
-                <p>${pokemon["special-attack"]
-                  .map((attack) => attack.type + attack.name)
-                  .join("")}</p>
-              </article>
-            </section     >
-
-            <section class="rows">
-              <section class="modal_block4">
-                <div class="resist-weak-ctn">
-                  <h3 class="modal-h4"> TYPE</h3>
-                    <div class="typeModal">
-                    <p>${pokemon.type.join(" ")}</p>
-                    </div>
-                </div>
-                <div class="resist-weak-ctn">
-                  <h3 class="modal-h4">RESISTANCE</h3>
-                    <p>${pokemon.resistant.join(" ")}</p>
-                </div>
-                <div class="resist-weak-ctn">
-                  <h3 class="modal-h4"> WEAKNESSES</h3>
-                  <p>${pokemon.weaknesses.join(" ")}</p>
-                </div>
-              </section     >
-
-              <section class="modal_block4" id="column-M">
-                <section class="evoluciones">
-                  <h3 class="modal-h3">EVOLUTION</h3>
-                  <div class="container-movements">
-                    <p>${prevEvolution ? prevEvolution : ""}</p>
-                    <p>${nextEvolution ? nextEvolution : ""}</p>
-                  </div>
+        <section class="group-moves">
+          <article class="titleAttack" >
+            <h2 class="modal-titles">Quick Moves</h2>
+            <p>${pokemon["quick-move"]
+              .map(
+                (move) => `
+                <section class="group-moves-attack">
+                  <ul class="poke-items">
+                    <span class="list-title">${move.name}</span>
+                  </ul>
+                  <ul class="poke-items">
+                    <span class="list-title">Type</span>
+                    <li class="li-item">${move.type}</li>
+                  </ul>
+                  <ul class="poke-items">
+                    <span class="list-title">Damage</span>
+                    <li class="li-item">${move["base-damage"]}</li>
+                  </ul>
+                  <ul class="poke-items">
+                    <span class="list-title">Energy</span>
+                    <li class="li-item">${move.energy}</li>
+                  </ul>
+                  <ul class="poke-items">
+                    <span class="list-title">Move duration - seg</span>
+                    <li class="li-item">${move["move-duration-seg"]}</li>
+                  </ul>
                 </section>
-                <section class="column">
-                  <h3 class="subtitle"> STATS </h3>
-                  <p> Max-Hp: ${pokemon.stats["max-hp"]} </p>
-                  <p> Max-cp: ${pokemon.stats["max-cp"]}</p>
-                  <p> Base-attack: ${pokemon.stats["base-attack"]}</p>
-                  <p> Base-defense: ${pokemon.stats["base-defense"]}</p>
-                  <p> Base-stamina: ${pokemon.stats["base-stamina"]}</p>
-                </section> 
-              </section>
-            </section>
+                `
+              )
+              .join("")}</p>
+          </article>
+          
+          <article class="titleAttack" >
+            <h2 class="modal-titles">Special Attack</h2>
+            <p>${pokemon["special-attack"]
+              .map(
+                (attack) => `
+                <section class="group-moves-attack">
+                  <ul class="poke-items">
+                    <span class="list-title">${attack.name}</span>
+                  </ul>
+                  <ul class="poke-items">
+                    <span class="list-title">Type</span>
+                    <li class="li-item">${attack.type}</li>
+                  </ul>
+                  <ul class="poke-items">
+                    <span class="list-title">Damage</span>
+                    <li class="li-item">${attack["base-damage"]}</li>
+                  </ul>
+                  <ul class="poke-items">
+                    <span class="list-title">Energy</span>
+                    <li class="li-item">${attack.energy}</li>
+                  </ul>
+                  <ul class="poke-items">
+                    <span class="list-title">Move duration - seg</span>
+                    <li class="li-item">${attack["move-duration-seg"]}</li>
+                  </ul>
+                </section>
+                `
+              )
+              .join("")}</p>
+          </article>
           </section>
-        </div>
-          `;
+          <section class="group-evolutions">
+            <h2 class="modal-titles">Evolution</h2>
+            <div class="container-movements">
+              <p>${prevEvolution ? prevEvolution : ""}</p>
+              <p>${nextEvolution ? nextEvolution : ""}</p>
+            </div>
+          </section>
+        </section>
+      </section>
+    </section>
+  </div>
+`;
 
       pokemonModal.innerHTML = template;
       let span = pokemonModal.querySelector('[id="spanClose"]');
@@ -163,12 +242,14 @@ export let createCards = function (pokemonArray) {
       body.style.position = "static";
       body.style.height = "100%";
       body.style.overflow = "hidden";
+      button.style.display = "none";
 
       span.onclick = function () {
         pokemonModal.style.display = "none";
         body.style.position = "inherit";
         body.style.height = "auto";
         body.style.overflow = "visible";
+        button.style.display = "block";
       };
     });
   });
