@@ -1,5 +1,4 @@
-.group-header,
-.group-modal {
+.group-header {
   display: flex;
   justify-content: flex-start;
   width: 280px;
@@ -14,27 +13,60 @@
   align-items: center;
 }
 .header-name {
-  padding: 1px 4px;
+  padding: 5px 4px;
+  margin-bottom: 5px;
   width: 130px;
 }
 .header-number {
-  padding: 1px 20px;
+  padding: 5px 20px;
 }
 .modal-poke-number,
 .modal-poke-name {
   color: var(--color-white);
-  font-size: 0.75rem;
+  font-size: 2rem;
 }
+
+.first {
+  text-align: center;
+}
+
+.second {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.group-moves {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: space-around;
+}
+
+.titleAttack,
+.group-evolutions,
+.group-stats{
+  background-color: #daf1f9;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.evolution-p{
+  font-size: 1.5rem;
+}
+  
 .group-modal {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 240px;
+  height: 85vh;
+  width: 60vw;
   background-color: var(--color-white);
   border-radius: 3px;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
 }
 .container-group {
+  justify-content: space-around;
   margin: 0 6px;
 }
 .group-img {
@@ -42,27 +74,29 @@
   margin: 4px 0;
 }
 .modal-poke-img {
-  height: 60px;
-  width: 60px;
+  text-align: center;
+  height: 100px;
+  width: 100px;
 }
 .poke-about {
   margin: 3px 10px;
   text-align: center;
   line-height: 1.3;
-  font-size: 0.5rem;
+  font-size: 2rem;
 }
 .poke-rarity {
   text-align: center;
   margin: 3px 0;
+  font-size: 2rem;
 }
 .modal-titles {
   font-weight: var(--font-bold);
-  font-size: 0.625rem;
+  font-size: 2rem;
   margin: 7px 0 3px 0;
 }
 .list-title {
   font-weight: var(--font-bold);
-  font-size: 0.5rem;
+  font-size: 1.5rem;
 }
 .li-item {
   display: inline-block;
@@ -70,7 +104,7 @@
   margin: 1px 2px;
   margin-left: 0px;
   border-radius: 10px;
-  font-size: 0.5rem;
+  font-size: 2rem;
 }
 .poke-items {
   margin-left: 5px;
@@ -92,15 +126,8 @@
   scrollbar-color: var(--color-medium-blue) var(--transparency-light-gray);
 }
 
-.modal-open {
-  display: block;
-  position: static;
-  height: 100%;
-  overflow: hidden;
-}
-.modal-hidden {
-  display: none;
-  position: inherit;
-  height: auto;
-  overflow: visible;
+
+
+
+
 }
