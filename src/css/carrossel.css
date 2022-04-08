@@ -1,0 +1,40 @@
+.box {
+  margin-bottom: 1rem;
+ 
+}
+
+.box-image img {
+  margin: auto;
+  animation: anima;
+  animation-duration: 800ms;
+  max-width: 56%;
+  margin-top: 1px;
+}
+
+@keyframes anima {
+  from {
+    transform: translate(-50px, 00);
+  }
+  to {
+    transform: translate(0px, 00);
+  }
+}
+
+.box-cursor {
+  justify-content: center;
+  display: flex;
+  margin: auto auto 1em;
+}
+
+.box-cursor span {
+  width: 20px;
+  height: 20px;
+  margin-right: 1px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #0c3559;
+}
+.box-cursor span.marcador{
+
+  background-color: rgb(84, 84, 234);
+ }
