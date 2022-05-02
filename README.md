@@ -40,7 +40,7 @@ Antes de iniciar o desenvolvimento do app, fizemos um trabalho de investigação
 
 O Jogo Pokémon GO é um jogo eletrônico gratuito de realidade aumentada voltado para smartphones. Com o uso do sistema de posicionamento global (GPS) e a câmara de dispositivos compatíveis, o jogo permite aos jogadores capturar, batalhar, e treinar criaturas virtuais chamadas Pokémon, que aparecem na tela do jogador usando realidade aumentada. Também há um acessório opcional, o Pokémon Go Plus, alerta os usuários quando Pokémon estiverem nas proximidades.
 
-Pensando nos jogadores, desevolvemos uma plataforma onde reuni informações relevantes para ser um treinador Pokémon. O usuário encontrará uma plataforma intuitiva  que é possivel coletar dados referente aos seus Pokémons ou aqueles que deseja capturar.
+Pensando nos jogadores, desevolvemos uma plataforma que reúne informações relevantes para ser um treinador Pokémon. O usuário encontrará uma plataforma intuitiva  que é possivel coletar dados referente aos seus Pokémons ou aqueles que deseja capturar.
  
 ### 1.1. Pokémon
 
