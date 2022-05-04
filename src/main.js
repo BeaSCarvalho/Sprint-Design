@@ -13,6 +13,7 @@ const buttonMobile = document.getElementById("button-mobile");
 buttonMobile.addEventListener("click", toggleMenu);
 buttonMobile.addEventListener("touchstart", toggleMenu);
 
+
 const nameTyped = document.getElementById("name-pokemon");
 const selectTypeOrWeakness = document.getElementById("filter-type-weakness");
 const selectAtributte = document.getElementById("filter-atributtes");

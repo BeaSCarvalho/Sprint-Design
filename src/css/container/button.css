@@ -3,7 +3,7 @@
   font-weight: 600;
   background-color: var(--transparency-light-gray);
   border: none;
-  border-radius: var(--border-radius-simple);
+  border-radius: 5rem;
   place-self: end;
   height: 4rem;
   width: 4rem;

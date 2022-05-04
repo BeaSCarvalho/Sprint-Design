@@ -1,79 +1,73 @@
 @charset "utf-8";
 @import url("container.css");
-@import url("carrossel.css");
+@import url("carousel.css");
 
-.background-main {
-  background-color: #bfb63b;
-  background: linear-gradient(
-    180deg,
-    rgba(191, 182, 59, 1) 0%,
-    rgba(135, 128, 27, 1) 100%
-  );
-}
-.title-about,
-.about-name {
-  color: #3bd1e5;
-  margin-left: 2%;
-  text-shadow: rgb(87, 84, 84) 2px 3px 2px;
-}
-.title-about {
-  margin: 3% 0;
-  font-size: 3rem;
-  text-align: center;
-}
-.about-name {
-  font-size: 1.5rem;
-}
 #contacts {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  max-width: calc(100% - 6%);
-  margin: 0 auto;
+  background: linear-gradient(
+    180deg,
+    rgba(59, 209, 229, 1) 0%,
+    rgba(6, 97, 109, 1) 73%,
+    rgba(10, 70, 89, 1) 100%
+  );
 }
 .about-us {
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.8);
-  margin: 5%;
-  width: 100%;
-  padding: 2%;
-  display: grid;
-  grid-template-columns: 1fr;
+  width: 90%;
+  padding: 20px;
+  margin: 30px auto;
 }
-.icon-git {
-  width: 12%;
-  height: 12%;
-  margin-right: 2%;
+.container-contacts {
+  display: grid;
+  grid-template-areas: "cont1 cont2" "cont3 cont4" "cont5 cont6";
+  grid-template-columns: 1fr 1fr;
+  justify-content: start;
+  justify-items: start;
+}
+.about-contact {
+  margin: 5% 3%;
+  display: grid;
+  grid-template-areas: "name" "git";
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.title-about {
+  color: #3bd1e5;
+  margin-left: 2%;
+  margin: 3% 0;
+  font-size: 3rem;
+  text-align: center;
+}
+.name {
+  color: rgb(221, 208, 208);
+  font-size: 2rem;
+  text-shadow: black 2px 3px 2px;
+  font-style: normal;
+  grid-area: name;
 }
 .git {
   display: flex;
   text-decoration: none;
   color: white;
-  margin-left: 3%;
+  grid-area: git;
 }
 .git:hover {
   color: #7cb8c0;
 }
-h1 {
-  color: rgb(221, 208, 208);
-  margin-left: 52px;
-  font-size: 20px;
-  text-shadow: black 2px 3px 2px;
+.icon-git {
+  width: 4rem;
+  height: 4rem;
 }
-.name {
-  color: rgb(221, 208, 208);
-  margin-left: 2%;
-  margin-bottom: 3%;
-  font-size: 2rem;
-  text-shadow: black 2px 3px 2px;
-}
-.about-contact {
-  margin: 5% 3%;
-}
-.container-contacts {
-  display: grid;
-  grid-template-areas: "cont1 cont2" "cont3 cont4" "cont5 cont6";
+.link-git {
+  color: #3bd1e5;
+  margin-left: 10px;
+  font-size: 1.6rem;
+  font-style: normal;
 }
 .cont1 {
   grid-area: cont1;
