@@ -1,14 +1,23 @@
 .box {
-  margin-bottom: 3rem;
-  padding-top: 3%;
+  height: auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#background {
+  background-image: url(../img/pokemon-background.svg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .box-image img {
-  margin: auto;
   animation: anima;
   animation-duration: 800ms;
-  max-width: 56%;
-  margin-top: 1px;
+  margin: auto;
+  border-radius: 20px;
 }
 
 @keyframes anima {
@@ -21,19 +30,20 @@
 }
 
 .box-cursor {
+  background-color: black;
   justify-content: center;
   display: flex;
-  margin: auto auto 1em;
+  padding: 20px 0;
 }
 
 .box-cursor span {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   margin-right: 2%;
   border-radius: 50%;
   cursor: pointer;
   background: #0c3559;
 }
 .box-cursor span.marcador {
-  background-color: rgb(84, 84, 234);
+  background-color: var(--color-medium-blue);
 }

@@ -7,7 +7,7 @@ import {
   filterRarity,
 } from "./pages/filters/js/data.js";
 import { createCards } from "./pages/filters/js/cards.js";
-import data from "./data/pokemon/pokemon.js";
+import data from "../../data/pokemon/pokemon.js";
 
 const buttonMobile = document.getElementById("button-mobile");
 buttonMobile.addEventListener("click", toggleMenu);
