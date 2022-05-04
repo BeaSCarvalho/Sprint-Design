@@ -63,6 +63,23 @@ function controllerBanner() {
     });
 }
 
+
+function heightBackground() {
+  const heightWindow = Number(window.screen.height);
+  const widthWindow = Number(window.screen.width);
+  const bannerImage = document.querySelectorAll('.img-carousel');
+  if (heightWindow > widthWindow) {
+    bannerImage[0].style.maxHeight = '60vh';
+    bannerImage[1].style.maxHeight = '60vh';
+    bannerImage[2].style.maxHeight = '60vh';
+  } else {
+    bannerImage[0].style.maxWidth = '70vh';
+    bannerImage[1].style.maxWidth = '70vh';
+    bannerImage[2].style.maxWidth = '70vh';
+  }
+}
+/*
+containerBanner.style.height = sumAll + "px";
 function heightBackground() {
   const heightWindow = Number(window.screen.height);
   const heightHeader = Number(
@@ -83,8 +100,24 @@ function heightBackground() {
   let count = sumAll - 1080;
   count = Math.abs(count);
 
-  let containerBanner = document.getElementsByClassName("img-carousel");
-  containerBanner[0].style.height = count + "px";
-  containerBanner[1].style.height = count + "px";
-  containerBanner[2].style.height = count + "px";
+  return count;
 }
+
+function sizeBackground() {
+  const widthWindow = Number(window.screen.width);
+  let containerBanner = document.getElementsByClassName("img-carousel");
+
+  let resultOne = widthWindow * 0.60;
+  let resultTwo = heightBackground();
+  if (resultTwo <= resultOne) {
+    containerBanner[0].style.height = resultTwo + "px";
+    containerBanner[1].style.height = resultTwo + "px";
+    containerBanner[2].style.height = resultTwo + "px";
+  } else {
+    containerBanner[0].style.width = "57%";
+    containerBanner[1].style.width = "57%";
+    containerBanner[2].style.width = "57%";
+  }
+}
+
+*/

@@ -1,8 +1,8 @@
 .box {
-  height: auto;
-  padding: 20px 0;
+  width: 100%;
+  height: calc(100vh - 55px - 55px);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
