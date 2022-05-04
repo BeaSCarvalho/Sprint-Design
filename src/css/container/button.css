@@ -1,4 +1,7 @@
-.btn-action {
+.btn-action,
+#clean-button,
+#back-button,
+#back-button-home {
   box-shadow: var(--shadown-drop-medium);
   font-weight: 600;
   background-color: var(--transparency-light-gray);
@@ -21,6 +24,12 @@
   position: fixed;
   z-index: 2000;
   place-self: end;
+}
+#back-button-home {
+  place-self: end;
+  position: absolute;
+  right: 3%;
+  bottom: 3%;
 }
 
 @media screen and (min-width: 0px) and (max-width: 549px) {
@@ -46,7 +55,7 @@
     width: 5rem;
   }
   .btn-action img {
-    height: 3rem;
+    height: 2rem;
   }
   #clean-button {
     grid-column: 1/3;
