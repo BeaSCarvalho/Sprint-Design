@@ -5,7 +5,7 @@
   align-items: center;
 }
 #background {
-  background-image: url(../img/pokemon-background.svg);
+  background-image: url(../../img/pokemon-background.svg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -42,6 +42,6 @@
   cursor: pointer;
   background: #0c3559;
 }
-.box-cursor span.marcador {
+.box-cursor span.marker {
   background-color: var(--color-medium-blue);
 }
