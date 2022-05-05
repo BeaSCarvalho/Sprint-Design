@@ -1,10 +1,10 @@
 let interval = 0;
 let maxSlider = document.querySelectorAll(".box-image").length - 1;
 
+initSizeBackground();
 disappearBanner();
 actionOfAppearing();
 controllerBanner();
-heightBackground();
 
 function disappearBanner() {
   let img = document.querySelectorAll(".box-image img");
@@ -63,61 +63,33 @@ function controllerBanner() {
     });
 }
 
+function initSizeBackground (){
+  let rotationPage = false;
+  do {
+    heightBackground();
+    rotationPage = screen.orientation.onchange = function () {
+      location.reload();
+    };
+  } while (rotationPage == false);
+}
 
 function heightBackground() {
   const heightWindow = Number(window.screen.height);
   const widthWindow = Number(window.screen.width);
   const bannerImage = document.querySelectorAll('.img-carousel');
-  if (heightWindow > widthWindow) {
-    bannerImage[0].style.maxHeight = '60vh';
-    bannerImage[1].style.maxHeight = '60vh';
-    bannerImage[2].style.maxHeight = '60vh';
+  if (heightWindow < widthWindow) {
+    bannerImage[0].style.width = '';
+    bannerImage[1].style.width = '';
+    bannerImage[2].style.width = '';
+    bannerImage[0].style.height = '60vh';
+    bannerImage[1].style.height = '60vh';
+    bannerImage[2].style.height = '60vh';
   } else {
-    bannerImage[0].style.maxWidth = '70vh';
-    bannerImage[1].style.maxWidth = '70vh';
-    bannerImage[2].style.maxWidth = '70vh';
+    bannerImage[0].style.width = '90vw';
+    bannerImage[1].style.width = '90vw';
+    bannerImage[2].style.width = '90vw';
+    bannerImage[0].style.height = '';
+    bannerImage[1].style.height = '';
+    bannerImage[2].style.height = '';
   }
 }
-/*
-containerBanner.style.height = sumAll + "px";
-function heightBackground() {
-  const heightWindow = Number(window.screen.height);
-  const heightHeader = Number(
-    document.querySelector("#header-filters").offsetHeight
-  );
-  const heightBox = Number(document.querySelector(".box-cursor").offsetHeight);
-  const box = document.querySelector(".box");
-  const buttonBox = document.querySelector(".box-cursor span");
-
-  let paddingBox = window.getComputedStyle(box).paddingTop;
-  let heightButton = window.getComputedStyle(buttonBox).height;
-  const regex = /\D|,/g;
-  paddingBox = Number(paddingBox.replace(regex, "")) * 2;
-  heightButton = Number(heightButton.replace(regex, "")) * 2;
-
-  let sumAll =
-    heightWindow - (heightHeader + heightBox + paddingBox + heightButton);
-  let count = sumAll - 1080;
-  count = Math.abs(count);
-
-  return count;
-}
-
-function sizeBackground() {
-  const widthWindow = Number(window.screen.width);
-  let containerBanner = document.getElementsByClassName("img-carousel");
-
-  let resultOne = widthWindow * 0.60;
-  let resultTwo = heightBackground();
-  if (resultTwo <= resultOne) {
-    containerBanner[0].style.height = resultTwo + "px";
-    containerBanner[1].style.height = resultTwo + "px";
-    containerBanner[2].style.height = resultTwo + "px";
-  } else {
-    containerBanner[0].style.width = "57%";
-    containerBanner[1].style.width = "57%";
-    containerBanner[2].style.width = "57%";
-  }
-}
-
-*/
