@@ -75,103 +75,99 @@ export let createCards = function (pokemonArray) {
       }
 
       let template = `
-    <div class="modal-group">
+      <div class="modal-group">
 
-      <div class="group-header">
-        <span class="header-number">
-          <p class="header-poke-number">${pokemon.num}</p>
-        </span>
-        <span class="header-name">
-          <h4 class="header-poke-name">${
-            pokemon.name[0].toUpperCase() + pokemon.name.substr(1)
-          }
-          </h4>
-        </span>
-        <button id="spanClose" class="close-modal">X</button> 
-      </div>
+        <div class="group-header">
+          <span class="group-header-number">
+            <p class="header-poke-number">${pokemon.num}</p>
+          </span>
+          <span class="group-header-name">
+            <h4 class="header-poke-name">${
+              pokemon.name[0].toUpperCase() + pokemon.name.substr(1)
+            }
+            </h4>
+          </span>
+          <button id="spanClose" class="close-modal">X</button> 
+        </div>
 
-      <div class="group-modal-items">
+        <div class="group-modal-items">
 
-        <section class="container-header-items">
-          <figure class="group-img">
-            <img class="modal-poke-img" src="${pokemon.img}" 
-            alt=${pokemon.name}>
-          </figure>
-          <p class="poke-about">${pokemon.about}</p> 
-          <p class="li-item poke-rarity">RARITY: ${
-            pokemon.rarity}</p> 
+          <section class="group-header-items">
+            <figure class="container-modal-image-header">
+              <img class="modal-poke-img" src="${pokemon.img}" 
+              alt=${pokemon.name}>
+            </figure>
+            <p class="poke-about">${pokemon.about}</p> 
+            <p class="poke-rarity">RARITY: ${
+              pokemon.rarity}</p> 
 
-          <section class="container-group-stats">
-            <table class="items-table-stats">
-              <tbdoy>
-                <tr>
-                  <td>
-                    <p class="list-title">Max-HP</p>
-                    <p class="li-item">${pokemon.stats["max-hp"]}</p>
-                  </td>
-                  <td>
-                    <p class="list-title">Max-CP</p>
-                    <p class="li-item">${pokemon.stats["max-cp"]}</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <p class="list-title">Base-Attack</p>
-                    <p class="li-item">${pokemon.stats["base-attack"]}</p>
-                  </td>
-                  <td>
-                    <p class="list-title">Base-Defense</p>
-                    <p class="li-item">${pokemon.stats["base-defense"]}</->
-                  </td>
-                  <td>
-                    <p class="list-title">Base-Stamina</p>
-                    <p class="li-item">${pokemon.stats["base-stamina"]}</->
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </section>  
-        </section> 
-      
-        <section class="container-group">
-          <div class="container-main-items">
+            <section class="container-group-stats">
+              <table class="items-table-stats">
+                <tbdoy>
+                  <tr>
+                    <td>
+                      <p class="list-title-table-header">Max-HP</p>
+                      <p class="li-item-table-header">${pokemon.stats["max-hp"]}</p>
+                    </td>
+                    <td>
+                      <p class="list-title-table-header">Max-CP</p>
+                      <p class="li-item-table-header">${pokemon.stats["max-cp"]}</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p class="list-title-table-header">Base-Attack</p>
+                      <p class="li-item-table-header">${pokemon.stats["base-attack"]}</p>
+                    </td>
+                    <td>
+                      <p class="list-title-table-header">Base-Defense</p>
+                      <p class="li-item-table-header">${pokemon.stats["base-defense"]}</->
+                    </td>
+                    <td>
+                      <p class="list-title-table-header">Base-Stamina</p>
+                      <p class="li-item-table-header">${pokemon.stats["base-stamina"]}</->
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>  
+          </section> 
+            
+          <section class="container-group-modal-text">
             <div class="container-list-type">
-
               <section class="group-type">
-               <h2 class="poke-type modal-titles">TYPE</h2>
-                <ul class="poke-items list-type">
+                <h2 class="modal-titles-table">TYPE</h2>
+                <ul>
                  ${pokemon.type
                    .map(
                      (type) =>
-                       '<li class="li-item-card-modal ' + type + '">' + type + "</li>"
+                       '<li class="list-item-card-modal ' + type + '">' + type + "</li>"
                    )
                    .join("")}
                 </ul>
               </section>
-
               <section class="group-weakness">
-                <h2 class="modal-titles">WEAKNESSES</h2>
-                <ul class="poke-items list-weaknesses">
+                <h2 class="modal-titles-table">WEAKNESSES</h2>
+                <ul>
                 ${pokemon.weaknesses
                   .map(
                     (type) =>
-                      '<li class="li-item-card-modal ' + type + '">' + type + "</li>"
+                      '<li class="list-item-card-modal ' + type + '">' + type + "</li>"
                   )
                   .join("")}
                 </ul>
               </section>
-
               <section class="group-resistant">
-                <h2 class="modal-titles">RESISTANT</h2>
-                <ul class="poke-items list-resistant">
+                <h2 class="modal-titles-table">RESISTANT</h2>
+                <ul>
                 ${pokemon.resistant
                   .map(
                     (type) =>
-                      '<li class="li-item-card-modal ' + type + '">' + type + "</li>"
+                      '<li class="list-item-card-modal ' + type + '">' + type + "</li>"
                   )
                   .join("")}
                 </ul>
@@ -179,69 +175,95 @@ export let createCards = function (pokemonArray) {
             </div>
 
             <section class="group-move-special">
+                  
               <section class="group-moves">
-
-                <section class="titleAttack">
-                  <h2 class="modal-titles">QUICK MOVES</h2>
-                  <p>${pokemon["quick-move"]
+                <h2 class="modal-titles">QUICK MOVES</h2>
+                <section class="container-info-text-table">
+                ${pokemon["quick-move"]
                     .map(
                       (move) => `
                       <section class="group-moves-attack">
-                        <ul class="poke-items">
-                          <span class="list-title">${move.name.toUpperCase()}</span>
-                        </ul>
-                        <ul class="poke-items">
-                          <span class="list-title">Type</span>
-                          <li class="li-item">${move.type}</li>
-                        </ul>
-                        <ul class="poke-items">
-                          <span class="list-title">Damage</span>
-                          <li class="li-item">${move["base-damage"]}</li>
-                        </ul>
-                        <ul class="poke-items">
-                          <span class="list-title">Energy</span>
-                          <li class="li-item">${move.energy}</li>
-                        </ul>
-                        <ul class="poke-items">
-                          <span class="list-title">Move duration - seg</span>
-                          <li class="li-item">${move["move-duration-seg"]}</li>
-                        </ul>
-                      </section>
+                        <p class="poke-items-name-table">${move.name.toUpperCase()}</p>
+
+                        <table class="list-items-table">
+                          <tbody class="list-items-table-body">
+                            <tr>
+                              <td class="block-item-table">
+                                <p class="list-title-table">Type</p>
+                                <p class="item-table-text">${move.type}</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <p class="list-title-table">Damage</p>
+                                <p class="item-table-text">${move["base-damage"]}</->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <p class="list-title-table">Energy</p>
+                                <p class="item-table-text">${move.energy}</->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <p class="list-title-table">Move-duration</p>
+                                <p class="item-table-text">${move["move-duration-seg"]}</->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </section>
                       `
                     )
-                    .join("")}</p>
+                    .join("")}
+                  </section>
                 </section>
 
-                <section class="titleAttack" >
-                  <h2 class="modal-titles">SPECIAL ATTACK</h2>
-                  <p>${pokemon["special-attack"]
+                <section class="group-moves">
+                <h2 class="modal-titles">SPECIAL ATTACK</h2>
+                <section class="container-info-text-table">
+                ${pokemon["special-attack"]
                     .map(
                       (attack) => `
                       <section class="group-moves-attack">
-                        <ul class="poke-items">
-                          <span class="list-title">${attack.name.toUpperCase()}</span>
-                        </ul>
-                        <ul class="poke-items">
-                          <span class="list-title">Type</span>
-                          <li class="li-item">${attack.type}</li>
-                        </ul>
-                        <ul class="poke-items">
-                          <span class="list-title">Damage</span>
-                          <li class="li-item">${attack["base-damage"]}</li>
-                        </ul>
-                        <ul class="poke-items">
-                          <span class="list-title">Energy</span>
-                          <li class="li-item">${attack.energy}</li>
-                        </ul>
-                        <ul class="poke-items">
-                          <span class="list-title">Move duration - seg</span>
-                          <li class="li-item">${attack["move-duration-seg"]}</li>
-                        </ul>
-                      </section>
+                        <p class="poke-items-name-table">${attack.name.toUpperCase()}</p>
+
+                        <table class="list-items-table">
+                          <tbody class="list-items-table-body">
+                            <tr>
+                              <td class="block-item-table">
+                                <p class="list-title-table">Type</p>
+                                <p class="item-table-text">${attack.type}</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <p class="list-title-table">Damage</p>
+                                <p class="item-table-text">${attack["base-damage"]}</->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <p class="list-title-table">Energy</p>
+                                <p class="item-table-text">${attack.energy}</->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <p class="list-title-table">Move-duration</p>
+                                <p class="item-table-text">${attack["move-duration-seg"]}</->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </section>
                       `
                     )
-                    .join("")}</p>
+                    .join("")}
+                  </section>
                 </section>
+
 
               <section class="group-evolutions">
                 <h2 class="modal-titles">EVOLUTION</h2>
@@ -250,14 +272,13 @@ export let createCards = function (pokemonArray) {
                  <p>${nextEvolution ? nextEvolution : ""}</p>
                 </div>
               </section>
-
-            </section>
-            </section>
-          </div>
-        </section>
+              </section>
+              </section>
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
-        `;
+          `;
 
       pokemonModal.innerHTML = template;
       let span = pokemonModal.querySelector('[id="spanClose"]');
