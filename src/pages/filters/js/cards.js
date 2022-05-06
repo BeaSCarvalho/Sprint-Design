@@ -106,26 +106,30 @@ export let createCards = function (pokemonArray) {
               pokemon.rarity}</p> 
 
             <section class="container-group-stats">
-              <span class="td-items">
-                <p class="list-title-table-header">Max-HP</p>
-                <p class="li-item-table-header">${pokemon.stats["max-hp"]}</p>
-              </span>
-              <span class="td-items">
-                <p class="list-title-table-header">Max-CP</p>
-                <p class="li-item-table-header">${pokemon.stats["max-cp"]}</p>
-              </span>
-              <span class="td-items">
-                <p class="list-title-table-header">Base-Attack</p>
-                <p class="li-item-table-header">${pokemon.stats["base-attack"]}</p>
-              </span>
-              <span class="td-items">
-                <p class="list-title-table-header">Base-Defense</p>
-                <p class="li-item-table-header">${pokemon.stats["base-defense"]}</p>
-              </span>
-              <span class="td-items">
-                <p class="list-title-table-header">Base-Stamina</p>
-                <p class="li-item-table-header">${pokemon.stats["base-stamina"]}</p>
-              </span>
+              <div class="items-stats">
+                <span class="td-items">
+                  <p class="list-title-table-header">Max-HP</p>
+                  <p class="li-item-table-header">${pokemon.stats["max-hp"]}</p>
+                </span>
+                <span class="td-items">
+                  <p class="list-title-table-header">Max-CP</p>
+                  <p class="li-item-table-header">${pokemon.stats["max-cp"]}</p>
+                </span>
+              </div>
+              <div class="items-stats">
+                <span class="td-items">
+                  <p class="list-title-table-header">Base-Attack</p>
+                  <p class="li-item-table-header">${pokemon.stats["base-attack"]}</p>
+                </span>
+                <span class="td-items">
+                  <p class="list-title-table-header">Base-Defense</p>
+                  <p class="li-item-table-header">${pokemon.stats["base-defense"]}</p>
+                </span>
+                <span class="td-items">
+                  <p class="list-title-table-header">Base-Stamina</p>
+                  <p class="li-item-table-header">${pokemon.stats["base-stamina"]}</p>
+                </span>
+              </div>
             </section>  
           </section> 
             

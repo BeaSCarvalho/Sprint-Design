@@ -1,3 +1,34 @@
+#not-pokemon {
+  font-size: 2.6rem;
+}
+.list-title-table-header,
+.type-text-table,
+.evolution-p {
+  font-size: 1rem;
+}
+.modal-titles-table,
+.list-item-card-modal,
+.item-table-text,
+.poke-items-name-table,
+.poke-about,
+.poke-rarity,
+.poke-items-name-table,
+.list-title-table {
+  font-size: 1.2rem;
+}
+.poke-number,
+.li-item-card {
+  font-size: 1.4rem;
+}
+.header-poke-name,
+.header-poke-number,
+.modal-titles {
+  font-size: 1.6rem;
+}
+.poke-title {
+  font-size: 2rem;
+}
+
 #result-cards {
   margin: 5rem auto;
   max-width: 1800px;
@@ -11,7 +42,6 @@
 #not-pokemon {
   font-weight: 600;
   padding: 2rem 0;
-  font-size: 2.6rem;
   text-align: center;
   line-height: 1.8;
 }
@@ -40,7 +70,6 @@
   height: 3rem;
   border-radius: 0.5rem;
   box-shadow: var(--shadown-drop-cards);
-  font-size: 1.5rem;
   font-weight: 600;
   display: flex;
   justify-content: center;
@@ -57,7 +86,6 @@
   margin-bottom: 3rem;
 }
 .poke-title {
-  font-size: 2rem;
   margin-bottom: 2px;
 }
 .poke-items {
@@ -70,7 +98,6 @@
   margin: 0.5rem;
   margin-left: 0;
   border-radius: 0.3rem;
-  font-size: 1.4rem;
 }
 .container-icon {
   background-color: var(--transparency-light-gray);
@@ -170,7 +197,6 @@
 .header-poke-number,
 .header-poke-name {
   color: var(--color-white);
-  font-size: 1.6rem;
   font-weight: 600;
 }
 
@@ -188,7 +214,7 @@
 
 /* cards modal body header */
 .group-header-items {
-  margin: 20px 0 10px 0;
+  margin: 20px 0 15px 0;
 }
 .container-header-items,
 .container-group-stats {
@@ -200,15 +226,20 @@
   margin: 10px 0 5px 0;
 }
 .container-group-stats {
-  margin: 15px auto 10px auto;
-  width: 70%;
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   column-gap: 20px;
   row-gap: 8px;
+}
+.items-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
 }
 .container-group-stats td {
   width: 10%;
@@ -229,7 +260,6 @@
   padding: 2% 8%;
   text-align: center;
   line-height: 1.3;
-  font-size: 1rem;
 }
 .poke-rarity {
   text-align: center;
@@ -248,7 +278,6 @@
 }
 .list-title-table-header {
   font-weight: 600;
-  font-size: 1rem;
 }
 
 /* cards modal body types */
@@ -259,15 +288,21 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   column-gap: 20px;
   row-gap: 10px;
+  margin-bottom: 15px;
 }
-.modal-table-titles {
+.container-list-type ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.modal-titles-table {
   font-weight: 600;
-  font-size: 1.2rem;
-  margin: 7px 0 0 0;
 }
 .list-item-card-modal {
   display: inline-block;
@@ -277,6 +312,9 @@
 }
 
 /* cards modal body move-special */
+.modal-titles-table {
+  text-align: center;
+}
 .group-move-special {
   width: 100%;
   display: flex;
@@ -305,7 +343,6 @@
 .poke-items-name-table,
 .list-title-table {
   font-weight: 600;
-  font-size: 1rem;
   padding: 2px 0;
 }
 .poke-items-name-table,
@@ -316,25 +353,25 @@
 .type-text-table {
   justify-self: flex-end;
   text-align: right;
-  font-size: 0.8rem;
   grid-area: type-pokemon;
 }
 .container-info-text-table {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .group-moves-attack {
-  padding: 5px 8px;
+  padding: 10px;
   border-radius: 5px;
-  margin: 5px 2px;
+  margin: 10px;
 }
 .list-items-table {
   margin: 5px 0;
 }
 .modal-titles {
   margin: 10px 0;
+  text-align: center;
 }
 .container-movements {
   display: flex;
@@ -350,7 +387,7 @@
   border-radius: 0.8rem;
   box-shadow: var(--shadown-drop-cards);
   padding: 5px;
-  margin: 10px;
+  margin: 10px 10px 20px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -362,7 +399,6 @@
   margin: 10px;
 }
 .evolution-p {
-  font-size: 1rem;
   font-weight: 600;
   text-align: center;
 }
@@ -381,4 +417,106 @@
 .modal-group {
   scrollbar-width: thin;
   scrollbar-color: var(--color-medium-blue) var(--transparency-light-gray);
+}
+
+@media screen and (min-width: 500px) and (max-width: 999px) {
+  .close-modal {
+    top: 20px;
+    right: -20px;
+  }
+  .group-header {
+    margin: 50px 0;
+  }
+  .group-header-name {
+    margin-right: 20px;
+  }
+  .group-modal-items {
+    margin-bottom: 50px;
+  }
+  .evolution-img {
+    height: 80px;
+    width: 80px;
+  }
+  .modal-poke-img {
+    width: 140px;
+    height: 140px;
+  }
+  .group-header-name {
+    width: 250px;
+  }
+  .list-title-table-header,
+  .type-text-table,
+  .evolution-p,
+  .modal-titles-table,
+  .list-item-card-modal,
+  .item-table-text,
+  .poke-items-name-table,
+  .poke-about,
+  .poke-rarity,
+  .poke-items-name-table,
+  .list-title-table,
+  .li-item-table-header {
+    font-size: 1.4rem;
+  }
+  .poke-number,
+  .li-item-card {
+    font-size: 1.6rem;
+  }
+  .header-poke-name,
+  .header-poke-number,
+  .modal-titles {
+    font-size: 1.8rem;
+  }
+  .poke-title {
+    font-size: 2.2rem;
+  }
+  .evolution-container {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .modal-group {
+    width: 60%;
+  }
+  .group-header-name {
+    width: 250px;
+  }
+  .evolution-img {
+    height: 100px;
+    width: 100px;
+  }
+  .modal-poke-img {
+    width: 180px;
+    height: 180px;
+  }
+  .list-title-table-header,
+  .type-text-table,
+  .evolution-p,
+  .modal-titles-table,
+  .list-item-card-modal,
+  .item-table-text,
+  .poke-items-name-table,
+  .poke-about,
+  .poke-rarity,
+  .poke-items-name-table,
+  .list-title-table,
+  .li-item-table-header {
+    font-size: 1.8rem;
+  }
+  .poke-number,
+  .li-item-card {
+    font-size: 2rem;
+  }
+  .header-poke-name,
+  .header-poke-number,
+  .modal-titles {
+    font-size: 2.6rem;
+  }
+  .poke-title {
+    font-size: 3rem;
+  }
+  .evolution-container {
+    width: 150px;
+  }
 }
