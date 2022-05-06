@@ -7,34 +7,37 @@ export let createCards = function (pokemonArray) {
   containerList.innerHTML = "";
   pokemonArray.forEach((pokemon) => {
     const item = document.createElement("section");
-    item.className = "card pokemon";
-    item.id = pokemon.num;
     containerList.appendChild(item).innerHTML = `
-      <p
-        ${pokemon.type
-          .map((type) => 'class="poke-number ' + type + '"')
-          .join("")}>
-        ${pokemon.num}  
-      </p>
-      <figure class="card-box" id="pokemon-${pokemon.num}">
-        <img class="poke-img" src="${pokemon.img}" alt=${pokemon.name}>
-      </figure>
-      <main class="card-info">
-        <h4 class="poke-title">
-          ${pokemon.name[0].toUpperCase() + pokemon.name.substr(1)}</p>
-        </h4>
-        <ul class="poke-items">
-          ${pokemon.type
-            .map(
-              (type) =>
-                '<li class="li-item-card ' + type + '">' + type + "</li>"
-            )
-            .join("")}
-        </ul> 
-        <div class="container-icon">
-          <img src="../../img/icon-open.png" alt="More information" class="small-icon">
-        </div>
-      </main>
+
+      <section class="container-card">
+        <section class="card" id="pokemon-${pokemon.num}">
+          <p
+            ${pokemon.type
+              .map((type) => 'class="poke-number ' + type + '"')
+              .join("")}>
+            ${pokemon.num}  
+          </p>
+          <figure class="card-box">
+            <img class="poke-img" src="${pokemon.img}" alt=${pokemon.name}>
+          </figure>
+          <div class="container-icon">
+            <img src="../../img/icons/icon-open.png" alt="More information" class="small-icon">
+          </div>
+        </section>
+        <main class="card-info">
+          <h4 class="poke-title">
+            ${pokemon.name[0].toUpperCase() + pokemon.name.substr(1)}</p>
+          </h4>
+          <ul class="poke-items">
+            ${pokemon.type
+              .map(
+                (type) =>
+                  '<li class="li-item-card ' + type + '">' + type + "</li>"
+              )
+              .join("")}
+          </ul> 
+        </main>
+      </div>
     `;
 
     const pokemonButton = item.querySelector(

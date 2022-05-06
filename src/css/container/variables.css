@@ -1,0 +1,48 @@
+:root {
+  --color-black: #022f35;
+  --color-white: #ffffff;
+  --color-dark-gray: #4e6064;
+  --color-medium-gray: #8da7ac;
+  --color-dark-dark-blue: #0a4659;
+  --color-dark-blue: #06616d;
+  --color-medium-blue: #329caa;
+  --color-light-blue: #3bd1e5;
+  --color-dark-green: #898220;
+  --color-medium-green: #9ebf3f;
+  --color-light-green: #b8cd7d;
+  --color-yellow: #f2960c;
+  --color-card: #f2f2f2;
+  --color-disabled: #cdb7b5;
+  --gradient-background: linear-gradient(
+    180deg,
+    rgba(192, 248, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 83%
+  );
+  --transparency-light: rgba(0, 0, 0, 0.5);
+  --transparency-light-gray: rgba(191, 208, 211, 0.8);
+  --shadown-drop-fort: 6px 6px 6px #737373;
+  --shadown-drop-medium: 3px 3px 2px #737373;
+  --shadown-article: 5px 10px 10px 0px rgba(0, 0, 0, 0.45);
+  --shadown-drop-cards: 6px 4px 4px #8da7ac;
+  --border-input: 1px solid var(--color-light-blue);
+
+  /*Colors Pokémons*/
+  --bug: rgb(158, 191, 63);
+  --dark: rgb(93, 96, 109);
+  --dragon: rgb(21, 116, 196);
+  --electric: rgb(238, 212, 79);
+  --fairy: rgb(237, 153, 229);
+  --fighting: rgb(215, 68, 86);
+  --fire: rgb(224, 164, 86);
+  --flying: rgb(156, 180, 230);
+  --ghost: rgb(107, 114, 196);
+  --grass: rgb(98, 190, 101);
+  --ground: rgb(214, 133, 91);
+  --ice: rgb(129, 212, 201);
+  --normal: rgb(154, 158, 163);
+  --poison: rgb(180, 103, 202);
+  --psychic: rgb(247, 124, 124);
+  --rock: rgb(205, 192, 144);
+  --steel: rgb(89, 150, 163);
+  --water: rgb(88, 159, 222);
+}
