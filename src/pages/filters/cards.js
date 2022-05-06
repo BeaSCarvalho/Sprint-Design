@@ -21,7 +21,7 @@ export let createCards = function (pokemonArray) {
             <img class="poke-img" src="${pokemon.img}" alt=${pokemon.name}>
           </figure>
           <div class="container-icon">
-            <img src="../../img/icons/icon-open.png" alt="More information" class="small-icon">
+            <img src="./img/icons/icon-open.png" alt="More information" class="small-icon">
           </div>
         </section>
         <main class="card-info">
