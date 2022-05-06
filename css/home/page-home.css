@@ -22,8 +22,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-items: start;
-  justify-content: space-between;
-  align-content: space-around;
+  justify-content: center;
+  align-content: center;
   gap: 25px;
 }
 .about-contact {
