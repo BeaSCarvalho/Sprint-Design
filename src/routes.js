@@ -1,5 +1,6 @@
 import { pageHome, initHome} from './pages/home/template-home.js';
-import { pageFilters, initPageFilters} from './pages/filters/template-filters.js';
+import { pageFilters } from './pages/filters/template-filters.js';
+import { initPageFilters} from './pages/filters/filters.js'
 import { pageTips} from './pages/tips/template-tips.js';
 import { pageCuriosities} from './pages/curiosities/template-curiosities.js';
 import { createHeader, toggleMenu}  from './pages/components/header.js'
