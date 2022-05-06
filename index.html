@@ -1,105 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="image/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./css/page-home.css">
-  <link rel="stylesheet" href="./css/carrossel.css">
-  
-  <title>ONPOKEMON</title>
-</head>
+    <title>ONPOKEMON</title>
+  </head>
 
-<body id="container-general">
-
-  <div id="container-pokemon">
-
-    <header id="header-filters">
-      <a href="./index.html" class="link-pokemon">
-        <img class="logo-onpokemon" alt="Website logo OnPokemon" src="./img/logo.png">
-      </a>
-      <section class="menu-header">
-        <nav id="nav">
-          <button class="button-mobile" id="button-mobile" aria-label="Open menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-            <span class="icon"></span>
-          </button>
-          <ul class="menu" id="menu" role="menu">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./pages/filters/filters.html">Filters</a></li>
-            <li><a href="./pages/tips/tips.html">Tips</a></li>
-            <li><a href="./pages/curiosities/curiosities.html">Curiosities</a></li>
-
-          </ul>
-        </nav>
-      </section>
-    </header>
-    <main class="background">
-      <div class="box">
-        <div class="box-image"><img src="img/primeiro.png" /></div>
-        <div class="box-image"><img src="img/segundo.png" /></div>
-        <div class="box-image"><img src="img/terceiro.png" /></div>
-      </div>
-
-      <section class="box-cursor"></section>
-      <nav class="principal">
-        <section class="about-us">
-          <h2 class="title-about">ABOUT US</h2>
-          <div class="container-contacts">
-            <section class="about-contact cont1">
-              <p class="name">Adriana Watanabe</p>
-              <a href="https://github.com/adrianatwatanabe" class="git">
-                <img src="./img/icon-github.png" alt="logo github" class="icon-git" />
-                <p class="about-name">github.com/adriantwatanabe</p>
-              </a>
-            </section>
-
-            <section class="about-contact cont2">
-              <p class="name">Ana Clara Freitas</p>
-              <a href="https://github.com/AnaClaraFreitas" class="git">
-                <img src="./img/icon-github.png" alt="logo github" class="icon-git" />
-                <p class="about-name">github.com/AnaClaraFreitas</p>
-              </a>
-            </section>
-
-            <section class="about-contact cont3">
-              <p class="name">Beatriz Carvalho</p>
-              <a href="https://github.com/BeaSCarvalho" class="git"><br />
-                <img src="./img/icon-github.png" alt="logo github" class="icon-git" />
-                <p class="about-name">github.com/BeaSCarvalho</p>
-              </a>
-            </section>
-
-            <section class="about-contact cont4">
-              <p class="name">Érika Krause</p>
-              <a href="https://github.com/erikakrause" class="git">
-                <img src="./img/icon-github.png" alt="logo github" class="icon-git" />
-                <p class="about-name">github.com/erikakrause</p>
-              </a>
-            </section>
-
-            <section class="about-contact cont5">
-              <p class="name">Helena Gonçalves</p>
-              <a href=" https://github.com/nannayusuf" class="git">
-                <img src="./img/icon-github.png" alt="logo github" class="icon-git" />
-                <p class="about-name">github.com/nannayusuf</p>
-              </a>
-            </section>
-
-            <section class="about-contact cont6">
-              <p class="name">Marione Pereira</p>
-              <a href=" https://github.com/Marione-Tainara" class="git">
-                <img src="./img/icon-github.png" alt="logo github" class="icon-git" />
-                <p class="about-name">github.com/Marione-Tainara</p>
-              </a>
-            </section>
-        </section>
-      </nav>
-    </main>
-    <script src="./pages/carrossel/carrossel.js"></script>
-  </div>
-  <script src="main.js" type="module"></script>
-
-</body>
-
+  <body id="container-general" class="container-general-home">
+    <div id="container-pokemon"></div>
+    <script src="routes.js" type="module"></script>
+  </body>
 </html>
