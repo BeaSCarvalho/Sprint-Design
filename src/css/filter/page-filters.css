@@ -25,7 +25,7 @@
 #name-pokemon {
   border: var(--border-input);
   background-color: var(--color-light-blue);
-  background-image: url(../img/icon-search.png);
+  background-image: url(../../img/icons/icon-search.png);
   background-position: right 8px center;
   background-repeat: no-repeat;
   background-size: 2rem;
@@ -50,7 +50,7 @@
   height: 3.5rem;
   margin: 0 0 2rem 0;
   border: none;
-  background-image: url(../img/icon-arrow-select.png);
+  background-image: url(../../img/icons/icon-arrow-select.png);
   background-position: right 8px center;
   background-repeat: no-repeat;
   background-size: auto 25%;

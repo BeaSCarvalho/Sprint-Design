@@ -48,32 +48,33 @@ export let createCards = function (pokemonArray) {
       let prevEvolution = "";
       let nextEvolution = "";
 
-      if (pokemon.evolution["prev-evolution"]) {
-        let evolutions = getPrevEvolution(pokemon.evolution["prev-evolution"]);
-
-        evolutions.forEach((evol) => {
-          prevEvolution += `
-              <div class="evolution-each-container">
-                <img class="evolution-img" 
-                  src="https://www.serebii.net/pokemongo/pokemon/${evol.num}.png">
-                <p class="evolution-p">${evol.name}</p><p class="evolution-p">N° ${evol.num}</p>
-              </div>
-            `;
-        });
-      }
-
       if (pokemon.evolution["next-evolution"]) {
         let evolutions = getNextEvolution(pokemon.evolution["next-evolution"]);
 
         evolutions.forEach((evol) => {
           nextEvolution += `
-              <div class="evolution-each-container">
-                <img class="evolution-img" 
-                  src="https://www.serebii.net/pokemongo/pokemon/${evol.num}.png">
-                <p class="evolution-p">${evol.name}</p>
-                <p class="evolution-p">N° ${evol.num}</p>
+              <div class="evolution-container">
+                <img class="evolution-img" src="../../img/pokemon/number-pokemon/${evol.num}.png">
+                <p class="evolution-p">${evol.name.toUpperCase()}</p>
+                <p class="evolution-p">N°: ${evol.num}</p>
+                <p class="evolution-p">Candy-cost: ${evol['candy-cost']}</p>
               </div>
               `;
+        });
+      }
+
+      if (pokemon.evolution["prev-evolution"]) {
+        let evolutions = getPrevEvolution(pokemon.evolution["prev-evolution"]);
+
+        evolutions.forEach((evol) => {
+          prevEvolution += `
+              <div class="evolution-container">
+                <img class="evolution-img" src="../../img/pokemon/number-pokemon/${evol.num}.png">
+                <p class="evolution-p">${evol.name.toUpperCase()}</p>
+                <p class="evolution-p">N°: ${evol.num}</p>
+                <p class="evolution-p">Candy-cost: ${evol['candy-cost']}</p>
+              </div>
+            `;
         });
       }
 
@@ -252,8 +253,8 @@ export let createCards = function (pokemonArray) {
               <section class="group-evolutions">
                 <h2 class="modal-titles">EVOLUTION</h2>
                 <div class="container-movements">
-                  <p>${prevEvolution ? prevEvolution : ""}</p>
-                 <p>${nextEvolution ? nextEvolution : ""}</p>
+                  ${nextEvolution ? nextEvolution : ""}
+                  ${prevEvolution ? prevEvolution : ""}
                 </div>
               </section>
               </section>

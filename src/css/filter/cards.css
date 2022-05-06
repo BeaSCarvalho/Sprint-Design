@@ -208,7 +208,7 @@
   justify-content: center;
   align-items: center;
   column-gap: 20px;
-  row-gap: 5px;
+  row-gap: 8px;
 }
 .container-group-stats td {
   width: 10%;
@@ -220,8 +220,8 @@
   align-items: center;
 }
 .modal-poke-img {
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
 }
 .poke-about {
   width: 100%;
@@ -335,6 +335,36 @@
 }
 .modal-titles {
   margin: 10px 0;
+}
+.container-movements {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.evolution-container {
+  height: 100%;
+  width: 100px;
+  background-color: var(--color-card);
+  border-radius: 0.8rem;
+  box-shadow: var(--shadown-drop-cards);
+  padding: 5px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.evolution-img {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+.evolution-p {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .modal-group::-webkit-scrollbar {
