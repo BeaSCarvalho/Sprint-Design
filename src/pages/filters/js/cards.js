@@ -98,7 +98,7 @@ export let createCards = function (pokemonArray) {
               alt=${pokemon.name}>
             </figure>
             <p class="poke-about">${pokemon.about}</p> 
-            <p class="poke-rarity">RARITY: ${
+            <p class="poke-rarity">Rarity: ${
               pokemon.rarity}</p> 
 
             <section class="container-group-stats">
