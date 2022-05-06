@@ -22,6 +22,9 @@
   padding: 0 1rem;
   border-radius: 0.5rem;
 }
+option {
+  font-size: 1.5rem;
+}  
 #name-pokemon {
   border: var(--border-input);
   background-color: var(--color-light-blue);
