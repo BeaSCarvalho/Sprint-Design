@@ -1,9 +1,10 @@
-const pokemonModal = document.getElementById("modal-pokemon");
-const button = document.getElementById("back-button");
-
 export let createCards = function (pokemonArray) {
   const containerList = document.getElementById("result-cards");
+  const pokemonModal = document.getElementById("modal-pokemon");
+  const button = document.getElementById("back-button");
+  
   containerList.innerHTML = "";
+
   pokemonArray.forEach((pokemon) => {
     const item = document.createElement("section");
     containerList.appendChild(item).innerHTML = `
