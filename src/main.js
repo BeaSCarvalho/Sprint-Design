@@ -5,8 +5,8 @@ import {
   percentagePerFilter,
   filterBy,
   filterRarity,
-} from "./pages/filters/js/data.js";
-import { createCards } from "./pages/filters/js/cards.js";
+} from "./pages/filters/data.js";
+import { createCards } from "./pages/filters/cards.js";
 import data from "./data/pokemon/pokemon.js";
 
 const buttonMobile = document.getElementById("button-mobile");

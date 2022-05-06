@@ -1,21 +1,21 @@
 .container-article {
   line-height: 1.5;
+  padding: 0 2rem;
 }
 .section-text {
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: auto 8% 3%;
-  padding: 5%;
 }
-.main-title,
 .sub-title {
   text-align: center;
 }
 .main-title {
   margin-top: 2rem;
-  font-size: 2.5rem;
+  text-align: left;
+  font-size: 2rem;
+  margin: 2rem 0;
 }
 .sub-title,
 .img-articles {
@@ -26,7 +26,7 @@
 }
 .article h3 {
   font-size: 1.2rem;
-  margin: 2rem 0;
+  margin: 1.6rem 0;
 }
 .first {
   order: 0;
@@ -42,14 +42,19 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: auto 10% 12%;
+  margin: auto 5% 12%;
   padding: 5%;
   border-radius: 7px;
   box-shadow: var(--shadown-article);
   display: flex;
 }
+.article figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .img-articles {
-  max-width: 100%;
+  max-width: 60%;
   align-items: center;
 }
 figcaption {
@@ -58,19 +63,22 @@ figcaption {
 }
 .paragraph-article {
   text-align: justify;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 
 @media screen and (min-width: 550px) {
   .article {
     margin: auto 10% 6%;
   }
+  .container-article {
+    padding: 0 3rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .main-title {
-    font-size: 3.5rem;
-    margin-top: 4rem;
+    font-size: 2.5rem;
+    margin-top: 3rem;
   }
   .sub-title,
   .img-articles {

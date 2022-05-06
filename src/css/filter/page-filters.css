@@ -4,7 +4,7 @@
 }
 #form-filters,
 #results-header {
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 .filter-title {
   display: block;
@@ -121,7 +121,7 @@
 @media screen and (min-width: 1000px) {
   #form-filters,
   #results-header {
-    padding: 0 2.5rem;
+    padding: 0 3rem;
   }
   .filter-title {
     font-size: 2.5rem;
