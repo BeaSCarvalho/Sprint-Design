@@ -2,8 +2,6 @@
 @import url("container.css");
 @import url("./filter/cards.css");
 @import url("./filter/group-pokemon.css");
-@import url("./filter/modal-card.css");
-@import url("./container/modal.css");
 
 #form-filters {
   display: grid;

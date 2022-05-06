@@ -68,7 +68,6 @@
   margin-left: 0;
   border-radius: 0.3rem;
   font-size: 1.4rem;
-  color: var(--color-white);
 }
 .container-icon {
   background-color: var(--transparency-light-gray);
@@ -174,7 +173,8 @@
 
 /* cards modal body */
 .group-modal-items {
-  overflow-y: scroll;
+  overflow-y: visible;
+  overflow-x: hidden;
   height: 100vh;
   margin-bottom: 30px;
   background-color: var(--color-white);
@@ -185,7 +185,7 @@
 
 /* cards modal body header */
 .group-header-items {
-  margin: 20px 0;
+  margin: 20px 0 10px 0;
 }
 .container-header-items,
 .container-group-stats {
@@ -197,7 +197,18 @@
   margin: 10px 0 5px 0;
 }
 .container-group-stats {
-  margin-bottom: 0;
+  margin: 15px auto 10px auto;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 5px;
+}
+.container-group-stats td {
+  width: 10%;
 }
 .container-modal-image-header {
   display: flex;
@@ -223,12 +234,15 @@
   font-weight: 600;
   font-size: 1.2rem;
 }
-.container-group-stats td {
-  width: 30%;
+.td-items {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.items-table-stats {
-  margin-bottom: 5px;
+.td-item p {
+  display: inline;
 }
 .list-title-table-header {
   font-weight: 600;
@@ -256,9 +270,8 @@
 .list-item-card-modal {
   display: inline-block;
   padding: 0.3rem 0.7rem;
-  margin: 0.5rem 0.5rem 0 10px;
+  margin: 5px 2px;
   border-radius: 0.3rem;
-  color: var(--color-white);
 }
 
 /* cards modal body move-special */
@@ -270,19 +283,21 @@
   justify-content: flex-start;
   column-gap: 20px;
   row-gap: 5px;
-  margin: 20px 0;
+}
+.group-moves-title {
+  display: grid;
+  grid-template-areas: "name-pokemon type-pokemon";
+  align-items: center;
 }
 .list-items-table,
 .list-items-table-body {
-  margin: 0 10px 0 5px;
+  margin: 0 10px 0 0;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
-  column-gap: 20px;
-  row-gap: 5px;
-}
-.list-items-table-body {
+  align-items: center;
+  width: 100%;
+  column-gap: 8px;
   row-gap: 5px;
 }
 .poke-items-name-table,
@@ -291,8 +306,16 @@
   font-size: 1rem;
   padding: 2px 0;
 }
-.poke-items-name-table {
+.poke-items-name-table,
+.type-text-table {
   padding: 0;
+  display: inline;
+}
+.type-text-table {
+  justify-self: flex-end;
+  text-align: right;
+  font-size: 0.8rem;
+  grid-area: type-pokemon;
 }
 .container-info-text-table {
   display: flex;
@@ -301,10 +324,15 @@
   justify-content: flex-start;
 }
 .group-moves-attack {
-  margin: 10px 5px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  margin: 5px 2px;
 }
 .list-items-table {
   margin: 5px 0;
+}
+.modal-titles {
+  margin: 10px 0;
 }
 
 .modal-group::-webkit-scrollbar {

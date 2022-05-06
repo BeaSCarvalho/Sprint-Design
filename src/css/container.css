@@ -89,9 +89,11 @@ img {
 }
 .dark {
   background-color: var(--dark);
+  color: var(--color-white);
 }
 .dragon {
   background-color: var(--dragon);
+  color: var(--color-white);
 }
 .electric {
   background-color: var(--electric);
@@ -101,6 +103,11 @@ img {
 }
 .fighting {
   background-color: var(--fighting);
+  color: var(--color-white);
+}
+.fight {
+  background-color: var(--fighting);
+  color: var(--color-white);
 }
 .fire {
   background-color: var(--fire);
@@ -110,21 +117,25 @@ img {
 }
 .ghost {
   background-color: var(--ghost);
+  color: var(--color-white);
 }
 .grass {
   background-color: var(--grass);
 }
 .ground {
   background-color: var(--ground);
+  color: var(--color-white);
 }
 .ice {
   background-color: var(--ice);
 }
 .normal {
   background-color: var(--normal);
+  color: var(--color-white);
 }
 .poison {
   background-color: var(--poison);
+  color: var(--color-white);
 }
 .psychic {
   background-color: var(--psychic);
@@ -137,4 +148,5 @@ img {
 }
 .water {
   background-color: var(--water);
+  color: var(--color-white);
 }

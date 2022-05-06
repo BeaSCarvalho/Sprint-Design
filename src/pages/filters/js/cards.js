@@ -102,38 +102,26 @@ export let createCards = function (pokemonArray) {
               pokemon.rarity}</p> 
 
             <section class="container-group-stats">
-              <table class="items-table-stats">
-                <tbdoy>
-                  <tr>
-                    <td>
-                      <p class="list-title-table-header">Max-HP</p>
-                      <p class="li-item-table-header">${pokemon.stats["max-hp"]}</p>
-                    </td>
-                    <td>
-                      <p class="list-title-table-header">Max-CP</p>
-                      <p class="li-item-table-header">${pokemon.stats["max-cp"]}</p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table>
-                <tbody>
-                  <tr>
-                    <td>
-                      <p class="list-title-table-header">Base-Attack</p>
-                      <p class="li-item-table-header">${pokemon.stats["base-attack"]}</p>
-                    </td>
-                    <td>
-                      <p class="list-title-table-header">Base-Defense</p>
-                      <p class="li-item-table-header">${pokemon.stats["base-defense"]}</->
-                    </td>
-                    <td>
-                      <p class="list-title-table-header">Base-Stamina</p>
-                      <p class="li-item-table-header">${pokemon.stats["base-stamina"]}</->
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <span class="td-items">
+                <p class="list-title-table-header">Max-HP</p>
+                <p class="li-item-table-header">${pokemon.stats["max-hp"]}</p>
+              </span>
+              <span class="td-items">
+                <p class="list-title-table-header">Max-CP</p>
+                <p class="li-item-table-header">${pokemon.stats["max-cp"]}</p>
+              </span>
+              <span class="td-items">
+                <p class="list-title-table-header">Base-Attack</p>
+                <p class="li-item-table-header">${pokemon.stats["base-attack"]}</p>
+              </span>
+              <span class="td-items">
+                <p class="list-title-table-header">Base-Defense</p>
+                <p class="li-item-table-header">${pokemon.stats["base-defense"]}</p>
+              </span>
+              <span class="td-items">
+                <p class="list-title-table-header">Base-Stamina</p>
+                <p class="li-item-table-header">${pokemon.stats["base-stamina"]}</p>
+              </span>
             </section>  
           </section> 
             
@@ -179,20 +167,17 @@ export let createCards = function (pokemonArray) {
               <section class="group-moves">
                 <h2 class="modal-titles">QUICK MOVES</h2>
                 <section class="container-info-text-table">
+
                 ${pokemon["quick-move"]
                     .map(
                       (move) => `
-                      <section class="group-moves-attack">
-                        <p class="poke-items-name-table">${move.name.toUpperCase()}</p>
-
+                      <section class="group-moves-attack ${move.type}">
+                        <div class="group-moves-title">
+                          <p class="poke-items-name-table">${move.name.toUpperCase()}</p>
+                          <p class="list-title-table type-text-table">${move.type.toUpperCase()}</p>
+                        </div>
                         <table class="list-items-table">
                           <tbody class="list-items-table-body">
-                            <tr>
-                              <td class="block-item-table">
-                                <p class="list-title-table">Type</p>
-                                <p class="item-table-text">${move.type}</p>
-                              </td>
-                            </tr>
                             <tr>
                               <td>
                                 <p class="list-title-table">Damage</p>
@@ -226,17 +211,13 @@ export let createCards = function (pokemonArray) {
                 ${pokemon["special-attack"]
                     .map(
                       (attack) => `
-                      <section class="group-moves-attack">
-                        <p class="poke-items-name-table">${attack.name.toUpperCase()}</p>
-
+                      <section class="group-moves-attack ${attack.type}">
+                        <div class="group-moves-title">
+                          <p class="poke-items-name-table">${attack.name.toUpperCase()}</p>
+                          <p class="list-title-table type-text-table">${attack.type.toUpperCase()}</p>
+                        </div>
                         <table class="list-items-table">
                           <tbody class="list-items-table-body">
-                            <tr>
-                              <td class="block-item-table">
-                                <p class="list-title-table">Type</p>
-                                <p class="item-table-text">${attack.type}</p>
-                              </td>
-                            </tr>
                             <tr>
                               <td>
                                 <p class="list-title-table">Damage</p>
