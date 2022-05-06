@@ -37,6 +37,10 @@
   justify-content: flex-start;
   width: 100%;
 }
+.group-header {
+  margin: 30px 0;
+  position: relative;
+}
 .group-modal-items {
   overflow-y: scroll;
   height: 100vh;
@@ -45,10 +49,6 @@
   border-radius: 3px;
   display: grid;
   grid-template-columns: 1fr;
-}
-.group-header {
-  margin: 30px 0;
-  position: relative;
 }
 .close-modal {
   width: 5rem;
@@ -80,43 +80,66 @@
 .header-number {
   padding: 4px 20px;
 }
-.modal-poke-number,
-.modal-poke-name {
+.header-poke-number,
+.header-poke-name {
   color: var(--color-white);
   font-size: 1.6rem;
   font-weight: 600;
 }
-.container-group {
-  margin: 0 6px;
+.container-header-items,
+.container-group-stats {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
 }
-.group-img {
-  place-self: center;
-  margin: 4px 0;
+.container-group-stats td {
+  width: 30%;
+  text-align: center;
+}
+.container-list-type {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 5px;
+  margin: 0 0 10px 10px;
+}
+.items-table-stats {
+  margin-bottom: 5px;
 }
 .modal-poke-img {
   height: 60px;
   width: 60px;
 }
 .poke-about {
-  margin: 3px 10px;
+  width: 100%;
+  margin: 10px 0;
+  padding: 0 8%;
   text-align: center;
   line-height: 1.3;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
 }
 .poke-rarity {
   text-align: center;
   margin: 3px 0;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 .modal-titles {
-  font-weight: var(--font-bold);
-  font-size: 0.625rem;
-  margin: 7px 0 3px 0;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 7px 0 0 0;
 }
 .list-title {
-  font-weight: var(--font-bold);
-  font-size: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
 }
-.li-item {
+.li-items {
   display: inline-block;
   padding: 1px 4px;
   margin: 1px 2px;
@@ -124,8 +147,13 @@
   border-radius: 10px;
   font-size: 0.5rem;
 }
-.poke-items {
-  margin-left: 5px;
+.li-item-card-modal {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  margin: 0.5rem 0.5rem 0 10px;
+  border-radius: 0.3rem;
+  font-size: 1.4rem;
+  color: var(--color-white);
 }
 
 .poke .group-modal::-webkit-scrollbar {
