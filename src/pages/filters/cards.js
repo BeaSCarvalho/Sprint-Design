@@ -1,7 +1,7 @@
 export let createCards = function (pokemonArray) {
-  const containerList = document.getElementById("result-cards");
-  const pokemonModal = document.getElementById("modal-pokemon");
-  const button = document.getElementById("back-button");
+  const containerList = document.querySelector("#result-cards");
+  const pokemonModal = document.querySelector("#modal-pokemon");
+  const button = document.querySelector("#back-button");
   
   containerList.innerHTML = "";
 
