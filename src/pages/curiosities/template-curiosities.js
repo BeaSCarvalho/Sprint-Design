@@ -1,39 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+import header from '../../components/header.js';
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../css/page-curiosities.css">
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  <title>ONPOKEMON - Curiosities</title>
-</head>
+export default function pageCuriosities(){
+  const container = document.createElement("div");
+  container.setAttribute("id","container-pokemon");
 
-<body id="container-general">
-
-  <div id="container-pokemon">
-
-    <header id="header-filters">
-      <a href="../../index.html" class="link-pokemon">
-        <img class="logo-onpokemon" alt="Website logo OnPokemon" src="../../img/logo.png">
-      </a>
-      <section class="menu-header">
-        <nav id="nav">
-          <button class="button-mobile" id="button-mobile" aria-label="Open menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-            <span class="icon"></span>
-          </button>
-          <ul class="menu" id="menu" role="menu">
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../filters/filters.html">Filters</a></li>
-            <li><a href="../tips/tips.html">Tips</a></li>
-            <li><a href="../curiosities/curiosities.html">Curiosities</a></li>
-          </ul>
-        </nav>
-      </section>
-    </header>
-
+  const templateCuriosities = `
     <main id="container-article">
-      <h1 class="main-title"> Curiosities </h1>
+      <h1 class="main-title" id="back-up"> Curiosities </h1>
       <section class="section-text">
         <p class="paragraph-article">
           Since it launched in the 90's, Pokémon has gone on to become one of the most popular franchises in the world!
@@ -132,12 +105,33 @@
             especially some of the rarer or older ones. It's fun trying to find them though!
           </p>
         </article>
-        <a href="curiosities.html#header-filters">
+        <a href="#back-up">
           <button type="button" id="back-button" class="btn-action">
-            <img src="../../img/icon-up-arrow.png" alt="Back to top">
+            <img src="./img/icon-up-arrow.png" alt="Back to top">
           </button>
-  </div>
-  <script src="../../main.js" type="module"></script>
-</body>
+  `;
 
-</html>
+  container.appendChild(header());
+  container.innerHTML += templateCuriosities;
+
+  const buttonMobile = container.querySelector("#button-mobile");
+  buttonMobile.addEventListener("click", toggleMenu);
+  buttonMobile.addEventListener("touchstart", toggleMenu);
+
+  function toggleMenu(event) {
+    if (event.type === "touchstart") {
+      event.preventDefault();
+    }
+    const navigation = document.getElementById("nav");
+    navigation.classList.toggle("active");
+    const navActive = navigation.classList.contains("active");
+    event.currentTarget.setAttribute("aria-expanded", navActive);
+    if (navActive) {
+      event.currentTarget.setAttribute("aria-laberl", "Close Menu");
+    } else {
+      event.currentTarget.setAttribute("aria-laberl", "Open Menu");
+    }
+  }
+
+  return container;
+}

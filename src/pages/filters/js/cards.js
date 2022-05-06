@@ -1,16 +1,18 @@
-const containerList = document.getElementById("result-cards");
-const pokemonModal = document.getElementById("modal-pokemon");
-const button = document.getElementById("back-button");
+
+export let createCards = function (pokemonArray) {
+
+  const containerList = document.querySelector("#result-cards");
+const pokemonModal = document.querySelector("#modal-pokemon");
+const button = document.querySelector("#back-button");
 
 let body = document.getElementsByTagName("body")[0];
 
-export let createCards = function (pokemonArray) {
   containerList.innerHTML = "";
-
-  pokemonArray.forEach((pokemon) => {
+  for (let i = 0; pokemonArray.length; i++) {
+  //pokemonArray.forEach((pokemon) => {
     const item = document.createElement("section");
     item.className = "card pokemon";
-    item.id = pokemon.num;
+    item.id = pokemonArray[i].num;
     containerList.appendChild(item).innerHTML = `
       <p
         ${pokemon.type
@@ -261,7 +263,7 @@ export let createCards = function (pokemonArray) {
         button.style.display = "block";
       };
     });
-  });
+  };
 };
 
 function getNextEvolution(pokemon) {

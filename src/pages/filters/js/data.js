@@ -28,7 +28,7 @@ export const filterBy = (
 
 export const filterRarity = (data, selectedOption) => {
   return data.filter((item) => {
-    return item["pokemon-rarity"] == selectedOption;
+    return item.rarity == selectedOption;
   });
 };
 

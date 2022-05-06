@@ -5,7 +5,7 @@ import {
   orderOfWeakness,
   percentagePerFilter,
   filterRarity
-} from "../src/js/data.js";
+} from "../src/pages/filters/js/data.js";
 
 const pokemonsForTest = [
   {
