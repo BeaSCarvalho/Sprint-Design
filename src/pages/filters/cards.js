@@ -1,6 +1,5 @@
 const pokemonModal = document.getElementById("modal-pokemon");
 const button = document.getElementById("back-button");
-const body = document.getElementsByTagName("body")[0];
 
 export let createCards = function (pokemonArray) {
   const containerList = document.getElementById("result-cards");

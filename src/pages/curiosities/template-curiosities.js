@@ -1,39 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  <title>ONPOKEMON - Curiosities</title>
-</head>
-
-<body id="container-general">
-
-  <div id="container-pokemon">
-
-    <header id="header-filters">
-      <a href="../../index.html" class="link-pokemon">
-        <img class="logo-onpokemon" alt="Website logo OnPokemon" src="../../img/icons/logo.png">
-      </a>
-      <section class="menu-header">
-        <nav id="nav">
-          <button class="button-mobile" id="button-mobile" aria-label="Open menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-            <span class="icon"></span>
-          </button>
-          <ul class="menu" id="menu" role="menu">
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../filters/filters.html">Filters</a></li>
-            <li><a href="../tips/tips.html">Tips</a></li>
-            <li><a href="../curiosities/curiosities.html">Curiosities</a></li>
-            <li><a href="../../index.html#contacts">Contacts</a></li>
-          </ul>
-        </nav>
-      </section>
-    </header>
-
-    <main class="container-article">
+export function pageCuriosities() {
+  const container = document.createElement("main");
+  container.setAttribute("id", "header-curiosities");
+  container.setAttribute("class", "container-article");
+  container.innerHTML = `
       <h1 class="main-title">CURIOSITIES</h1>
       <section class="section-text">
         <p class="paragraph-article">
@@ -133,13 +102,11 @@
             especially some of the rarer or older ones. It's fun trying to find them though!
           </p>
         </article>
-        <a href="curiosities.html#header-filters">
+        <a href="#header-curiosities">
           <button type="button" id="back-button" class="btn-action">
             <img src="../../img/icons/icon-up-arrow.png" alt="Back to top">
           </button>
-        </a>
-  </div>
-  <script src="../../main.js" type="module"></script>
-</body>
+  `;
 
-</html>
+  return container;
+}
