@@ -54,7 +54,7 @@ export let createCards = function (pokemonArray) {
         evolutions.forEach((evol) => {
           nextEvolution += `
               <div class="evolution-container">
-                <img class="evolution-img" src="../../img/pokemon/number-pokemon/${evol.num}.png">
+                <img class="evolution-img" src="./img/pokemon/number-pokemon/${evol.num}.png">
                 <p class="evolution-p">${evol.name.toUpperCase()}</p>
                 <p class="evolution-p">N°: ${evol.num}</p>
                 <p class="evolution-p">Candy-cost: ${evol['candy-cost']}</p>
@@ -69,7 +69,7 @@ export let createCards = function (pokemonArray) {
         evolutions.forEach((evol) => {
           prevEvolution += `
               <div class="evolution-container">
-                <img class="evolution-img" src="../../img/pokemon/number-pokemon/${evol.num}.png">
+                <img class="evolution-img" src="./img/pokemon/number-pokemon/${evol.num}.png">
                 <p class="evolution-p">${evol.name.toUpperCase()}</p>
                 <p class="evolution-p">N°: ${evol.num}</p>
                 <p class="evolution-p">Candy-cost: ${evol['candy-cost']}</p>
