@@ -1,9 +1,17 @@
-.btn-action {
+.btn-action,
+#clean-button,
+#back-button {
   box-shadow: var(--shadown-drop-medium);
+}
+
+.btn-action,
+#clean-button,
+#back-button,
+#back-button-home {
   font-weight: 600;
   background-color: var(--transparency-light-gray);
   border: none;
-  border-radius: var(--border-radius-simple);
+  border-radius: 5rem;
   place-self: end;
   height: 4rem;
   width: 4rem;
@@ -21,6 +29,13 @@
   position: fixed;
   z-index: 2000;
   place-self: end;
+}
+#back-button-home {
+  place-self: end;
+  position: absolute;
+  right: 3%;
+  bottom: 3%;
+  box-shadow: none;
 }
 
 @media screen and (min-width: 0px) and (max-width: 549px) {
@@ -46,7 +61,7 @@
     width: 5rem;
   }
   .btn-action img {
-    height: 3rem;
+    height: 2rem;
   }
   #clean-button {
     grid-column: 1/3;

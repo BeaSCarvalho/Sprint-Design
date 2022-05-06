@@ -7,7 +7,7 @@
 }
 .logo-onpokemon,
 .menu-header {
-  margin: 1rem 2rem;
+  margin: 1.3rem 2rem;
 }
 .logo-onpokemon {
   height: 2rem;
@@ -22,7 +22,8 @@
   gap: 2rem;
 }
 .menu a:hover {
-  background-color: #8da7ac;
+  background-color: #329caa;
+  color: white;
 }
 .menu a {
   text-decoration: none;
@@ -38,7 +39,7 @@
 
 @media screen and (max-width: 800px) {
   .logo-onpokemon {
-    height: 1.5rem;
+    height: 2.8rem;
   }
   .button-mobile {
     display: flex;
@@ -55,7 +56,7 @@
     display: block;
     background-color: var(--color-dark-dark-blue);
     position: absolute;
-    top: 45px;
+    top: 58px;
     width: 100%;
     right: 0;
     height: 0;
@@ -95,9 +96,9 @@
   }
   .menu a {
     padding: 1rem 0;
-    margin: 0 1rem;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-    font-size: 1.5rem;
+    margin: 0 20px;
+    border-bottom: 2px solid rgba(52, 52, 52, 0.05);
+    font-size: 2rem;
   }
 }
 

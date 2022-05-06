@@ -2,7 +2,8 @@
 @import url("container.css");
 @import url("./filter/cards.css");
 @import url("./filter/group-pokemon.css");
-@import url("./filter/modal.css");
+@import url("./filter/modal-card.css");
+@import url("./container/modal.css");
 
 #form-filters {
   display: grid;
@@ -35,7 +36,7 @@
   background-position: right 8px center;
   background-repeat: no-repeat;
   background-size: 2rem;
-  width: 238px;
+  width: 260px;
   padding: 0.85rem 1rem;
   margin-bottom: 2rem;
 }
@@ -86,11 +87,13 @@
   background-color: var(--color-light-blue);
   color: var(--color-dark-dark-blue);
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 10px 20px;
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.2;
+  margin-bottom: 40px;
   cursor: auto;
+  width: auto;
 }
 #quantify-text::after {
   content: "|";
@@ -146,7 +149,7 @@
     font-size: 1.8rem;
   }
   .order-calculation {
-    width: 250px;
+    width: 275px;
     height: 4rem;
   }
   #calculation-selector {
@@ -158,57 +161,3 @@
     padding: 1.2rem;
   }
 }
-
-#modal-pokemon {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  padding: 2rem 0;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-}
-.modal-container {
-  background: var(--color-dark-dark-blue);
-  margin: auto;
-  width: 60%;
-  height: 95%;
-  position: relative;
-  border-radius: 6px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  box-shadow: var(--shadown-modal);
-}
-.modal-container .close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.modal-container .close:hover,
-.modal-container .close:focus {
-  color: var(--color-light-blue);
-  text-decoration: none;
-  cursor: pointer;
-}
-.close-modal {
-  width: 5rem;
-  height: 5rem;
-  background: var(--color-medium-gray);
-  border-radius: 0.3rem;
-  border: none;
-  color: white;
-  font-size: 2.5rem;
-  position: absolute;
-  top: 24px;
-  right: -5px;
-  box-shadow: var(--shadown-modal);
-  cursor: pointer;
-}
-
