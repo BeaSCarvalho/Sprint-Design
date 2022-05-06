@@ -15,9 +15,9 @@ export function initPageFilters() {
   const selectAtributte = document.querySelector("#filter-atributtes");
   const selectOrder = document.querySelector("#order-selector");
   const selectOrderByWeakness = document.querySelector("#calculation-selector");
+  const selectRarity = document.querySelector("#rarity-selector");
   const cleanButton = document.querySelector("#clean-button");
   const percentage = document.querySelector("#quantify-text");
-  const selectRarity = document.querySelector("#rarity-selector");
 
   createCards(data.pokemon);
   selectAtributte.disabled = true;
@@ -48,6 +48,7 @@ export function initPageFilters() {
 }
 
 function searchNamePokemon() {
+  const nameTyped = document.querySelector("#name-pokemon");
   let name = nameTyped.value;
   let resultName = "";
   resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
@@ -58,12 +59,14 @@ function searchNamePokemon() {
 }
 
 function activeFilters() {
-  let selectedValueTypeOrWeakness = selectTypeOrWeakness.value;
-  let selectedValueAttribute = selectAtributte.value;
+  let selectTypeOrWeakness = document.querySelector("#filter-type-weakness");
+  let selectAtributte = document.querySelector("#filter-atributtes");
+  selectTypeOrWeakness = selectTypeOrWeakness.value;
+  selectAtributte = selectAtributte.value;
   let resultOfFilters = filterBy(
     data.pokemon,
-    selectedValueTypeOrWeakness,
-    selectedValueAttribute
+    selectTypeOrWeakness,
+    selectAtributte
   );
   createCards(resultOfFilters);
   resultOfFilters = resultOfFilters.length;
@@ -71,19 +74,22 @@ function activeFilters() {
 }
 
 function orderToShow() {
-  const selectedOrder = selectOrder.value;
+  let selectedOrder = document.querySelector("#order-selector");
+  selectedOrder = selectedOrder.value;
   activeFilters(alphabeticOrder(data.pokemon, selectedOrder));
   filterPerRarity(alphabeticOrder(data.pokemon, selectedOrder));
-  
 }
 
 function showInOrderOfWeakness() {
-  const selectedOrderByWeakness = selectOrderByWeakness.value;
+  let selectedOrderByWeakness = document.querySelector("#calculation-selector");
+  selectedOrderByWeakness = selectedOrderByWeakness.value;
   activeFilters(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
   filterPerRarity(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
 }
 
 function percentagePokemon(resultOfFilters, pokemon) {
+  let percentage = document.querySelector("#quantify-text");
+  let resultCards= document.getElementById("result-cards");
   pokemon = pokemon.length;
   let resultPercentage = percentagePerFilter(resultOfFilters, pokemon);
   percentage.innerHTML = `Esse filtro representa ${resultPercentage}% do total de Pokémons.`;
@@ -118,6 +124,7 @@ function cleanForm() {
 }
 
 function filterPerRarity() {
+  let selectRarity = document.querySelector("#rarity-selector");
   let selectedValueRarity = selectRarity.value;
   let resultOfFilters = filterRarity(data.pokemon, selectedValueRarity);
   createCards(resultOfFilters);
