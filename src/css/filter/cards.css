@@ -255,7 +255,6 @@
   width: 80px;
 }
 .poke-about {
-  width: 100%;
   margin: 10px 0;
   padding: 2% 8%;
   text-align: center;
@@ -468,7 +467,7 @@
     font-size: 1.8rem;
   }
   .poke-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   .evolution-container {
     width: 150px;
@@ -514,7 +513,7 @@
     font-size: 2.6rem;
   }
   .poke-title {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .evolution-container {
     width: 150px;
