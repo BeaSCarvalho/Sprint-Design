@@ -1,5 +1,5 @@
 export function createHeader() {
-  const templateHeader =`
+  const templateHeader = `
     <a href="#home" class="link-pokemon">
       <img class="logo-onpokemon" alt="Website logo OnPokemon" src="./img/icons/logo.png">
     </a>
@@ -20,8 +20,7 @@ export function createHeader() {
   `;
 
   return templateHeader;
-}    
-
+}
 
 export function toggleMenu(event) {
   if (event.type === "touchstart") {

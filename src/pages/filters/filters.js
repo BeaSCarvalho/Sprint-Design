@@ -9,46 +9,8 @@ import {
 import data from "../../data/pokemon/pokemon.js";
 import { createCards } from './cards.js';
 
-export function initPageFilters() {
-  const nameTyped = document.querySelector("#name-pokemon");
-  const selectTypeOrWeakness = document.querySelector("#filter-type-weakness");
-  const selectAtributte = document.querySelector("#filter-atributtes");
-  const selectOrder = document.querySelector("#order-selector");
-  const selectOrderByWeakness = document.querySelector("#calculation-selector");
-  const selectRarity = document.querySelector("#rarity-selector");
-  const cleanButton = document.querySelector("#clean-button");
-  const percentage = document.querySelector("#quantify-text");
-
-  createCards(data.pokemon);
-  selectAtributte.disabled = true;
-  nameTyped.addEventListener("keyup", searchNamePokemon);
-  nameTyped.addEventListener("change", function () {
-    nameTyped.value = "";
-  });
-  selectOrder.addEventListener("change", orderToShow);
-  selectTypeOrWeakness.addEventListener("change", function () {
-    selectTypeOrWeakness.classList.replace("color-select", "new-color-select");
-    selectAtributte.disabled = false;
-    activeFilters();
-  });
-  selectAtributte.addEventListener("change", function () {
-    selectAtributte.classList.replace("color-select", "new-color-select");
-    activeFilters();
-  });
-  selectOrderByWeakness.addEventListener("change", function () {
-    selectOrderByWeakness.classList.replace("color-select", "new-color-select");
-    showInOrderOfWeakness();
-  });
-  selectRarity.addEventListener("change", function () {
-    selectRarity.classList.replace("color-select", "new-color-select");
-    filterPerRarity();
-  });
-  typeWriter(percentage);
-  cleanButton.addEventListener("click", cleanForm);
-}
-
-function searchNamePokemon() {
-  const nameTyped = document.querySelector("#name-pokemon");
+/* funciona */
+export function searchNamePokemon(nameTyped) {
   let name = nameTyped.value;
   let resultName = "";
   resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
@@ -58,7 +20,7 @@ function searchNamePokemon() {
   percentagePokemon(resultName, data.pokemon);
 }
 
-function activeFilters() {
+export function activeFilters() {
   let selectTypeOrWeakness = document.querySelector("#filter-type-weakness");
   let selectAtributte = document.querySelector("#filter-atributtes");
   selectTypeOrWeakness = selectTypeOrWeakness.value;
@@ -73,21 +35,21 @@ function activeFilters() {
   percentagePokemon(resultOfFilters, data.pokemon);
 }
 
-function orderToShow() {
+export function orderToShow() {
   let selectedOrder = document.querySelector("#order-selector");
   selectedOrder = selectedOrder.value;
   activeFilters(alphabeticOrder(data.pokemon, selectedOrder));
   filterPerRarity(alphabeticOrder(data.pokemon, selectedOrder));
 }
 
-function showInOrderOfWeakness() {
+export function showInOrderOfWeakness() {
   let selectedOrderByWeakness = document.querySelector("#calculation-selector");
   selectedOrderByWeakness = selectedOrderByWeakness.value;
   activeFilters(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
   filterPerRarity(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
 }
 
-function percentagePokemon(resultOfFilters, pokemon) {
+export function percentagePokemon(resultOfFilters, pokemon) {
   let percentage = document.querySelector("#quantify-text");
   let resultCards= document.getElementById("result-cards");
   pokemon = pokemon.length;
@@ -100,15 +62,7 @@ function percentagePokemon(resultOfFilters, pokemon) {
   }
 }
 
-function typeWriter(letter) {
-  let textArray = letter.innerHTML.split("");
-  letter.innerHTML = "";
-  textArray.forEach((arr, i) => {
-    setTimeout(() => (letter.innerText += arr), 75 * i);
-  });
-}
-
-function cleanForm() {
+export function cleanForm() {
   const selectTypeOrWeakness = document.querySelector("#filter-type-weakness");
   const selectAtributte = document.querySelector("#filter-atributtes");
   const selectOrder = document.querySelector("#order-selector");
@@ -123,11 +77,19 @@ function cleanForm() {
   createCards(data.pokemon);
 }
 
-function filterPerRarity() {
+export function filterPerRarity() {
   let selectRarity = document.querySelector("#rarity-selector");
   let selectedValueRarity = selectRarity.value;
   let resultOfFilters = filterRarity(data.pokemon, selectedValueRarity);
   createCards(resultOfFilters);
   resultOfFilters = resultOfFilters.length;
   percentagePokemon(resultOfFilters, data.pokemon);
+}
+
+export function typeWriter(letter) {
+  let textArray = letter.innerHTML.split("");
+  letter.innerHTML = "";
+  textArray.forEach((arr, i) => {
+    setTimeout(() => (letter.innerText += arr), 75 * i);
+  });
 }
