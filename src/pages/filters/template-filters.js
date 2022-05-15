@@ -88,5 +88,123 @@ export function pageFilters() {
     </ul>
   `;
 
+
+  function initPageFilters() {
+    const nameTyped = container.querySelector("#name-pokemon");
+    const selectTypeOrWeakness = container.querySelector("#filter-type-weakness");
+    const selectAtributte = container.querySelector("#filter-atributtes");
+    const selectOrder = container.querySelector("#order-selector");
+    const selectOrderByWeakness = container.querySelector("#calculation-selector");
+    const cleanButton = container.querySelector("#clean-button");
+    const percentage = container.querySelector("#quantify-text");
+    const selectRarity = container.querySelector("#rarity-selector");
+  
+    createCards(data.pokemon);
+    selectAtributte.disabled = true;
+    nameTyped.addEventListener("keyup", searchNamePokemon);
+    nameTyped.addEventListener("change", function () {
+      nameTyped.value = "";
+    });
+    selectOrder.addEventListener("change", orderToShow);
+    selectTypeOrWeakness.addEventListener("change", function () {
+      selectTypeOrWeakness.classList.replace("color-select", "new-color-select");
+      selectAtributte.disabled = false;
+      activeFilters();
+    });
+    selectAtributte.addEventListener("change", function () {
+      selectAtributte.classList.replace("color-select", "new-color-select");
+      activeFilters();
+    });
+    selectOrderByWeakness.addEventListener("change", function () {
+      selectOrderByWeakness.classList.replace("color-select", "new-color-select");
+      showInOrderOfWeakness();
+    });
+    selectRarity.addEventListener("change", function () {
+      selectRarity.classList.replace("color-select", "new-color-select");
+      filterPerRarity();
+    });
+    typeWriter(percentage);
+    cleanButton.addEventListener("click", cleanForm);
+  }
+  
+  function searchNamePokemon() {
+    let name = nameTyped.value;
+    let resultName = "";
+    resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
+    resultName = searchByName(data.pokemon, resultName);
+    createCards(resultName);
+    resultName = resultName.length;
+    percentagePokemon(resultName, data.pokemon);
+  }
+  
+  function activeFilters() {
+    let selectedValueTypeOrWeakness = selectTypeOrWeakness.value;
+    let selectedValueAttribute = selectAtributte.value;
+    let resultOfFilters = filterBy(
+      data.pokemon,
+      selectedValueTypeOrWeakness,
+      selectedValueAttribute
+    );
+    createCards(resultOfFilters);
+    resultOfFilters = resultOfFilters.length;
+    percentagePokemon(resultOfFilters, data.pokemon);
+  }
+  
+  function orderToShow() {
+    const selectedOrder = selectOrder.value;
+    activeFilters(alphabeticOrder(data.pokemon, selectedOrder));
+    filterPerRarity(alphabeticOrder(data.pokemon, selectedOrder));
+    
+  }
+  
+  function showInOrderOfWeakness() {
+    const selectedOrderByWeakness = selectOrderByWeakness.value;
+    activeFilters(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
+    filterPerRarity(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
+  }
+  
+  function percentagePokemon(resultOfFilters, pokemon) {
+    pokemon = pokemon.length;
+    let resultPercentage = percentagePerFilter(resultOfFilters, pokemon);
+    percentage.innerHTML = `Esse filtro representa ${resultPercentage}% do total de Pokémons.`;
+    if (resultPercentage == 0.0) {
+      resultCards.innerHTML = `
+        <p id="not-pokemon">Pokémons não encontrados!<br>Tente outro resultado!</p>
+      `;
+    }
+  }
+  
+  function typeWriter(letter) {
+    let textArray = letter.innerHTML.split("");
+    letter.innerHTML = "";
+    textArray.forEach((arr, i) => {
+      setTimeout(() => (letter.innerText += arr), 75 * i);
+    });
+  }
+  
+  function cleanForm() {
+    const selectTypeOrWeakness = container.querySelector("#filter-type-weakness");
+    const selectAtributte = container.querySelector("#filter-atributtes");
+    const selectOrder = container.querySelector("#order-selector");
+    const selectOrderByWeakness = container.querySelector("#calculation-selector");
+    const percentage = container.querySelector("#quantify-text");
+    selectTypeOrWeakness.classList.replace("new-color-select", "color-select");
+    selectAtributte.classList.replace("new-color-select", "color-select");
+    selectOrderByWeakness.classList.replace("new-color-select", "color-select");
+    selectAtributte.disabled = true;
+    percentage.innerHTML = `Esse filtro representa 100% do total de Pokémons.`;
+    selectOrder.selectedIndex = 0;
+    createCards(data.pokemon);
+  }
+  
+  function filterPerRarity() {
+    let selectedValueRarity = selectRarity.value;
+    let resultOfFilters = filterRarity(data.pokemon, selectedValueRarity);
+    createCards(resultOfFilters);
+    resultOfFilters = resultOfFilters.length;
+    percentagePokemon(resultOfFilters, data.pokemon);
+  }
+  
+
   return container;
 }

@@ -77,6 +77,7 @@ export let createCards = function (pokemonArray) {
       }
 
       let template = `
+      
     <li class="modal-group">
       <header class="group-header">
         <span class="group-header-number">
