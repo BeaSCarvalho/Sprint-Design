@@ -1,5 +1,5 @@
 export function pageFilters() {
-  const container = document.createElement("div");
+  const container = document.createElement("main");
   container.innerHTML = `
     <form id="form-filters">
       <h1 class="filter-title">TO FILTER</h1>
@@ -81,10 +81,11 @@ export function pageFilters() {
       </a>
     </section>
 
-    <section id="result-cards" class="list">
-    </section>
-    <div id="modal-pokemon" class="modal-container">
-    </div>
+    <ul id="result-cards" class="list">
+    </ul>
+
+    <ul id="modal-pokemon" class="modal-container">
+    </ul>
   `;
 
 
