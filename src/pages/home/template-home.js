@@ -66,7 +66,7 @@ export function pageHome() {
   </nav>
   <a href="index.html#header-filters">
     <button type="button" id="back-button-home" class="btn-action">
-      <img src="../../img/icons/icon-up-arrow.png" alt="Back to top">
+      <img src="./img/icons/icon-up-arrow.png" alt="Back to top">
     </button>
   </a>
 </footer>
