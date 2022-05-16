@@ -8,9 +8,95 @@ import {
 } from './data.js';
 import data from "../../data/pokemon/pokemon.js";
 import { createCards } from './cards.js';
+import { createModal } from './modal.js';
+
+export function initPageFilters() {
+  showAllPokemon();
+  activeModal();
+  startAllFilters();
+}
+
+function showAllPokemon() {
+  const pokemonList = createCards(data.pokemon);
+  pokemonList.forEach((item) => {
+    const cardsList = document.querySelector("#results-cards");
+    cardsList.append(item);
+  });
+  const pokemonModalList = createModal(data.pokemon);
+  pokemonModalList.forEach((item) => {
+    const modalList = document.querySelector("#modal-pokemon");
+    modalList.append(item);
+  })
+}
+
+function activeModal(){
+  const clickOnTheCard = document.querySelectorAll(".card");
+  clickOnTheCard.forEach((card) => {
+    card.addEventListener("click", () => {
+      const cardNumber = card.getAttribute('data-pokemon');
+      const modal = document.querySelector(`.pokemon-modal-${cardNumber}`);
+      const modalContainer = document.querySelector("#modal-pokemon");
+      const button = document.querySelector("#back-button");
+      modalContainer.classList.add('active');
+      button.classList.add('active');
+      modal.classList.add('active');
+    });
+  });
+  const modalCloseButton = document.querySelectorAll(".close-modal");
+  modalCloseButton.forEach((modal) => {
+    modal.addEventListener("click", () => {
+      const modalNumber = modal.getAttribute('data-pokemon-modal');
+      const modalPokemon = document.querySelector(`.pokemon-modal-${modalNumber}`);
+      const modalContainer = document.querySelector("#modal-pokemon");
+      const button = document.querySelector("#back-button");
+      modalContainer.classList.remove('active');
+      button.classList.remove('active');
+      modalPokemon.classList.remove('active');
+    });
+  });
+}
+
+function startAllFilters() {
+  const nameTyped = document.querySelector("#name-pokemon");
+  const selectTypeOrWeakness = document.querySelector("#filter-type-weakness");
+  const selectAtributte = document.querySelector("#filter-atributtes");
+  const selectOrder = document.querySelector("#order-selector");
+  const selectOrderByWeakness = document.querySelector("#calculation-selector");
+  const selectRarity = document.querySelector("#rarity-selector");
+  const cleanButton = document.querySelector("#clean-button");
+  const percentage = document.querySelector("#quantify-text");
+
+  createCards(data.pokemon);
+  selectAtributte.disabled = true;
+  nameTyped.addEventListener("keyup", searchNamePokemon);
+  nameTyped.addEventListener("change", function () {
+    nameTyped.value = "";
+  });
+  selectOrder.addEventListener("change", orderToShow);
+  selectTypeOrWeakness.addEventListener("change", function () {
+    selectTypeOrWeakness.classList.replace("color-select", "new-color-select");
+    selectAtributte.disabled = false;
+    activeFilters();
+  });
+  selectAtributte.addEventListener("change", function () {
+    selectAtributte.classList.replace("color-select", "new-color-select");
+    activeFilters();
+  });
+  selectOrderByWeakness.addEventListener("change", function () {
+    selectOrderByWeakness.classList.replace("color-select", "new-color-select");
+    showInOrderOfWeakness();
+  });
+  selectRarity.addEventListener("change", function () {
+    selectRarity.classList.replace("color-select", "new-color-select");
+    filterPerRarity();
+  });
+  typeWriter(percentage);
+  cleanButton.addEventListener("click", cleanForm);
+}
 
 /* funciona */
-export function searchNamePokemon(nameTyped) {
+function searchNamePokemon() {
+  const nameTyped = document.querySelector("#name-pokemon");
   let name = nameTyped.value;
   let resultName = "";
   resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
@@ -20,7 +106,7 @@ export function searchNamePokemon(nameTyped) {
   percentagePokemon(resultName, data.pokemon);
 }
 
-export function activeFilters() {
+function activeFilters() {
   let selectTypeOrWeakness = document.querySelector("#filter-type-weakness");
   let selectAtributte = document.querySelector("#filter-atributtes");
   selectTypeOrWeakness = selectTypeOrWeakness.value;
@@ -35,21 +121,21 @@ export function activeFilters() {
   percentagePokemon(resultOfFilters, data.pokemon);
 }
 
-export function orderToShow() {
+function orderToShow() {
   let selectedOrder = document.querySelector("#order-selector");
   selectedOrder = selectedOrder.value;
   activeFilters(alphabeticOrder(data.pokemon, selectedOrder));
   filterPerRarity(alphabeticOrder(data.pokemon, selectedOrder));
 }
 
-export function showInOrderOfWeakness() {
+function showInOrderOfWeakness() {
   let selectedOrderByWeakness = document.querySelector("#calculation-selector");
   selectedOrderByWeakness = selectedOrderByWeakness.value;
   activeFilters(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
   filterPerRarity(orderOfWeakness(data.pokemon, selectedOrderByWeakness));
 }
 
-export function percentagePokemon(resultOfFilters, pokemon) {
+function percentagePokemon(resultOfFilters, pokemon) {
   let percentage = document.querySelector("#quantify-text");
   let resultCards= document.getElementById("result-cards");
   pokemon = pokemon.length;
@@ -62,7 +148,7 @@ export function percentagePokemon(resultOfFilters, pokemon) {
   }
 }
 
-export function cleanForm() {
+function cleanForm() {
   const selectTypeOrWeakness = document.querySelector("#filter-type-weakness");
   const selectAtributte = document.querySelector("#filter-atributtes");
   const selectOrder = document.querySelector("#order-selector");
@@ -77,7 +163,7 @@ export function cleanForm() {
   createCards(data.pokemon);
 }
 
-export function filterPerRarity() {
+function filterPerRarity() {
   let selectRarity = document.querySelector("#rarity-selector");
   let selectedValueRarity = selectRarity.value;
   let resultOfFilters = filterRarity(data.pokemon, selectedValueRarity);
@@ -86,7 +172,7 @@ export function filterPerRarity() {
   percentagePokemon(resultOfFilters, data.pokemon);
 }
 
-export function typeWriter(letter) {
+function typeWriter(letter) {
   let textArray = letter.innerHTML.split("");
   letter.innerHTML = "";
   textArray.forEach((arr, i) => {

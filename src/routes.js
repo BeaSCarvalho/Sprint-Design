@@ -1,20 +1,10 @@
-import { pageHome, initHome} from './pages/home/template-home.js';
+import { creatingInternalElements } from './pages/components/header.js';
+import { pageHome } from './pages/home/template-home.js';
 import { pageFilters } from './pages/filters/template-filters.js';
 import { pageTips} from './pages/tips/template-tips.js';
 import { pageCuriosities} from './pages/curiosities/template-curiosities.js';
-import { createHeader, toggleMenu}  from './pages/components/header.js'
-
-export function creatingInternalElements() {
-  const container = document.getElementById('container-pokemon');
-  const header = document.createElement('header');
-  header.setAttribute('id', 'header');
-  header.innerHTML = createHeader();
-  container.append(header);
-
-  const buttonMobile = container.querySelector("#button-mobile");
-  buttonMobile.addEventListener("click", toggleMenu);
-  buttonMobile.addEventListener("touchstart", toggleMenu);
-}
+import { initPageHome } from './pages/home/home.js';
+import { initPageFilters } from './pages/filters/filters.js';
 
 function redirectPages() {
   const container = document.getElementById('container-pokemon');
@@ -23,17 +13,19 @@ function redirectPages() {
   switch (window.location.hash) {
     case '#home':
       container.append(pageHome());
-      initHome();
+      initPageHome();
       break;
     case '#contacts':
       container.append(pageHome());
-      initHome();
+      initPageHome();
       break;
     case '#filters':
       container.append(pageFilters());
+      initPageFilters();
       break;
     case '#form-filters': 
       container.append(pageFilters());
+      initPageFilters();
       break;   
     case '#tips-and-tricks':
       container.append(pageTips());
@@ -49,7 +41,7 @@ function redirectPages() {
       break;
     default:
       container.append(pageHome());
-      initHome();  
+      initPageHome();  
   }   
 }
 

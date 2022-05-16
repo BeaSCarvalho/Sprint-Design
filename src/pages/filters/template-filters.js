@@ -1,15 +1,3 @@
-import { createCards } from "./cards.js";
-import {
-  activeFilters,
-  cleanForm,
-  filterPerRarity,
-  orderToShow,
-  searchNamePokemon,
-  showInOrderOfWeakness,
-  typeWriter,
-} from "./filters.js";
-import data from "../../data/pokemon/pokemon.js";
-
 export function pageFilters() {
   const container = document.createElement("main");
   container.innerHTML = `
@@ -96,61 +84,9 @@ export function pageFilters() {
     <ul id="results-cards">
     </ul>
 
-    <ul id="modal-pokemon" class="modal-container">
+    <ul id="modal-pokemon">
     </ul>
   `;
-
-  const pokemonList = createCards(data.pokemon);
-  pokemonList.forEach((item) => {
-    const cardsList = container.querySelector('#results-cards');
-    cardsList.append(item);
-  });
-
-  
-
-  const nameTyped = container.querySelector("#name-pokemon");
-  const selectOrder = container.querySelector("#order-selector");
-  const selectTypeOrWeakness = container.querySelector("#filter-type-weakness");
-  const selectAtributte = container.querySelector("#filter-atributtes");
-  const selectRarity = container.querySelector("#rarity-selector");
-  const selectOrderByWeakness = container.querySelector("#calculation-selector");
-  const cleanButton = container.querySelector("#clean-button");
-  const percentage = container.querySelector("#quantify-text");
-
-  selectAtributte.disabled = true;
-  typeWriter(percentage);
-
-  nameTyped.addEventListener("keyup", () => {
-    searchNamePokemon(nameTyped);
-  });
-  nameTyped.addEventListener("change", () => {
-    nameTyped.value = "";
-  });
-
-  selectOrder.addEventListener("change", orderToShow);
-
-  selectTypeOrWeakness.addEventListener("change", () => {
-    selectTypeOrWeakness.classList.replace("color-select", "new-color-select");
-    selectAtributte.disabled = false;
-    activeFilters();
-  });
-
-  selectAtributte.addEventListener("change", () => {
-    selectAtributte.classList.replace("color-select", "new-color-select");
-    activeFilters();
-  });
-
-  selectOrderByWeakness.addEventListener("change", () => {
-    selectOrderByWeakness.classList.replace("color-select", "new-color-select");
-    showInOrderOfWeakness();
-  });
-
-  selectRarity.addEventListener("change", () => {
-    selectRarity.classList.replace("color-select", "new-color-select");
-    filterPerRarity();
-  });
-
-  cleanButton.addEventListener("click", cleanForm);
 
   return container;
 }
