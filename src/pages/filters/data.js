@@ -1,6 +1,3 @@
-//array inicia com todos pokemons em order number e de az
-//depois em cada filtro verificar abaixo verificar se cada array está vazio
-
 let optionAlphabeticOrder = "";
 let arrayAlphabeticOrder = [];
 let optionFilterBy = [];
@@ -10,18 +7,28 @@ let arrayFilterRarity = [];
 let optionOrderOfWeakness = "";
 let arrayOrderOfWeakness = [];
 
+/*
 const filtersResult = (data, selectedOption) => {
-  if (optionFilterBy !== "" || optionFilterRarity !== "" || optionOrderOfWeakness !== "") {
-    if (optionFilterBy !== ""){
-      console.log(arrayFilterBy);
-    }
+  let arrayDataPokemon = [];
+  if (optionAlphabeticOrder) {
+    //ele sempre tem uma opção default
+    arrayDataPokemon = alphabeticOrder();
+  }
+  if (optionFilterBy !== ""){
+    filterBy()
+  }
+  if (optionFilterRarity !== ""){
+    filterRarity();
+  }
+  if (optionOrderOfWeakness !== "") {
+    orderOfWeakness();
   }
 };
+*/
 
 export const alphabeticOrder = (data, selectedOption) => {
   optionAlphabeticOrder = selectedOption;
-  //chamar função filtersResult
-  //se essa função der true, deve-se usar 
+  /* default option */
   if (selectedOption === "number") {
     arrayAlphabeticOrder = data.sort((a, b) => (a.num > b.num ? 1 : -1));
     return arrayAlphabeticOrder;
@@ -29,7 +36,8 @@ export const alphabeticOrder = (data, selectedOption) => {
   if (selectedOption === "name-az") {
     arrayAlphabeticOrder = data.sort((a, b) => (a.name > b.name ? 1 : -1));
     return arrayAlphabeticOrder;
-  } else if (selectedOption === "name-za") {
+  }
+  if (selectedOption === "name-za") {
     arrayAlphabeticOrder = data.sort((a, b) => (a.name > b.name ? -1 : 1));
     return arrayAlphabeticOrder;
   }
