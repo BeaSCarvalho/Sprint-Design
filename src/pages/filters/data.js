@@ -1,9 +1,7 @@
-export const searchByName = (data, condition) => {
-  const typedName = data.filter((pokemon) =>
-    pokemon.name.toLowerCase().includes(condition.toLowerCase())
-  );
-  return typedName;
-};
+//salvar as alterações de escolhas de filtros
+//criar um array de dados escolhidos para cada valor "selecionado" / setado
+//array inicia com todos pokemons em order number e de az
+//depois em cada filtro verificar abaixo verificar se cada array está vazio
 
 export const alphabeticOrder = (data, selectedOption) => {
   if (selectedOption === "number") {
@@ -53,6 +51,13 @@ export const orderOfWeakness = (data, selectedOrder) => {
       a.weaknesses.length > b.weaknesses.length ? -1 : 1
     );
   }
+};
+
+export const searchByName = (data, condition) => {
+  const typedName = data.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(condition.toLowerCase())
+  );
+  return typedName;
 };
 
 export const percentagePerFilter = (resultOfFilters, totalOfPokemons) => {
