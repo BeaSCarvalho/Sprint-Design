@@ -73,7 +73,7 @@ export function pageFilters() {
 
     <section id="results-header">
       <h1 class="filter-title">RESULTS</h1>
-      <p id="quantify-text">This filter represents 100% of the total Pokemon.</p>
+      <p id="quantify-text">This filter represents 100% of the total Pokémon.</p>
       <a href="#form-filters">
         <button type="button" id="back-button" class="btn-action">
           <img src="./img/icons/icon-up-arrow.png" alt="Back to filters">
@@ -81,7 +81,7 @@ export function pageFilters() {
       </a>
     </section>
 
-    <ul id="results-cards">
+    <ul id="result-cards">
     </ul>
 
     <ul id="modal-pokemon">

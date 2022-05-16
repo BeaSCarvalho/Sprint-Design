@@ -24,7 +24,7 @@
 }
 option {
   font-size: 1.5rem;
-}  
+}
 #name-pokemon {
   border: var(--border-input);
   background-color: var(--color-light-blue);
@@ -84,19 +84,12 @@ option {
   color: var(--color-dark-dark-blue);
   border-radius: 0.5rem;
   padding: 10px 20px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 40px;
   cursor: auto;
   width: auto;
-}
-#quantify-text::after {
-  content: "|";
-  opacity: 1;
-  margin-left: 0.5rem;
-  display: inline-block;
-  animation: blink 0.7s infinite;
 }
 #error-form {
   font-weight: 600;

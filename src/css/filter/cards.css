@@ -10,7 +10,7 @@
   align-items: center;
 }
 .container-card {
-  margin: 20px;
+  margin: 30px;
   list-style: none;
 }
 .list-title-table-header,
@@ -42,8 +42,8 @@
 }
 
 #result-cards {
-  margin: 5rem auto;
   max-width: 1800px;
+  height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -226,8 +226,9 @@
   margin-bottom: 30px;
   background-color: var(--color-white);
   border-radius: 3px;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* cards modal body header */
@@ -496,6 +497,9 @@
 }
 
 @media screen and (min-width: 1000px) {
+  .container-card {
+    margin: 60px;
+  }
   .group-header-number {
     margin-right: 30px;
   }

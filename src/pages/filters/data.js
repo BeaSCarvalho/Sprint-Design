@@ -5,6 +5,17 @@ export const searchByName = (data, condition) => {
   return typedName;
 };
 
+export const alphabeticOrder = (data, selectedOption) => {
+  if (selectedOption === "number") {
+    return data.sort((a, b) => (a.num > b.num ? 1 : -1));
+  }
+  if (selectedOption === "name-az") {
+    return data.sort((a, b) => (a.name > b.name ? 1 : -1));
+  } else if (selectedOption === "name-za") {
+    return data.sort((a, b) => (a.name > b.name ? -1 : 1));
+  }
+};
+
 export const filterBy = (
   data,
   selectedValueTypeOrWeakness,
@@ -30,17 +41,6 @@ export const filterRarity = (data, selectedOption) => {
   return data.filter((item) => {
     return item.rarity == selectedOption;
   });
-};
-
-export const alphabeticOrder = (data, selectedOption) => {
-  if (selectedOption === "number") {
-    return data.sort((a, b) => (a.num > b.num ? 1 : -1));
-  }
-  if (selectedOption === "name-az") {
-    return data.sort((a, b) => (a.name > b.name ? 1 : -1));
-  } else if (selectedOption === "name-za") {
-    return data.sort((a, b) => (a.name > b.name ? -1 : 1));
-  }
 };
 
 export const orderOfWeakness = (data, selectedOrder) => {

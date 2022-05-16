@@ -1,5 +1,7 @@
 export function createCards (pokemonArray) {
   const pokemonList = [];
+  const cardsList = document.querySelector("#result-cards");
+  cardsList.innerHTML = "";
   pokemonArray.forEach((pokemon) => {
     const item = document.createElement("li");
     item.setAttribute('class', 'container-card');
