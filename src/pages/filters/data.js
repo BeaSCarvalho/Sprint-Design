@@ -1,55 +1,81 @@
-//salvar as alterações de escolhas de filtros
-//criar um array de dados escolhidos para cada valor "selecionado" / setado
 //array inicia com todos pokemons em order number e de az
 //depois em cada filtro verificar abaixo verificar se cada array está vazio
 
-export const alphabeticOrder = (data, selectedOption) => {
-  if (selectedOption === "number") {
-    return data.sort((a, b) => (a.num > b.num ? 1 : -1));
-  }
-  if (selectedOption === "name-az") {
-    return data.sort((a, b) => (a.name > b.name ? 1 : -1));
-  } else if (selectedOption === "name-za") {
-    return data.sort((a, b) => (a.name > b.name ? -1 : 1));
+let optionAlphabeticOrder = "";
+let arrayAlphabeticOrder = [];
+let optionFilterBy = [];
+let arrayFilterBy = [];
+let optionFilterRarity = "";
+let arrayFilterRarity = [];
+let optionOrderOfWeakness = "";
+let arrayOrderOfWeakness = [];
+
+const filtersResult = (data, selectedOption) => {
+  if (optionFilterBy !== "" || optionFilterRarity !== "" || optionOrderOfWeakness !== "") {
+    if (optionFilterBy !== ""){
+      console.log(arrayFilterBy);
+    }
   }
 };
 
-export const filterBy = (
-  data,
-  selectedValueTypeOrWeakness,
-  selectedValueAttribute
-) => {
+export const alphabeticOrder = (data, selectedOption) => {
+  optionAlphabeticOrder = selectedOption;
+  //chamar função filtersResult
+  //se essa função der true, deve-se usar 
+  if (selectedOption === "number") {
+    arrayAlphabeticOrder = data.sort((a, b) => (a.num > b.num ? 1 : -1));
+    return arrayAlphabeticOrder;
+  }
+  if (selectedOption === "name-az") {
+    arrayAlphabeticOrder = data.sort((a, b) => (a.name > b.name ? 1 : -1));
+    return arrayAlphabeticOrder;
+  } else if (selectedOption === "name-za") {
+    arrayAlphabeticOrder = data.sort((a, b) => (a.name > b.name ? -1 : 1));
+    return arrayAlphabeticOrder;
+  }
+};
+
+export const filterBy = (data, selectedValueTypeOrWeakness, selectedValueAttribute) => {
+  optionFilterBy = [selectedValueTypeOrWeakness, selectedValueAttribute];
   switch (selectedValueTypeOrWeakness) {
     case "type":
-      return data.filter((item) => {
+      arrayFilterBy = data.filter((item) => {
         return item.type.includes(selectedValueAttribute);
       });
+      return arrayFilterBy;
     case "weaknesses":
-      return data.filter((item) => {
+      arrayFilterBy = data.filter((item) => {
         return item.weaknesses.includes(selectedValueAttribute);
       });
+      return arrayFilterBy;
     case "resistant":
-      return data.filter((item) => {
+      arrayFilterBy = data.filter((item) => {
         return item.resistant.includes(selectedValueAttribute);
       });
+      return arrayFilterBy;
   }
 };
 
 export const filterRarity = (data, selectedOption) => {
-  return data.filter((item) => {
+  optionFilterRarity = selectedOption;
+  arrayFilterRarity = data.filter((item) => {
     return item.rarity == selectedOption;
   });
+  return arrayFilterRarity;
 };
 
 export const orderOfWeakness = (data, selectedOrder) => {
+  optionOrderOfWeakness = selectedOrder;
   if (selectedOrder === "less-weakness") {
-    return data.sort((a, b) =>
+    arrayOrderOfWeakness = data.sort((a, b) =>
       a.weaknesses.length > b.weaknesses.length ? 1 : -1
     );
+    return arrayOrderOfWeakness;
   } else if (selectedOrder === "more-weakness") {
-    return data.sort((a, b) =>
+    arrayOrderOfWeakness = data.sort((a, b) =>
       a.weaknesses.length > b.weaknesses.length ? -1 : 1
     );
+    return arrayOrderOfWeakness;
   }
 };
 

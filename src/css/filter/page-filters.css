@@ -106,7 +106,8 @@ option {
 }
 
 @media screen and (min-width: 700px) {
-  .order-calculation {
+  .order-calculation,
+  #calculation-selector {
     margin-right: 2rem;
   }
 }
@@ -128,19 +129,18 @@ option {
     border-radius: 0.8rem;
   }
   #name-pokemon {
-    width: 275px;
+    width: 295px;
     padding: 0.88rem 1rem;
   }
   #name-pokemon::placeholder {
     font-size: 1.8rem;
   }
   .order-calculation {
-    width: 275px;
+    width: 295px;
     height: 4rem;
   }
   #calculation-selector {
     width: 295px;
-    margin-right: 0px;
   }
   #quantify-text {
     min-width: 455px;

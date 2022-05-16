@@ -23,6 +23,19 @@ export function pageFilters() {
           <option value="name-za">Z-A name</option>
         </select>
 
+        <select class="order-calculation color-select" id="rarity-selector">
+          <option selected disabled>Rarity</option>
+          <option value="normal">Normal</option>
+          <option value="legendary">Legendary</option>
+          <option value="mythic">Mythic</option>
+        </select>
+
+        <select class="order-calculation color-select" id="calculation-selector">
+          <option selected disabled>Ordered by Weakness</option>
+          <option value="less-weakness">Lesser amount of weakness</option>
+          <option value="more-weakness">Greater amount of weakness</option>
+        </select>
+
         <select class="order-calculation color-select" id="filter-type-weakness">
           <option selected disabled>Select by</option>
           <option value="type">Type</option>
@@ -52,18 +65,6 @@ export function pageFilters() {
           <option value="water">Water</option>
         </select>
 
-        <select class="order-calculation color-select" id="rarity-selector">
-          <option selected disabled>Rarity</option>
-          <option value="normal">Normal</option>
-          <option value="legendary">Legendary</option>
-          <option value="mythic">Mythic</option>
-        </select>
-
-        <select class="order-calculation color-select" id="calculation-selector">
-          <option selected disabled>Ordered by Weakness</option>
-          <option value="less-weakness">Lesser amount of weakness</option>
-          <option value="more-weakness">Greater amount of weakness</option>
-        </select>
       </div>
 
       <button type="reset" id="clean-button" class="btn-action">

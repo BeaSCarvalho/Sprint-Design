@@ -40,7 +40,6 @@
 .poke-title {
   font-size: 2rem;
 }
-
 #result-cards {
   max-width: 1800px;
   min-height: 70vh;
@@ -566,5 +565,11 @@
   }
   .evolution-container {
     width: 150px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .container-card {
+    margin: 50px 60px;
   }
 }
