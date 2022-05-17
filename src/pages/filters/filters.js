@@ -29,6 +29,20 @@ function showAllPokemon() {
   filtersResult('number');
 }
 
+function showFilteredPokemon(pokemonArray) {
+  const pokemonList = createCards(pokemonArray);
+  pokemonList.forEach((item) => {
+    const cardsList = document.querySelector("#result-cards");
+    cardsList.append(item);
+  });
+  const pokemonModalList = createModal(pokemonArray);
+  pokemonModalList.forEach((item) => {
+    const modalList = document.querySelector("#modal-pokemon");
+    modalList.append(item);
+  })
+  activeModal();
+}
+
 function activeModal(){
   const clickOnTheCard = document.querySelectorAll(".card");
   clickOnTheCard.forEach((card) => {
@@ -56,19 +70,6 @@ function activeModal(){
   });
 }
 
-function showFilteredPokemon(pokemonArray) {
-  const pokemonList = createCards(pokemonArray);
-  pokemonList.forEach((item) => {
-    const cardsList = document.querySelector("#result-cards");
-    cardsList.append(item);
-  });
-  const pokemonModalList = createModal(pokemonArray);
-  pokemonModalList.forEach((item) => {
-    const modalList = document.querySelector("#modal-pokemon");
-    modalList.append(item);
-  })
-}
-
 function startAllFilters() {
   const nameTyped = document.querySelector("#name-pokemon");
   const selectOrder = document.querySelector("#order-selector");
@@ -77,6 +78,7 @@ function startAllFilters() {
   const selectRarity = document.querySelector("#rarity-selector");
   const selectOrderByWeakness = document.querySelector("#calculation-selector");
   const cleanButton = document.querySelector("#clean-button");
+  const containerCards = document.querySelector("#result-cards");
 
   selectElements.disabled = true;
 
@@ -100,8 +102,8 @@ function startAllFilters() {
   });
 
   selectTypeOrWeakness.addEventListener("change", function () {
-    const containerCards = document.querySelector("#result-cards");
     selectTypeOrWeakness.classList.replace("color-select", "new-color-select");
+    selectElements.selectedIndex = 0;
     selectElements.disabled = false;
     containerCards.innerHTML = '<p id="not-pokemon">Select Elements filter options.</p>';
     const selectTypeOrWeaknessValue = selectTypeOrWeakness.value;
@@ -154,10 +156,8 @@ function activeElementsFilters(selectElements) {
 }
 
 function percentagePokemon(resultOfFilters) {
-  const percentage = document.querySelector("#quantify-text");
   const resultCards= document.getElementById("result-cards");
-  console.log(resultOfFilters);
-  console.log(data.pokemon.length);
+  const percentage = document.querySelector("#quantify-text");
   const resultPercentage = percentagePerFilter(data.pokemon.length, resultOfFilters);
   percentage.innerHTML = `This filter represents ${resultPercentage}% of total Pokémon.`;
   if (resultPercentage == 0.0) {
@@ -179,6 +179,7 @@ function cleanForm() {
   nameTyped.value = "";
   selectOrder.selectedIndex = 0;
   selectElements.disabled = true;
+
   selectTypeOrWeakness.classList.replace("new-color-select", "color-select");
   selectElements.classList.replace("new-color-select", "color-select");
   selectRarity.classList.replace("new-color-select", "color-select");
