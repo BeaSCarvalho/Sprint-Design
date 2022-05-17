@@ -35,6 +35,7 @@ export const filtersResult = (data, selectedOption) => {
       optionFilterBy = selectedOption;
       break;
     default:
+      optionFilterElements = selectedOption;
   }
 
   /* one activated filter */
@@ -116,7 +117,6 @@ const orderOfWeakness = (data, selectedOrder) => {
 };
 
 const filterElements = (data, selectedValueAttribute) => {
-  optionFilterElements = selectedValueAttribute;
   switch (optionFilterBy) {
     case "type":
       return data.filter((item) => {

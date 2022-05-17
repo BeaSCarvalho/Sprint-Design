@@ -93,11 +93,13 @@ function startAllFilters() {
     selectTypeOrWeakness.classList.replace("color-select", "new-color-select");
     selectElements.disabled = false;
     containerCards.innerHTML = '<p id="not-pokemon">Select Elements filter options.</p>';
+    const selectTypeOrWeaknessValue = selectTypeOrWeakness.value;
+    filtersResult(data, selectTypeOrWeaknessValue);
   });
 
   selectElements.addEventListener("change", function () {
     selectElements.classList.replace("color-select", "new-color-select");
-    activeElementsFilters(selectTypeOrWeakness, selectElements);
+    activeElementsFilters(selectElements);
   });
   
   selectRarity.addEventListener("change", function () {
@@ -131,14 +133,9 @@ function orderToShow(selectedOrder) {
   percentagePokemon(data.pokemon, results);
 }
 
-function activeElementsFilters(selectTypeOrWeakness, selectElements) {
-  const selectTypeOrWeaknessValue = selectTypeOrWeakness.value;
+function activeElementsFilters(selectElements) {
   const selectElementsValue = selectElements.value;
-  const resultOfFilters = filtersResult(
-    data.pokemon,
-    selectTypeOrWeaknessValue,
-    selectElementsValue
-  );
+  const resultOfFilters = filtersResult(data.pokemon, selectElementsValue);
   showFilteredPokemon(resultOfFilters);
   const results = resultOfFilters.length;
   percentagePokemon(data.pokemon, results);
