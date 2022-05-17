@@ -7,11 +7,10 @@ let optionFilterRarity = "";
 let optionOrderOfWeakness = "";
 
 /*
-  Number / AZ / ZA  --> Rarity, Weakness , Types  --> 3 opções * 3 = 9 opções
-  Number / AZ/ ZA --> Rarity e Waekness , Rarity e Types, Weakeness e Type --> 9 opções
-  Number / AZ / ZA --> Rarity, Weakness e Types --> 3 opções
-  TOTALIZANDO: 21 opções de escolhas "geral"
-  Como FilterBy é atrelado aos Elementos, não é necessário "filtrar os elementos"
+  Number / AZ / ZA  --> Rarity, Weakness , Types  --> 3 options * 3 = 9 options
+  Number / AZ/ ZA --> Rarity e Waekness , Rarity e Types, Weakeness e Type --> 9 options
+  Number / AZ / ZA --> Rarity, Weakness e Types --> 3 options
+  TOTAL: 21 options "general"
 */
 
 export const filtersResult = (selectedOption) => {
