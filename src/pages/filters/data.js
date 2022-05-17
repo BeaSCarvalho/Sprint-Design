@@ -46,7 +46,6 @@ export const filtersResult = (selectedOption) => {
   }
 
   /* four activated filter */
-  //no
   if (optionFilterElements !== "" && optionFilterRarity !== "" && optionOrderOfWeakness !== "") {
     collection = alphabeticOrder(data.pokemon, optionAlphabeticOrder);
     collection = filterRarity(collection, optionFilterRarity);
@@ -62,14 +61,12 @@ export const filtersResult = (selectedOption) => {
     collection = orderOfWeakness(collection, optionOrderOfWeakness);
     return collection;
   } 
-  //no
   if (optionFilterRarity !== "" && optionOrderOfWeakness === "" && optionFilterElements !== "") {
     collection = alphabeticOrder(data.pokemon, optionAlphabeticOrder);
     collection = filterRarity(collection, optionFilterRarity);
     collection = filterElements(collection, optionFilterElements);
     return collection;
   }
-  //no
   if (optionFilterRarity === "" && optionOrderOfWeakness !== "" && optionFilterElements !== "") {
     collection = alphabeticOrder(data.pokemon, optionAlphabeticOrder);
     collection = orderOfWeakness(collection, optionOrderOfWeakness);
