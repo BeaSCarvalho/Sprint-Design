@@ -145,7 +145,7 @@ export const searchByName = (data, condition) => {
   );
 };
 
-export const percentagePerFilter = (resultOfFilters, totalOfPokemons) => {
+export const percentagePerFilter = (totalOfPokemons, resultOfFilters) => {
   const percentageOfPokemons = (resultOfFilters / totalOfPokemons) * 100;
   const roundedNumber = Math.round(percentageOfPokemons * 100) / 100;
   return roundedNumber;

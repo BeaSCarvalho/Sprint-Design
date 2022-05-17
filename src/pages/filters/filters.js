@@ -120,48 +120,45 @@ function searchNamePokemon(nameTyped) {
   const name = nameTyped.value;
   let resultName = "";
   resultName = name.replace(/[^a-z^A-Z^à-ú^À-Ú]/g, "");
-  const resultOfFilters = searchByName(resultName);
+  const resultOfFilters = searchByName(data.pokemon, resultName);
   showFilteredPokemon(resultOfFilters);
-  const results = resultName.length;
-  percentagePokemon(resultOfFilters, results);
+  percentagePokemon(resultOfFilters.length);
 }
 
 function orderToShow(selectedOrder) {
   const selectedOrderValue = selectedOrder.value;
   const resultOfFilters = filtersResult(selectedOrderValue);
   showFilteredPokemon(resultOfFilters);
-  const results = resultOfFilters.length;
-  percentagePokemon(resultOfFilters, results);
+  percentagePokemon(resultOfFilters.length);
 }
 
 function filterPerRarity(selectRarity) {
   const selectedRarityValue = selectRarity.value;
   const resultOfFilters = filtersResult(selectedRarityValue);
   showFilteredPokemon(resultOfFilters);
-  const results = resultOfFilters.length;
-  percentagePokemon(resultOfFilters, results);
+  percentagePokemon(resultOfFilters.length);
 }
 
 function showInOrderOfWeakness(selectedOrderByWeakness) {
   const selectOrderByWeaknessValue = selectedOrderByWeakness.value;
   const resultOfFilters = filtersResult(selectOrderByWeaknessValue);
   showFilteredPokemon(resultOfFilters);
-  const results = resultOfFilters.length;
-  percentagePokemon(resultOfFilters, results);
+  percentagePokemon(resultOfFilters.length);
 }
 
 function activeElementsFilters(selectElements) {
   const selectElementsValue = selectElements.value;
   const resultOfFilters = filtersResult(selectElementsValue);
   showFilteredPokemon(resultOfFilters);
-  const results = resultOfFilters.length;
-  percentagePokemon(resultOfFilters, results);
+  percentagePokemon(resultOfFilters.length);
 }
 
-function percentagePokemon(pokemon, resultOfFilters) {
+function percentagePokemon(resultOfFilters) {
   const percentage = document.querySelector("#quantify-text");
   const resultCards= document.getElementById("result-cards");
-  const resultPercentage = percentagePerFilter(pokemon.length, resultOfFilters);
+  console.log(resultOfFilters);
+  console.log(data.pokemon.length);
+  const resultPercentage = percentagePerFilter(data.pokemon.length, resultOfFilters);
   percentage.innerHTML = `This filter represents ${resultPercentage}% of total Pokémon.`;
   if (resultPercentage == 0.0) {
     resultCards.innerHTML = `
@@ -182,7 +179,6 @@ function cleanForm() {
   nameTyped.value = "";
   selectOrder.selectedIndex = 0;
   selectElements.disabled = true;
-
   selectTypeOrWeakness.classList.replace("new-color-select", "color-select");
   selectElements.classList.replace("new-color-select", "color-select");
   selectRarity.classList.replace("new-color-select", "color-select");
