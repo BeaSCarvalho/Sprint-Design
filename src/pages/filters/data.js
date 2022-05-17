@@ -1,3 +1,5 @@
+import data from "../../data/pokemon/pokemon.js";
+
 let optionAlphabeticOrder = "";
 let optionFilterBy = "";
 let optionFilterElements = "";
@@ -12,8 +14,8 @@ let optionOrderOfWeakness = "";
   Como FilterBy é atrelado aos Elementos, não é necessário "filtrar os elementos"
 */
 
-export const filtersResult = (data, selectedOption) => {
-  let pokemonCollection = [];
+export const filtersResult = (selectedOption) => {
+  let collection = [];
   switch (selectedOption) {
     case 'number':
     case 'name-az':
@@ -40,50 +42,57 @@ export const filtersResult = (data, selectedOption) => {
 
   /* one activated filter */
   if (optionFilterElements === "" && optionFilterRarity === "" && optionOrderOfWeakness === "") {
-    return alphabeticOrder(data, optionAlphabeticOrder);
+    return alphabeticOrder(data.pokemon, optionAlphabeticOrder);
   }
 
   /* four activated filter */
+  //no
   if (optionFilterElements !== "" && optionFilterRarity !== "" && optionOrderOfWeakness !== "") {
-    pokemonCollection = alphabeticOrder(data, optionAlphabeticOrder);
-    pokemonCollection = filterRarity(pokemonCollection, optionFilterRarity);
-    pokemonCollection = orderOfWeakness(pokemonCollection, optionOrderOfWeakness);
-    pokemonCollection = filterElements(pokemonCollection, optionFilterElements);
-    return pokemonCollection;
+    collection = alphabeticOrder(data.pokemon, optionAlphabeticOrder);
+    collection = filterRarity(collection, optionFilterRarity);
+    collection = orderOfWeakness(collection, optionOrderOfWeakness);
+    collection = filterElements(collection, optionFilterElements);
+    return collection;
   }
   
   /* three activated filter */
   if (optionFilterRarity !== "" && optionOrderOfWeakness !== "" && optionFilterElements === "") {
-    pokemonCollection = alphabeticOrder(data, optionAlphabeticOrder);
-    pokemonCollection = filterRarity(pokemonCollection, optionFilterRarity);
-    pokemonCollection = orderOfWeakness(pokemonCollection, optionOrderOfWeakness);
-    return pokemonCollection;
+    collection = alphabeticOrder(data.pokemon, optionAlphabeticOrder);
+    collection = filterRarity(collection, optionFilterRarity);
+    collection = orderOfWeakness(collection, optionOrderOfWeakness);
+    return collection;
   } 
-  
+  //no
   if (optionFilterRarity !== "" && optionOrderOfWeakness === "" && optionFilterElements !== "") {
-    pokemonCollection = alphabeticOrder(data, optionAlphabeticOrder);
-    pokemonCollection = filterRarity(pokemonCollection, optionFilterRarity);
-    pokemonCollection = filterElements(pokemonCollection, optionFilterElements);
-    return pokemonCollection;
+    collection = alphabeticOrder(data.pokemon, optionAlphabeticOrder);
+    collection = filterRarity(collection, optionFilterRarity);
+    collection = filterElements(collection, optionFilterElements);
+    return collection;
   }
-
+  //no
   if (optionFilterRarity === "" && optionOrderOfWeakness !== "" && optionFilterElements !== "") {
-    pokemonCollection = alphabeticOrder(data, optionAlphabeticOrder);
-    pokemonCollection = orderOfWeakness(pokemonCollection, optionOrderOfWeakness);
-    pokemonCollection = filterElements(pokemonCollection, optionFilterElements);
-    return pokemonCollection;
+    collection = alphabeticOrder(data.pokemon, optionAlphabeticOrder);
+    collection = orderOfWeakness(collection, optionOrderOfWeakness);
+    collection = filterElements(collection, optionFilterElements);
+    return collection;
   }
 
   /* two activated filter */
-  if (optionFilterElements !== ""){
-    return alphabeticOrder(filterElements(data, selectedOption));
-  } 
   if (optionFilterRarity !== ""){
-    return alphabeticOrder(filterRarity(data, selectedOption));
+    collection = alphabeticOrder(data.pokemon, optionAlphabeticOrder);
+    collection = filterRarity(collection, optionFilterRarity);
+    return collection;
   } 
   if (optionOrderOfWeakness !== "") {
-    return alphabeticOrder(orderOfWeakness(data, selectedOption));
+    collection = alphabeticOrder(data.pokemon, optionAlphabeticOrder);
+    collection = orderOfWeakness(collection, optionOrderOfWeakness);
+    return collection;
   }
+  if (optionFilterElements !== ""){
+    collection = alphabeticOrder(data.pokemon, optionAlphabeticOrder);
+    collection = filterElements(collection, optionFilterElements);
+    return collection;
+  } 
 };
 
 export const alphabeticOrder = (data, selectedOption) => {
