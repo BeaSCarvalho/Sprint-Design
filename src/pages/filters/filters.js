@@ -169,4 +169,6 @@ function cleanForm() {
   percentage.innerHTML = `This filter represents 100% of the total Pokémon.`;
   cleanFilters();
   showAllPokemon(alphabeticOrder(data.pokemon, "number"));
+  activeModal();
+  startAllFilters();
 }

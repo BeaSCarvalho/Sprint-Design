@@ -184,7 +184,6 @@ export function createModal (pokemonArray) {
 
 function getEvolution(pokemon) {
   const pokemonArray = [];
-  console.log(pokemon.evolution);
   if (pokemon.evolution["prev-evolution"] !== undefined) {
     const prevEvolution = pokemon.evolution["prev-evolution"];
     pokemonArray.push(`
@@ -235,6 +234,12 @@ function getEvolution(pokemon) {
         </div>
       `);
     }
+  }
+
+  if (pokemon.evolution["prev-evolution"] === undefined && pokemon.evolution["next-evolution"] === undefined) {
+    pokemonArray.push(`
+      <p class="not-evolution">This pokemon has no evolution!</p>
+    `);
   }
   return pokemonArray;
 }

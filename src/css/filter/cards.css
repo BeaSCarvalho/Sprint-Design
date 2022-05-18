@@ -1,6 +1,11 @@
 #not-pokemon {
   font-size: 2.6rem;
 }
+.not-evolution {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 5px 10px 5px;
+}
 #results-cards {
   position: relative;
   display: flex;
