@@ -182,62 +182,59 @@ export function createModal (pokemonArray) {
   return pokemonList;
 }
 
-/*
-  pokemon001 {
-    next-evolution 002 {
-      next-evolution 003
-    }
-  }
-  pokemon002 {
-    prev-evolution 001
-    next-evolution 002
-  }
-  pokemon003 {
-    prev-evolution 002 {
-      prev-evolution 001
-    }
-  }
-*/
-
 function getEvolution(pokemon) {
-  console.log(pokemon);
-  const prevEvolution = pokemon.evolution["prev-evolution"];
-  const nextEvolution = pokemon.evolution["next-evolution"];
-  const nextNextEvolution = pokemon.evolution["next-evolution"]["nex-evolution"];
-  console.log(prevEvolution);
-  console.log(nextEvolution);
   const pokemonArray = [];
-  if (prevEvolution) {
+  console.log(pokemon.evolution);
+  if (pokemon.evolution["prev-evolution"] !== undefined) {
+    const prevEvolution = pokemon.evolution["prev-evolution"];
     pokemonArray.push(`
       <div class="evolution-container">
-        <img class="evolution-img" src="./img/pokemon/number-pokemon/${prevEvolution.num}.png">
-        <p class="evolution-p">${prevEvolution.name}</p>
-        <p class="evolution-p">N°: ${prevEvolution.num}</p>
-        <p class="evolution-p">Candy-cost: ${prevEvolution['candy-cost']}</p>
+        <img class="evolution-img" src="./img/pokemon/number-pokemon/${prevEvolution[0].num}.png">
+        <p class="evolution-p">${prevEvolution[0].name}</p>
+        <p class="evolution-p">N°: ${prevEvolution[0].num}</p>
+        <p class="evolution-p">Candy-cost: ${prevEvolution[0]['candy-cost']}</p>
       </div>
     `);
+
+    if (pokemon.evolution["prev-evolution"][0]["prev-evolution"] !== undefined) {
+      const prevPrevEvolution = pokemon.evolution["prev-evolution"][0]["prev-evolution"];
+      pokemonArray.push(`
+        <div class="evolution-container">
+          <img class="evolution-img" src="./img/pokemon/number-pokemon/${prevPrevEvolution[0].num}.png">
+          <p class="evolution-p">${prevPrevEvolution[0].name}</p>
+          <p class="evolution-p">N°: ${prevPrevEvolution[0].num}</p>
+          <p class="evolution-p">Candy-cost: ${prevPrevEvolution[0]['candy-cost']}</p>
+        </div>
+      `);
+      pokemonArray.reverse();
+    }
   }
-  if (nextEvolution !== undefined) {
-    console.log(nextEvolution.name);
-    pokemonArray.push(`
+
+  if (pokemon.evolution["next-evolution"]!== undefined) {
+    const nextEvolution = pokemon.evolution["next-evolution"];
+
+    for (let position in pokemon.evolution["next-evolution"]) {
+      pokemonArray.push(`
       <div class="evolution-container">
-        <img class="evolution-img" src="./img/pokemon/number-pokemon/${nextEvolution.num}.png">
-        <p class="evolution-p">${nextEvolution.name}</p>
-        <p class="evolution-p">N°: ${nextEvolution.num}</p>
-        <p class="evolution-p">Candy-cost: ${nextEvolution['candy-cost']}</p>
+        <img class="evolution-img" src="./img/pokemon/number-pokemon/${nextEvolution[position].num}.png">
+        <p class="evolution-p">${nextEvolution[position].name}</p>
+        <p class="evolution-p">N°: ${nextEvolution[position].num}</p>
+        <p class="evolution-p">Candy-cost: ${nextEvolution[position]['candy-cost']}</p>
       </div>
     `);
-  }
-  if (nextNextEvolution !== undefined) {
-    console.log(nextNextEvolution.name);
-    pokemonArray.push(`
-      <div class="evolution-container">
-        <img class="evolution-img" src="./img/pokemon/number-pokemon/${nextNextEvolution.num}.png">
-        <p class="evolution-p">${nextNextEvolution.name}</p>
-        <p class="evolution-p">N°: ${nextNextEvolution.num}</p>
-        <p class="evolution-p">Candy-cost: ${nextNextEvolution['candy-cost']}</p>
-      </div>
-    `);
+    }
+
+    if (pokemon.evolution["next-evolution"][0]["next-evolution"] !== undefined) {
+      const nextNextEvolution = pokemon.evolution["next-evolution"][0]["next-evolution"];
+      pokemonArray.push(`
+        <div class="evolution-container">
+          <img class="evolution-img" src="./img/pokemon/number-pokemon/${nextNextEvolution[0].num}.png">
+          <p class="evolution-p">${nextNextEvolution[0].name}</p>
+          <p class="evolution-p">N°: ${nextNextEvolution[0].num}</p>
+          <p class="evolution-p">Candy-cost: ${nextNextEvolution[0]['candy-cost']}</p>
+        </div>
+      `);
+    }
   }
   return pokemonArray;
 }
