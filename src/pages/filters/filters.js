@@ -81,6 +81,7 @@ function startAllFilters() {
   const containerCards = document.querySelector("#result-cards");
 
   selectElements.disabled = true;
+  cleanButton.addEventListener("click", cleanForm);
 
   nameTyped.addEventListener("keyup", () => {
     searchNamePokemon(nameTyped);
@@ -118,8 +119,6 @@ function startAllFilters() {
     const selectElementsValue = selectElements.value;
     filterOption(selectElementsValue);
   });
-
-  cleanButton.addEventListener("click", cleanForm);
 }
 
 function searchNamePokemon(nameTyped) {
