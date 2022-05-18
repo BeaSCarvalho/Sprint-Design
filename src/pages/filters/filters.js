@@ -81,11 +81,15 @@ function startAllFilters() {
   const containerCards = document.querySelector("#result-cards");
 
   selectElements.disabled = true;
+  cleanButton.addEventListener("click", cleanForm);
 
   nameTyped.addEventListener("keyup", () => {
     searchNamePokemon(nameTyped);
   });
-  nameTyped.addEventListener("change", cleanForm);
+  nameTyped.addEventListener("change", () => {
+    const nameTyped = document.querySelector("#name-pokemon");
+    nameTyped.value = "";
+  });
 
   selectOrder.addEventListener("change", () => {
     const selectedOrderValue = selectOrder.value;
@@ -118,8 +122,6 @@ function startAllFilters() {
     const selectElementsValue = selectElements.value;
     filterOption(selectElementsValue);
   });
-
-  cleanButton.addEventListener("click", cleanForm);
 }
 
 function searchNamePokemon(nameTyped) {
@@ -150,7 +152,6 @@ function percentagePokemon(resultOfFilters) {
 }
 
 function cleanForm() {
-  const nameTyped = document.querySelector("#name-pokemon");
   const selectOrder = document.querySelector("#order-selector");
   const selectTypeOrWeakness = document.querySelector("#filter-type-weakness");
   const selectElements = document.querySelector("#filter-atributtes");
@@ -158,7 +159,6 @@ function cleanForm() {
   const selectOrderByWeakness = document.querySelector("#calculation-selector");
   const percentage = document.querySelector("#quantify-text");
 
-  nameTyped.value = "";
   selectOrder.selectedIndex = 0;
   selectElements.disabled = true;
 
@@ -169,4 +169,6 @@ function cleanForm() {
   percentage.innerHTML = `This filter represents 100% of the total Pokémon.`;
   cleanFilters();
   showAllPokemon(alphabeticOrder(data.pokemon, "number"));
+  activeModal();
+  startAllFilters();
 }

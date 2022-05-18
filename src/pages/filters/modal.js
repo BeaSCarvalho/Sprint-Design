@@ -23,8 +23,12 @@ export function createModal (pokemonArray) {
                 alt=${pokemon.name}>
               </figure>
               <p class="poke-about">${pokemon.about}</p> 
-              <p class="poke-rarity">Rarity: ${
+              <div class="info-rarity-egg">
+                <p class="poke-rarity">RARITY: ${
                 pokemon.rarity}</p> 
+                <p class="poke-rarity">EGG: ${
+                  pokemon.egg}</p> 
+              </div>
               <section class="container-group-stats">
                 <div class="items-stats">
                   <span class="td-items">
@@ -169,7 +173,7 @@ export function createModal (pokemonArray) {
                   <section class="group-evolutions">
                     <h2 class="modal-titles">EVOLUTION</h2>
                     <div class="container-movements">
-                      
+                      ${getEvolution(pokemon)}
                     </div>
                   </section>
                 </section>
@@ -182,60 +186,64 @@ export function createModal (pokemonArray) {
   return pokemonList;
 }
 
-/*
-${nextEvolution ? nextEvolution : ""}
-${prevEvolution ? prevEvolution : ""}
+function getEvolution(pokemon) {
+  const pokemonArray = [];
+  if (pokemon.evolution["prev-evolution"] !== undefined) {
+    const prevEvolution = pokemon.evolution["prev-evolution"];
+    pokemonArray.push(`
+      <div class="evolution-container">
+        <img class="evolution-img" src="./img/pokemon/number-pokemon/${prevEvolution[0].num}.png">
+        <p class="evolution-p">${prevEvolution[0].name.toUpperCase()}</p>
+        <p class="evolution-p">N°: ${prevEvolution[0].num}</p>
+        <p class="evolution-p">Candy-cost: ${prevEvolution[0]['candy-cost']}</p>
+      </div>
+    `);
 
-let prevEvolution = "";
-let nextEvolution = "";
-
-if (pokemon.evolution["next-evolution"]) {
-  let evolutions = getNextEvolution(pokemon.evolution["next-evolution"]);
-  evolutions.forEach((evol) => {
-    nextEvolution += `
+    if (pokemon.evolution["prev-evolution"][0]["prev-evolution"] !== undefined) {
+      const prevPrevEvolution = pokemon.evolution["prev-evolution"][0]["prev-evolution"];
+      pokemonArray.push(`
         <div class="evolution-container">
-          <img class="evolution-img" src="./img/pokemon/number-pokemon/${evol.num}.png">
-          <p class="evolution-p">${evol.name.toUpperCase()}</p>
-          <p class="evolution-p">N°: ${evol.num}</p>
-          <p class="evolution-p">Candy-cost: ${evol['candy-cost']}</p>
+          <img class="evolution-img" src="./img/pokemon/number-pokemon/${prevPrevEvolution[0].num}.png">
+          <p class="evolution-p">${prevPrevEvolution[0].name.toUpperCase()}</p>
+          <p class="evolution-p">N°: ${prevPrevEvolution[0].num}</p>
+          <p class="evolution-p">Candy-cost: ${prevPrevEvolution[0]['candy-cost']}</p>
         </div>
-        `;
-  });
-}
-
-if (pokemon.evolution["prev-evolution"]) {
-  let evolutions = getPrevEvolution(pokemon.evolution["prev-evolution"]);
-  evolutions.forEach((evol) => {
-    prevEvolution += `
-        <div class="evolution-container">
-          <img class="evolution-img" src="./img/pokemon/number-pokemon/${evol.num}.png">
-          <p class="evolution-p">${evol.name.toUpperCase()}</p>
-          <p class="evolution-p">N°: ${evol.num}</p>
-          <p class="evolution-p">Candy-cost: ${evol['candy-cost']}</p>
-        </div>
-      `;
-  });
-}
-
-function getNextEvolution(pokemon) {
-  let evolutions = [];
-  pokemon.forEach((evol) => {
-    let nextEvolution = evol["next-evolution"];
-    if (nextEvolution) {
-      evolutions.push(...getNextEvolution(nextEvolution));
+      `);
+      pokemonArray.reverse();
     }
-    evolutions.push(evol);
-  });
-  return evolutions;
-}
-
-function getPrevEvolution(pokemon) {
-  let prevEvolution = pokemon[0]["prev-evolution"];
-  let evolutions = [];
-  if (prevEvolution) {
-    evolutions.push(...getPrevEvolution(prevEvolution));
   }
-  evolutions.push(pokemon[0]);
-  return evolutions;
+
+  if (pokemon.evolution["next-evolution"]!== undefined) {
+    const nextEvolution = pokemon.evolution["next-evolution"];
+
+    for (let position in pokemon.evolution["next-evolution"]) {
+      pokemonArray.push(`
+      <div class="evolution-container">
+        <img class="evolution-img" src="./img/pokemon/number-pokemon/${nextEvolution[position].num}.png">
+        <p class="evolution-p">${nextEvolution[position].name.toUpperCase()}</p>
+        <p class="evolution-p">N°: ${nextEvolution[position].num}</p>
+        <p class="evolution-p">Candy-cost: ${nextEvolution[position]['candy-cost']}</p>
+      </div>
+    `);
+    }
+
+    if (pokemon.evolution["next-evolution"][0]["next-evolution"] !== undefined) {
+      const nextNextEvolution = pokemon.evolution["next-evolution"][0]["next-evolution"];
+      pokemonArray.push(`
+        <div class="evolution-container">
+          <img class="evolution-img" src="./img/pokemon/number-pokemon/${nextNextEvolution[0].num}.png">
+          <p class="evolution-p">${nextNextEvolution[0].name.toUpperCase()}</p>
+          <p class="evolution-p">N°: ${nextNextEvolution[0].num}</p>
+          <p class="evolution-p">Candy-cost: ${nextNextEvolution[0]['candy-cost']}</p>
+        </div>
+      `);
+    }
+  }
+
+  if (pokemon.evolution["prev-evolution"] === undefined && pokemon.evolution["next-evolution"] === undefined) {
+    pokemonArray.push(`
+      <p class="not-evolution">This pokemon has no evolution!</p>
+    `);
+  }
+  return pokemonArray;
 }
-*/
