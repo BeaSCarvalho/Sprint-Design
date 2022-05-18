@@ -198,7 +198,6 @@ function getEvolution(pokemon) {
         <p class="evolution-p">Candy-cost: ${prevEvolution[0]['candy-cost']}</p>
       </div>
     `);
-
     if (pokemon.evolution["prev-evolution"][0]["prev-evolution"] !== undefined) {
       const prevPrevEvolution = pokemon.evolution["prev-evolution"][0]["prev-evolution"];
       pokemonArray.push(`
@@ -215,7 +214,6 @@ function getEvolution(pokemon) {
 
   if (pokemon.evolution["next-evolution"]!== undefined) {
     const nextEvolution = pokemon.evolution["next-evolution"];
-
     for (let position in pokemon.evolution["next-evolution"]) {
       pokemonArray.push(`
       <div class="evolution-container">
@@ -226,7 +224,6 @@ function getEvolution(pokemon) {
       </div>
     `);
     }
-
     if (pokemon.evolution["next-evolution"][0]["next-evolution"] !== undefined) {
       const nextNextEvolution = pokemon.evolution["next-evolution"][0]["next-evolution"];
       pokemonArray.push(`
