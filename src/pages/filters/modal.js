@@ -23,8 +23,12 @@ export function createModal (pokemonArray) {
                 alt=${pokemon.name}>
               </figure>
               <p class="poke-about">${pokemon.about}</p> 
-              <p class="poke-rarity">Rarity: ${
+              <div class="info-rarity-egg">
+                <p class="poke-rarity">RARITY: ${
                 pokemon.rarity}</p> 
+                <p class="poke-rarity">EGG: ${
+                  pokemon.egg}</p> 
+              </div>
               <section class="container-group-stats">
                 <div class="items-stats">
                   <span class="td-items">
@@ -189,7 +193,7 @@ function getEvolution(pokemon) {
     pokemonArray.push(`
       <div class="evolution-container">
         <img class="evolution-img" src="./img/pokemon/number-pokemon/${prevEvolution[0].num}.png">
-        <p class="evolution-p">${prevEvolution[0].name}</p>
+        <p class="evolution-p">${prevEvolution[0].name.toUpperCase()}</p>
         <p class="evolution-p">N°: ${prevEvolution[0].num}</p>
         <p class="evolution-p">Candy-cost: ${prevEvolution[0]['candy-cost']}</p>
       </div>
@@ -200,7 +204,7 @@ function getEvolution(pokemon) {
       pokemonArray.push(`
         <div class="evolution-container">
           <img class="evolution-img" src="./img/pokemon/number-pokemon/${prevPrevEvolution[0].num}.png">
-          <p class="evolution-p">${prevPrevEvolution[0].name}</p>
+          <p class="evolution-p">${prevPrevEvolution[0].name.toUpperCase()}</p>
           <p class="evolution-p">N°: ${prevPrevEvolution[0].num}</p>
           <p class="evolution-p">Candy-cost: ${prevPrevEvolution[0]['candy-cost']}</p>
         </div>
@@ -216,7 +220,7 @@ function getEvolution(pokemon) {
       pokemonArray.push(`
       <div class="evolution-container">
         <img class="evolution-img" src="./img/pokemon/number-pokemon/${nextEvolution[position].num}.png">
-        <p class="evolution-p">${nextEvolution[position].name}</p>
+        <p class="evolution-p">${nextEvolution[position].name.toUpperCase()}</p>
         <p class="evolution-p">N°: ${nextEvolution[position].num}</p>
         <p class="evolution-p">Candy-cost: ${nextEvolution[position]['candy-cost']}</p>
       </div>
@@ -228,7 +232,7 @@ function getEvolution(pokemon) {
       pokemonArray.push(`
         <div class="evolution-container">
           <img class="evolution-img" src="./img/pokemon/number-pokemon/${nextNextEvolution[0].num}.png">
-          <p class="evolution-p">${nextNextEvolution[0].name}</p>
+          <p class="evolution-p">${nextNextEvolution[0].name.toUpperCase()}</p>
           <p class="evolution-p">N°: ${nextNextEvolution[0].num}</p>
           <p class="evolution-p">Candy-cost: ${nextNextEvolution[0]['candy-cost']}</p>
         </div>
