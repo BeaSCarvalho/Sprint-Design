@@ -3,7 +3,7 @@
 
 ## Escolha os seus Pokemóns para combate, filtrando por tipo e fraqueza.
 
-**Status do Projeto:** _em andamento_
+**Status do Projeto:** _Finalizado_
 
 **Deploy:** [Site OnPokemon](https://beascarvalho.github.io/Sprint-Design/index.html)
 
