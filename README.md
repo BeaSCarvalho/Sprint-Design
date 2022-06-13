@@ -29,9 +29,10 @@
   - [2.2. UX (Experiência do Usuário) e UI (Design de Interface)](#2.2-ux-experiência-do-usuário-e-ui-design-de-interface)
 - [2.3 Protótipos de Alta Fidelidade](#2.3-protótipos-de-alta-fidelidade)
   - [2.3.1 Smartphone Posição Vertical](#2.3.1-smartphone-posição-vertical)
-- [3. FERRAMENTAS UTILIZADAS](#3-ferramentas-utilizadas)
-- [4. CHECKLIST](#4-checklist)
-- [5. AUTORAS](#5-autoras)
+- [3. PRODUTO FINAL](#3-produto-final)  
+- [4. FERRAMENTAS UTILIZADAS](#4-ferramentas-utilizadas)
+- [5. CHECKLIST](#5-checklist)
+- [6. AUTORAS](#6-autoras)
 ---
 
 ## 1. PRODUTO
@@ -137,8 +138,13 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
   <img alt="Protótipo de Smartphone com orientação vertical" src="./src/img/to-readme/mobile-gif.gif">
 </div>
 
+## 3.PRODUTO FINAL
 
-## 3. FERRAMENTAS UTILIZADAS
+<div>
+  <img alt="GIF produto final" src="./src/img/to-readme/gif-sprint-design.gif" width=800>
+</div>
+
+## 4. FERRAMENTAS UTILIZADAS
 
 - **Planejamento:**
 
@@ -153,7 +159,7 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
 - **Web:**
   - **Editor:** _[Visual Studio Code](https://code.visualstudio.com/)_
 
-## 4. CHECKLIST
+## 5. CHECKLIST
 
 - [x] Usar VanillaJS.
 - [x] Passa pelo linter (`npm run pretest`)
@@ -170,7 +176,7 @@ Os principais usuários do _OnPokemon_, são os jogadores (treinadores) que dese
 - [x] UI: Permite filtrar dados com base em uma condição.
 - [x] UI: É _responsivo_.
 
-## 5. AUTORAS
+## 6. AUTORAS
 
 <table>
 <td>
